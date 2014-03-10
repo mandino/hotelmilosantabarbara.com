@@ -1,3 +1,4 @@
+# Default ignores
 .htaccess
 wp-config.php
 wp-content/uploads/
@@ -15,3 +16,17 @@ tmp/
 blogs/
 .DS_Store
 test/
+
+# ignore debug.log
+wp-content/debug.log
+# ignore local-config.php
+local-config.php
+
+# ignore wordpress themes
+wp-content/wp-content/themes/classic/
+wp-content/wp-content/themes/twentyfourteen/
+wp-content/wp-content/themes/twentythirteen/
+wp-content/wp-content/themes/twentytwelve/
+
+# ignore other themes
+wp-content/wp-content/themes/default/

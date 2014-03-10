@@ -1,23 +1,4 @@
 
-/* ================================================  MAX WIDTH 1280 ======================================= */
-
-
-@media only screen 
-and (max-width : 1280px) {
-
-
-
-	/* Navigation */
-
-	#primary-nav .container {
-	    width: 1040px;
-	}
-
-	
-}
-
-
-
 /* ================================================  MAX WIDTH 1439 ======================================= */
 
 
@@ -43,6 +24,26 @@ and (max-width : 1439px) {
 
 
 }
+
+
+
+/* ================================================  MAX WIDTH 1280 ======================================= */
+
+
+@media only screen 
+and (max-width : 1280px) {
+
+
+
+	/* Navigation */
+
+	#primary-nav .container {
+	    width: 820px;
+	}
+
+	
+}
+
 
 
 
@@ -86,6 +87,10 @@ and (max-width : 1099px) {
 
 
 	/* Navigation */
+
+	.droplogo {
+		padding-top: 20px;
+	}
 
 	.logo img {
 	    max-width: 150px;

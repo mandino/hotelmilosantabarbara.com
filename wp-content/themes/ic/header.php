@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<title>
 		<?php global $page, $paged; wp_title( '|', true, 'right' ); bloginfo( 'name' );
 	
