@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<markers>
+  <marker>
+    <marker_id>2</marker_id>
+    <map_id>1</map_id>
+    <title>Parking and Directions</title>
+    <address>202 W. Cabrillo Boulevard Santa Barbara, CA 93101</address>
+    <desc>202 W. Cabrillo Boulevard Santa Barbara, CA 93101</desc>
+    <pic></pic>
+    <icon></icon>
+    <linkd></linkd>
+    <lat>34.4104457</lat>
+    <lng>-119.69201770000001</lng>
+    <anim></anim>
+    <category>0</category>
+    <infoopen></infoopen>
+  </marker>
+</markers>
