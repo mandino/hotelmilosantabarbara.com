@@ -239,17 +239,17 @@ input[type="submit"] {
 	-moz-animation-name:slideIn;
 	-o-animation-name:slideIn;
 	animation-name:slideIn;
-	-webkit-animation-delay:4s;
-	-moz-animation-delay:4s;
-	-ms-animation-delay:4s;
-	-o-animation-delay:4s;
+	-webkit-animation-delay:2s;
+	-moz-animation-delay:2s;
+	-ms-animation-delay:2s;
+	-o-animation-delay:2s;
 }
 
 .specialsbox:before {
 	font-weight: bold;
 	color: #fff;
 	font-size: 15px;
-	content: 'latest special';
+	content: 'Welcome';
 	padding: 6px 10px;
 	background: #1C93D1;
 	position: absolute;

@@ -48,6 +48,19 @@
 		<div class="closebox"><a href="#">X</a></div>
 		
 		
+		<div class="specialtab">
+			
+			<a href="#"><h3 style="font-size: 40px;"><span>Hotel Oceana Is Now</span>Hotel Milo<br><span>Santa Barbara</span></h3></a>
+		
+		
+		</div>
+		
+
+
+
+		
+		<!--
+		
 		<div class="span">
 			from $240
 		
@@ -60,6 +73,8 @@
 		
 		
 		</div>
+		
+		-->
 	
 	</div>
 </div>
