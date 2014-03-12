@@ -14,7 +14,7 @@
 		<li class="shop"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
 		<li class="arts"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
 		<li class="sights"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
-		<!--<li class="events"><a class="linkerd active" href="http://milo.lurnglier.com/?page_id=157" title="Events">Events</a></li>	-->
+		<!--<li class="events"><a class="linkerd active" href="http://hotelmilosantabarbara.com/?page_id=157" title="Events">Events</a></li>	-->
 		
 	</ul>
 
