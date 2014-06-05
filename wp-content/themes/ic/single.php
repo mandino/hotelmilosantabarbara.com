@@ -107,78 +107,17 @@ if( count( $children ) != 0 ) { ?>
 			</div>
 
 			<div class="sidebar fr">
-				
-				<a class="button" target="_blank" href="<?php if(get_post_meta ($post->ID, 'cebo_booklink', true)) { echo get_post_meta ($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>" onclick="_gaq.push(['_link', this.href]);return false;"><?php _e('RESERVE NOW', 'cebolang'); ?></a>
-				
-				
-				<ul class="thumbgal">
-						
-						<?php query_posts('post_type=specials&posts_per_page=4'); if(have_posts()) : while(have_posts()) : the_post(); 
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+										
+			<!-- widgetized  -->
 
-							<?php if(get_post_meta($post->ID, 'cebo_available_on_sidebar', true)) { ?>
-							
-								<li>
-									
-						
-									<?php if(get_post_meta($post->ID, 'cebo_pricepoint', true)) { ?>
-									
-									<div class="from-price">
-										<?php echo get_post_meta($post->ID, 'cebo_pricepoint', true); ?>
-									</div>
-									
-									<?php } ?>
-									
-									<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
-									
-									<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>"></a>
-									
-									<?php } else { ?>
-									
-									<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
-									
-									<?php } ?>
-									
-									<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
-									
-									<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
-									
-									
-									<?php } ?>
-
-									<div class="hover-effect">
-										
-										<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
-										
-										<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
-										
-										<?php } ?>
-										
-										
-										<!-- , and Hotel Oceana Tote Bag., and breakfast at the Hotel. -->
-										<a href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
-									</div>
-									
-								</li>
-
-							<?php } ?>
-							
-							<?php endwhile; endif; wp_reset_query(); ?>
-							
-														
-						</ul>
-						
-						
-						  <!-- widgetized  -->
-
-		     		<?php if ( !function_exists('dynamic_sidebar')
-							|| !dynamic_sidebar('Sidebar') ) : ?>
-					<?php endif; ?>  
+	     		<?php if ( !function_exists('dynamic_sidebar')
+						|| !dynamic_sidebar('Sidebar') ) : ?>
+				<?php endif; ?>  
+	
+	     	<!-- widgetized  -->	
+	
+			</div>
 		
-		     	<!-- widgetized  -->	
-		
-				</div>
-			
 			<div class="clear"></div>
 
 		</div>

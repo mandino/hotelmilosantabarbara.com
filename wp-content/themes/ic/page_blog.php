@@ -16,13 +16,13 @@ get_header(); ?>
 				<div class="fl">
 	
 					
-					<h2 class="section-pre-title fl">Our Blog</h2>
+					<h2 class="section-pre-title fl">Blog</h2>
 
 					<div class="section-header-divider fl"></div>
 				
 
 		
-					<h2 class="section-title fr"><?php single_cat_title(); ?></h2>
+					<h2 class="section-title fr">Hotel Milo Santa Barbara Blog</h2>
 	
 				</div>
 
@@ -93,7 +93,7 @@ get_header(); ?>
 
 			</div>
 			
-			<div class="sidebar fr" style="padding: 40px 20px 0">
+			<div class="sidebar fr" style="padding: 15px 20px 0">
 	
 				  <!-- widgetized  -->
 

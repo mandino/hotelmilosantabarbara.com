@@ -380,6 +380,22 @@ and (max-width : 1099px) {
 	    width: 23.6%;
 	}
 
+
+	/* Blog */
+
+	.catlist.fl {
+		width: 67%;
+	}
+
+	.page-template-page_blog-php .room-list p {
+		font-size: 17px;
+		line-height: 1.5;
+	}
+
+	.page-template-page_blog-php .room-list h3 {
+	    font-size: 25px;
+	}
+
 	
 
 }
@@ -867,6 +883,30 @@ and (max-width : 939px) {
 	    font-size: 14px;
 	}
 
+
+
+	/* Blog */
+
+	.catlist.fl {
+	    width: 65%;
+	}
+
+	.sidebar.fr {
+	    width: 26%;
+	}
+
+	.sidewidgets h4 {
+		font-size: 20px;
+	}
+
+	.catlist .fl {
+		height: 50%;
+	}
+
+	.catlist li {
+	    height: 500px !important;
+	}
+
 	
 
 }
@@ -1224,6 +1264,14 @@ and (max-width : 640px)
 	    width: 260px;
 	}
 
+
+
+	/* Blog */
+
+	.catlist.fl {
+	    width: 63%;
+	}
+
 	
 
 }
@@ -1276,8 +1324,8 @@ and (max-width : 480px)
 {	
 
 	#home-slider {
-height: 250px;
-}
+		height: 250px;
+	}
 
 
 		.specialsbox {
@@ -1465,8 +1513,49 @@ padding: 8px 12px;
 	/* reserve button on banner */
 
 	.slide-header .button {
-    display: none;
-}
+	    display: none;
+	}
+
+
+
+	/* Blog */
+
+	.page-template-page_blog-php .rooms .wonderline {
+		display: none;
+	}
+
+	.catlist.fl {
+	    width: 100%;
+	    padding: 0 20px 0 0 !important;
+	}
+
+	.page-template-page_blog-php .room-list h3 {
+	    font-size: 22px;
+	}
+
+	.page-template-page_blog-php .room-list p {
+	    font-size: 15px;
+	    line-height: 1.5;
+	}
+
+	.sidebar.fr {
+	    clear: both;
+	    float: none;
+	    margin-bottom: 0;
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 90%;
+	}
+
+	.sidewidgets input {
+	    margin: 6px auto 0;
+	}
+
+	.sidewidgets .icon-search {
+	    right: 23px;
+	}
+
+
 
 }
 

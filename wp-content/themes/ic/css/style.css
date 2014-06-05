@@ -2876,18 +2876,18 @@ h4.strawberry {
 .gohead {
 	position: relative;
 	display: block;
-	background: url(../images/arrow_updown_gray.png) -36px 0px transparent no-repeat;
+	/*background: url(../images/arrow_updown_gray.png) -36px 0px transparent no-repeat;*/
 	height: 17px;
-	width: 35px;
+	width: auto;
 	float: right;
 }
 
 .holup {
 	position: relative;
 	display: block;
-	background: url(../images/arrow_updown_gray.png) 0px 0px transparent no-repeat;
+	/*background: url(../images/arrow_updown_gray.png) 0px 0px transparent no-repeat;*/
 	height: 17px;
-	width: 35px;
+	width: auto;
 	float: left;
 }
 

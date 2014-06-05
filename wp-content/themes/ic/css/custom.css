@@ -531,7 +531,11 @@ color: #333;
 #primary-nav {
     clear: both;
     overflow: auto;
-    margin: -1px !important;
+    /*margin: -1px !important;*/
+}
+
+#primary-nav .container {
+    width: 1000px;
 }
 
 #primary-nav nav {
