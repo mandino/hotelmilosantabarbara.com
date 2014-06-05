@@ -101,3 +101,13 @@ if ( !function_exists('ss_framework_admin_scripts') ) {
 	
 }
 
+
+
+//  Exclude Categories
+
+function exclude_widget_categories($args){
+	$exclude = "10"; // The IDs of the excluding categories
+	$args["exclude"] = $exclude;
+	return $args;
+}
+add_filter("widget_categories_args","exclude_widget_categories");

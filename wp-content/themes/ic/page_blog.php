@@ -41,7 +41,8 @@ get_header(); ?>
 						query_posts(
 						array(
 								'post_type' => 'post',
-								'paged' => $paged
+								'paged' => $paged,
+								'cat' => -10,
 								
 							));
 						if(have_posts()) :
