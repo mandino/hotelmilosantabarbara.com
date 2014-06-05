@@ -687,6 +687,8 @@
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo $imgsrc[0]; ?>' alt='<?php the_title(); ?>' /></a>
 								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+									<span><?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ', '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></span>
+
 								<p><?php echo excerpt(10); ?></p>
 							</li>
 							<?php endwhile; endif; wp_reset_query(); ?>	
@@ -699,6 +701,8 @@
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo $imgsrc[0]; ?>' alt='<?php the_title(); ?>' /></a>
 								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+								<span><?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ', '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></span>
+								
 								<p><?php echo excerpt(80); ?></p>
 							</li>
 						</ul>
@@ -713,12 +717,20 @@
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo $imgsrc[0]; ?>' alt='<?php the_title(); ?>' /></a>
 								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+									<span><?php $project_terms = wp_get_object_terms($post->ID, 'category'); if(!empty($project_terms)) { if(!is_wp_error( $project_terms )) { echo ''; $count = 0; foreach($project_terms as $term){ if($count > 0) { echo ', '; } echo '<a href="'.get_term_link($term->slug, 'category'). '">'.$term->name. '</a>';  $count++; }  } } ?></span>
+
 								<p><?php echo excerpt(10); ?></p>
 							</li>
 						<?php endwhile; endif; wp_reset_query(); ?>	
 						</ul>
 						
 						<div class="clear"></div>
+						
+						<?php $projects = get_page_with_template('page_blog');
+				  				$projecturl= get_permalink($projects);	
+									?>
+
+						<a href="<?php echo $projecturl; ?>" style="width: 99%; display: block; padding: 20px 0; font-family: didot, serif; font-size: 20px;" class="button">View All Posts</a>
 					</div>
 	
 				</div>

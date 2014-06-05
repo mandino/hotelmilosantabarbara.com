@@ -50,7 +50,7 @@
 		
 		<div class="specialtab">
 			
-			<a href="#"><h3 style="font-size: 40px;"><span>Hotel Oceana Is Now</span>Hotel Milo<br><span>Santa Barbara</span></h3></a>
+			<a href="http://hotelmilosantabarbara.com/santa-barbara-beach-hotels/becoming-milo/"><h3 style="font-size: 40px;"><span>Hotel Oceana Is Now</span>Hotel Milo<br><span>Santa Barbara</span></h3></a>
 		
 		
 		</div>

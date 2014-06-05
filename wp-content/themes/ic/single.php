@@ -167,6 +167,15 @@ if( count( $children ) != 0 ) { ?>
 							
 														
 						</ul>
+						
+						
+						  <!-- widgetized  -->
+
+		     		<?php if ( !function_exists('dynamic_sidebar')
+							|| !dynamic_sidebar('Sidebar') ) : ?>
+					<?php endif; ?>  
+		
+		     	<!-- widgetized  -->	
 		
 				</div>
 			

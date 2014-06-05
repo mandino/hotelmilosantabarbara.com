@@ -5,7 +5,8 @@
 		if ($(window).width() > 399) {
 			$("a[rel^='prettyPhoto']").prettyPhoto({
 		    	default_width: 800,
-		    	default_height: 600
+		    	default_height: 600,
+
 		    });
 		}
 	    

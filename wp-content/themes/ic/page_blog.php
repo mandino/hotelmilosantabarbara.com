@@ -1,9 +1,8 @@
-<?php
-/**
- * The template for displaying Archive pages.
- *
- */
+<?php 
 
+/* Template Name: Blog
+
+*/
 get_header(); ?>   
 
 
@@ -17,21 +16,13 @@ get_header(); ?>
 				<div class="fl">
 	
 					
-					<h2 class="section-pre-title fl">Archives</h2>
+					<h2 class="section-pre-title fl">Our Blog</h2>
 
 					<div class="section-header-divider fl"></div>
 				
 
 		
-					<h2 class="section-title fr">
-						<?php if (is_day()) { ?>
-                    <?php the_time('F jS, Y'); ?>
-                    <?php } elseif (is_month()) { ?>
-                    <?php the_time('F, Y'); ?>
-                    <?php } elseif (is_year()) { ?>
-                    <?php the_time('Y'); ?>
-                    <?php } ?>
-					</h2>
+					<h2 class="section-title fr"><?php single_cat_title(); ?></h2>
 	
 				</div>
 
@@ -44,13 +35,18 @@ get_header(); ?>
 				<ul>
 					
 							
-		<?php  if(have_posts()) :
-		       $postcount=1;
-		      while(have_posts()) : the_post();
-		           
-		        if( ($postcount % 2) == 0 ) $post_class = ' leftimg';
-		        else $post_class = ' rightimg'; 
-		        
+			
+		<?php  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+						
+						query_posts(
+						array(
+								'post_type' => 'post',
+								'paged' => $paged
+								
+							));
+						if(have_posts()) :
+					    $postcount=1;
+					    while(have_posts()) : the_post();
 		      
 				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 		        ?>
