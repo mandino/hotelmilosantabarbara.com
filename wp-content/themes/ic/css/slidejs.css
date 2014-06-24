@@ -133,7 +133,7 @@
 }
 
 .fl .slidesjs-slide .post-date {
-    background: none repeat scroll 0 0 #252424;
+    background: none repeat scroll 0 0 rgba(0,0,0,.8);
     padding: 10px;
     position: absolute;
     right: 20px;
@@ -142,15 +142,15 @@
 
 .slidesjs-slide .post-date span {
     bottom: auto;
-    clear: left;
-    font-size: 60px;
+    clear: none;
+    font-size: 37px;
     font-style: italic;
     height: auto;
-    right: 0;
+    right: auto;
 }
 
 .slidesjs-slide .post-date span.date-number {
-    display: block;
+    display: inline;
     margin-top: -14px;
 }
 

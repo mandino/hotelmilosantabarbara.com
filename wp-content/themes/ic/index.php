@@ -304,10 +304,15 @@
 								      
 								<span class="date-month"><?php echo $shortdaterz; ?></span>
 								
-								<?php $shortdate = tribe_get_start_date($post->ID, true, 'j');
-								      $shortdatez = substr($shortdate, 0, 2);  ?>
+								<?php 
+									$shortdate = tribe_get_start_date($post->ID, true, 'j');
+									$shortdateend = tribe_get_end_date($post->ID, true, 'j');
+								    $shortdatez = substr($shortdate, 0, 2);
+								    $shortdateendz = substr($shortdateend, 0, 2);
+								?>
 								      
-								<span class="date-number"><?php echo $shortdatez; ?></span>
+								<span class="date-number"><?php echo $shortdatez; ?> -</span>
+								<span class="date-number date-number-end"><?php echo $shortdateendz; ?></span>
 							</div>
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
 							<div class="ptit"> 

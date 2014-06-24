@@ -678,6 +678,7 @@ color: #333;
 	width: 100%;
 	background: #eee;
 	position: relative;
+	overflow: hidden;
 }
 
 .slide-header {
