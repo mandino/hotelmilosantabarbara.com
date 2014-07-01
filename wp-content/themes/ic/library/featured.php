@@ -43,38 +43,43 @@
 		</ul>
 	</div>
 		
-	<div class="specialsbox">
-		
-		<div class="closebox"><a href="#">X</a></div>
-		
-		
-		<div class="specialtab">
-			
-			<a href="http://hotelmilosantabarbara.com/santa-barbara-beach-hotels/becoming-milo/"><h3 style="font-size: 40px;"><span>Hotel Oceana Is Now</span>Hotel Milo<br><span>Santa Barbara</span></h3></a>
-		
-		
-		</div>
-		
+	<?php 
 
+		$popout_query = new WP_Query(
+			array(
+				'post_type' => 'popout-box', 
+				'posts_per_page' => 1,
+			)
+		);
 
-
-		
-		<!--
-		
-		<div class="span">
-			from $240
-		
-		</div>
-		
-		
-		<div class="specialtab">
-			
-			<a href="#"><h3>Jeep ride and wine tasting<br><span>Ocean to Vineyards</span></h3></a>
-		
-		
-		</div>
-		
-		-->
+		if($popout_query->have_posts()) :
 	
-	</div>
+	?>
+
+		<div class="specialsbox">
+				
+			<div class="closebox"><a href="#">X</a></div>
+
+			<?php while($popout_query->have_posts()) : $popout_query->the_post(); ?>
+				
+				<div class="specialtab">
+					
+					<?php if(get_post_meta($post->ID, 'cebo_popout_url', true)) { ?>
+						<a href="<?php echo get_post_meta($post->ID, 'cebo_popout_url', true); ?>"><h3 style="font-size: 30px;">
+					<?php } ?>
+
+						<span><?php echo get_post_meta($post->ID, 'cebo_popout_subtitle', true); ?></span>
+						<?php echo get_post_meta($post->ID, 'cebo_popout_title', true); ?><br>
+						<span><?php echo get_post_meta($post->ID, 'cebo_popout_tagline', true); ?></span></h3>
+
+					<?php if(get_post_meta($post->ID, 'cebo_popout_url', true)) { ?></a><?php } ?>
+						
+				</div>
+
+			<?php endwhile; ?>
+	
+		</div>
+
+	<?php endif; ?>
+
 </div>
