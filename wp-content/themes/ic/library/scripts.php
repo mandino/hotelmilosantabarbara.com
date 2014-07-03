@@ -284,7 +284,6 @@
 	$( function() {
 
 		// Quotes Rotator
-
 		$( '#cbp-qtrotator' ).cbpQTRotator();
 
 	} );
