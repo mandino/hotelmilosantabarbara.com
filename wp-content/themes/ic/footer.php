@@ -44,10 +44,10 @@
 					<form name="surveys" action="http://zmaildirect.com/app/new/MTIwODQ2MDg1" method="get">  
 
 					<input type="hidden" name="formId" value="MTIzNTQzMjYx">
-					    <div style="float: left;">
+					    <div>
 					<input type="text" name="email" placeholder="Exclusive offers">
 						</div>
-					  <div style="float: right;">	
+					  <div>	
 					<input type="submit" value="Sign Up">
 						</div>
 					</form>	
