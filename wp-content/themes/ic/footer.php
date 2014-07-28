@@ -41,19 +41,16 @@
 	
 				<div class="newsletter-form">
 					
-					
-					<?php if(get_option('cebo_enewslettercode')) { ?>
-					
-					<?php echo get_option('cebo_enewslettercode'); ?>
-					
-					<?php } else { ?>
-					
-					<form name="newsletter-submission">
-						<input type="text" name="firstname" placeholder="Exclusive offers">
-						<input type="submit" value="Sign Up">
-					</form>
-					
-					<?php  } ?>
+					<form name="surveys" action="http://zmaildirect.com/app/new/MTIwODQ2MDg1" method="get">  
+
+					<input type="hidden" name="formId" value="MTIzNTQzMjYx">
+					    <div style="float: left;">
+					<input type="text" name="email" placeholder="Exclusive offers">
+						</div>
+					  <div style="float: right;">	
+					<input type="submit" value="Sign Up">
+						</div>
+					</form>	
 	
 				</div>
 				
