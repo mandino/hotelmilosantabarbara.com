@@ -126,19 +126,6 @@ _gaq.push(['_setDomainName', 'hotelmilosantabarbara.com']);
 _gaq.push(['_trackPageview']);
 
 
-
-_gaq.push(['secondTracker._setAccount', 'UA-48295809-1']);
-
-_gaq.push(['secondTracker._setAllowLinker', true]);
-
-_gaq.push(['secondTracker._setDomainName', 'hotelmilosantabarbara.com']);
-
-_gaq.push(['secondTracker._trackPageview']);
-
-
-
-
-
 (function() {
 
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
