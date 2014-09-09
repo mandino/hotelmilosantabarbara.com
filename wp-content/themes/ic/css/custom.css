@@ -826,6 +826,10 @@ line-height: 30px;
     padding-top: 20px;
 }
 
+.clear.three-col, .clear.two-col {
+	display: none;
+}
+
 .post-content .imagegal ul li {
 		display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
         margin-bottom: 20px;

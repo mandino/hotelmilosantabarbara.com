@@ -567,23 +567,26 @@ and (max-width : 940px)
 
 
 	/* Page - Specials */
-
-	.post-content .imagegal ul li:nth-child(3n) {
-	    margin-right: 0;
+	
+	.post-content .imagegal ul li.three-last {
+		margin-right: 0;
 	}
-
-	.post-content .imagegal ul li:nth-child(4n) {
+	
+	.post-content .imagegal ul li.three-last {
 	    margin-right: 13px;
 	}
 
 	.post-content .imagegal ul li {
 	    margin-bottom: 20px;
-	    width: 32%;
+	    width: 30%;
 	}
 
 	.post-content .imagegal.photos ul li:nth-child(4n) {
 	    margin-right: 7px;
 	}
+	
+	.clear.three-col { display: block;}
+	.clear.four-col { display: none;}
 
 
 
