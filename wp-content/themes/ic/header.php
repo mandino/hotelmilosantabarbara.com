@@ -1,3 +1,13 @@
+<?php 
+
+	require_once bloginfo('template_url').'/library/mobile-detect.php';
+	$detect = new Mobile_Detect;
+	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+	$scriptVersion = $detect->getScriptVersion();
+
+	$check = $detect->isMobile(); 
+
+?>
 <!DOCTYPE HTML>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -70,17 +80,26 @@
 	}
 	
 	$(document).ready(function() {
-	
+
+		<?php if( !$check ) { ?>
+
+			$('.imagegal ul li').toggle(function() {
+
+				$(this).children('.hover-effect').addClass('hover-effect-mobile');
+
+			}, function() {
+				$(this).children('.hover-effect').removeClass('hover-effect-mobile');
+			});
+				
+		<?php } ?>
 	
 		jQuery('form a.button').click(function(e) {
-					e.preventDefault();
-					_gaq.push(['_link', createURL() ]);
-					return false;
-				});
+			e.preventDefault();
+			_gaq.push(['_link', createURL() ]);
+			return false;
+		});
 	
-	});
-	
-	
+	});	
 	
 	</script>
 
