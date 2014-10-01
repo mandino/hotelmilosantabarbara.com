@@ -1,12 +1,26 @@
+<?php 
+
+	require_once bloginfo('template_url').'/library/mobile-detect.php';
+	$detect = new Mobile_Detect;
+	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+	$scriptVersion = $detect->getScriptVersion();
+
+	$check = $detect->isMobile(); 
+
+?>
 <!DOCTYPE HTML>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
 	<title>
-		<?php global $page, $paged; wp_title( '|', true, 'right' );
+		<?php global $page, $paged; wp_title( '|', true, 'right' ); bloginfo( 'name' );
 	
-		
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) )
+			echo " | $site_description";
+	
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
 			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
@@ -66,17 +80,26 @@
 	}
 	
 	$(document).ready(function() {
-	
+
+		<?php if( !$check ) { ?>
+
+			$('.imagegal ul li').toggle(function() {
+
+				$(this).children('.hover-effect').addClass('hover-effect-mobile');
+
+			}, function() {
+				$(this).children('.hover-effect').removeClass('hover-effect-mobile');
+			});
+				
+		<?php } ?>
 	
 		jQuery('form a.button').click(function(e) {
-					e.preventDefault();
-					_gaq.push(['_link', createURL() ]);
-					return false;
-				});
+			e.preventDefault();
+			_gaq.push(['_link', createURL() ]);
+			return false;
+		});
 	
-	});
-	
-	
+	});	
 	
 	</script>
 
@@ -134,10 +157,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 </script>
 
-<!-- zdirect script -->
-<script type="text/javascript" src="https://www.zdirect.com/scripts/newApp.js"></script>
 
-<!-- sojern script -->
+<!-- Sojern script -->
 <script>
 (function () {
 var pl = document.createElement('script');
@@ -146,6 +167,7 @@ pl.async = true;
 pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=[destination_searched]&et=hs';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
 })();
 </script>
+
 
 </head> 
 	
