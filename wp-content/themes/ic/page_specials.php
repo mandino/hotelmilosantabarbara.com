@@ -90,8 +90,9 @@
 					)); $i = 0; if(have_posts()) : while(have_posts()) : the_post(); $i++;
 					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 							
-							<li <?php if($i % 4 == 0) { echo 'class="four-last"';} else if ($i % 3 == 0) { echo 'class="three-last"';} else if ($i % 2 == 0) { echo 'class="two-last"';} else {} ?>>
 							
+							<li <?php if($i % 4 == 0) { echo 'class="four-last"';} else if ($i % 3 == 0) { echo 'class="three-last"';} else if ($i % 2 == 0) { echo 'class="two-last"';} else {} ?>>
+							<a href="<?php the_permalink(); ?>" class="overlink"></a>
 								<?php if(get_post_meta($post->ID, 'cebo_pricepoint', true)) { ?>
 								
 								<div class="from-price">
