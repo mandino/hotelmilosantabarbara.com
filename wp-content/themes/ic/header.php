@@ -1,6 +1,6 @@
 <?php 
 
-	require_once bloginfo('template_url').'/library/mobile-detect.php';
+	require_once TEMPLATEPATH.'/library/mobile-detect.php';
 	$detect = new Mobile_Detect;
 	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 	$scriptVersion = $detect->getScriptVersion();
