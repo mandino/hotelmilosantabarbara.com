@@ -279,7 +279,7 @@
 
 		<?php if( $check ) { ?>
 			
-			$('.section-photos li').toggle( function(){
+			$('.section-photos li, .imagegal li').toggle( function(){
 
 				$(this).children('.hover-effect').addClass('mobile-hovered');
 
