@@ -277,6 +277,20 @@
 
 		$('.thumbgal li').bind("vmousedown", function(){});
 
+		<?php if( $check ) { ?>
+			
+			$('.section-photos li').toggle( function(){
+
+				$(this).children('.hover-effect').addClass('mobile-hovered');
+
+			}, function(){
+
+				$(this).children('.hover-effect').removeClass('mobile-hovered');
+
+			});
+
+		<?php  } ?>
+
 	});
 
 

@@ -5,7 +5,7 @@
 	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 	$scriptVersion = $detect->getScriptVersion();
 
-	$check = $detect->isMobile(); 
+	$check = $detect->isMobile();
 
 ?>
 <!DOCTYPE HTML>
