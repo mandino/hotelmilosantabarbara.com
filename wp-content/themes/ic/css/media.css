@@ -580,8 +580,8 @@ and (max-width : 940px)
 	    margin-bottom: 20px;
 	    width: 30%;
 		display:block !important;
-		height: 275px;
 	}
+	
 	.post-content .imagegal ul li a.overlink {
 		width: 100%;
 		height: 100%;
@@ -1329,29 +1329,41 @@ padding: 8px 12px;
 
 }
 
+/* ================================================  MOBILES BELOW 568 ======================================= */
+
+
+@media only screen 
+and (max-width : 568px) {
+
+
+	.page-template-page_specials-php .imagegal li .hover-effect > h3 {
+		top: 10%;
+	}
+
+}
+
 
 
 /* ================================================  MOBILES BELOW 480 ======================================= */
 
 
 @media only screen 
-and (max-width : 480px) 
-{	
+and (max-width : 480px) {
 
 	#home-slider {
 		height: 250px;
 	}
-
-
-		.specialsbox {
+	
+	.specialsbox {
 		display: none;
 	}
 	
 	
 	ul.tabs li a {
-padding: 8px 12px;
-}
-		#footer-newsletter {
+		padding: 8px 12px;
+	}
+	
+	#footer-newsletter {
 		display: none;
 	}
 
@@ -1462,7 +1474,19 @@ padding: 8px 12px;
 	/* Page - Specials */
 	
 	.post-content .imagegal ul li {
-		width: 31.33%;
+		width: 46%;
+	}
+	
+	.page-template-page_specials-php .clear.two-col {
+		display: block;
+	}
+	
+	.page-template-page_specials-php .clear.three-col {
+		display: none;
+	}
+	
+	.page-template-page_specials-php .imagegal li .hover-effect > h3 {
+		top: 22%;
 	}
 	
 	/* Page - Guide */
@@ -1633,6 +1657,11 @@ and (max-width : 399px)
 		.specialsbox {
 		display: none;
 	}
+	
+	.page-template-page_specials-php .post-content .imagegal ul li.three-last {
+		margin-right: auto;
+	}
+	
 	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
 
 	    background-size: 70%;
