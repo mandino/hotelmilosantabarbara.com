@@ -117,6 +117,8 @@ function exclude_widget_categories($args){
 }
 add_filter("widget_categories_args","exclude_widget_categories");
 
+//  Do not load smoothness calendar CSS
+
 function remove_events_css() {
     wp_dequeue_style( 'tribe-events-custom-jquery-styles' );
     wp_deregister_style( 'tribe-events-custom-jquery-styles' );
