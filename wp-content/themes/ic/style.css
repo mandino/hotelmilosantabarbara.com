@@ -1676,7 +1676,7 @@ h1, h2, h3, h4, h5, h6, h7 {
         opacity: 0;
     }
 
-    #intro .section-photos li:hover .hover-effect.mobile-hovered, .post-content .imagegal li:hover .hover-effect.mobile-hovered {
+    #intro .section-photos li .hover-effect.mobile-hovered, .post-content .imagegal li .hover-effect.mobile-hovered {
         opacity: 1;
     }
 
