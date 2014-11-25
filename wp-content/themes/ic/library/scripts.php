@@ -175,12 +175,6 @@
 
 	    // Tabbing - TABS FUNCTION
 
-		$('.tabs-wrapper').each(function() {
-			$(this).find(".tab-content").hide(); //Hide all content
-			$(this).find("ul.tabs li:first").addClass("active").show(); //Activate first tab
-			$(this).find(".tab-content:first").show(); //Show first tab content
-		});
-
 		// $("ul.tabs li").click(function(e) {
 		// 	$(this).parents('.tabs-wrapper').find("ul.tabs li").removeClass("active"); //Remove any "active" class
 		// 	$(this).addClass("active"); //Add "active" class to selected tab
@@ -205,17 +199,26 @@
 
 			<?php if(!is_page(45)) { ?>
 
+				$('.tabs-wrapper').each(function() {
+					$(this).find(".tab-content").hide(); //Hide all content
+					$(this).find("#<?php echo $post->post_name; ?>.tab-content").show(); //Hide all content
+				});
 
-					var container = $('html'),
-				    	scrollTo = $('#neighborhood-guide');
+				var container = $('html'),
+			    	scrollTo = $('#neighborhood-guide');
 
-				    container.scrollTop(0),
-					container.scrollTop(
-					    10 + scrollTo.offset().top - container.offset().top + container.scrollTop()
-					);
+			    container.scrollTop(0),
+				container.scrollTop(
+				    10 + scrollTo.offset().top - container.offset().top + container.scrollTop()
+				);
 
 
 			<?php } else { ?>
+
+				$('.tabs-wrapper').each(function() {
+					$(this).find(".tab-content").hide(); //Hide all content
+					$(this).find(".tab-content:first").show(); //Show first tab content
+				});
 
 				$('.tabs li:first-child').addClass('active');
 

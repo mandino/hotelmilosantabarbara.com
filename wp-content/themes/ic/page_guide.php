@@ -90,7 +90,7 @@
 			<div class="tabs-container">
 				
 				
-				<div id="tab1" class="tab-content">
+				<div id="eat" class="tab-content">
 					
 					<div class="container">
 						
@@ -224,7 +224,7 @@
 				
 				
 			
-				<div id="tab2" class="tab-content">
+				<div id="shop" class="tab-content">
 					
 					<div class="container">
 						
@@ -355,7 +355,7 @@
 				
 				
 			
-				<div id="tab3" class="tab-content">
+				<div id="culture" class="tab-content">
 					
 					<div class="container">
 						
@@ -485,7 +485,7 @@
 				
 				
 			
-				<div id="tab4" class="tab-content">
+				<div id="landmarks" class="tab-content">
 					
 					<div class="container">
 						
