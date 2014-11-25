@@ -317,6 +317,10 @@
 
 			});
 
+			$('.special-external').click(function(){
+				window.location.href = $(this).attr('href');
+			});
+
 		<?php  } ?>
 
 	});
