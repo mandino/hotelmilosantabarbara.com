@@ -181,22 +181,47 @@
 			$(this).find(".tab-content:first").show(); //Show first tab content
 		});
 
-		$("ul.tabs li").click(function(e) {
-			$(this).parents('.tabs-wrapper').find("ul.tabs li").removeClass("active"); //Remove any "active" class
-			$(this).addClass("active"); //Add "active" class to selected tab
-			$(this).parents('.tabs-wrapper').find(".tab-content").hide(); //Hide all tab content
+		// $("ul.tabs li").click(function(e) {
+		// 	$(this).parents('.tabs-wrapper').find("ul.tabs li").removeClass("active"); //Remove any "active" class
+		// 	$(this).addClass("active"); //Add "active" class to selected tab
+		// 	$(this).parents('.tabs-wrapper').find(".tab-content").hide(); //Hide all tab content
 
-			var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-			$("li.tab-item:first-child").css("background", "none" );
-			$(this).parents('.tabs-wrapper').find(activeTab).fadeIn(1000); //Fade in the active ID content
-			e.preventDefault();
-		});
+		// 	var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		// 	$("li.tab-item:first-child").css("background", "none" );
+		// 	$(this).parents('.tabs-wrapper').find(activeTab).fadeIn(1000); //Fade in the active ID content
+		// 	e.preventDefault();
+		// });
 
-		$("ul.tabs li a").click(function(e) {
-			e.preventDefault();
-		})
+		// $("ul.tabs li a").click(function(e) {
+		// 	e.preventDefault();
+		// })
 
 		$("li.tab-item:last-child").addClass('last-item');
+
+		<?php if( is_page_template('page_guide.php') ) { ?>
+
+			$('.tabs li').removeClass('active');
+			$('.tabs .<?php echo $post->post_name; ?>').addClass('active');
+
+			<?php if(!is_page(45)) { ?>
+
+
+					var container = $('html'),
+				    	scrollTo = $('#neighborhood-guide');
+
+				    container.scrollTop(0),
+					container.scrollTop(
+					    10 + scrollTo.offset().top - container.offset().top + container.scrollTop()
+					);
+
+
+			<?php } else { ?>
+
+				$('.tabs li:first-child').addClass('active');
+
+			<?php } ?>
+
+		<?php } ?>
 
 
 
