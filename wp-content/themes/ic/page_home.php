@@ -107,7 +107,7 @@ get_header(); ?>
 							<br>
 							<p><?php the_title(); ?></p>
 							
-							<a href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
+							<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
 						</div>
 					</li>
 					
@@ -159,7 +159,7 @@ get_header(); ?>
 							
 							
 							<!-- , and Hotel Oceana Tote Bag., and breakfast at the Hotel. -->
-							<a href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
+							<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
 						</div>
 					</li>
 
