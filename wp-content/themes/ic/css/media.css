@@ -1351,9 +1351,13 @@ and (max-width : 568px) {
 and (max-width : 480px) {
 
 	#home-slider {
-		height: 250px;
+		height: 200px;
 	}
 	
+	.slicer {
+		width: 80%;
+	}
+
 	.specialsbox {
 		display: none;
 	}
