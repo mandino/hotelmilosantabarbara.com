@@ -121,7 +121,7 @@
 	?>
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 
 var _gaq = _gaq || [];
 
@@ -144,7 +144,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 })();
 
-</script>-->
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -201,7 +201,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 						</span>
 						
 						<span class="dropsec" style="margin-right: 6px">
-							<select name="adults[]" class="halfsies">
+							<select id="adults"  name="adults[]" class="halfsies">
 								<option value="1"><?php _e('1 Adult','cebolang'); ?></option>
 								<option value="2"><?php _e('2 Adults','cebolang'); ?></option>
 								<option value="3"><?php _e('3 Adults','cebolang'); ?></option>
@@ -210,15 +210,15 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 						</span>
 						
 						<span class="dropsec">
-							<select name="children[]" class="halfsies">
-								<option value=""><?php _e('0 Kids','cebolang'); ?></option>
+							<select  id="children" name="children[]" class="halfsies">
+								<option value="0"><?php _e('0 Kids','cebolang'); ?></option>
 								<option value="1"><?php _e('1 Kid','cebolang'); ?></option>
 								<option value="2"><?php _e('2 Kids','cebolang'); ?></option>
 								<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
 							</select>
 						</span>
 						
-						<a href="#" class="button">Search Now</a>	
+						<a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	
 						
 					
 					</form>
