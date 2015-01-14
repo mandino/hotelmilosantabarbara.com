@@ -3961,3 +3961,7 @@ ul.tabs li:last-child {
 .fullpic .button {
 bottom: 38px !important;
 }
+
+.constainer strong {
+  font-weight: bold;
+}
