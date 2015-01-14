@@ -49,7 +49,7 @@
 					<?php } ?>
 
 		
-					<h2 class="section-title fr"><?php the_title(); ?></h2>
+					<h1 style="font-size: 34px;" class="section-title fr"><?php the_title(); ?></h2>
 	
 				</div>
 	
