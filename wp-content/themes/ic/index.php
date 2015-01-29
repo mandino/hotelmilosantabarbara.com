@@ -78,7 +78,7 @@
 					<?php query_posts('post_type=page&p=15'); if(have_posts()) : while(have_posts()) : the_post(); 							  
 					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 					
-					<li>
+					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
 						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
@@ -95,7 +95,7 @@
 							
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 							
-							<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
 							
 							<?php } ?>
 							<br>
@@ -116,7 +116,7 @@
 					
 					<!-- Special -->
 					
-					<li>
+					<li class="hover">
 					
 						<?php if(get_post_meta($post->ID, 'cebo_pricepoint', true)) { ?>
 						
@@ -147,7 +147,7 @@
 							
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 							
-							<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
 							
 							<?php } ?>
 							
@@ -169,7 +169,7 @@
 					
 					<!-- Amenities -->
 					
-					<li>
+					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
 						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
@@ -185,7 +185,7 @@
 						<div class="hover-effect">
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 							
-							<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
 							
 							<?php } ?>
 							<br>
