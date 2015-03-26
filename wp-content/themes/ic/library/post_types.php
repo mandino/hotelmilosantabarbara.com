@@ -102,6 +102,24 @@ function creater_post_types() {
 
 
 
+add_action( 'init', 'packages_post_type' );
+function packages_post_type() {
+  register_post_type( 'packages',
+    array(
+      'labels' => array(
+        'name' => __( 'Packages' ),
+        'singular_name' => __( 'Packages' )
+      ),
+      'public' => true,
+      'rewrite' => array('slug' => 'santa-barbara-vacation-packages'),
+      'menu_icon' => 'dashicons-palmtree',
+      'supports' => array('title','editor','category','author','thumbnail','revision')
+    )
+  );
+}
+
+
+
 
 add_action( 'init', 'create_post_types' );
 function create_post_types() {
