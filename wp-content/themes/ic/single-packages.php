@@ -75,22 +75,22 @@
 			</div>
 			
 			<div class="post-tags">
-				<ul>
-	
-					<?php  
-						$package_query = new wp_query(
-							array(
-							'post_type' => 'packages',
-							'posts_per_page'=> 8,
-							'post__not_in' => array($post->ID),
-						)); if($package_query->have_posts()) : while($package_query->have_posts()) : $package_query->the_post(); 
-					?>
+				
+				<?php  
+					$package_query = new wp_query(array(
+						'post_type' => 'packages',
+						'posts_per_page'=> 8,
+						'post__not_in' => array($post->ID),
+					));
+					if($package_query->have_posts()) :
+				?>
+					<ul>
+						<?php while($package_query->have_posts()) : $package_query->the_post(); ?>
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>								
+						<?php endwhile; ?>
+					</ul>
+				<?php endif; wp_reset_query(); ?>	
 
-						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-						
-					<?php endwhile; endif; wp_reset_query(); ?>	
-
-				</ul>
 			</div>
 			
 			<div class="wonderline"></div>
