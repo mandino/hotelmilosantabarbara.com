@@ -396,7 +396,11 @@ and (max-width : 1099px) {
 	    font-size: 25px;
 	}
 
-	
+	/* light it up blue */
+
+	li.blue-btn {
+		left: 0px;
+	}	
 
 }
 
@@ -711,7 +715,7 @@ and (max-width : 999px) {
 		left: 40px;
 		margin-left: 13px;
 		padding: 1px 0 0;
-		top: 29px;
+		top: 4px;
 		background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
 		border: none;
 	}
@@ -732,8 +736,11 @@ and (max-width : 999px) {
 
 	
 	#primary-nav {
-min-height: 50px;
-}
+	  min-height: 68px;
+	  position: relative;
+	  top: 19px;
+	}
+	
 	.logo.mobile > img {
 	    height: 100%;
 	}
@@ -745,7 +752,7 @@ min-height: 50px;
 	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
 	    font-size: 11px;
 	    letter-spacing: 3px;
-	    padding: 11px 6px;
+	    padding: 20px 11px
 	    
 	}
 
@@ -1598,6 +1605,15 @@ and (max-width : 480px) {
 	    right: 23px;
 	}
 
+/* light it up blue */
+
+.blue-mobile {
+	display: none;
+}
+
+li.blue-btn {
+	width: 35px;
+}
 
 
 }
