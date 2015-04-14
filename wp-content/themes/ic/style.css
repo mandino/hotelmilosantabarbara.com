@@ -1497,6 +1497,10 @@ h1, h2, h3, h4, h5, h6, h7 {
     padding: 20px 70px;
 }
 
+
+
+/* ================================================== Dropdown Calendar ===============================================  */
+
 .res {
 	float: right;
 	z-index: 9999999999999;
@@ -1504,65 +1508,69 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 .ressys {
-	position: absolute;
-	z-index: 999;
-	background: #fff;
-	width: 600px;
-	min-height: 386px;
-	right: 0; 
-	top: 92px;
-	border-left: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	transition: all 0.5s ease-in-out;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode:both;
-	-ms-animation-fill-mode:both;
-	-o-animation-fill-mode:both;
-	animation-fill-mode:both;
-	-webkit-animation-duration:.5s;
-	-moz-animation-duration:.5s;
-	-ms-animation-duration:.5s;
-	-o-animation-duration:.5s;
-	animation-duration:.5s;
-	-webkit-animation-name:fadeInDown;
-	-moz-animation-name:fadeInDown;
-	-o-animation-name:fadeInDown;
-	animation-name:fadeInDown;
-	-webkit-animation-delay:0s;
-	-moz-animation-delay:0s;
-	-ms-animation-delay:0s;
-	-o-animation-delay:0s;
+  position: absolute;
+  z-index: 999;
+  background: #fff;
+  width: 600px;
+  min-height: 335px;
+  right: 0; 
+  top: 92px;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+    overflow: hidden;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode:both;
+  -ms-animation-fill-mode:both;
+  -o-animation-fill-mode:both;
+  animation-fill-mode:both;
+  -webkit-animation-duration:.5s;
+  -moz-animation-duration:.5s;
+  -ms-animation-duration:.5s;
+  -o-animation-duration:.5s;
+  animation-duration:.5s;
+  -webkit-animation-name:fadeInDown;
+  -moz-animation-name:fadeInDown;
+  -o-animation-name:fadeInDown;
+  animation-name:fadeInDown;
+  -webkit-animation-delay:0s;
+  -moz-animation-delay:0s;
+  -ms-animation-delay:0s;
+  -o-animation-delay:0s;
 }
 
 .dropit {
-	opacity: 1;
-	visibility: visible;
-	top: 102px;
+  opacity: 1;
+  visibility: visible;
+  top: 102px;
 }
 
 .ressys:hover {
-	opacity: 1 !important;
-	visibility: visible  !important;
-	top: 102px;
+  opacity: 1 !important;
+  visibility: visible  !important;
+  top: 102px;
 }
 .sticky #navigation .ressys {
-	top: 57px;
+  top: 57px;
 }
 
 .sticky #navigation .dropit {
-	top: 67px;
+  top: 67px;
 }
 
 .sticky #navigation .ressys:hover {
-	top: 67px;
+  top: 67px;
 }
 
 .formfields {
-	padding: 10px 20px 0 20px;
-	border-bottom: 1px solid #ddd;
+  padding: 10px 20px 0 20px;
+  border-bottom: 1px solid #ddd;
 }
+
+
+
 /* ======================================================== HOME SLIDER =====================================================  */
 
 
