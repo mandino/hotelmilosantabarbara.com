@@ -132,7 +132,7 @@ and (max-width : 1099px) {
 	}
 
 	#primary-nav nav ul li {
-	    margin-right: 12px;
+	    margin-right: 10px;
 	}
 
 	#primary-nav nav ul li a {
@@ -715,7 +715,8 @@ and (max-width : 999px) {
 		left: 40px;
 		margin-left: 13px;
 		padding: 1px 0 0;
-		top: 4px;
+		/* top: 4px; */
+		top: 29px;
 		background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
 		border: none;
 	}
@@ -736,9 +737,12 @@ and (max-width : 999px) {
 
 	
 	#primary-nav {
+		min-height: 50px;
+	  /* 
 	  min-height: 68px;
 	  position: relative;
 	  top: 19px;
+	  */
 	}
 	
 	.logo.mobile > img {
@@ -752,7 +756,7 @@ and (max-width : 999px) {
 	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
 	    font-size: 11px;
 	    letter-spacing: 3px;
-	    padding: 20px 11px
+	     padding: 11px 6px;
 	    
 	}
 
