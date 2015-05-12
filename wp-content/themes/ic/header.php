@@ -188,48 +188,56 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 					<div class="reservationform">
 					
 					
-					<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_self">
-						
-						<span class="calsec">
-							<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
-							<input type="hidden"  id="arv">
-							<i class="fa fa-calendar"></i>
-						</span>
-						
-						<span class="calsec">
-							<input type="text" id="departure_date" name="departure_date" placeholder="<?php _e('Departure','cebolang'); ?>" class="calendarsection" />
-							<input type="hidden" id="dep">
-							<i class="fa fa-calendar"></i>
-						</span>
-						
-						<span class="dropsec" style="margin-right: 6px">
-							<select id="adults"  name="adults[]" class="halfsies">
-								<option value="1"><?php _e('1 Adult','cebolang'); ?></option>
-								<option value="2" selected="selected"><?php _e('2 Adults','cebolang'); ?></option>
-								<option value="3"><?php _e('3 Adults','cebolang'); ?></option>
-								<option value="4"><?php _e('4 Adults','cebolang'); ?></option>
-							</select>
-						</span>
-						
-						<span class="dropsec">
-							<select  id="children" name="children[]" class="halfsies">
-								<option value="0"><?php _e('0 Kids','cebolang'); ?></option>
-								<option value="1"><?php _e('1 Kid','cebolang'); ?></option>
-								<option value="2"><?php _e('2 Kids','cebolang'); ?></option>
-								<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
-							</select>
-						</span>
+						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_self">
+							
+							<span class="calsec">
+								<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
+								<input type="hidden"  id="arv">
+								<i class="fa fa-calendar"></i>
+							</span>
+							
+							<span class="calsec">
+								<input type="text" id="departure_date" name="departure_date" placeholder="<?php _e('Departure','cebolang'); ?>" class="calendarsection" />
+								<input type="hidden" id="dep">
+								<i class="fa fa-calendar"></i>
+							</span>
+							
+							<span class="dropsec" style="margin-right: 6px">
+								<select id="adults"  name="adults[]" class="halfsies">
+									<option value="1"><?php _e('1 Adult','cebolang'); ?></option>
+									<option value="2" selected="selected"><?php _e('2 Adults','cebolang'); ?></option>
+									<option value="3"><?php _e('3 Adults','cebolang'); ?></option>
+									<option value="4"><?php _e('4 Adults','cebolang'); ?></option>
+								</select>
+							</span>
+							
+							<span class="dropsec">
+								<select  id="children" name="children[]" class="halfsies">
+									<option value="0"><?php _e('0 Kids','cebolang'); ?></option>
+									<option value="1"><?php _e('1 Kid','cebolang'); ?></option>
+									<option value="2"><?php _e('2 Kids','cebolang'); ?></option>
+									<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
+								</select>
+							</span>
 
-						<button class="button" type="submit"><?php _e('Search Now','cebolang'); ?></button>
+							<button class="button" type="submit"><?php _e('Search Now','cebolang'); ?></button>
+							
+							<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
+							
 						
-						<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
-						
-					
-					</form>
+						</form>
 				
-				</div>
+					</div>
 
+				<!-- flex dates -->
 
+					<div class="reservationform flexdate">
+					
+						<p><a href="https://hotelmilosantabarbara.reztrip.com">Flexible dates?</a> Search for our best available rate</p>				
+						
+					</div>
+
+				<!-- end flex datess -->
 
 				</div>
 				
