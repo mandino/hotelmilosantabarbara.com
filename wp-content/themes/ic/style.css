@@ -162,6 +162,18 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 
 
+/* TRANSITIONS ######################################################################################################## */
+
+.language > a, 
+.language > i {
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+}
+
+
+
 /* Base Styles -----------------------------------------------------------*/
 
 
@@ -1348,6 +1360,14 @@ h1, h2, h3, h4, h5, h6, h7 {
 	position: absolute;
 	right: 0;
 	text-transform: uppercase;
+}
+
+.language > a, .language > i {
+	color: #000;
+}
+
+.language:hover > a, .language:hover > i {
+	color: #1c93d1;
 }
 
 #primary-nav .molang {
