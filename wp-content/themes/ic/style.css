@@ -1378,7 +1378,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 		color: #1c93d1;
 	}
 
-#primary-nav .molang li {
+#primary-nav .molang li a {
 	color: #000;
 }
 
