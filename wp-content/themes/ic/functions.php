@@ -125,3 +125,31 @@ function remove_events_css() {
     wp_deregister_style( 'tribe-events-custom-jquery-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'remove_events_css', 20 );
+
+
+
+if ( function_exists('icl_get_languages') ) {
+
+	function language_selector_flags(){
+	    $languages = icl_get_languages('skip_missing=0&orderby=code');
+	    if(!empty($languages)){
+	        foreach($languages as $l){
+	            if(!$l['active']) {
+	                echo '<li><a href="'.$l['url'].'">'.$l['language_code'].'</a></li>';
+	            }
+	        }
+	    }
+	}
+
+	function language_selector_flags_current(){
+	    $languages = icl_get_languages('skip_missing=1&orderby=code');
+	    if(!empty($languages)){
+	        foreach($languages as $l){
+	            if($l['active']) {
+	                echo '<a href="'.$l['url'].'">'.$l['language_code'].'</a>';
+	            }
+	        }
+	    }
+	}
+
+}

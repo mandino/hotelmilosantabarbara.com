@@ -15,10 +15,15 @@ and (max-width : 1439px) {
 
 	#primary-nav nav {
 	    margin: 25px 20px 22px 0;
+	    width: 95%;
 	}
 
-	#primary-nav nav ul li a {
+	#primary-nav nav ul li a, .language a, .language i {
 	    font-size: 12px;
+	}
+
+	.language {
+		margin-top: -9.5px;
 	}
 
 
@@ -61,8 +66,12 @@ and (max-width : 1240px) {
 	    width: 680px;
 	}
 
-	#primary-nav nav ul li a {
+	#primary-nav nav ul li a, .language a, .language i {
 	    font-size: 11px;
+	}
+
+	.language {
+		margin-top: -8.5px;
 	}
 
 
@@ -121,7 +130,7 @@ and (max-width : 1099px) {
 
 	#primary-nav nav {
 	    margin: 13px 0;
-	    width: 100%;
+	    width: 95%;
 	}
 
 	#primary-nav .button, #navigation-sticky-wrapper.sticky #primary-nav .button {
@@ -135,8 +144,12 @@ and (max-width : 1099px) {
 	    margin-right: 10px;
 	}
 
-	#primary-nav nav ul li a {
+	#primary-nav nav ul li a, .language a, .language i {
 	    font-size: 10px;
+	}
+
+	.language {
+		margin-top: -8.5px;
 	}
 
 	.ressys {
@@ -802,15 +815,25 @@ line-height: 16px;
 }
 /* ================================================  MAX WIDTH 939 ======================================= */
 
-@media only screen 
-and (max-width : 939px) {
+@media only screen and (max-width : 939px) {
 	
 	
 	
 	
 	
-		#footer-newsletter {
+	#footer-newsletter {
 		display: none;
+	}
+
+	.language {
+	    left: 85%;
+	    margin-top: -8.5px;
+	    right: 0;
+	    width: 35px;
+	}
+
+	.language a, .language i {
+		font-size: 14px;
 	}
 	
 

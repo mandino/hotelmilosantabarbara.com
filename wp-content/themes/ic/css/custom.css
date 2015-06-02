@@ -541,12 +541,13 @@ line-height: 30px;
 
 #primary-nav {
     clear: both;
-    overflow: auto;
+    overflow: visible;
     /*margin: -1px !important;*/
 }
 
 #primary-nav .container {
     width: 1000px;
+    position: relative;
 }
 
 #primary-nav nav {
@@ -557,7 +558,7 @@ line-height: 30px;
     background: transparent;
     height: auto;
     margin: 23px 20px 23px 0;
-    width: 100%;
+    width: 95%;
     float: none;
     font-weight: bold;
 }

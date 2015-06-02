@@ -1315,9 +1315,84 @@ h1, h2, h3, h4, h5, h6, h7 {
     padding: 6px;
 }
 
-/*#navigation-sticky-wrapper.sticky #primary-nav nav ul li a {
-    font-size: 13px;
-}*/
+.language {
+	clear: none;
+	display: inline-block;
+	float: right;
+	margin-top: -12.5px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 3.3%;
+	z-index: 9;
+}
+
+.language a {
+    color: #868282;
+    font-family: scala-sans,sans-serif,helvetica,arial;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.language i {
+	color: #868282;
+	float: right;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.6;
+	position: absolute;
+	right: 0;
+	text-transform: uppercase;
+}
+
+#primary-nav .molang {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	top: -10px;
+	left: -8px;
+	width: 55px;
+	text-align: center;
+	background: #fff;
+}
+
+#primary-nav .molang li {
+	float: none;
+	margin: 0px 0 0 0;
+	padding: 5px 0px 5px 5px;
+	background: #fff;
+	text-align: center;
+	width: 100%;
+	list-style: none;
+}
+	#primary-nav .molang li a:hover, .language a:hover {
+		color: #1c93d1;
+	}
+
+#primary-nav .language:hover .molang {
+	opacity: 1;
+	visibility: visible;
+	top: 18px;
+}
+
+.molang img {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	opacity: 0.7;
+}
+
+.molang img:hover {
+	opacity: 1;
+}
 
 #navigation {
     transition: all 0.5s;
