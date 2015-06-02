@@ -1378,6 +1378,10 @@ h1, h2, h3, h4, h5, h6, h7 {
 		color: #1c93d1;
 	}
 
+#primary-nav .molang li {
+	color: #000;
+}
+
 #primary-nav .language:hover .molang {
 	opacity: 1;
 	visibility: visible;
