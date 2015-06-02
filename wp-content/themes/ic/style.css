@@ -1316,15 +1316,13 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 .language {
-	clear: none;
-	display: inline-block;
-	float: right;
-	margin-top: -12.5px;
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 3.3%;
-	z-index: 9;
+    display: inline-block;
+    float: right;
+    margin: 20px 0 20px 10px;
+    position: relative;
+    right: 0;
+    width: 2.5%;
+    z-index: 9;
 }
 
 .language a {

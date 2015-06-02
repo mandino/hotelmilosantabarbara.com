@@ -217,6 +217,19 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 			<a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 
 			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
+
+			<?php if ( function_exists('icl_get_languages') ) { ?>
+
+				<div class="language">
+					<?php language_selector_flags_current(); ?>
+					<i class="fa fa-angle-down"></i>
+				
+					<ul class="molang">
+						<?php language_selector_flags(); ?>
+					</ul>
+				</div>
+
+			<?php } ?>
 			
 			<div class="container" style="float: right;">
 
@@ -227,19 +240,6 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 						 <?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 					</ul>
 				</nav>
-
-				<?php if ( function_exists('icl_get_languages') ) { ?>
-
-					<div class="language">
-						<?php language_selector_flags_current(); ?>
-						<i class="fa fa-angle-down"></i>
-					
-						<ul class="molang">
-							<?php language_selector_flags(); ?>
-						</ul>
-					</div>
-
-				<?php } ?>
 	
 			</div>
 	
