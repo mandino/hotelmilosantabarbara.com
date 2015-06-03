@@ -32,7 +32,7 @@
 					<?php } ?>
 					
 				</div>
-				<img src="<?php echo $imgsrc[0]; ?>" alt="<?php get_post_meta($post->ID, 'bigtitle', true); ?>" />
+				<img width="1600" height="560" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>" alt="<?php get_post_meta($post->ID, 'bigtitle', true); ?>" />
 			</li>
 			
 			

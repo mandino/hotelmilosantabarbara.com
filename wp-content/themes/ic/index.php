@@ -81,11 +81,11 @@
 					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img width="540" height="290" class="lazy img-responsive" data-original="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img width="540" height="290" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
 						
 						<?php } ?>
 						
@@ -128,11 +128,11 @@
 						
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
 						
 						<?php } ?>
 						
@@ -172,11 +172,11 @@
 					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
 						
 						<?php } ?>
 						
@@ -347,7 +347,7 @@
 
 							<?php } ?>							
 
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
+							<a href="<?php the_permalink(); ?>"><img width="540" height="290" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>"></a>
 							<div class="ptit"> 
 								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 							</div>
@@ -377,7 +377,7 @@
 						
 						
 						<div>
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
+							<a href="<?php the_permalink(); ?>"><img width="540" height="290" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>"></a>
 							<div class="ptits"> 
 								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 							</div>

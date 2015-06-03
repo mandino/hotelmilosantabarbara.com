@@ -1,6 +1,18 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
+		
+		$('img.lazy').each(function() {
+			var img = $(this);
+			var width = img.width();
+			var ratio = img.data('aspectratio');
+			var height = width / ratio;
+			$(this).css('height', height+'px');
+		});
+		
+		$("img.lazy").lazyload({
+			effect : "fadeIn",
+		});
 
 		if ($(window).width() > 399) {
 			$("a[rel^='prettyPhoto']").prettyPhoto({
