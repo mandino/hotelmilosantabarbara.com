@@ -153,3 +153,7 @@ if ( function_exists('icl_get_languages') ) {
 	}
 
 }
+
+function tt($image,$width,$height){
+    return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
+}
