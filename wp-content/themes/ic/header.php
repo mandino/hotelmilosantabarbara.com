@@ -13,15 +13,16 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
-	<title>
-		<?php global $page, $paged; wp_title( '|', true, 'right' );
+	<!--<title>
+		<?php /**global $page, $paged; wp_title( '|', true, 'right' );
 	
 		
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
-			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
+			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );**/
 		?>
-	</title>
+	</title>-->
+	<title><?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	
