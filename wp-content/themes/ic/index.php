@@ -189,7 +189,7 @@
 							
 							<?php } ?>
 							<br>
-							<p><?php wp_title(); ?></p>
+							<!-- <p><?php wp_title(); ?></p> -->
 							
 							<a class="special-external" href="/?page_id=70"><i class="fa fa-chevron-right fa-lg"></i></a>
 						</div>
