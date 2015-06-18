@@ -349,7 +349,7 @@
 
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo tt($imgsrc[0], 540, 292); ?>"></a>
 							<div class="ptit"> 
-								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
+								<a href="<?php the_permalink(); ?>"><span><?php the_title_char_limit(40); ?></span></a>
 							</div>
 
 						</div>
@@ -379,7 +379,7 @@
 						<div>
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo tt($imgsrc[0], 540, 292); ?>"></a>
 							<div class="ptits"> 
-								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
+								<a href="<?php the_permalink(); ?>"><span><?php the_title_char_limit(40); ?></span></a>
 							</div>
 						</div>
 						
