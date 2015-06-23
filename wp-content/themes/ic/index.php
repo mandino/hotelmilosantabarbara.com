@@ -89,7 +89,7 @@
 						
 						<?php } ?>
 						
-						<h3><?php _e('Rooms & Suites', 'cebolang'); ?></h3>
+						<h3><?php _e('Guest Rooms', 'cebolang'); ?></h3>
 
 						<div class="hover-effect">
 							
