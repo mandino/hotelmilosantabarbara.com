@@ -81,11 +81,11 @@
 					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 531, 290); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img src="<?php echo tt($imgsrc[0], 531, 290); ?>">
 						
 						<?php } ?>
 						
@@ -128,11 +128,11 @@
 						
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 257, 290); ?>">
 						
 						<?php } else { ?>
 						
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt($imgsrc[0], 257, 290); ?>">
 						
 						<?php } ?>
 						
@@ -172,11 +172,11 @@
 					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 257, 290); ?>">
 						
 						<?php } else { ?>
 						
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt($imgsrc[0], 257, 290); ?>">
 						
 						<?php } ?>
 						
