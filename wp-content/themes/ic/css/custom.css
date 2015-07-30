@@ -541,9 +541,9 @@ line-height: 30px;
 
 #primary-nav {
     clear: both;
-    overflow: visible;
+    overflow: auto;
     /*margin: -1px !important;*/
-    position: relative;
+    /**position: relative;**/
 }
 
 #primary-nav .container {
