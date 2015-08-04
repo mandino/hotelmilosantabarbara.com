@@ -46,7 +46,7 @@
 					<?php } ?>
 
 		
-					<h2 class="section-title fr"><?php wp_title(); ?></h2>
+					<h2 class="section-title fr"><?php the_title(); ?></h2>
 	
 				</div>
 	
@@ -86,7 +86,7 @@
 				?>
 					<ul>
 						<?php while($package_query->have_posts()) : $package_query->the_post(); ?>
-							<li><a href="<?php the_permalink(); ?>"><?php wp_title(); ?></a></li>								
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>								
 						<?php endwhile; ?>
 					</ul>
 				<?php endif; wp_reset_query(); ?>	

@@ -541,7 +541,7 @@ line-height: 30px;
 
 #primary-nav {
     clear: both;
-    overflow: auto;
+  	overflow: visible;
     /*margin: -1px !important;*/
     /**position: relative;**/
 }
@@ -692,7 +692,6 @@ line-height: 30px;
 	background: #eee;
 	position: relative;
 	overflow: hidden;
-	margin-top: -4.4%;
 }
 
 .slide-header {

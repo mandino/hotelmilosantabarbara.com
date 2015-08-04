@@ -105,7 +105,7 @@ get_header(); ?>
 							
 							<?php } ?>
 							<br>
-							<p><?php wp_title(); ?></p>
+							<p><?php the_title(); ?></p>
 							
 							<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
 						</div>
@@ -195,7 +195,7 @@ get_header(); ?>
 							
 							<?php } ?>
 							<br>
-							<p><?php wp_title(); ?></p>
+							<p><?php the_title(); ?></p>
 							
 							<a href="/?page_id=70"><i class="fa fa-chevron-right fa-lg"></i></a>
 						</div>
@@ -216,7 +216,7 @@ get_header(); ?>
 			
 				<?php query_posts('post_type=page&p=165'); if(have_posts()) : while(have_posts()) : the_post(); 	?>
 				
-				<h1><?php wp_title(); ?></h1>
+				<h1><?php the_title(); ?></h1>
 				
 				<?php the_content(); ?>
 				
@@ -247,7 +247,7 @@ get_header(); ?>
 							<div class="cbp-qtcontent">
 								<blockquote>
 								  <p><?php echo excerpt(40); ?></p>
-								  <footer><?php wp_title(); ?></footer>
+								  <footer><?php the_title(); ?></footer>
 								</blockquote>
 							</div>
 						
@@ -355,7 +355,7 @@ get_header(); ?>
 
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
 							<div class="ptit"> 
-								<a href="<?php the_permalink(); ?>"><span><?php wp_title(); ?></span></a>
+								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 							</div>
 
 						</div>
@@ -385,7 +385,7 @@ get_header(); ?>
 						<div>
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
 							<div class="ptits"> 
-								<a href="<?php the_permalink(); ?>"><span><?php wp_title(); ?></span></a>
+								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 							</div>
 						</div>
 						
