@@ -146,7 +146,11 @@ if ( function_exists('icl_get_languages') ) {
 	    if(!empty($languages)){
 	        foreach($languages as $l){
 	            if($l['active']) {
-	                echo '<a href="'.$l['url'].'">'.$l['language_code'].'</a>';
+	            	if($l['language_code'] == 'pt-pt') {
+	            		echo '<a href="'.$l['url'].'">pt</a>';
+	            	} else {
+	            		echo '<a href="'.$l['url'].'">'.$l['language_code'].'</a>';
+	            	}
 	            }
 	        }
 	    }
