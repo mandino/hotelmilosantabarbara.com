@@ -14,7 +14,7 @@
 	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
 	<title>
-		<?php global $page, $paged; wp_title( '|', true, 'right' ); bloginfo( 'name' );
+		<?php global $page, $paged; the_title( '|', true, 'right' ); bloginfo( 'name' );
 	
 		// Add the blog description for the home/front page.
 		$site_description = get_bloginfo( 'description', 'display' );
@@ -266,9 +266,9 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 	
 		<div id="primary-nav">
 		
-			<a href="<?php bloginfo('url'); ?>" class="logo<?php if(is_home()) { ?> droplogo<?php } ?>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo wp_title(); ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo<?php if(is_home()) { ?> droplogo<?php } ?>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
 
-			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo wp_title(); ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
 			
 			<a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 
