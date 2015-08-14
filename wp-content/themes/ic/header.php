@@ -218,7 +218,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 
 			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 
-			
+			<!--
 			<?php if ( function_exists('icl_get_languages') ) { ?>
 
 				<div class="language">
@@ -231,8 +231,9 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 				</div>
 
 			<?php } ?>
+			-->
+
 			
-			<!--
 			<div class="language">
 					<a href="http://hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
 					<i class="fa fa-angle-down"></i>
@@ -243,7 +244,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 						<li><a href="http://hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
 					</ul>
 				</div>
-			-->
+			
 
 			<div class="container" style="float: right;">
 
