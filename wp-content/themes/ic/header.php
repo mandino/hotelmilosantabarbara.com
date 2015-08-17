@@ -208,7 +208,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 	
 		</div>
 	
-		<div id="primary-nav">
+		<div id="primary-nav" style="overflow:visible;">
 		
 			<a href="<?php bloginfo('url'); ?>" class="logo<?php if(is_home()) { ?> droplogo<?php } ?>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
 
