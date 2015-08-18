@@ -112,7 +112,34 @@
 	</footer>
 
 <?php wp_footer(); ?>
-	
+<script type="text/javascript">
+$(document).ready(function(){
+   
+	var url_trigger = window.location.pathname;
+	var url_trim = url_trigger.split("/")[1];
+
+		if (url_trim == 'uber-uns') {
+			$('.current-language').text('de');
+			$('.current-language').attr('href','http://hotelmilosantabarbara.com/uber-uns/');
+			$('.de-lang').text('en');
+			$('.de-lang').attr('href','http://hotelmilosantabarbara.com/');
+		} else if (url_trim == 'a-propos-de-nous') {
+			$('.current-language').text('fr');
+			$('.current-language').attr('href','http://hotelmilosantabarbara.com/a-propos-de-nous/');
+			$('.fr-lang').text('en');
+			$('.fr-lang').attr('href','http://hotelmilosantabarbara.com/');
+		} else if (url_trim == 'sobre-nos') {
+			$('.current-language').text('pt-pt');
+			$('.current-language').attr('href','http://hotelmilosantabarbara.com/sobre-nos/');
+			$('.pt-lang').text('en');
+			$('.pt-lang').attr('href','http://hotelmilosantabarbara.com/');
+		} else {
+			$('.current-language').text('en');
+			$('.current-language').attr('href','http://hotelmilosantabarbara.com/');
+		}
+
+});
+</script>	
 <!-- <div id="fb-root"></div> -->
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];

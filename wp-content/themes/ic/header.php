@@ -235,13 +235,13 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 
 			
 			<div class="language">
-					<a href="http://hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
+					<a class="current-language" href="http://hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
 					<i class="fa fa-angle-down"></i>
 			
 					<ul class="molang">
-						<li><a href="http://hotelmilosantabarbara.com/uber-uns/" data-ajax="false">de</a></li>
-						<li><a href="http://hotelmilosantabarbara.com/a-propos-de-nous/" data-ajax="false">fr</a></li>
-						<li><a href="http://hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
+						<li><a class="de-lang" href="http://hotelmilosantabarbara.com/uber-uns/" data-ajax="false">de</a></li>
+						<li><a class="fr-lang" href="http://hotelmilosantabarbara.com/a-propos-de-nous/" data-ajax="false">fr</a></li>
+						<li><a class="pt-lang" href="http://hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
 					</ul>
 				</div>
 			
