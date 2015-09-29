@@ -220,7 +220,7 @@ input[type="submit"] {
 	right: -10px;
 	bottom: 50px;
 	width: 300px;
-	height: 100px;
+	/*height: 100px;*/
 	z-index: 14;
 	background-color: rgba(255, 255, 255, 0.90);
 	padding: 12px 20px;
@@ -284,7 +284,7 @@ border: 3px solid #fff;
 	right: -10px;
 	bottom: 50px;
 	width: 300px;
-	height: 100px;
+	/*height: 100px;*/
 	z-index: 14;
 	background-color: rgba(255, 255, 255, 0.90);
 	padding: 12px 20px;
