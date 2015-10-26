@@ -159,7 +159,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 								</select>
 							</span>
 
-							<button class="button" type="submit"><?php _e('Search Now','cebolang'); ?></button>
+							<button class="button" type="submit" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);"><?php _e('Search Now','cebolang'); ?></button>
 							
 							<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
 							
