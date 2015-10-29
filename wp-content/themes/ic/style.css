@@ -3609,7 +3609,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-	
+	display:none;
 }
 .ui-corner-all,
 .ui-corner-top,
