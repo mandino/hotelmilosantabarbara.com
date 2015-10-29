@@ -738,6 +738,10 @@ and (max-width : 940px)
 	.mmenu-icon {
 		display: block;
 	}
+	
+	#primary-nav {
+		position: relative;
+	}
 
 	#primary-nav .fl {
 		display: none;
@@ -803,10 +807,14 @@ line-height: 16px;
 	}
 
 	.mmenu-icon .fa.fa-bars {
-	    background: none repeat scroll 0 0 #38BABF;
+	    background: none repeat scroll 0 0 #1c93d1;
 	    color: #FFFFFF;
 	    padding: 6px;
 	    font-size: 34px;
+	}
+	
+	.post-content .imagegal ul li:before {
+		z-index: 1;
 	}
 
 
@@ -921,12 +929,15 @@ line-height: 16px;
 	    width: 15%;
 	}
 	
-	footer .social-buttons li {
-	    float: left;
+	footer nav .social-buttons.fr {
+		width: 100%;
+		text-align: center;
 	}
 	
-	.social-buttons li:last-child {
-		margin-right: 0;
+	footer .social-buttons li {
+	    float: left;
+		float: none;
+		margin: 0 10px;
 	}
 
 	footer #footer-details p {
@@ -1354,6 +1365,13 @@ padding: 8px 12px;
 
 	#primary-nav .button.mobile {
 		display: inline;
+		padding: 16px 20px;
+		margin: 0 0 0 5px;
+	}
+	
+	#navigation-sticky-wrapper.sticky #primary-nav .button.mobile {
+		padding: 16px 20px;
+		margin: 0 0 0 5px;
 	}
 	
 	

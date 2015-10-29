@@ -32,3 +32,5 @@ wp-content/wp-content/themes/twentytwelve/
 wp-content/wp-content/themes/default/
 *1markers.xml
 timthumb.txt
+*.xml
+*.txt
