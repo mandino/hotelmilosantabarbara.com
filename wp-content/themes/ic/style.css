@@ -3603,13 +3603,18 @@ body .ui-tooltip {
 
 /* Misc visuals
 ----------------------------------*/
+div.ui-loader h1
+{
+  display: none;
+}
+
 
 /* Corner radius */
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-	display:none;
+
 }
 .ui-corner-all,
 .ui-corner-top,
