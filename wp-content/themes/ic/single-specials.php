@@ -76,11 +76,16 @@
 			
 			<div class="post-tags">
 				<ul>
-	
-				<?php  query_posts(
+				
+				<?php  
+				
+				$currentID = get_the_ID();
+				
+				query_posts(
 					array(
 					'post_type' => 'specials',
-					'posts_per_page'=> 8
+					'posts_per_page'=> 8,
+					'post__not_in' => array($currentID)
 					
 					)); if(have_posts()) : while(have_posts()) : the_post(); ?>
 				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
