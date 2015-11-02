@@ -32,7 +32,17 @@
 					<li class="locationa"><i class="fa fa-map-marker fa-lg"></i> <?php echo get_option('cebo_address'); ?></li>
 					<?php } ?>
 					<?php if(get_option('cebo_tele')) { ?>
-					<li class="phone"><i class="fa fa-mobile-phone fa-lg"></i> <?php echo get_option('cebo_tele'); ?> <?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?></li>
+					<li class="phone"><i class="fa fa-mobile-phone fa-lg"></i> 
+
+						<span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span>
+
+						<script type="text/javascript">
+							SetElementToNavisNCPhoneNumber("NavisTFN");
+						</script>
+
+						<?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?>
+
+					</li>
 					<?php } ?>
 					<?php if(get_option('cebo_email')) { ?>
 					<li class="email"><i class="fa fa-envelope fa-lg"></i> <a href="mailto:<?php echo get_option('cebo_email'); ?>"><?php echo get_option('cebo_email'); ?></a></li>
@@ -104,7 +114,7 @@
 			
 				<?php if(get_option('cebo_address')) { ?>
 					<p><?php echo get_option('cebo_address'); ?><br />
-					<span class="mobile-number">805.965.4577</span></p>
+					<span class="mobile-number">(866)320-0339</span></p>
 					<?php } ?>
 			</div>
 		</div>

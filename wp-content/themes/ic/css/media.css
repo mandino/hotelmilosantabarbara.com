@@ -442,7 +442,7 @@ and (max-width : 1024px) {
 and (max-width : 1023px) {
 
 	#maparea, #toggles {
-		display: none !important;
+		/*display: none !important;*/
 	}
 
 
