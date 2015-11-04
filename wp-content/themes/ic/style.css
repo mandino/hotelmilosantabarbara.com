@@ -1546,7 +1546,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 #primary-nav {
     clear: both;
-    overflow: visible;
+    overflow: auto;
 }
 
 #primary-nav nav {
@@ -3608,13 +3608,12 @@ div.ui-loader h1
   display: none;
 }
 
-
 /* Corner radius */
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-
+	
 }
 .ui-corner-all,
 .ui-corner-top,
