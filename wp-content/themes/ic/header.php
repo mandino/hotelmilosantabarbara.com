@@ -54,21 +54,37 @@
 	<!-- Fonts -->
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/quotes-rotator/component.css" />
+	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/slidejs.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
 
-	<!-- Jquery -->
-	<?php include(TEMPLATEPATH. "/library/jquery.php"); ?>	
+	<?php if ( 'rooms' == get_post_type() ) 	{ ?>
+		<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/iosslider.css">
+	<?php } ?>
 
-	<!-- Scripts -->
-	<?php include(TEMPLATEPATH. "/library/scripts.php"); ?>
+	<!-- Custom Plugin Settings -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/custom-plugins.css">
 
+	<!-- Color Override CSS -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/oceana-hotel.css">
+	
+	<!-- Lightbox - Prettyphoto -->	
+	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
+	
+	<!-- responsive style -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
+	
 	<style>
-		<?php
-
-			include(TEMPLATEPATH. "/library/inset.php");
-		?>	
+		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
 	</style>
 
-
+	<!-- Jquery -->
+	<?php //include(TEMPLATEPATH. "/library/jquery.php"); ?>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script type='text/javascript' src='<?php bloginfo ('url'); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
 
 	<?php
 		/****************** DO NOT REMOVE **********************
@@ -80,38 +96,9 @@
 		wp_head();
 	?>
 
-<script>
-
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-48295809-1', 'auto', {
-		'allowLinker': true
-	});
-	ga('send', 'pageview');
-	ga('require', 'linker');
-	ga('linker:autoLink', ['reztrip.com'], false, true);
-
-</script>
-
 <!-- NAVIS script -->
 <script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8663200339"></script>
 <script language="javascript">ProcessNavisNCKeyword();</script>
-
-<!-- zdirect script -->
-<script type="text/javascript" src="https://www.zdirect.com/scripts/newApp.js"></script>
-
-<!-- sojern script -->
-<script>
-(function () {
-var pl = document.createElement('script');
-pl.type = 'text/javascript';
-pl.async = true;
-pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=[destination_searched]&et=hs';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
-})();
-</script>
 
 </head> 
 	
