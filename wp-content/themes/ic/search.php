@@ -86,7 +86,7 @@ get_header(); ?>
 
 			</div>
 			
-			<div class="sidebar fr" style="padding: 40px 20px 0">
+			<div class="sidebar fr" style="padding-top: 25px;">
 	
 				  <!-- widgetized  -->
 
