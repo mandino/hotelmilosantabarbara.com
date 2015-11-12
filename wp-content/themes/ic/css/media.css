@@ -749,18 +749,8 @@ and (max-width : 940px)
 
 	/* Navigation */
 	
-	#property-nav {
-		height: 26px;
-	}
-
-	
 	#primary-nav {
-		min-height: 50px;
-	  /* 
-	  min-height: 68px;
-	  position: relative;
-	  top: 19px;
-	  */
+		min-height: 46px;
 	}
 	
 	.logo.mobile > img {
@@ -773,17 +763,15 @@ and (max-width : 940px)
 
 	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
 	    font-size: 11px;
-	    letter-spacing: 3px;
-	     padding: 11px 6px;
-	    
+	    letter-spacing: 3px;	    
 	}
 
 	#primary-nav .button, #navigation-sticky-wrapper.sticky #primary-nav .button {
 	    font-size: 16px;
-left: 0;
-padding: 16px 40px;
-height: 15px;
-line-height: 16px;
+		left: 0;
+		padding: 16px 40px;
+		height: 15px;
+		line-height: 16px;
 	}
 
 	#primary-nav span.navdrop, #primary-nav span.navdrop ul {
@@ -809,7 +797,7 @@ line-height: 16px;
 	.mmenu-icon .fa.fa-bars {
 	    background: none repeat scroll 0 0 #1c93d1;
 	    color: #FFFFFF;
-	    padding: 6px;
+	    padding: 6px 6px 7px;
 	    font-size: 34px;
 	}
 	
@@ -1034,6 +1022,18 @@ height: 350px;
 
 
 	/* Navigation */
+
+	.ic-navis {
+		display: none;
+	}
+
+	#property-nav {
+		height: 24px;
+	}
+
+	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
+		padding: 11px 6px;   
+	}
 
 	.dropit, .ressys:hover {
 	    top: 62px;

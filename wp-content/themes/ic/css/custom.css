@@ -329,10 +329,10 @@ line-height: 30px;
 }
 
 #navigation-sticky-wrapper.sticky #primary-nav nav {
-    transition: all 0.5s;
+    /*transition: all 0.5s;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
+    -o-transition: all 0.5s;*/
     margin: 13px 0;
 }
 
@@ -344,12 +344,6 @@ line-height: 30px;
     padding: 10px 70px;
 }
 
-#navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
-    font-size: 13px;
-    padding: 12px 6px;
-    font-weight: bold;
-}
-
 #primary-nav nav .container {
 	max-width: 1000px;
 }
@@ -359,10 +353,10 @@ line-height: 30px;
 }*/
 
 #navigation {
-    transition: all 0.5s;
+    /*transition: all 0.5s;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
+    -o-transition: all 0.5s;*/
     background: none repeat scroll 0 0 #FFFFFF;
     width: 100%;
     border-bottom: 1px solid #ddd;
@@ -404,6 +398,27 @@ line-height: 30px;
     display: none;
 }
 
+#primary-nav nav ul li.navis-mobile {
+	display: none;
+}
+
+#primary-nav nav.mm-menu .navis-mobile {
+	display: inline-block;
+}
+
+.navis-mobile .fa-phone {
+    color: #0a94d5;
+    font-size: 23px;
+    margin-right: 8px;
+    vertical-align: sub;
+}
+
+.navis-mobile span#NavisTFNmobnav {
+	bottom: 2px;
+	position: relative;
+	vertical-align: bottom;
+}
+
 
 
 /* ======================================================== TOP NAVIGATION =====================================================  */
@@ -414,10 +429,6 @@ line-height: 30px;
     background: none repeat scroll 0 0 #fff;
     height: auto;
     border-bottom: 2px solid #333333;
-    transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
 	max-width: 100%;
 }
 
@@ -552,10 +563,6 @@ line-height: 30px;
 }
 
 #primary-nav nav {
-    transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
     background: transparent;
     height: auto;
     margin: 23px 20px 23px 0;
@@ -596,10 +603,6 @@ line-height: 30px;
 	
 	
 #primary-nav .button {
-	transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
     background: none repeat scroll 0 0 #38BABF;
     font-size: 20px;
     font-weight: bold;

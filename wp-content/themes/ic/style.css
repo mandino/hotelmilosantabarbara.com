@@ -1322,11 +1322,6 @@ h1, h2, h3, h4, h5, h6, h7 {
     padding: 10px 70px;
 }
 
-#navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
-    font-size: 10px;
-    padding: 6px;
-}
-
 .language {
     display: inline-block;
     float: right;
@@ -1455,27 +1450,6 @@ h1, h2, h3, h4, h5, h6, h7 {
 .logo img {
 	max-width: 150px;
 	
-}
-
-.navis-mobile {
-	display: none;
-}
-
-.mm-menu .navis-mobile {
-	display: inline-block;
-}
-
-.navis-mobile .fa-phone {
-    color: #0a94d5;
-    font-size: 23px;
-    margin-right: 8px;
-    vertical-align: sub;
-}
-
-.navis-mobile span#NavisTFNmobnav {
-	bottom: 2px;
-	position: relative;
-	vertical-align: bottom;
 }
 
 
