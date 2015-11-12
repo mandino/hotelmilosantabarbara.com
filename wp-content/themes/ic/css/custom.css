@@ -419,6 +419,10 @@ line-height: 30px;
 	vertical-align: bottom;
 }
 
+.click-nav:hover .ic-navis i, .click-nav:hover .ic-navis span {
+    color: #ffffff;
+}
+
 
 
 /* ======================================================== TOP NAVIGATION =====================================================  */
