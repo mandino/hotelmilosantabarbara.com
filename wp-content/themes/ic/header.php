@@ -241,7 +241,16 @@
 	
 				<nav id="menu" class="fl">
 					<ul>
-						 <?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
+						
+						<li class="navis-mobile">
+						 	<span><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span>
+
+							<script type="text/javascript">
+								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
+							</script>
+						</li>
+
 					</ul>
 				</nav>
 	

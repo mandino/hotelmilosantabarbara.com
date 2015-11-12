@@ -34,3 +34,4 @@ wp-content/wp-content/themes/default/
 timthumb.txt
 *.xml
 *.txt
+^.*\.timthumb.txt$
