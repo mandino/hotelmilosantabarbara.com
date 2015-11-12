@@ -140,6 +140,7 @@ if(! isset($ALLOWED_SITES)){
 		'imageshack.us',
 		'tinypic.com',
 		'sphrcl.co',
+		'hotelmilosantabarbara.com',
 	);
 }
 // -------------------------------------------------------------
