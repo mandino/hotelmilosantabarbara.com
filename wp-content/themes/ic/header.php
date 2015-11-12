@@ -183,12 +183,15 @@
 		<div id="property-nav">
 			
 			<nav class="click-nav">
+
+				<span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
+
+				<script type="text/javascript">
+					SetElementToNavisNCPhoneNumber("NavisTFN_ic");
+				</script>
+						
 				<ul class="container no-js">
-					<li>
-	
-						<a href="http://independentcollection.com" target="_blank" class="clicknav-clicker"></a>
-	
-					</li>
+					<li><a href="http://independentcollection.com" target="_blank" class="clicknav-clicker"></a></li>
 				</ul>
 			</nav>
 			

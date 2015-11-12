@@ -1530,6 +1530,23 @@ h1, h2, h3, h4, h5, h6, h7 {
 -moz-transition:background-color 0.2s ease-in-out;display:block;text-decoration:none;}
 .click-nav ul li a:hover {}
 
+.click-nav .ic-navis {
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.click-nav #NavisTFN_ic {
+	font-weight: bold;
+}
+
+.click-nav .fa-phone {
+    font-size: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
 /* Clicknav - Fallbacks */
 .click-nav .no-js ul {display:none;}
 .click-nav .no-js:hover ul {display:block;}
