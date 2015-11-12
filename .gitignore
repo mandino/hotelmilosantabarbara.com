@@ -35,3 +35,4 @@ timthumb.txt
 *.xml
 *.txt
 ^.*\.timthumb.txt$
+wp-content/plugins/wp-google-maps/1markers.xml
