@@ -269,10 +269,10 @@
 
 	<ul style="" class="right-links right" id="toggles">
 
-		<li class="dine"><a class="linkerd active" href="<?php bloginfo('url'); ?>?page_id=48" title="Dining">Eat</a></li>
-		<li class="shop"><a class="linkerd active" href="<?php bloginfo('url'); ?>?page_id=68" title="Dining">Shop</a></li>
-		<li class="arts"><a class="linkerd active" href="<?php bloginfo('url'); ?>?page_id=66" title="Dining">Culture</a></li>
-		<li class="sights"><a class="linkerd active" href="<?php bloginfo('url'); ?>?page_id=160" title="Dining">Landmarks</a></li>
+		<li class="dine"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
+		<li class="shop"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
+		<li class="arts"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
+		<li class="sights"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
 
 	</ul>
 
