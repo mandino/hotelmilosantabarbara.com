@@ -34,10 +34,11 @@
 					<?php if(get_option('cebo_tele')) { ?>
 					<li class="phone"><i class="fa fa-mobile-phone fa-lg"></i> 
 
-						<span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span>
+						<a id="lnkP2TalkFTN" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span></a>
 
 						<script type="text/javascript">
 							SetElementToNavisNCPhoneNumber("NavisTFN");
+							SetNavisP2TalkLink("lnkP2TalkFTN");
 						</script>
 
 						<?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?>

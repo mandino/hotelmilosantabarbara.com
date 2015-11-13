@@ -100,6 +100,7 @@
 <script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8663200339"></script>
 <script language="javascript">ProcessNavisNCKeyword();</script>
 
+
 </head> 
 	
 <body id="oceana" <?php body_class($class); ?>>
@@ -184,10 +185,11 @@
 			
 			<nav class="click-nav">
 
-				<span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
+				<a id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span></a>
 
 				<script type="text/javascript">
 					SetElementToNavisNCPhoneNumber("NavisTFN_ic");
+					SetNavisP2TalkLink("lnkP2Talk");
 				</script>
 						
 				<ul class="container no-js">
@@ -247,10 +249,11 @@
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						
 						<li class="navis-mobile">
-						 	<span><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span>
+						 	<a id="lnkP2Talkmobile" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
 
 							<script type="text/javascript">
 								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
+								SetNavisP2TalkLink("lnkP2Talkmobile");
 							</script>
 						</li>
 

@@ -9,6 +9,19 @@
 /* Custom Codes - All CSS outside from the defaults - Non media sensitive */
 
 
+/* ======================================================== Transitions =====================================================  */
+
+/* Color .4s */
+
+.click-nav:hover a:hover .ic-navis  i, 
+.click-nav:hover a:hover .ic-navis span {
+	transition: color 0.4s;
+	-moz-transition: color 0.4s;
+	-webkit-transition: color 0.4s;
+	-o-transition: color 0.4s;
+}
+
+
 
 /* ======================================================== GLOBAL STUFF =====================================================  */
 
@@ -421,6 +434,10 @@ line-height: 30px;
 
 .click-nav:hover .ic-navis i, .click-nav:hover .ic-navis span {
     color: #ffffff;
+}
+
+.click-nav:hover a:hover .ic-navis  i, .click-nav:hover a:hover .ic-navis span {
+    color: #ddd;
 }
 
 
