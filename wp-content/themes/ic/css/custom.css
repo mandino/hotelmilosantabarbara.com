@@ -3754,6 +3754,7 @@ ul.tabs li:last-child {
 
 .wpcf7-form > p {
     clear: both;
+	margin: 0;
 }
 
 .wpcf7-form .submit-button {
@@ -3770,7 +3771,23 @@ ul.tabs li:last-child {
     width: 46.7%;
 }
 
+.post-content .wpcf7 img.ajax-loader {
+    width: auto;
+    float: right;
+    margin: 5px 4px 15px 4px;
+    padding: 17px 0;
+}
 
+.wpcf7-response-output {
+    clear: both;
+    width: 100%;
+    margin: 0 !important;
+}
+
+span.wpcf7-not-valid-tip {
+    top: -15px;
+    position: relative;
+}
 
 /* ==================================================  Prettyphoto  ===============================================  */
 
