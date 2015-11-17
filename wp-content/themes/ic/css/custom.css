@@ -3394,6 +3394,7 @@ ul.tabs li:last-child {
 .fullpic {
 	width: 100%;
 	position: relative;
+	clear: both;
 }
 .fullpic:before {
    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FFFFFF;
