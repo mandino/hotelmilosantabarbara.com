@@ -133,8 +133,8 @@
 							
 							<span class="dropsec" style="margin-right: 6px">
 								<select id="adults"  name="adults[]" class="halfsies">
-									<option value="1" selected="selected"><?php _e('1 Adult','cebolang'); ?></option>
-									<option value="2"><?php _e('2 Adults','cebolang'); ?></option>
+									<option value="1"><?php _e('1 Adult','cebolang'); ?></option>
+									<option value="2" selected="selected"><?php _e('2 Adults','cebolang'); ?></option>
 									<option value="3"><?php _e('3 Adults','cebolang'); ?></option>
 									<option value="4"><?php _e('4 Adults','cebolang'); ?></option>
 								</select>
