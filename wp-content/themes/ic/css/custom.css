@@ -1147,6 +1147,8 @@ line-height: 30px;
     margin: 40px 0;
     padding-left: 40px;
     font-weight: bold;
+	width: 44%;
+    float: left;
 }
 
 .contact-details li i {
@@ -1163,6 +1165,35 @@ line-height: 30px;
 
 .contact-details .email i {
     font-size: 17px;
+}
+
+ /* NAvis Footer */
+.navis-footer {
+    float: left;
+    margin: 64px 0;
+}
+
+.navis-footer a {
+    background: url(../images/navispushbutton.png);
+    display: inline-block;
+    width: 148px;
+    height: 59px;
+    margin: 0 4px;
+    text-indent: -9999px;
+}
+
+.navis-footer a#lnkP2Chatfooter {
+    background-position: 0 0;
+}
+.navis-footer a#lnkP2Chatfooter:hover {
+    background-position: 0 -78px;
+}
+
+.navis-footer a#lnkP2Talkfooter {
+    background-position: 148px 0;
+}
+.navis-footer a#lnkP2Talkfooter:hover {
+    background-position: 148px -78px;
 }
 
 /* Footer Backgrounds */
@@ -1184,6 +1215,7 @@ line-height: 30px;
     border-radius: 4px;
     overflow: auto;
     width: 50%;
+	clear: both;
 }
 
 .newsletter-form form {
