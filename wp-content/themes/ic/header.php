@@ -118,6 +118,8 @@
 					
 					
 						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_self">
+
+							<input type="hidden" value="1" name="rooms">
 							
 							<span class="calsec">
 								<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
