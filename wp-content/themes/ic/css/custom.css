@@ -4149,6 +4149,14 @@ li.blue-btn i {
 }
 
 
+div#TA_ssnarrowcollectreview383 li:before {
+    display: none;
+}
+
+div#TA_ssnarrowcollectreview383 li img {
+    max-width: 100%;
+    width: auto;
+}
 
 
 
