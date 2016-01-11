@@ -7,17 +7,62 @@
 
 
 
-
+<?php if (is_page('45')) { ?>
   <ul class="right-links right" id="toggles">
 										
-			<li class="dine"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
-		<li class="shop"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
-		<li class="arts"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
-		<li class="sights"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
+		<li class="dine"><a data-id="eatl"  class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
+		<li class="shop"><a data-id="shopl" class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
+		<li class="arts"><a data-id="cult" class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
+		<li class="sights"><a data-id="landl" class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
 		<!--<li class="events"><a class="linkerd active" href="http://hotelmilosantabarbara.com/?page_id=157" title="Events">Events</a></li>	-->
 		
 	</ul>
+<?php } ?>
 
+<?php if (is_page('1682')) {  /**EAT PAGE **/ ?>
+<ul class="right-links right" id="toggles">
+
+		<li class="dine"><a data-id="eatl"  class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
+		<li class="shop"><a data-id="shopl" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
+		<li class="arts"><a data-id="cult" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
+		<li class="sights"><a data-id="landl" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
+
+</ul>
+<?php } ?>
+
+<?php if (is_page('1684')) {  /**SHOP PAGE **/ ?>
+<ul class="right-links right" id="toggles">
+
+		<li class="dine"><a data-id="eatl"  class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
+		<li class="shop"><a data-id="shopl" class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
+		<li class="arts"><a data-id="cult" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
+		<li class="sights"><a data-id="landl" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
+
+</ul>
+<?php } ?>
+
+<?php if (is_page('1686')) {  /**CULTURE PAGE **/ ?>
+<ul class="right-links right" id="toggles">
+
+		<li class="dine"><a data-id="eatl"  class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
+		<li class="shop"><a data-id="shopl" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
+		<li class="arts"><a data-id="cult" class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
+		<li class="sights"><a data-id="landl" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
+
+</ul>
+<?php } ?>
+
+
+<?php if (is_page('1688')) {  /**LANDMARK PAGE **/ ?>
+<ul class="right-links right" id="toggles">
+
+		<li class="dine"><a data-id="eatl"  class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
+		<li class="shop"><a data-id="shopl" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
+		<li class="arts"><a data-id="cult" class="linkerd" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
+		<li class="sights"><a data-id="landl" class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
+
+</ul>
+<?php } ?>
 						
 						
 						<a href="#features-1" id="link" class="navigateTo page-down"></a>
@@ -82,11 +127,12 @@
 		<div id="tabs-wrapper" class="tabs-wrapper">
 		
 			<ul class="tabs">
-				<li class="eat"><a href="<?php echo get_permalink( $post->post_parent ); ?>eat">Eat</a></li>
-				<li class="shop"><a href="<?php echo get_permalink( $post->post_parent ); ?>shop">Shop</a></li>
-				<li class="culture"><a href="<?php echo get_permalink( $post->post_parent ); ?>culture">Culture</a></li>
-				<li class="landmarks"><a href="<?php echo get_permalink( $post->post_parent ); ?>landmarks">Landmarks</a></li>
-			</ul>	
+				<li class="eat"><a id="eatl" href="<?php echo get_permalink( $post->post_parent ); ?>eat">Eat</a></li>
+				<li class="shop"><a id="shopl" href="<?php echo get_permalink( $post->post_parent ); ?>shop">Shop</a></li>
+				<li class="culture"><a id="cult" href="<?php echo get_permalink( $post->post_parent ); ?>culture">Culture</a></li>
+				<li class="landmarks"><a id="landl" href="<?php echo get_permalink( $post->post_parent ); ?>landmarks">Landmarks</a></li>
+			</ul>
+
 			<div class="tabs-container">
 				
 				
