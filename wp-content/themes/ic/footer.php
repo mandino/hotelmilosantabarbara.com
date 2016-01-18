@@ -198,6 +198,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 })();
 </script>
 
+<?php if ( !is_front_page() ) {	?>
 <!-- LINKERED LINKS -->
 <script>
 	jQuery(function ($) {
@@ -214,6 +215,8 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 });
 </script>
 <!-- LINKERED LINKS -->
+<?php } ?>
+
 
 <!-- <div id="fb-root"></div> -->
 <script>(function(d, s, id) {
