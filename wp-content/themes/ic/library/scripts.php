@@ -1,7 +1,5 @@
 <!-- JS -->
-<script type='text/javascript' src='<?php bloginfo ('url'); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
 <!-- <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script> -->
-
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.prettyPhoto.js"></script>
 
 <!-- ClickNav -->
@@ -14,7 +12,7 @@
 <script src="<?php bloginfo ('template_url'); ?>/js/quotes-rotator/modernizr.custom.js"></script>
 
 <!-- Quotes Rotator -->
-<script src="<?php bloginfo ('template_url'); ?>/js/quotes-rotator/jquery.cbpQTRotator.js"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/quotes-rotator/jquery.cbpQTRotator.min.js"></script>
 
 <!-- SlideJS -->
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.slides.min.js"></script>
@@ -45,7 +43,8 @@
 
 <script type="text/javascript">
 
-	$(document).ready(function(){
+	//$(document).ready(function(){
+	jQuery( document ).ready(function( $ ) {
 		
 		$('img.lazy').each(function() {
 			var img = $(this);
@@ -385,105 +384,91 @@
 			});
 
 		<?php  } ?>
-
-	});
-
-
-
-	$( function() {
-
-		// Quotes Rotator
-		$( '#cbp-qtrotator' ).cbpQTRotator();
-
-	} );
-
-
-
-	// Sticky Nav
-
-	$(window).load(function(){
-		$(".searchbox").sticky({ topSpacing: 61, className: 'sticky', wrapperClassName: 'my-wrapper' });
-		$("#navigation").sticky({ topSpacing: 0, className: 'sticky', wrapperClassName: 'my-wrapper' });
-		$("#quiet").sticky({ topSpacing: 0, className: 'unstick'});
-	});
-
-
-
-	// FadeIn logo
-
-	 $(window).scroll(function() {
-		        
-        var verschil = ($(window).scrollTop() / 5);
-    
-      if (verschil > 40) 
-            
-           $('.droplogo').addClass('jumpshot');
-        
-        else if (verschil < 40)
-            
-           $('.droplogo').removeClass('jumpshot');
-    });
-
-
-
-	 // Calendar in Navigation
-
-	 $(function() {
-
-	 	var $html 	= $('html'),
-			$menu	= $('nav#menu'),
-			$both	= $html.add( $menu );
-
-		$menu.mmenu();
-
-	 	if ($(window).width() < 1000) {
-			   
-		   var pos 	= 'mm-top mm-right mm-bottom',
-				zpos	= 'mm-front mm-next';
-
-			//	Add the position-classnames onChange
-			$('input[name="pos"]').change(function() {
-				$both.removeClass( pos ).addClass( 'mm-' + this.value );
-			});
-			$('input[name="zpos"]').change(function() {
-				$both.removeClass( zpos ).addClass( 'mm-' + this.value );
-			});
-
-		} else {
 		
-		var $menu	= $('nav#menu');
-				$menu.removeClass()
-				$('nav#menu ul').removeClass()
-				$('#primary-nav .container').prepend($menu);
 		
-		}
+		//$( function() {
+			// Quotes Rotator
+			$( '#cbp-qtrotator' ).cbpQTRotator();
+		//} );
+		
+		
+		// Sticky Nav
+		//$(window).load(function(){
+			$(".searchbox").sticky({ topSpacing: 61, className: 'sticky', wrapperClassName: 'my-wrapper' });
+			$("#navigation").sticky({ topSpacing: 0, className: 'sticky', wrapperClassName: 'my-wrapper' });
+			$("#quiet").sticky({ topSpacing: 0, className: 'unstick'});
+		//});
 
+		
+		// FadeIn logo
+			$(window).scroll(function() {	
+				var verschil = ($(window).scrollTop() / 5);
+			  if (verschil > 40) 
+				   $('.droplogo').addClass('jumpshot');
+				else if (verschil < 40)
+				   $('.droplogo').removeClass('jumpshot');
+			});
+		
+		// Calendar in Navigation
 
-	 	$( window ).resize(function() {
+		//$(function() {
 
-			if ($(window).width() >1000) {
+			var $html 	= $('html'),
+				$menu	= $('nav#menu'),
+				$both	= $html.add( $menu );
 
-				var $menu	= $('nav#menu');
-				$menu.removeClass()
-				$('nav#menu ul').removeClass()
-				$('#primary-nav .container').prepend($menu);
+			$menu.mmenu();
+
+			if ($(window).width() < 1000) {
+				   
+			   var pos 	= 'mm-top mm-right mm-bottom',
+					zpos	= 'mm-front mm-next';
+
+				//	Add the position-classnames onChange
+				$('input[name="pos"]').change(function() {
+					$both.removeClass( pos ).addClass( 'mm-' + this.value );
+				});
+				$('input[name="zpos"]').change(function() {
+					$both.removeClass( zpos ).addClass( 'mm-' + this.value );
+				});
 
 			} else {
-
-				var $menu	= $('nav#menu');
-				$menu.addClass('fl mm-menu mm-horizontal mm-ismenu')
-				$('nav#menu ul').addClass('mm-list mm-panel mm-opened mm-current')
-				$('html').prepend($menu);
-
+			
+			var $menu	= $('nav#menu');
+					$menu.removeClass()
+					$('nav#menu ul').removeClass()
+					$('#primary-nav .container').prepend($menu);
+			
 			}
 
-		});
 
-		$('.hover').bind('touchstart mouseover', function(e) {
-	        //e.preventDefault();
-	        $(this).toggleClass('hover_effect');
-	    });
-			
+			$( window ).resize(function() {
+
+				if ($(window).width() >1000) {
+
+					var $menu	= $('nav#menu');
+					$menu.removeClass()
+					$('nav#menu ul').removeClass()
+					$('#primary-nav .container').prepend($menu);
+
+				} else {
+
+					var $menu	= $('nav#menu');
+					$menu.addClass('fl mm-menu mm-horizontal mm-ismenu')
+					$('nav#menu ul').addClass('mm-list mm-panel mm-opened mm-current')
+					$('html').prepend($menu);
+
+				}
+
+			});
+
+			$('.hover').bind('touchstart mouseover', function(e) {
+				//e.preventDefault();
+				$(this).toggleClass('hover_effect');
+			});
+				
+		//});
+		
+
 	});
-
 </script>

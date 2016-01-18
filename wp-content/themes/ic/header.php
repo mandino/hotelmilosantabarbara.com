@@ -15,7 +15,6 @@
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
 	<title>
 		<?php global $page, $paged; wp_title( '|', true, 'right' );
-	
 		
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
@@ -83,9 +82,11 @@
 
 	<!-- Jquery -->
 	<?php //include(TEMPLATEPATH. "/library/jquery.php"); ?>
+	<!--
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script type='text/javascript' src='<?php bloginfo ('url'); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-
+	-->
+	
 	<?php
 		/****************** DO NOT REMOVE **********************
 		/* We add some JavaScript to pages with the comment form
@@ -198,7 +199,6 @@
 				</div>
 			</div>
 			
-			
 		<div id="property-nav">
 			
 			<nav class="click-nav">
@@ -214,9 +214,6 @@
 					<li><a href="http://independentcollection.com" target="_blank" class="clicknav-clicker"></a></li>
 				</ul>
 			</nav>
-			
-			
-			
 	
 		</div>
 	
@@ -278,11 +275,7 @@
 					</ul>
 				</nav>
 	
-			</div>
-	
-				
-				
-				
+			</div>	
 	
 		</div>
 

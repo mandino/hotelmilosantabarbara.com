@@ -140,7 +140,8 @@
 <?php include(TEMPLATEPATH. "/library/scripts.php"); ?>
 
 <script type="text/javascript">
-$(document).ready(function(){
+//$(document).ready(function(){
+jQuery( document ).ready(function( $ ) {
    
 	var url_trigger = window.location.pathname;
 	var url_trim = url_trigger.split("/")[1];
