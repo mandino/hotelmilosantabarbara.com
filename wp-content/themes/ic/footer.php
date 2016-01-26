@@ -199,7 +199,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 </script>
 
 <?php if ( !is_front_page() ) {	?>
-<!-- LINKERED LINKS -->
+<!-- LINKERED LINKS
 <script>
 	jQuery(function ($) {
 	// Load dialog on page load
