@@ -259,7 +259,7 @@
 
 				<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i></a>
 	
-				<nav id="menu" class="fl">
+				<nav id="menu" class="fl" style="z-index:1">
 					<ul>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						
