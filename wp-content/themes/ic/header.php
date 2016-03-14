@@ -181,7 +181,7 @@
 
 					<div class="reservationform flexdate">
 					
-						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="ga('send', 'event', 'Booking-widget', 'click', 'Flexible Dates');">Flexible dates?</a> Search for our best available rate</p>
+						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="ga('send', 'event', 'Flexible Dates', 'click', 'Booking-widget');">Flexible dates?</a> Search for our best available rate</p>
 						
 					</div>
 
