@@ -89,13 +89,13 @@
 
 						<?php } ?>
 
-						<h3><?php _e('Guest Rooms', 'cebolang'); ?></h3>
+						<h2><?php _e('Guest Rooms', 'cebolang'); ?></h2>
 
 						<div class="hover-effect">
 
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 
-							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
+							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2></a>
 
 							<?php } ?>
 							<br>
@@ -138,7 +138,7 @@
 
 						<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
 
-						<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
+						<h2><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
 
 
 						<?php } ?>
@@ -147,7 +147,7 @@
 
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 
-							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
+							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2></a>
 
 							<?php } ?>
 
@@ -180,12 +180,12 @@
 
 						<?php } ?>
 
-						<h3><?php _e('IC Local', 'cebolang'); ?></h3>
+						<h2><?php _e('IC Local', 'cebolang'); ?></h2>
 
 						<div class="hover-effect">
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 
-							<a class="special-copy-link" href="http://www.independentcollection.com/ic-local" target="_blank"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
+							<a class="special-copy-link" href="http://www.independentcollection.com/ic-local" target="_blank"><h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2></a>
 
 							<?php } ?>
 							<br>
@@ -366,7 +366,7 @@
 
 					<!-- <a class="slidesjs-previous slidesjs-navigation" href="#"><i class="icon-chevron-left icon-large"></i></a> -->
 
-					<h3><?php _e('Upcoming events', 'cebolang'); ?></h3>
+					<h2><?php _e('Upcoming events', 'cebolang'); ?></h2>
 				</div>
 
 				<div class="fr">
@@ -390,7 +390,7 @@
 						<a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa fa-chevron-right fa-lg"></i></a>
 					</div>
 
-					<h3><?php _e('From our blog', 'cebolang'); ?></h3>
+					<h2><?php _e('From our blog', 'cebolang'); ?></h2>
 				</div>
 
 			</div>

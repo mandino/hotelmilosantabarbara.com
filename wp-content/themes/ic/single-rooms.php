@@ -53,7 +53,7 @@
 					<?php } ?>
 
 		
-					<h2 class="section-title fr"><?php the_title(); ?></h2>
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 				</div>
 	
@@ -105,7 +105,7 @@
 					
 					
 					<div id="inline-1" class="hide">
-						<h3 style="text-align: center;">Room Features</h3>
+						<h2 style="text-align: center;">Room Features</h2>
 						<ul class="amenities">
 							<?php $details = get_post_meta ($post->ID, 'cebo_details', true);
 			             		$detailer = explode(',', $details);
@@ -185,7 +185,7 @@
 									
 									<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
 									
-									<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
+									<h2><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
 									
 									
 									<?php } ?>
@@ -194,7 +194,7 @@
 										
 										<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 										
-										<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+										<h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2>
 										
 										<?php } ?>
 										
@@ -260,7 +260,7 @@
 				<div class='item item1 current'>
 					<a href="<?php the_permalink(); ?>"><img src = '<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>' /></a>
 					
-					<h3><?php the_title(); ?></h3>
+					<h2><?php the_title(); ?></h2>
 				</div>
 				
 				<?php endwhile; endif; wp_reset_query(); ?>	
