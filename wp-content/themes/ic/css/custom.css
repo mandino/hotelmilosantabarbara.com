@@ -4161,10 +4161,20 @@ div#TA_ssnarrowcollectreview383 li img {
     width: auto;
 }
 
+.tribe-events-list .time-details{
+	margin-top: 5px;
+}
+.tribe-events-venue-details .fn{
+	 font-size: 1.2em;
+    font-style: normal;
+    font-family: inherit;
+    left: 0px;
+    top: 42px;
+}
 
-
-
-
+.tribe-events-venue-details .fn a{
+	color: #0689cd;
+}
 
 
 
