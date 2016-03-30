@@ -109,6 +109,22 @@ if( count( $children ) != 0 ) { ?>
 				
 				<?php endwhile; endif; wp_reset_query(); ?>	
 
+				<div class="pagination-single">
+
+			        <div class="nextprev-postlink">
+			          
+			                    <div class="prev-post-link">
+			                       <?php previous_post_link( '%link', '<< Previous Article', TRUE ); ?>
+			                   </div>
+
+		                        <div class="next-post-link">
+		                           <?php next_post_link( '%link', 'Next Article >>', TRUE); ?>
+		                       </div>
+
+			        </div>
+
+				</div>					
+
 			</div>
 
 			<div class="sidebar fr">
