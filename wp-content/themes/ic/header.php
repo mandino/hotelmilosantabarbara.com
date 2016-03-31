@@ -29,11 +29,11 @@
 	
 	<link rel="icon" href="<?php bloginfo ('template_url'); ?>/cebo_options/<?php bloginfo ('template_url'); ?>/images/admin_sidebar_icon.png" type="image/x-ico"/>
 	
-	<? } else { ?>
+	<?php } else { ?>
 	
 	<link rel="icon" href="<?php echo get_option('cebo_custom_favicon'); ?>" type="image/x-ico"/>
 	
-	<? } ?>
+	<?php } ?>
 	
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('cebo_feedburner_url') <> "" ) { echo get_option('cebo_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
@@ -96,6 +96,13 @@
 			wp_enqueue_script( 'comment-reply' );
 		wp_head();
 	?>
+<!-- GA CODE -->
+ <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-48295809-1', 'auto',{'allowLinker': true });
+ga('require', 'linker'); ga('linker:autoLink', ['hotelmilosantabarbara.reztrip.com','hotelmilosantabarbara.reztripmobile.com']);
+ga('send', 'pageview');
+</script>
 
 <!-- NAVIS script -->
 <script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
