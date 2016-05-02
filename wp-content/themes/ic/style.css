@@ -4193,3 +4193,8 @@ bottom: 38px !important;
   {
   width: 97%;
   }
+
+  
+  li.blue-btn {
+    display: none;
+}
