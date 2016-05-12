@@ -4198,3 +4198,10 @@ bottom: 38px !important;
   li.blue-btn {
     display: none;
 }
+
+.post-content em {
+    font-style: italic;
+}
+.post-content strong {
+    font-weight: bold;
+}
