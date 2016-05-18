@@ -160,7 +160,7 @@ ga('send', 'pageview');
 			</div>
 		<div id="property-nav">
 			<nav class="click-nav">
-				<a style="color:#fff !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span></a>
+				<a style="color:#000 !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span></a>
 				<script type="text/javascript">
 					SetElementToNavisNCPhoneNumber("NavisTFN_ic");
 					SetNavisP2TalkLink("lnkP2Talk");
