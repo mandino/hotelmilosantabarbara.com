@@ -36,7 +36,7 @@
 
 
 
-	<div id="intro" class="section">
+	<!--div id="intro" class="section"-->
 		
 		<div class="container">
 
@@ -232,7 +232,7 @@
 
 		</div>
 
-	</div>
+	<!--/div-->
 	
 	<div class="clear"></div>
 
