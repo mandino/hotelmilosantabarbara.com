@@ -108,6 +108,9 @@ ga('send', 'pageview');
 	src="https://www.facebook.com/tr?id=1701093870106348&ev=PageView&noscript=1"
 	/></noscript>
 	<!-- End Facebook Pixel Code -->
+
+	<script> function ViewContent(){ fbq('track', 'ViewContent'); } </script>
+
 </head> 
 <body id="oceana" <?php body_class($class); ?>>
 	<div id="navigation">
@@ -115,7 +118,7 @@ ga('send', 'pageview');
 				<div class="whippapeal">
 				<div class="formfields">
 					<div class="reservationform">
-						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_blank">
+						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>/search?">
 							<input type="hidden" value="1" name="rooms">
 							<span class="calsec">
 								<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
@@ -143,13 +146,13 @@ ga('send', 'pageview');
 									<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
 								</select>
 							</span>
-							<button class="button" type="submit" onClick="ga('send', 'event', 'Booking-widget', 'Search-now', 'Search dates with booking widget');"><?php _e('Search Now','cebolang'); ?></button>
+							<button class="button" type="submit" onClick="fbq('track', 'Lead'); ga('send', 'event', 'Booking-widget', 'Search-now', 'Search dates with booking widget');"><?php _e('Search Now','cebolang'); ?></button>
 							<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
 						</form>
 					</div>
 				<!-- flex dates -->
 					<div class="reservationform flexdate">
-						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="ga('send', 'event', 'Flexible Dates', 'click', 'Booking-widget');">Flexible dates?</a> Search for our best available rate</p>
+						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="fbq('track', 'Lead'); ga('send', 'event', 'Flexible Dates', 'click', 'Booking-widget');">Flexible dates?</a> Search for our best available rate</p>
 					</div>
 				<!-- end flex datess -->
 				</div>
@@ -200,7 +203,7 @@ ga('send', 'pageview');
 				<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i></a>
 				<nav id="menu" class="fl" style="z-index:1">
 					<ul>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
+						<?php wp_nav_menu( array( 'walker' => new MV_Cleaner_Walker_Nav_Menu(), 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						<li class="navis-mobile">
 						 	<a id="lnkP2Talkmobile" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
 							<script type="text/javascript">
