@@ -58,7 +58,7 @@ $event_id = get_the_ID();
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 
 			<!-- Event meta -->
-			<?php //do_action( 'tribe_events_single_event_before_the_meta' ) ?>
+			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
 				<?php
 				/**
 				 * The tribe_events_single_event_meta() function has been deprecated and has been
