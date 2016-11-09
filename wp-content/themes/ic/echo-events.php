@@ -20,7 +20,7 @@
 
 function getCoordinatesFromAddress( $sQuery, $sCountry = 'it' )
 {
-	$sURL = 'http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($sQuery).'&sensor=false&region='.$sCountry.'&language='.$sCountry;
+	$sURL = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyD28F-07gRmSGF4SwEo-7iIFyxJxQovKSQ&address='.urlencode($sQuery).'&region='.$sCountry.'&language='.$sCountry;
 	$sData = file_get_contents($sURL);
 	
 	return json_decode($sData);

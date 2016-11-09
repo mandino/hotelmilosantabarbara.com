@@ -1,6 +1,6 @@
 <!-- Google Map API Files -->
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD28F-07gRmSGF4SwEo-7iIFyxJxQovKSQ"></script>
 
 <script type="text/javascript">
 
