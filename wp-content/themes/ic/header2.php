@@ -26,6 +26,11 @@
 			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
 		?>
 	</title>
+	<?php 
+		if ( file_exists( dirname( __FILE__ ) . '/noindex.php' ) ) {
+		    include( dirname( __FILE__ ) . '/noindex.php' );
+		}
+	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	
@@ -69,8 +74,8 @@
 	var adults = jQuery("#adults").val();
 	var children = jQuery("#children").val();
 	
-	var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>/search?" + 
-										"&arrival_date=" + checkin + 
+	var bookinglink = "<?php echo get_option('cebo_genbooklink'); ?>" + 
+										"?arrival_date=" + checkin + 
 										"&departure_date=" + checkout + 
 										"&adults[]=" + adults + 
 										"&children[]=" + children;
@@ -185,7 +190,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 					<div class="reservationform">
 					
 					
-					<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>/search?" target="_blank">
+					<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank">
 						
 						<span class="calsec">
 							<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
