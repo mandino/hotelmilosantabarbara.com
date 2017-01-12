@@ -75,16 +75,25 @@
 			wp_enqueue_script( 'comment-reply' );
 		wp_head();
 	?>
-<!-- GA CODE -->
- <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
-Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-48295809-1', 'auto',{'allowLinker': true });
-ga('require', 'linker'); ga('linker:autoLink', ['hotelmilosantabarbara.reztrip.com','hotelmilosantabarbara.reztripmobile.com']);
-ga('send', 'pageview');
-</script>
-<!-- NAVIS script -->
-<script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
-<script language="javascript">ProcessNavisNCKeyword();</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TW66C6C');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- GA CODE -->
+	 <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+	Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48295809-1', 'auto',{'allowLinker': true });
+	ga('require', 'linker'); ga('linker:autoLink', ['hotelmilosantabarbara.reztrip.com','hotelmilosantabarbara.reztripmobile.com']);
+	ga('send', 'pageview');
+	</script>
+	<!-- NAVIS script -->
+	<script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
+	<script language="javascript">ProcessNavisNCKeyword();</script>
 	<script type="application/ld+json">
 		{
 		"@context": "http://schema.org",
@@ -118,6 +127,11 @@ ga('send', 'pageview');
 
 </head> 
 <body id="oceana" <?php body_class($class); ?>>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW66C6C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 	<div id="navigation">
 			<div class="ressys">
 				<div class="whippapeal">
