@@ -1510,10 +1510,11 @@ h1, h2, h3, h4, h5, h6, h7 {
 .click-nav ul li a:hover {}
 
 .click-nav .ic-navis {
-    font-size: 14px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
+	font-size: 18px;
+	position: absolute;
+	right: 20px;
+	top: 9px;
+	font-weight: bold;
 }
 
 .click-nav #NavisTFN_ic {

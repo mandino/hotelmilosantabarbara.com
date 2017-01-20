@@ -182,11 +182,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		<div id="property-nav">
 			<nav class="click-nav">
-				<a style="color:#000 !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span></a>
+				<a style="color:#000 !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">
+					<span class="ic-navis"><i class="fa fa-phone"></i> <span>Reservations</span> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
+				</a>
+
+				<div class="navis-footer">
+					
+					<a class="ptt" id="lnkP2Chatfooter" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407" target="new">Push to Chat</a>
+					<a class="ptt" id="lnkP2Talkfooter" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">Push to Talk</a>
+
+				</div>
+
 				<script type="text/javascript">
 					SetElementToNavisNCPhoneNumber("NavisTFN_ic");
 					SetNavisP2TalkLink("lnkP2Talk");
+					SetNavisP2TalkLink("lnkP2Talkfooter");
+					SetNavisP2ChatLink("lnkP2Chatfooter");
 				</script>
+
 				<ul class="container no-js">
 					<li><a href="http://independentcollection.com" target="_blank" class="clicknav-clicker"></a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>

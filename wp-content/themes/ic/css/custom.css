@@ -1171,32 +1171,37 @@ line-height: 30px;
 }
 
  /* NAvis Footer */
+
 .navis-footer {
-    float: left;
-    margin: 64px 0;
+	position: absolute;
+	right: 20px;
+	top: 5px;
+	max-height: 100%;
 }
 
 .navis-footer a {
-    background: url(../images/navispushbutton.png);
-    display: inline-block;
-    width: 148px;
-    height: 59px;
-    margin: 0 4px;
-    text-indent: -9999px;
+	background-image: url(../images/navispushbutton.png);
+	background-repeat: no-repeat;
+	background-size: 160px;
+	display: inline-block;
+	width: 78px;
+	height: 30px;
+	margin: 0 4px;
+	text-indent: -9999px;
 }
 
 .navis-footer a#lnkP2Chatfooter {
     background-position: 0 0;
 }
 .navis-footer a#lnkP2Chatfooter:hover {
-    background-position: 0 -78px;
+    background-position: 0 -40px;
 }
 
 .navis-footer a#lnkP2Talkfooter {
-    background-position: 148px 0;
+    background-position: -85px 0;
 }
 .navis-footer a#lnkP2Talkfooter:hover {
-    background-position: 148px -78px;
+    background-position: -85px -40px;
 }
 
 /* Footer Backgrounds */
