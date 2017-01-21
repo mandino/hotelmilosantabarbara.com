@@ -49,6 +49,18 @@
 					<li class="email"><i class="fa fa-envelope fa-lg"></i> <a href="mailto:<?php echo get_option('cebo_email'); ?>"><?php echo get_option('cebo_email'); ?></a></li>
 					<?php } ?>
 				</ul>
+
+				<div class="navis-footer">
+					<a id="lnkP2Chatfooter" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407" target="new">Push to Chat</a>
+					<a id="lnkP2Talkfooter" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">Push to Talk</a>
+
+					<script type="text/javascript">
+						//SetElementToNavisNCPhoneNumber("NavisTFNfooter");
+						SetNavisP2TalkLink("lnkP2Talkfooter");
+						SetNavisP2ChatLink("lnkP2Chatfooter");
+					</script>
+					
+				</div>
 	
 				<div class="newsletter-form">
 					
