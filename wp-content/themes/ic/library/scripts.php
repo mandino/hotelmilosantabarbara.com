@@ -1,11 +1,3 @@
-<?php 
-	require_once TEMPLATEPATH.'/library/mobile-detect.php';
-	$detect = new Mobile_Detect;
-	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-	$scriptVersion = $detect->getScriptVersion();
-	$check = $detect->isMobile();
-?>
-
 <!-- JS -->
 <!-- <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script> -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.prettyPhoto.js"></script>
@@ -470,8 +462,6 @@
 
 	});
 
-	<?php if($check) { ?>
-		jQuery('#lnkP2Talk').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFN_ic').text()));
-	<?php } ?>
+	jQuery('#lnkP2Talkmobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
 	
 </script>
