@@ -4,7 +4,7 @@
 
 <!-- Google Map API Files -->
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCN-FukkWho1yDgUAiO-gfTafDxn2yvPEc"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
