@@ -160,11 +160,6 @@ jQuery( document ).ready(function( $ ) {
 });
 </script>
 
-
-
-<!-- zdirect script -->
-<script type="text/javascript" src="https://www.zdirect.com/scripts/newApp.js"></script>
-
 <!-- sojern script -->
 <script>
 (function () {
