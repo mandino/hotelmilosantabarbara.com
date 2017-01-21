@@ -182,15 +182,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		<div id="property-nav">
 			<nav class="click-nav">
-				<a style="color:#000 !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">
+				<!-- <a style="color:#000 !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">
 					<span class="ic-navis"><i class="fa fa-phone"></i> <span>Reservations</span> <span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
-				</a>
+				</a> -->
 
 				<div class="navis-footer">
-					
 					<a class="ptt" id="lnkP2Chatheader" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
 					<a class="ptt" id="lnkP2Talkheader" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-
 				</div>
 
 				<script type="text/javascript">
@@ -201,7 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</script>
 
 				<ul class="container no-js">
-					<li><a href="http://independentcollection.com" target="_blank" class="clicknav-clicker"></a></li>
+					<li><a href="http://www.independentcollection.com/ic-local" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>
 				</ul>
 			</nav>
