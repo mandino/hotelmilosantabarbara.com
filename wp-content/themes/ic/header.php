@@ -188,16 +188,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 				<div class="navis-footer">
 					
-					<a class="ptt" id="lnkP2Chatfooter" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407" target="new">Push to Chat</a>
-					<a class="ptt" id="lnkP2Talkfooter" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">Push to Talk</a>
+					<a class="ptt" id="lnkP2Chatheader" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
+					<a class="ptt" id="lnkP2Talkheader" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 
 				</div>
 
 				<script type="text/javascript">
 					SetElementToNavisNCPhoneNumber("NavisTFN_ic");
 					SetNavisP2TalkLink("lnkP2Talk");
-					SetNavisP2TalkLink("lnkP2Talkfooter");
-					SetNavisP2ChatLink("lnkP2Chatfooter");
+					SetNavisP2TalkLink("lnkP2Talkheader");
+					SetNavisP2ChatLink("lnkP2Chatheader");
 				</script>
 
 				<ul class="container no-js">

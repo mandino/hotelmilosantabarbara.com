@@ -1209,6 +1209,7 @@ line-height: 30px;
 	right: 20px;
 	top: 5px;
 	max-height: 100%;
+	margin: 0;
 }
 
 .click-nav .navis-footer a {
@@ -1222,18 +1223,18 @@ line-height: 30px;
 	text-indent: -9999px;
 }
 
-.click-nav .navis-footer a#lnkP2Chatfooter {
+.click-nav .navis-footer a#lnkP2Chatheader {
     background-position: 0 0;
 }
 
-.click-nav .navis-footer a#lnkP2Chatfooter:hover {
+.click-nav .navis-footer a#lnkP2Chatheader:hover {
     background-position: 0 -40px;
 }
 
-.click-nav .navis-footer a#lnkP2Talkfooter {
+.click-nav .navis-footer a#lnkP2Talkheader {
     background-position: -85px 0;
 }
-.click-nav .navis-footer a#lnkP2Talkfooter:hover {
+.click-nav .navis-footer a#lnkP2Talkheader:hover {
     background-position: -85px -40px;
 }
 
