@@ -131,11 +131,10 @@ and (max-width : 1099px) {
 	/* Navigation */
 
 	#primary-nav .container {
-	    width: 80%;
+	    width: 70%;
 	}
 
 	#primary-nav nav {
-	    margin: 13px 0;
 	    width: 100%;
 	}
 
@@ -144,6 +143,14 @@ and (max-width : 1099px) {
 	    font-weight: bold;
 	    margin: 0 0 0 20px;
 	    padding: 11px 40px;
+	}
+
+	#primary-nav .button {
+		margin: 10px 10px 10px 20px;
+	}
+
+	#navigation-sticky-wrapper.sticky #primary-nav .button {
+		margin: 0 0 0 20xp;
 	}
 
 	#primary-nav nav ul li {
@@ -156,7 +163,6 @@ and (max-width : 1099px) {
 
 	.language {
 		margin-bottom: 0;
-		margin-top: 13px;
 	}
 
 	.ressys {
@@ -747,9 +753,17 @@ li.blue-btn i {
 		left: 40px;
 		margin-left: 13px;
 		padding: 1px 0 0;
-		top: 4px;
+		top: 12px;
 		background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
 		border: none;
+		transition: all 0.5s;
+	    -moz-transition: all 0.5s;
+	    -webkit-transition: all 0.5s;
+	    -o-transition: all 0.5s;
+	}
+
+	.sticky .logo.mobile {
+		top: 0;
 	}
 
 	.mmenu-icon {
@@ -766,10 +780,6 @@ li.blue-btn i {
 
 	/* Navigation */
 
-	#primary-nav {
-		min-height: 46px;
-	}
-
 	.logo.mobile > img {
 	    height: 100%;
 	}
@@ -781,6 +791,8 @@ li.blue-btn i {
 	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
 	    font-size: 11px;
 	    letter-spacing: 3px;
+	    padding: 15px;
+	    line-height: 18px;
 	}
 
 	#primary-nav .button, #navigation-sticky-wrapper.sticky #primary-nav .button {
@@ -816,6 +828,15 @@ li.blue-btn i {
 	    color: #FFFFFF;
 	    padding: 6px 6px 7px;
 	    font-size: 34px;
+	    margin: 10px 0;
+	    transition: all 0.5s;
+	    -moz-transition: all 0.5s;
+	    -webkit-transition: all 0.5s;
+	    -o-transition: all 0.5s;
+	}
+
+	.sticky .mmenu-icon .fa.fa-bars {
+		margin: 0;
 	}
 
 	.post-content .imagegal ul li:before {
@@ -863,7 +884,7 @@ li.blue-btn i {
 
 	.language {
 	    left: 0;
-	    margin-top: 11.5px;
+	    margin-top: 22px;
 	    right: 0;
 	    width: 35px;
 	}
@@ -871,9 +892,6 @@ li.blue-btn i {
 	.language a, .language i {
 		font-size: 14px;
 	}
-
-
-
 
 
 
@@ -1061,14 +1079,6 @@ height: 350px;
 
 
 	/* Navigation */
-
-	#property-nav {
-		height: 24px;
-	}
-
-	#property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker {
-		padding: 11px 6px;
-	}
 
 	.dropit, .ressys:hover {
 	    top: 62px;
@@ -1401,16 +1411,14 @@ padding: 8px 12px;
 	#primary-nav .button.mobile {
 		display: inline;
 		padding: 16px 20px;
-		margin: 0 0 0 5px;
 	}
 
 	#navigation-sticky-wrapper.sticky #primary-nav .button.mobile {
 		padding: 16px 20px;
-		margin: 0 0 0 5px;
 	}
 
 
-		#footer-newsletter {
+	#footer-newsletter {
 		display: none;
 	}
 
