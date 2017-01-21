@@ -78,6 +78,10 @@ and (max-width : 1240px) {
 	    margin-top: 12px;
 	}
 
+	#lnkP2Talk, .click-nav .navis-footer {
+		display:none;
+	}
+
 
 
 }
@@ -456,9 +460,7 @@ and (max-width : 1023px) {
 /* ================================================  MAX WIDTH 940 ======================================= */
 
 
-@media only screen
-and (max-width : 940px)
-{
+@media only screen and (max-width : 940px) {
 
 
 
@@ -714,12 +716,7 @@ and (max-width : 940px)
 		display: none;
 	}
 
-#lnkP2Talk
-{
-	display:none;
-}
-li.blue-btn
-{
+li.blue-btn {
 	bottom: 1px;
 	width: 25px !important;
     height: 25px !important;

@@ -1170,7 +1170,10 @@ line-height: 30px;
     font-size: 17px;
 }
 
- /* NAvis Footer */
+
+
+ /* NAVIS Footer */
+
 .navis-footer {
     float: left;
     margin: 64px 0;
@@ -1198,6 +1201,44 @@ line-height: 30px;
 .navis-footer a#lnkP2Talkfooter:hover {
     background-position: 148px -78px;
 }
+
+/* NAVIS Footer - click-nav */
+
+.click-nav .navis-footer {
+	position: absolute;
+	right: 20px;
+	top: 5px;
+	max-height: 100%;
+	margin: 0;
+}
+
+.click-nav .navis-footer a {
+	background-image: url(../images/navispushbutton.png);
+	background-repeat: no-repeat;
+	background-size: 160px;
+	display: inline-block;
+	width: 78px;
+	height: 30px;
+	margin: 0 4px;
+	text-indent: -9999px;
+}
+
+.click-nav .navis-footer a#lnkP2Chatheader {
+    background-position: 0 0;
+}
+
+.click-nav .navis-footer a#lnkP2Chatheader:hover {
+    background-position: 0 -40px;
+}
+
+.click-nav .navis-footer a#lnkP2Talkheader {
+    background-position: -85px 0;
+}
+.click-nav .navis-footer a#lnkP2Talkheader:hover {
+    background-position: -85px -40px;
+}
+
+
 
 /* Footer Backgrounds */
 

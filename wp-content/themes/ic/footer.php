@@ -49,18 +49,6 @@
 					<li class="email"><i class="fa fa-envelope fa-lg"></i> <a href="mailto:<?php echo get_option('cebo_email'); ?>"><?php echo get_option('cebo_email'); ?></a></li>
 					<?php } ?>
 				</ul>
-				
-				<div class="navis-footer">
-					<a id="lnkP2Chatfooter" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407" target="new">Push to Chat</a>
-					<a id="lnkP2Talkfooter" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new">Push to Talk</a>
-
-					<script type="text/javascript">
-						//SetElementToNavisNCPhoneNumber("NavisTFNfooter");
-						SetNavisP2TalkLink("lnkP2Talkfooter");
-						SetNavisP2ChatLink("lnkP2Chatfooter");
-					</script>
-					
-				</div>
 	
 				<div class="newsletter-form">
 					
@@ -172,11 +160,6 @@ jQuery( document ).ready(function( $ ) {
 });
 </script>
 
-
-
-<!-- zdirect script -->
-<script type="text/javascript" src="https://www.zdirect.com/scripts/newApp.js"></script>
-
 <!-- sojern script -->
 <script>
 (function () {
@@ -187,27 +170,6 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 })();
 </script>
 
-<?php if ( !is_front_page() ) {	?>
-<!-- LINKERED LINKS
-<script>
-	jQuery(function ($) {
-	// Load dialog on page load
-	//$('#basic-modal-content').modal();
- $(".linkerd").click(function(){
-
- 	var id=$(this).attr("data-id");
- 	
- 	var hr=$("#"+id).attr("href");
- 	window.parent.location=hr;
- })
- 
-});
-</script>
-<!-- LINKERED LINKS -->
-<?php } ?>
-
-
-<!-- <div id="fb-root"></div> -->
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
