@@ -26,9 +26,6 @@
 <!-- Lazy Load -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/scripts/jquery.lazyload.js"></script>
 
-<!-- Jquery UI -->
-<!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js?ver=3.5.2'></script> -->
-
 <!-- Iosslider -->
 <?php if ( 'rooms' == get_post_type() ) 	{ ?>
 	<script src="<?php bloginfo ('template_url'); ?>/js/jquery.iosslider.min.js"></script>
@@ -38,12 +35,10 @@
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.mmenu.min.js"></script>
 
 <!-- Optional FlexSlider Additions -->
-<!-- <script src="<?php bloginfo ('template_url'); ?>/js/jquery.easing.js"></script> -->
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.mousewheel.js"></script>
 
 <script type="text/javascript">
 
-	//$(document).ready(function(){
 	jQuery( document ).ready(function( $ ) {
 		
 		$('img.lazy').each(function() {
@@ -411,8 +406,6 @@
 		
 		// Calendar in Navigation
 
-		//$(function() {
-
 			var $html 	= $('html'),
 				$menu	= $('nav#menu'),
 				$both	= $html.add( $menu );
@@ -466,9 +459,9 @@
 				//e.preventDefault();
 				$(this).toggleClass('hover_effect');
 			});
-				
-		//});
-		
 
 	});
+
+	jQuery('#lnkP2Talk').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFN_ic').text()));
+	
 </script>
