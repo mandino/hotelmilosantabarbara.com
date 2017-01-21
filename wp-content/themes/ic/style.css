@@ -1335,6 +1335,10 @@ h1, h2, h3, h4, h5, h6, h7 {
     right: 0;
     width: 3%;
     z-index: 9;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 
 .sticky .language {
