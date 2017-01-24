@@ -192,7 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 
 				<script type="text/javascript">
-					SetElementToNavisNCPhoneNumber("NavisTFN_ic");
+					SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
 					SetNavisP2TalkLink("lnkP2Talk");
 					SetNavisP2TalkLink("lnkP2Talkheader");
 					SetNavisP2ChatLink("lnkP2Chatheader");
