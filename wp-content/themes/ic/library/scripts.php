@@ -465,5 +465,6 @@
 	jQuery('#lnkP2Talkmobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
 	jQuery('#lnkP2Talkheader').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
 	jQuery('#lnkP2Chatheader').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
+	jQuery('#lnkP2Talk').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
 	
 </script>
