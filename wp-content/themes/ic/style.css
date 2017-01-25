@@ -1521,11 +1521,13 @@ h1, h2, h3, h4, h5, h6, h7 {
 .click-nav ul li a:hover {}
 
 .click-nav .ic-navis {
-	font-size: 18px;
+	font-size: 14px;
 	position: absolute;
-	right: 210px;
-	top: 9px;
+	right: 200px;
+	top: 3px;
 	font-weight: bold;
+  text-align: center;
+  z-index: 10;
 }
 
 .click-nav #NavisTFN_ic {
