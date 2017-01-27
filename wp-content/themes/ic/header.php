@@ -244,15 +244,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</li>
 						<li class="navis-mobile2">
 							<span>
-								<a class="ptt" id="lnkP2Chatheader" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-								<a class="ptt" id="lnkP2Talkheader" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
+								<a class="ptt" id="lnkP2Chatheader-mobile" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
+								<a class="ptt" id="lnkP2Talkheader-mobile" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 							</span>	
 
 							<script type="text/javascript">
 								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-								SetNavisP2TalkLink("lnkP2Talk");
-								SetNavisP2TalkLink("lnkP2Talkheader");
-								SetNavisP2ChatLink("lnkP2Chatheader");
+								SetNavisP2TalkLink("lnkP2Talkheader-mobile");
+								SetNavisP2ChatLink("lnkP2Chatheader-mobile");
 							</script>
 						</li>
 					</ul>

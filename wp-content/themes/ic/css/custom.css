@@ -1242,7 +1242,7 @@ line-height: 30px;
 
 /* NAVIS Footer - mobile */
 
-.navis-mobile2 #lnkP2Chatheader {
+.navis-mobile2 #lnkP2Chatheader-mobile {
     background: url(../images/push2chat.png);
     background-size: 100% 100%;
     display: inline-block;
@@ -1252,7 +1252,7 @@ line-height: 30px;
     text-indent: -9999px;
 }
 
-.navis-mobile2 #lnkP2Talkheader {
+.navis-mobile2 #lnkP2Talkheader-mobile {
     background: url(../images/push2talk.png);
     background-size: 100% 100%;
     display: inline-block;
