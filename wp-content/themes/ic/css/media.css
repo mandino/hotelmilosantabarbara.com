@@ -78,10 +78,10 @@ and (max-width : 1240px) {
 	    margin-top: 12px;
 	}
 
-	#lnkP2Talk, .click-nav .navis-footer {
-		display:none;
+	.click-nav .container {
+		width: 75%;
+		margin: 0;
 	}
-
 
 
 }
@@ -774,8 +774,25 @@ li.blue-btn i {
 		position: relative;
 	}
 
-	#primary-nav .fl {
+	#primary-nav .fl,
+	#lnkP2Talk, 
+	.click-nav .navis-footer  {
 		display: none;
+	}
+
+	.navis-mobile2 {
+		padding: 30px 0 !important;
+		display: block !important;
+		text-align: center;
+	}
+
+	.navis-mobile2:after {
+		border: none !important;
+	}
+
+	.click-nav .container {
+	    width: 95%;
+	    margin: auto;
 	}
 
 	/* Navigation */

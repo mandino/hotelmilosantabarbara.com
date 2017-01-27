@@ -1240,6 +1240,28 @@ line-height: 30px;
 }
 
 
+/* NAVIS Footer - mobile */
+
+.navis-mobile2 #lnkP2Chatheader {
+    background: url(../images/push2chat.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+    text-indent: -9999px;
+}
+
+.navis-mobile2 #lnkP2Talkheader {
+    background: url(../images/push2talk.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+    text-indent: -9999px;
+}
+
 
 /* Footer Backgrounds */
 
