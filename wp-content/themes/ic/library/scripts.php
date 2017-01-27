@@ -462,6 +462,8 @@
 
 	});
 
+	jQuery('#lnkP2Talkheader-mobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));	
+	jQuery('#lnkP2Chatheader-mobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));	
 	jQuery('#lnkP2Talkmobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
 	jQuery('#lnkP2Talkheader').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
 	jQuery('#lnkP2Chatheader').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
