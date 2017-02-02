@@ -4132,11 +4132,17 @@ padding: 0 !important;
     border-right: 1px solid #D9D9D9;
     padding: 20px 20px 0 0 !important;
     width: 73%;
+    box-sizing: border-box;
 }
 
 .catlist li {
     height: 330px !important;
 }
+
+.sidebar.fr {
+    width: 24%;
+}
+
 
 /* --------------- Light it up BLUE ------------ */
 
