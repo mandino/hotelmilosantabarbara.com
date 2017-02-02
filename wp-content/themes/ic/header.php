@@ -234,7 +234,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i></a>
 				<nav id="menu" class="fl" style="z-index:1">
 					<ul>
-						<?php wp_nav_menu( array( 'walker' => new MV_Cleaner_Walker_Nav_Menu(), 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						<li class="navis-mobile">
 						 	<a id="lnkP2Talkmobile" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
 							<script type="text/javascript">
@@ -242,6 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								SetNavisP2TalkLink("lnkP2Talkmobile");
 							</script>
 						</li>
+						<?php wp_nav_menu( array( 'walker' => new MV_Cleaner_Walker_Nav_Menu(), 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						<li class="navis-mobile2">
 							<span>
 								<a class="ptt" id="lnkP2Chatheader-mobile" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
