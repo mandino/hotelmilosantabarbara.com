@@ -3927,7 +3927,14 @@ div.ui-loader h1
     text-transform: uppercase;
 }
 
+/* For Events page top Next/Previous Link */
+#tribe-events-header .tribe-events-sub-nav .tribe-events-nav-previous {
+    display: block !important;
+}
 
+#tribe-events-header .tribe-events-sub-nav .tribe-events-nav-next a {
+    display: block !important;
+}
 
 
 
