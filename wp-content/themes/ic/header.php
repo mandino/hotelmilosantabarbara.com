@@ -10,6 +10,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
+	<meta http-equiv="Expires" content="30" />
 	<title>
 		<?php global $page, $paged; wp_title( '|', true, 'right' );
 		// Add a page number if necessary:
