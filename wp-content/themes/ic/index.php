@@ -81,17 +81,24 @@ get_header();
 
 					<!-- featured Room -->
 
-					<?php query_posts('post_type=page&p=15'); if(have_posts()) : while(have_posts()) : the_post();
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php 
+
+						query_posts('post_type=page&p=15'); if(have_posts()) : while(have_posts()) : the_post();
+						
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 531x290");
+						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
+						$image_url = wp_get_attachment_image_src($image_id , 'Image 540x290'); 	
+
+					?>
 
 					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 
-						<img src="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 531, 290); ?>">
+						<img src="<?php echo $image_url[0]; ?>">
 
 						<?php } else { ?>
 
-						<img src="<?php echo tt($imgsrc[0], 531, 290); ?>">
+						<img src="<?php echo $imgsrc[0]; ?>">
 
 						<?php } ?>
 
@@ -114,11 +121,15 @@ get_header();
 
 
 					<?php endwhile; endif; wp_reset_query(); ?>
-					<?php query_posts('post_type=specials&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post();
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php 
 
+						query_posts('post_type=specials&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post();
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 257x290"); 
 
+						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
+						$image_url = wp_get_attachment_image_src($image_id , 'Image 257x290'); 	
 
+					?>
 
 					<!-- Special -->
 
@@ -134,11 +145,11 @@ get_header();
 
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 257, 290); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $image_url[0]; ?>">
 
 						<?php } else { ?>
 
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt($imgsrc[0], 257, 290); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
 
 						<?php } ?>
 
@@ -164,8 +175,15 @@ get_header();
 					</li>
 
 					<?php endwhile; endif; wp_reset_query(); ?>
-					<?php query_posts('post_type=page&p=2396'); if(have_posts()) : while(have_posts()) : the_post();
-					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					<?php 
+
+						query_posts('post_type=page&p=2396'); if(have_posts()) : while(have_posts()) : the_post();
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+
+						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
+						$image_url = wp_get_attachment_image_src($image_id , 'Image 257x290');
+
+					?>
 
 
 
@@ -178,11 +196,11 @@ get_header();
 					<li class="hover">
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 257, 290); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $image_url[0]; ?>">
 
 						<?php } else { ?>
 
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo tt($imgsrc[0], 257, 290); ?>">
+						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>">
 
 						<?php } ?>
 
@@ -312,7 +330,8 @@ get_header();
 					<div class="slides-mini">
 
 						<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 4
-					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 
 
 						<div>
@@ -378,12 +397,14 @@ get_header();
 				<div class="fr">
 					<div class="slides-mini">
 
-						<?php query_posts('post_type=post&posts_per_page=4&cat=-10'); if(have_posts()) : while(have_posts()) : the_post();
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+						<?php 
+
+							query_posts('post_type=post&posts_per_page=4&cat=-10'); if(have_posts()) : while(have_posts()) : the_post();
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 540x292"); ?>
 
 
 						<div>
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo tt($imgsrc[0], 540, 292); ?>"></a>
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0] ?>"></a>
 							<div class="ptits">
 								<a href="<?php the_permalink(); ?>"><span><?php the_title_char_limit(40); ?></span></a>
 							</div>
