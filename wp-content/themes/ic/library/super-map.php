@@ -535,10 +535,6 @@
 		
 </script>
 
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.simplemodal.js"></script>
-
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/basic.js"></script>
-
 <!--[if lt IE 7 ]>
 <script src="js/libs/dd_belatedpng.js"></script>
 <script> DD_belatedPNG.fix('img, .png_bg');</script>
