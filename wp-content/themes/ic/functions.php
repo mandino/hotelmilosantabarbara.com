@@ -121,6 +121,12 @@ function enqueue_footer_scripts() {
 
 	wp_enqueue_script('jquery');
 
+	if(is_home() || is_front_page() || is_page_template('page_guide.php')) {
+		wp_enqueue_script('google-maps', '//maps.google.com/maps/api/js?key=AIzaSyCN-FukkWho1yDgUAiO-gfTafDxn2yvPEc', '', '', true);
+		wp_enqueue_script('map-js', SS_BASE_URL . 'js/map-js.js', 'jquery', '', true);
+		wp_enqueue_script('gmap3new', SS_BASE_URL . 'js/gmap3new.js', 'jquery', '', true);
+	}
+
 	wp_enqueue_script('prettyPhoto', SS_BASE_URL . 'js/jquery.prettyPhoto.js', 'jquery', '', true);
 	wp_enqueue_script('jquery-clicknav', SS_BASE_URL . 'js/jquery-clicknav.js', 'jquery', '', true);
 	wp_enqueue_script('pinit');
