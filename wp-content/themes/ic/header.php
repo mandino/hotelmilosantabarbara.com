@@ -36,37 +36,7 @@
 	<!-- MILO -->
 	<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/icfavicon.png" type="image/png">
 	<link rel="icon" href="icfavicon.png" type="image/png">
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/style.css">
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/custom.css">
-	<!-- Fonts -->
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/quotes-rotator/component.css" />
-	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/slidejs.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
-	<?php if ( 'rooms' == get_post_type() ) 	{ ?>
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/iosslider.css">
-	<?php } ?>
-	<!-- Custom Plugin Settings -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/custom-plugins.css">
-	<!-- Color Override CSS -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/oceana-hotel.css">
-	<!-- Lightbox - Prettyphoto -->	
-	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
-	<!-- responsive style -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
-	<style>
-		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
-	</style>
-	<!-- Jquery -->
-	<?php //include(TEMPLATEPATH. "/library/jquery.php"); ?>
-	<!--
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script type='text/javascript' src='<?php bloginfo ('url'); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-	-->
+
 	<?php
 		/****************** DO NOT REMOVE **********************
 		/* We add some JavaScript to pages with the comment form
@@ -76,6 +46,10 @@
 			wp_enqueue_script( 'comment-reply' );
 		wp_head();
 	?>
+
+	<style>
+		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
+	</style>
 
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
