@@ -36,11 +36,6 @@
 
 						<a id="lnkP2TalkFTN" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span></a>
 
-						<script type="text/javascript">
-							SetElementToNavisNCPhoneNumber("NavisTFN");
-							SetNavisP2TalkLink("lnkP2TalkFTN");
-						</script>
-
 						<?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?>
 
 					</li>
