@@ -11,8 +11,8 @@
   
   $cachedir = "cache/" . $requestTime . "/";                             // Sets the directory the cache will be stored i     
   $cachedsource = $cachedir . $lat . $long . "-cache.txt";                     // Build the cache file name
-  //$source = (file_exists($cachedsource)) ? $cachedsource : 'http://search.twitter.com/search.json?q=&result_type=mixed&count=5&p=1&rpp=50&geocode=' . $lat . "," . $lon . ",1mi";
-  $source = 'http://search.twitter.com/search.json?q=&result_type=mixed&count=5&p=1&rpp=50&geocode=' . $lat . "," . $lon . ",1mi";
+  //$source = (file_exists($cachedsource)) ? $cachedsource : '//search.twitter.com/search.json?q=&result_type=mixed&count=5&p=1&rpp=50&geocode=' . $lat . "," . $lon . ",1mi";
+  $source = '//search.twitter.com/search.json?q=&result_type=mixed&count=5&p=1&rpp=50&geocode=' . $lat . "," . $lon . ",1mi";
   
   $cache = dirname(__FILE__) . "/" . $cachedsource;          
   $data = @file_get_contents($source);

@@ -31,13 +31,13 @@
 
 <!-- Fonts -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/fonts.css">
 
 <!-- Jquery -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
 <!-- Jquery Stuffs -->
@@ -307,10 +307,10 @@
 
 
 <!-- things I added from independnentcollection.com -->
-<script src="http://www.independentcollection.com/wp-content/themes/ic/js/markermanager.js" type="text/javascript"></script>
-<script src="http://www.independentcollection.com/wp-content/themes/ic/js/StyledMarker.js" type="text/javascript"></script>
-<script src="http://www.independentcollection.com/wp-content/themes/ic/js/jquery.metadata.js" type="text/javascript"></script>
-<script src="http://www.independentcollection.com/wp-content/themes/ic/js/jquery.jmapping.js" type="text/javascript"></script>	
+<script src="//www.independentcollection.com/wp-content/themes/ic/js/markermanager.js" type="text/javascript"></script>
+<script src="//www.independentcollection.com/wp-content/themes/ic/js/StyledMarker.js" type="text/javascript"></script>
+<script src="//www.independentcollection.com/wp-content/themes/ic/js/jquery.metadata.js" type="text/javascript"></script>
+<script src="//www.independentcollection.com/wp-content/themes/ic/js/jquery.jmapping.js" type="text/javascript"></script>	
 	<script type="text/javascript">
 		
 		<?php if(!$check) { ?>
@@ -420,7 +420,7 @@
 				
 				} else if (switchhot == 'marriot') {
 					
-					var bookinglink = "http://www.marriott.com/" + promoex + 
+					var bookinglink = "//www.marriott.com/" + promoex + 
 													"&fromDate=" + checkin + 
 													"&toDate=" + checkout + 
 													"&numberOfGuests=" + adults + 
@@ -480,7 +480,7 @@
 						
 				}
 
-				var bookinglink = "http://" + hotell + ".reztripmobile.com/rt/m/results?" + 
+				var bookinglink = "//" + hotell + ".reztripmobile.com/rt/m/results?" + 
 												"&propertyId=" + propertyid + 
 												"&sub=" + hotell + 
 												"&locale=" + locale + 
@@ -533,7 +533,7 @@
 						
 				}
 
-				var bookinglink = "http://" + hotell + ".reztripmobile.com/rt/m/results?" + 
+				var bookinglink = "//" + hotell + ".reztripmobile.com/rt/m/results?" + 
 												"&propertyId=" + propertyid + 
 												"&sub=" + hotell + 
 												"&locale=" + locale +
@@ -612,7 +612,7 @@
 				
 				if (switchhot == 'reztrip') {
 					
-					var bookinglink = "http://" + hotell + ".reztripmobile.com/rt/m/results?" + 
+					var bookinglink = "//" + hotell + ".reztripmobile.com/rt/m/results?" + 
 													"&propertyId=" + propertyid + 
 													"&sub=" + hotell + 
 													"&locale=" + locale + 
@@ -625,7 +625,7 @@
 				
 				} else if (switchhot == 'marriot') {
 					
-					var bookinglink = "http://www.marriott.com/" + promoex + 
+					var bookinglink = "//www.marriott.com/" + promoex + 
 													"&fromDate=" + checkin + 
 													"&toDate=" + checkout + 
 													"&numberOfGuests=" + adults + 

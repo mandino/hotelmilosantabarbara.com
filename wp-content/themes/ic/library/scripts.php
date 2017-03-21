@@ -1,12 +1,12 @@
 <!-- JS -->
-<!-- <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script> -->
+<!-- <script src="//code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script> -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.prettyPhoto.js"></script>
 
 <!-- ClickNav -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery-clicknav.js"></script>
 
 <!-- Pinterest -->
-<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 
 <!-- Custom Modernizr for Quotes Rotator -->
 <script src="<?php bloginfo ('template_url'); ?>/js/quotes-rotator/modernizr.custom.js"></script>
