@@ -125,10 +125,17 @@
 
 	</footer>
 
-<?php wp_footer(); ?>
+<?php 
 
-<!-- Scripts -->
-<?php include(TEMPLATEPATH. "/library/scripts.php"); ?>
+	wp_footer();
+	
+	if(is_home() || is_front_page() || is_page_template('page_guide.php')) {
+		include (TEMPLATEPATH . '/library/super-map.php'); 
+	}
+	
+	include(TEMPLATEPATH. "/library/scripts.php"); 
+
+?>
 
 <!-- sojern script -->
 <script>
@@ -159,7 +166,7 @@ var google_custom_params = window.google_tag_params;
 var google_remarketing_only = true;
 /* ]]> */
 </script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+<script async type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
 <noscript>
 <div style="display:inline;">

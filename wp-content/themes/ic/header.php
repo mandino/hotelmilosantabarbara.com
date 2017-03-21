@@ -67,7 +67,7 @@
 	ga('send', 'pageview');
 	</script>
 	<!-- NAVIS script -->
-	<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
+	<script async language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
 	<script language="javascript">ProcessNavisNCKeyword();</script>
 	<script type="application/ld+json">
 		{
