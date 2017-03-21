@@ -66,9 +66,7 @@
 	ga('require', 'linker'); ga('linker:autoLink', ['hotelmilosantabarbara.reztrip.com','hotelmilosantabarbara.reztripmobile.com']);
 	ga('send', 'pageview');
 	</script>
-	<!-- NAVIS script -->
-	<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
-	<script language="javascript">ProcessNavisNCKeyword();</script>
+
 	<script type="application/ld+json">
 		{
 		"@context": "//schema.org",
@@ -167,13 +165,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 				</div>
 
-				<script type="text/javascript">
-					SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-					SetNavisP2TalkLink("lnkP2Talk");
-					SetNavisP2TalkLink("lnkP2Talkheader");
-					SetNavisP2ChatLink("lnkP2Chatheader");
-				</script>
-
 				<ul class="container no-js">
 					<li><a href="//www.independentcollection.com/ic-local" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>
@@ -211,10 +202,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<ul>
 						<li class="navis-mobile">
 						 	<a id="lnkP2Talkmobile" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
-							<script type="text/javascript">
-								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-								SetNavisP2TalkLink("lnkP2Talkmobile");
-							</script>
 						</li>
 						<?php wp_nav_menu( array( 'walker' => new MV_Cleaner_Walker_Nav_Menu(), 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						<li class="navis-mobile2">
@@ -222,12 +209,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<a class="ptt" id="lnkP2Chatheader-mobile" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
 								<a class="ptt" id="lnkP2Talkheader-mobile" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 							</span>	
-
-							<script type="text/javascript">
-								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-								SetNavisP2TalkLink("lnkP2Talkheader-mobile");
-								SetNavisP2ChatLink("lnkP2Chatheader-mobile");
-							</script>
 						</li>
 					</ul>
 				</nav>

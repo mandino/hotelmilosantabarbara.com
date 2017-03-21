@@ -36,11 +36,6 @@
 
 						<a id="lnkP2TalkFTN" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span></a>
 
-						<script type="text/javascript">
-							SetElementToNavisNCPhoneNumber("NavisTFN");
-							SetNavisP2TalkLink("lnkP2TalkFTN");
-						</script>
-
 						<?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?>
 
 					</li>
@@ -125,10 +120,21 @@
 
 	</footer>
 
-<?php wp_footer(); ?>
+<?php 
 
-<!-- Scripts -->
-<?php include(TEMPLATEPATH. "/library/scripts.php"); ?>
+	wp_footer();
+	
+	if(is_home() || is_front_page() || is_page_template('page_guide.php')) {
+		include (TEMPLATEPATH . '/library/super-map.php'); 
+	}
+	
+	include(TEMPLATEPATH. "/library/scripts.php"); 
+
+?>
+
+<!-- NAVIS script -->
+<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
+<script language="javascript">ProcessNavisNCKeyword();</script>
 
 <!-- sojern script -->
 <script>
@@ -159,7 +165,7 @@ var google_custom_params = window.google_tag_params;
 var google_remarketing_only = true;
 /* ]]> */
 </script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+<script async type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
 <noscript>
 <div style="display:inline;">
