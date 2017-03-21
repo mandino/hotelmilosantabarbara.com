@@ -1248,6 +1248,10 @@ height: 350px;
 	    font-size: 25px;
 	}
 
+	.post-content iframe {
+		width: 100%;
+	}
+
 
 
 	/* Post slider */
