@@ -1,4 +1,17 @@
 jQuery( document ).ready(function( $ ) {
+
+	SetElementToNavisNCPhoneNumber("NavisTFN");
+	SetNavisP2TalkLink("lnkP2TalkFTN");
+
+	SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
+	SetNavisP2TalkLink("lnkP2Talk");
+	SetNavisP2TalkLink("lnkP2Talkheader");
+	SetNavisP2ChatLink("lnkP2Chatheader");
+
+	SetNavisP2TalkLink("lnkP2Talkmobile");
+
+	SetNavisP2TalkLink("lnkP2Talkheader-mobile");
+	SetNavisP2ChatLink("lnkP2Chatheader-mobile");
 		
 	$('img.lazy').each(function() {
 		var img = $(this);
