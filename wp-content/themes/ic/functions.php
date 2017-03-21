@@ -107,7 +107,7 @@ function enqueue_footer_scripts() {
 	wp_enqueue_style('googleapis-fonts', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700');
 	wp_enqueue_style('quotes-rotator', SS_BASE_URL . 'css/quotes-rotator/component.css');
 	wp_enqueue_style('slidejs', SS_BASE_URL . 'css/slidejs.css');
-	wp_enqueue_style('flexslider', SS_BASE_URL . 'css/flexslider/flexslider.css');
+	wp_enqueue_style('flexslider', SS_BASE_URL . 'js/flexslider/flexslider.css');
 	wp_enqueue_style('mmenu', SS_BASE_URL . 'css/jquery.mmenu.css');
 
 	if ( 'rooms' == get_post_type() ) {
