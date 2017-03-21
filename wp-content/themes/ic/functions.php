@@ -113,7 +113,7 @@ function enqueue_footer_scripts() {
 	wp_enqueue_style('custom-plugins', SS_BASE_URL . 'css/custom-plugins.css');
 	wp_enqueue_style('oceana-hotel', SS_BASE_URL . 'css/oceana-hotel.css');
 	wp_enqueue_style('prettyPhoto', SS_BASE_URL . 'css/prettyPhoto.css');
-	wp_enqueue_style('media', SS_BASE_URL . 'css/media.css');
+	wp_enqueue_style('responsive-css', SS_BASE_URL . 'css/media.css');
 
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', '', '', true);
