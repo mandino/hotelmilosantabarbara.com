@@ -96,10 +96,6 @@ define( 'SS_BASE_URL', get_template_directory_uri() . '/' );
 if (!is_admin()) add_action( 'wp_enqueue_scripts', 'enqueue_footer_scripts', 11 );
 function enqueue_footer_scripts() {
 
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false, '');
-	wp_enqueue_script('jquery');
-
 	wp_enqueue_style('style', SS_BASE_URL . 'style.css');
 	wp_enqueue_style('style-css', SS_BASE_URL . 'css/style.css');
 	wp_enqueue_style('custom', SS_BASE_URL . 'css/custom.css');
@@ -118,6 +114,10 @@ function enqueue_footer_scripts() {
 	wp_enqueue_style('oceana-hotel', SS_BASE_URL . 'css/oceana-hotel.css');
 	wp_enqueue_style('prettyPhoto', SS_BASE_URL . 'css/prettyPhoto.css');
 	wp_enqueue_style('media', SS_BASE_URL . 'css/media.css');
+
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', '', '', true);
+	wp_enqueue_script('jquery');
 
 	wp_enqueue_script('prettyPhoto', SS_BASE_URL . 'js/jquery.prettyPhoto.js', 'jquery', '', true);
 	wp_enqueue_script('jquery-clicknav', SS_BASE_URL . 'js/jquery-clicknav.js', 'jquery', '', true);
