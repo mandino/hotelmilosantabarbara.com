@@ -32,7 +32,7 @@
 		}
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="profile" href="//gmpg.org/xfn/11" />
 	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if (get_option('cebo_custom_favicon') == '') { ?>
@@ -60,7 +60,7 @@
 
 	<!-- Fonts -->
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
 
 	<!-- Jquery -->
 	<?php include(TEMPLATEPATH. "/library/jquery.php"); ?>	
@@ -154,7 +154,7 @@ _gaq.push(['_trackPageview']);
 
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : '//www') + '.google-analytics.com/ga.js';
 
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
@@ -250,7 +250,7 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 				<ul class="container no-js">
 					<li>
 	
-						<a href="http://independentcollection.com" target="_blank" class="clicknav-clicker"></a>
+						<a href="//independentcollection.com" target="_blank" class="clicknav-clicker"></a>
 	
 						<!-- <ul>
 							<li class="navitem"><a href="#">Independet Collection</a></li>
