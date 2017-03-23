@@ -95,13 +95,13 @@ get_header(); ?>
 						
 						<?php } ?>
 						
-						<h3><?php _e('Rooms & Suites', 'cebolang'); ?></h3>
+						<h2><?php _e('Rooms & Suites', 'cebolang'); ?></h2>
 
 						<div class="hover-effect">
 							
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 							
-							<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+							<h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2>
 							
 							<?php } ?>
 							<br>
@@ -144,7 +144,7 @@ get_header(); ?>
 						
 						<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
 						
-						<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
+						<h2><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
 						
 						
 						<?php } ?>
@@ -153,7 +153,7 @@ get_header(); ?>
 							
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 							
-							<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+							<h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2>
 							
 							<?php } ?>
 							
@@ -186,12 +186,12 @@ get_header(); ?>
 						
 						<?php } ?>
 						
-						<h3><?php _e('Hotel Overview', 'cebolang'); ?></h3>
+						<h2><?php _e('Hotel Overview', 'cebolang'); ?></h2>
 						
 						<div class="hover-effect">
 							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 							
-							<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+							<h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2>
 							
 							<?php } ?>
 							<br>
@@ -372,7 +372,7 @@ get_header(); ?>
 
 					<!-- <a class="slidesjs-previous slidesjs-navigation" href="#"><i class="icon-chevron-left icon-large"></i></a> -->
 
-					<h3><?php _e('Upcoming events', 'cebolang'); ?></h3>
+					<h2><?php _e('Upcoming events', 'cebolang'); ?></h2>
 				</div>
 
 				<div class="fr">
@@ -396,7 +396,7 @@ get_header(); ?>
 						<a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa fa-chevron-right fa-lg"></i></a>
 					</div>
 
-					<h3><?php _e('From our blog', 'cebolang'); ?></h3>
+					<h2><?php _e('From our blog', 'cebolang'); ?></h2>
 				</div>
 	
 			</div>

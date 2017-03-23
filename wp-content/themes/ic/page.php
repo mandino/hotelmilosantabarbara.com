@@ -45,7 +45,7 @@
 					<?php } ?>
 
 		
-					<h2 class="section-title fr"><?php the_title(); ?></h2>
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 				</div>
 	
@@ -174,7 +174,7 @@
 									
 									<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
 									
-									<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
+									<h2><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h2>
 									
 									
 									<?php } ?>
@@ -183,7 +183,7 @@
 										
 										<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 										
-										<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+										<h2><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h2>
 										
 										<?php } ?>
 										

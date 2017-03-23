@@ -58,7 +58,7 @@
 					<?php } ?>
 
 		
-					<h2 class="section-title fr"><?php the_title(); ?></h2>
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 				</div>
 	
@@ -505,7 +505,7 @@
 							
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo tt($imgsrc[0], 240, 161); ?>' alt='<?php the_title(); ?>' /></a>
-								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+								<a href="<?php the_permalink(); ?>"><h2 style="margin-top: 15px;"><?php the_title(); ?></h2></a>
 								<p><?php echo excerpt(10); ?></p>
 							</li>
 							<?php endwhile; endif; wp_reset_query(); ?>	
@@ -517,7 +517,7 @@
 						<?php query_posts('post_type=post&posts_per_page=1&cat=-10'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo tt($imgsrc[0], 540, 361); ?>' alt='<?php the_title(); ?>' /></a>
-								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+								<a href="<?php the_permalink(); ?>"><h2 style="margin-top: 15px;"><?php the_title(); ?></h2></a>
 								<p><?php echo excerpt(80); ?></p>
 							</li>
 						</ul>
@@ -531,7 +531,7 @@
 							
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo tt($imgsrc[0], 240, 161); ?>' alt='<?php the_title(); ?>' /></a>
-								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+								<a href="<?php the_permalink(); ?>"><h2 style="margin-top: 15px;"><?php the_title(); ?></h2></a>
 								<p><?php echo excerpt(10); ?></p>
 							</li>
 						<?php endwhile; endif; wp_reset_query(); ?>	

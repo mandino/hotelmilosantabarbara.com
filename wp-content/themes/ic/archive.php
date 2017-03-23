@@ -14,7 +14,7 @@ get_header(); ?>
 					<h2 class="section-pre-title fl">Archives</h2>
 					
 					<div class="section-header-divider fl"></div>
-					<h2 class="section-title fr">
+					<h1 class="section-title fr">
 						
 						<?php if ( is_day() ) : ?><?php printf( __('%s'), get_the_date() ); ?>
 						<?php elseif ( is_month() ) : ?><?php printf( __('%s'), get_the_date('F Y') ); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 						<?php endif; ?>
 						
 					
-					</h2>
+					</h1>
 	
 				</div>
 
