@@ -6,6 +6,8 @@ $bgrepeat = get_option('cebo_background_repeat');
 $bgpos = get_option('cebo_background_position');
 $accent = get_option('cebo_accent_color');
 $accentsecond = get_option('cebo_second_color');	
+$css = '';
+
 
 function hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);
@@ -30,111 +32,111 @@ function deleteFirstChar( $string ) {
 
 
 
-echo stripslashes(get_option('cebo_custom_css'));  
+$css .= stripslashes(get_option('cebo_custom_css'));  
 
 $rgb = hex2rgb($accent);
 
 $rawcolor = deleteFirstChar( $accent );
 
-if(get_option('cebo_accent_color')) { ?>
+if(get_option('cebo_accent_color')) {
 
+$css .= <<<CSS
 
-
-.mmenu-icon .fa.fa-bars { background: none repeat scroll 0 0 <?php echo $accent; ?>; }
+.mmenu-icon .fa.fa-bars { background: none repeat scroll 0 0  $accent; }
 
 .button:focus {
-    background-color: <?php echo $accent; ?>;
+    background-color:  $accent;
 }
 
 
  #room-featured-slider .button:hover {
-        background: none repeat scroll 0 0 <?php echo $accent; ?> !important;
+        background: none repeat scroll 0 0  $accent !important;
     }
 
 .fullpic .button:hover {
-        background: none repeat scroll 0 0 <?php echo $accent; ?> !important;
+        background: none repeat scroll 0 0  $accent !important;
 }
 
 .room-details-content .button:hover {
-        background-color: <?php echo $accent; ?> !important;
+        background-color:  $accent !important;
         }
 
 .sidebar .button:hover {
-        background: <?php echo $accent; ?> !important;
+        background:  $accent !important;
 
 }
 
-.upcoming-events .fr li:hover .event-date {	background: <?php echo $accent; ?>; }
+.upcoming-events .fr li:hover .event-date {	background:  $accent; }
 
 .upcoming-events li:hover .event-description {
-background: none repeat scroll 0 0 <?php echo $accent; ?>;
+background: none repeat scroll 0 0  $accent;
 }
 	
-nav .icon-mail:hover {  color: <?php echo $accent; ?>; }
+nav .icon-mail:hover {  color:  $accent; }
 
-nav .icon-mail { background: <?php echo $accent; ?>; }
+nav .icon-mail { background:  $accent; }
 
-.button {  background: <?php echo $accent; ?>; }
+.button {  background:  $accent; }
 
-.circle { background: none repeat scroll 0 0 <?php echo $accent; ?>; }
+.circle { background: none repeat scroll 0 0  $accent; }
 
 
 
-a { color: <?php echo $accent; ?>; }
+a { color:  $accent; }
 
-.button:focus { background-color: <?php echo $accent; ?>; }
+.button:focus { background-color:  $accent; }
 
-.boxer .lowball { color: <?php echo $accent; ?>; }
+.boxer .lowball { color:  $accent; }
 	
-.boxer h3 { color: <?php echo $accent; ?>; }
-.boxer h6 {  color: <?php echo $accent; ?>; }    
+.boxer h3 { color:  $accent; }
+.boxer h6 {  color:  $accent; }    
 
 
-.boxer a { color: <?php echo $accent; ?>; }   	
+.boxer a { color:  $accent; }   	
 
 
-p a { color: <?php echo $accent; ?>; }	
+p a { color:  $accent; }	
 
-.dropmenu select { border: 1px solid <?php echo $accent; ?>; }
+.dropmenu select { border: 1px solid  $accent; }
  
 
-.icon-menu { color: <?php echo $accent; ?>; }
+.icon-menu { color:  $accent; }
 
-#slidecaption .footprints li:hover {  background: <?php echo $accent; ?>; }
+#slidecaption .footprints li:hover {  background:  $accent; }
 
-.boxer aside ul li a:hover { color: <?php echo $accent; ?>; }
+.boxer aside ul li a:hover { color:  $accent; }
 
-ul.tabs li.active a { color: <?php echo $accent; ?>; }
+ul.tabs li.active a { color:  $accent; }
 
 
-#toggle-view li.activated:after { background: <?php echo $accent; ?>; }
+#toggle-view li.activated:after { background:  $accent; }
 
 .nextposters .boxer li a:hover h4 {
-	color: <?php echo $accent; ?>;
+	color:  $accent;
 }
 
 .usercomments h4 i a {
-	color: <?php echo $accent; ?>;
+	color:  $accent;
 }
 
 .social-buttons a:hover, .social-buttons i:hover {
-		color: <?php echo $accent; ?>;
+		color:  $accent;
 	}
 
 #primary-nav nav ul li a:hover {
-		color: <?php echo $accent; ?>;
+		color:  $accent;
 	}
 
-#primary-nav .button { background: none repeat scroll 0 0 <?php echo $accent; ?>;   }
+#primary-nav .button { background: none repeat scroll 0 0  $accent;   }
  
  #neighborhood .section-header .fr li {
-    background: none repeat scroll 0 0 <?php echo $accent; ?>;
+    background: none repeat scroll 0 0  $accent;
     }
     
- .newsletter-form input[type="submit"] { background: none repeat scroll 0 0 <?php echo $accent; ?>; }
+ .newsletter-form input[type="submit"] { background: none repeat scroll 0 0  $accent; }
  
  	footer nav ul.footling li a:hover {
-		color: <?php echo $accent; ?>;
+		color:  $accent;
 	}
 	
 
@@ -142,76 +144,83 @@ ul.tabs li.active a { color: <?php echo $accent; ?>; }
 .ui-timepicker-div .ui-state-default,
 .ui-timepicker-div .ui-widget-content .ui-state-default,
 .ui-timepicker-div .ui-widget-header .ui-state-default {
-    background: <?php echo $accent; ?>;
+    background:  $accent;
 
 }
 
 .dp-highlight .ui-state-default {
-          background: <?php echo $accent; ?>;
+          background:  $accent;
          }
 
 
 	   
-#map .activities li { background: none repeat scroll 0 0 <?php echo $accent; ?>; }
+#map .activities li { background: none repeat scroll 0 0  $accent; }
   
 .post-content h3 {
-    color: <?php echo $accent; ?>;
+    color:  $accent;
  }
  
  .post-tags li a:hover, .post-tags li.current a {
-	color: <?php echo $accent; ?>;
+	color:  $accent;
 }
 
    
 .post-content blockquote p {
-    color: <?php echo $accent; ?>;
+    color:  $accent;
  }
  
  
   .wpcf7 input[type="submit"]:hover {
-        background-color: <?php echo $accent; ?>;
+        background-color:  $accent;
 
     }
  
  
  .upcoming-calendar .tribe-mini-calendar td.tribe-events-has-events {
-   background: none repeat scroll 0 0 <?php echo $accent; ?>;
+   background: none repeat scroll 0 0  $accent;
 }
       
 .section-photos li div.hover-effect, .thumbgal li div.hover-effect {
-background: none repeat scroll 0 0 rgba(<?php echo print_r($rgb); ?>, .8);
+background: none repeat scroll 0 0 rgba( $rgb, .8);
 }
 
 
 #neighborhood .section-header .fr li {
-    background: none repeat scroll 0 0 <?php echo $accent; ?>;
+    background: none repeat scroll 0 0  $accent;
 }
 
 footer nav ul.footling li a:hover {
-		color: <?php echo $accent; ?>;
+		color:  $accent;
 	}
 
 
 .dp-highlight .ui-state-default {
-          background: <?php echo $accent; ?>;
+          background:  $accent;
           color: #FFF;
         }
         
-#map .activities li {  background: none repeat scroll 0 0 <?php echo $accent; ?>; }        
+#map .activities li {  background: none repeat scroll 0 0  $accent; }        
    
    
    
    
      .placeMark { 
-	background: <?php echo $accentsecond; ?>;
+	background:  $accentsecond;
   }
   
    #toggles li {
 
-	background: <?php echo $accentsecond; ?>;
+	background:  $accentsecond;
 
   }
 
-.from-price { background: none repeat scroll 0 0 rgba(<?php echo print_r($rgb); ?>, 0.8);      } 
+.from-price { background: none repeat scroll 0 0 rgba( $rgb, 0.8);      }
 
-<?php } ?>
+CSS;
+
+}
+  
+  file_put_contents(TEMPLATEPATH."/css/inset.css", $css);  
+  echo "<link rel='stylesheet' id='inset-css'  href='".get_bloginfo("template_directory")."/css/inset.css' type='text/css' media='all' />";
+
+?>
