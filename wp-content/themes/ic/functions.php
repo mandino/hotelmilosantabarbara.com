@@ -194,8 +194,30 @@ function remove_events_css() {
     wp_dequeue_style( 'tribe-events-custom-jquery-styles' );
     wp_deregister_style( 'tribe-events-custom-jquery-styles' );
 }
-add_action( 'wp_enqueue_scripts', 'remove_events_css', 20 );
 
+
+function php_init() {
+    wp_register_script( 'php_init', get_bloginfo('template_url').'/js/php_vars.js', 'jQuery', '', false );
+
+    $php_vars = array(
+        'cebo_address' => get_option('cebo_address'),
+        'bloginfo_name' => get_bloginfo('name'),
+        'cebo_mapmarker' => (get_option('cebo_mapmarker') ? get_option('cebo_mapmarker') : '//maps.google.com/mapfiles/marker_green.png'),
+        'cebo_mapcenter' => get_option('cebo_mapcenter'),
+        'template_directory' => get_bloginfo('template_directory'),
+        'template_url' => get_bloginfo('template_url'),
+        'perm' => preg_replace('/(?<!href=["\'])http:\/\//', '', get_permalink()),
+        'img' => preg_replace('/(?<!href=["\'])http:\/\//', '', sp_get_image()),
+        'bloginfo_url' => get_bloginfo ('url'),
+
+    );
+
+    wp_localize_script( 'php_init', 'php_vars', $php_vars);
+    wp_enqueue_script( 'php_init' );
+}
+
+add_action('wp_enqueue_scripts', 'php_init');
+add_action( 'wp_enqueue_scripts', 'remove_events_css', 20 );
 
 
 if ( function_exists('icl_get_languages') ) {
