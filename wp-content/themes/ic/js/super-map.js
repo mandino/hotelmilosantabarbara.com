@@ -1,5 +1,4 @@
-  //$(document).ready(function(){
-  jQuery( document ).ready(function( $ ) {
+  $(document).ready(function(){
     var list = [];
     var i = 0; // Ordinal for locations.
     var locations = [];
