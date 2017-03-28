@@ -24,7 +24,7 @@
 		}
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="profile" href="//gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if (get_option('cebo_custom_favicon') == '') { ?>
 	<link rel="icon" href="<?php bloginfo ('template_url'); ?>/cebo_options/<?php bloginfo ('template_url'); ?>/images/admin_sidebar_icon.png" type="image/x-ico"/>
@@ -36,37 +36,7 @@
 	<!-- MILO -->
 	<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/icfavicon.png" type="image/png">
 	<link rel="icon" href="icfavicon.png" type="image/png">
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/style.css">
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/custom.css">
-	<!-- Fonts -->
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/quotes-rotator/component.css" />
-	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/slidejs.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/js/flexslider/flexslider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/jquery.mmenu.css">
-	<?php if ( 'rooms' == get_post_type() ) 	{ ?>
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/iosslider.css">
-	<?php } ?>
-	<!-- Custom Plugin Settings -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/custom-plugins.css">
-	<!-- Color Override CSS -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/oceana-hotel.css">
-	<!-- Lightbox - Prettyphoto -->	
-	<link rel="stylesheet" href="<?php bloginfo ('template_url'); ?>/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
-	<!-- responsive style -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
-	<style>
-		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
-	</style>
-	<!-- Jquery -->
-	<?php //include(TEMPLATEPATH. "/library/jquery.php"); ?>
-	<!--
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script type='text/javascript' src='<?php bloginfo ('url'); ?>/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-	-->
+
 	<?php
 		/****************** DO NOT REMOVE **********************
 		/* We add some JavaScript to pages with the comment form
@@ -76,6 +46,10 @@
 			wp_enqueue_script( 'comment-reply' );
 		wp_head();
 	?>
+
+	<style>
+		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
+	</style>
 
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -92,12 +66,10 @@
 	ga('require', 'linker'); ga('linker:autoLink', ['hotelmilosantabarbara.reztrip.com','hotelmilosantabarbara.reztripmobile.com']);
 	ga('send', 'pageview');
 	</script>
-	<!-- NAVIS script -->
-	<script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
-	<script language="javascript">ProcessNavisNCKeyword();</script>
+
 	<script type="application/ld+json">
 		{
-		"@context": "http://schema.org",
+		"@context": "//schema.org",
 		"@type": "NewsArticle",
 		"headline": "Article headline",
 		"alternativeHeadline": "The headline of the Article",
@@ -183,25 +155,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		<div id="property-nav">
 			<nav class="click-nav">
-				<a style="color:#000 !important;" id="lnkP2Talk" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
+				<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
 					<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
 					<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
 				</a>
 
 				<div class="navis-footer">
-					<a class="ptt" id="lnkP2Chatheader" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-					<a class="ptt" id="lnkP2Talkheader" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
+					<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
+					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 				</div>
 
-				<script type="text/javascript">
-					SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-					SetNavisP2TalkLink("lnkP2Talk");
-					SetNavisP2TalkLink("lnkP2Talkheader");
-					SetNavisP2ChatLink("lnkP2Chatheader");
-				</script>
-
 				<ul class="container no-js">
-					<li><a href="http://www.independentcollection.com/ic-local" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
+					<li><a href="//www.independentcollection.com/ic-local" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>
 				</ul>
 			</nav>
@@ -223,12 +188,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<?php } ?>
 			-->
 			<div class="language">
-					<a class="current-language" href="http://hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
+					<a class="current-language" href="//hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
 					<i class="fa fa-angle-down"></i>
 					<ul class="molang">
-						<li><a class="de-lang" href="http://hotelmilosantabarbara.com/uber-uns/" data-ajax="false">de</a></li>
-						<li><a class="fr-lang" href="http://hotelmilosantabarbara.com/a-propos-de-nous/" data-ajax="false">fr</a></li>
-						<li><a class="pt-lang" href="http://hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
+						<li><a class="de-lang" href="//hotelmilosantabarbara.com/uber-uns/" data-ajax="false">de</a></li>
+						<li><a class="fr-lang" href="//hotelmilosantabarbara.com/a-propos-de-nous/" data-ajax="false">fr</a></li>
+						<li><a class="pt-lang" href="//hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
 					</ul>
 				</div>
 			<div class="container" style="float: right;">
@@ -236,24 +201,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<nav id="menu" class="fl" style="z-index:1">
 					<ul>
 						<li class="navis-mobile">
-						 	<a id="lnkP2Talkmobile" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
-							<script type="text/javascript">
-								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-								SetNavisP2TalkLink("lnkP2Talkmobile");
-							</script>
+						 	<a id="lnkP2Talkmobile" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
 						</li>
 						<?php wp_nav_menu( array( 'walker' => new MV_Cleaner_Walker_Nav_Menu(), 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 						<li class="navis-mobile2">
 							<span>
-								<a class="ptt" id="lnkP2Chatheader-mobile" href="http://www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-								<a class="ptt" id="lnkP2Talkheader-mobile" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
+								<a class="ptt" id="lnkP2Chatheader-mobile" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
+								<a class="ptt" id="lnkP2Talkheader-mobile" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 							</span>	
-
-							<script type="text/javascript">
-								SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-								SetNavisP2TalkLink("lnkP2Talkheader-mobile");
-								SetNavisP2ChatLink("lnkP2Chatheader-mobile");
-							</script>
 						</li>
 					</ul>
 				</nav>

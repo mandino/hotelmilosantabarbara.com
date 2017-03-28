@@ -406,6 +406,10 @@ and (max-width : 1099px) {
 	    width: 22.6%;
 	}
 
+	.post-content iframe {
+		width: 100%;
+	}
+
 
 	/* Blog */
 

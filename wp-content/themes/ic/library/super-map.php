@@ -1,141 +1,3 @@
-<!-- Google Map API Files -->
-
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCN-FukkWho1yDgUAiO-gfTafDxn2yvPEc"></script>
-
-<script type="text/javascript">
-
-    //$(document).ready(function() {
-	jQuery( document ).ready(function( $ ) {
-
-      /* Submit tweet */
-      $('#twitter-form').submit(function(){  
-          //setup variables  
-          var form = $(this),  
-          formData = form.serialize(),  
-          formUrl = form.attr('action'),  
-          formMethod = form.attr('method'),  
-          responseMsg = $('#response')  
-
-          //show response message - waiting  
-          responseMsg.hide()  
-                     .addClass('response-waiting')  
-                     .text('Please Wait...')  
-                     .fadeIn(200);  
-
-             //send data to server for validation  
-             $.ajax({  
-                 url: formUrl,  
-                 type: formMethod,  
-                 data: formData,  
-                 success:function(data){  
-                     //setup variables  
-                     var responseData = jQuery.parseJSON(data),  
-                         klass = '';  
-
-                     //response conditional  
-                     switch(responseData.status){  
-                         case 'error':  
-                             klass = 'response-error';  
-                         break;  
-                         case 'success':  
-                             klass = 'response-success';
-                             $("#tweet").html("");
-                         break;  
-                     }  
-
-                     //show reponse message  
-                     responseMsg.fadeOut(200,function(){  
-                         $(this).removeClass('response-waiting')  
-                                .addClass(klass)  
-                                .text(responseData.message)  
-                                .fadeIn(200,function(){  
-                                    //set timeout to hide response message  
-                                    setTimeout(function(){  
-                                        responseMsg.fadeOut(200,function(){  
-                                            $(this).removeClass(klass);  
-                                        });  
-                                    },3000);  
-                                 });  
-                      });  
-                   }  
-             });
-
-          //prevent form from submitting  
-          return false;  
-      })
-      
-     $("#infoBox").show();
-
-      /* Hide Sidebar */
-      $("a#controlbtn").click(function(e) {
-      
-        e.preventDefault();
-        
-        var slidepx=$("div#sidebar").width() + 10;
-    	
-    	if ($('div#sidebar').hasClass("open")) {
-    	
-    		margin = -280;
-    		$('div#sidebar').removeClass("open");
-
-    	} else {
-    		margin = 0;
-    		$("div#sidebar").addClass("open");
-    	}
-    	
-        	$("div#sidebar").animate({ 
-        		marginLeft: margin
-      		}, {
-                    duration: 'slow',
-                    easing: 'easeOutQuint'
-                });
-
-
-      }); 
-
-    });
-</script>
-
-<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
-
-<script type="text/javascript">
-    //$(document).ready(function() {
-	jQuery( document ).ready(function( $ ) {
-
-       $("#infoBox").show();
-
-      /* Hide Sidebar */
-      $("#closePanelButton").click(function(e) {
-      
-        e.preventDefault();
-        
-        var slidepx=$("div#sidepanelWrapper").width() + 10;
-    	
-    	if ($('div#sidepanelWrapper').hasClass("open")) {
-    	
-    		right = -215;
-    		$('div#sidepanelWrapper').removeClass("open");
-
-    	} else {
-    		right = 0;
-    		$("div#sidepanelWrapper").addClass("open");
-    	}
-    	
-        	$("div#sidepanelWrapper").animate({ 
-        		right: right
-      		}, {
-                    duration: 'slow',
-                    easing: 'easeOutQuint'
-                });
-                
-			
-      }); 
-
-    });
-</script>
-
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/gmap3new.js"></script>
-
 <script type="text/javascript">
 	//$(document).ready(function(){
 	jQuery( document ).ready(function( $ ) {
@@ -151,7 +13,7 @@
     
     $("#maparea").gmap3({
       marker:{
-      	address:"<?php echo get_option('cebo_address'); ?>", data:"<?php bloginfo('name'); ?>", options:{icon:<?php if(get_option('cebo_mapmarker')) { ?>"<?php echo get_option('cebo_mapmarker'); ?>"<?php } else { ?>"http://maps.google.com/mapfiles/marker_green.png"<?php } ?>}
+      	address:"<?php echo get_option('cebo_address'); ?>", data:"<?php bloginfo('name'); ?>", options:{icon:<?php if(get_option('cebo_mapmarker')) { ?>"<?php echo get_option('cebo_mapmarker'); ?>"<?php } else { ?>"//maps.google.com/mapfiles/marker_green.png"<?php } ?>}
       },
       map: {
       action: 'init',
@@ -372,7 +234,7 @@
              //var imgs = (val["images"] !== "undefined") ? '' : buildPlaceCarousel(val["images"]);
              var imgs = (val["images"] !== undefined) ? buildPlaceCarousel(val["images"]) : '';
             
-             placeContainer = '<div class="placeData" id="placeData' + i + '"><p class="streetview">See it up close. Drag your streeview!</p><a href="#" class="closeData">X</a><div class="qualinfo"><a href="' + val["permalink"] + '"><img src="' + val["photo"] + '"/></a><div class="marco"><h4><span>' + val["name"] + '</span></h4><p class="smaller" id="' + val["cater"] + '">' + val["cater"] + '</p><p class="desc">' + val["desc"] + '</p></div></div><div class="specialinfo"><a href="' + val["permalink"] + '">More Info</a><a class="fac" href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=' + val["name"] + '&amp;p[url]=' + val["permalink"] + '&amp;p[images][0]=' + val["photo"] + '&amp;p[summary]=' + val["desc"] + '" target="_blank">Share It</a><a href="http://twitter.com/share?text=' + val["name"] + '&url=' + val["permalink"] + '"target="_blank">Tweet It</a><?php $perm = get_permalink(); $img = sp_get_image(); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=' + val["desc"] + ' on <?php bloginfo ('url'); ?>" target="_blank">Pin It</a></div>';
+             placeContainer = '<div class="placeData" id="placeData' + i + '"><p class="streetview">See it up close. Drag your streeview!</p><a href="#" class="closeData">X</a><div class="qualinfo"><a href="' + val["permalink"] + '"><img src="' + val["photo"] + '"/></a><div class="marco"><h4><span>' + val["name"] + '</span></h4><p class="smaller" id="' + val["cater"] + '">' + val["cater"] + '</p><p class="desc">' + val["desc"] + '</p></div></div><div class="specialinfo"><a href="' + val["permalink"] + '">More Info</a><a class="fac" href="//www.facebook.com/sharer.php?s= 100&amp;p[title]=' + val["name"] + '&amp;p[url]=' + val["permalink"] + '&amp;p[images][0]=' + val["photo"] + '&amp;p[summary]=' + val["desc"] + '" target="_blank">Share It</a><a href="//twitter.com/share?text=' + val["name"] + '&url=' + val["permalink"] + '"target="_blank">Tweet It</a><?php $perm = get_permalink(); $img = sp_get_image(); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="//pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=' + val["desc"] + ' on <?php bloginfo ('url'); ?>" target="_blank">Pin It</a></div>';
              
              $("#maparea").gmap3({ 
                  marker:{
@@ -415,7 +277,7 @@
 	$(".placeData").hide();
   $("#maparea").gmap3({
       marker:{
-        address:"<?php echo get_option('cebo_address'); ?>", data:"<?php bloginfo('name'); ?>", options:{icon:<?php if(get_option('cebo_mapmarker')) { ?>"<?php echo get_option('cebo_mapmarker'); ?>"<?php } else { ?>"http://maps.google.com/mapfiles/marker_green.png"<?php } ?>}
+        address:"<?php echo get_option('cebo_address'); ?>", data:"<?php bloginfo('name'); ?>", options:{icon:<?php if(get_option('cebo_mapmarker')) { ?>"<?php echo get_option('cebo_mapmarker'); ?>"<?php } else { ?>"//maps.google.com/mapfiles/marker_green.png"<?php } ?>}
       },
       map: {
       action: 'init',
@@ -534,12 +396,3 @@
 
 		
 </script>
-
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.simplemodal.js"></script>
-
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/basic.js"></script>
-
-<!--[if lt IE 7 ]>
-<script src="js/libs/dd_belatedpng.js"></script>
-<script> DD_belatedPNG.fix('img, .png_bg');</script>
-<![endif]-->
