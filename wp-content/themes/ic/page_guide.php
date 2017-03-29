@@ -211,14 +211,32 @@
 								
 										 <?php
 										              
-											    $gallery = get_post_gallery_images();
+											$gallery = get_post_gallery(get_the_ID(), false);
+											$args = array( 
+											    'post_type'      => 'attachment', 
+											    'posts_per_page' => -1, 
+											    'post_status'    => 'any', 
+											    'post__in'       => explode(',', $gallery['ids']) 
+											); 
+											$attachments = get_posts($args);											
 											
-											
-											                        
-											    foreach( $gallery as $image ) {// Loop through each image in each gallery
-											        $image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image) . ' "><img src="' . str_replace('-150x150','',$image) . '"  /></li></a>';
-											    }                  
-											    echo $image_list;
+											foreach ($attachments as $attachment) {
+
+											    $image_alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+											    if (empty($image_alt)) {
+											        $image_alt = $attachment->post_title;
+											    }
+											    if (empty($image_alt)) {
+											        $image_alt = $attachment->post_excerpt;
+											    }
+
+											    $image_title = $attachment->post_title;
+											    $image_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+
+											    $image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_alt . '"/></li></a>';
+
+											}              
+											echo $image_list;
 											                     
 											?>
 											
@@ -275,13 +293,31 @@
 								
 										 <?php
 										              
-											    $gallery = get_post_gallery_images();
-											
-											
+											    $gallery = get_post_gallery(get_the_ID(), false);
+												$args = array( 
+													'post_type'      => 'attachment', 
+													'posts_per_page' => -1, 
+													'post_status'    => 'any', 
+													'post__in'       => explode(',', $gallery['ids']) 
+												); 											
+												$attachments = get_posts($args);
 											                        
-											    foreach( $gallery as $image ) {// Loop through each image in each gallery
-											        $image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image) . ' "><img src="' . str_replace('-150x150','',$image) . '"  /></li></a>';
-											    }                  
+												foreach ($attachments as $attachment) {
+
+													$image_alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+													if (empty($image_alt)) {
+														$image_alt = $attachment->post_title;
+													}
+													if (empty($image_alt)) {
+														$image_alt = $attachment->post_excerpt;
+													}
+
+													$image_title = $attachment->post_title;
+													$image_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+
+													$image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_alt . '"/></li></a>';
+
+												}            
 											    echo $image_list;
 											                     
 											?>
@@ -337,13 +373,30 @@
 								
 										 <?php
 										              
-											    $gallery = get_post_gallery_images();
-											
-											
-											                        
-											    foreach( $gallery as $imager ) {// Loop through each image in each gallery
-											        $image_listr .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$imager) . ' "><img src=" ' . str_replace('-150x150','',$imager) . ' "  /></li></a>';
-											    }                  
+											    $gallery = get_post_gallery(get_the_ID(), false);
+												$args = array( 
+													'post_type'      => 'attachment', 
+													'posts_per_page' => -1, 
+													'post_status'    => 'any', 
+													'post__in'       => explode(',', $gallery['ids']) 
+												); 
+												$attachments = get_posts($args);											
+												foreach ($attachments as $attachment) {
+
+													$image_alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+													if (empty($image_alt)) {
+														$image_alt = $attachment->post_title;
+													}
+													if (empty($image_alt)) {
+														$image_alt = $attachment->post_excerpt;
+													}
+
+													$image_title = $attachment->post_title;
+													$image_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+
+													$image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_alt . '"/></li></a>';
+
+												}                 
 											    echo $image_listr;                       
 											                     
 											?>
@@ -398,14 +451,32 @@
 								
 										 <?php
 										              
-											    $gallery = get_post_gallery_images();
+											    $gallery = get_post_gallery(get_the_ID(), false);
+												$args = array( 
+													'post_type'      => 'attachment', 
+													'posts_per_page' => -1, 
+													'post_status'    => 'any', 
+													'post__in'       => explode(',', $gallery['ids']) 
+												); 
+												$attachments = get_posts($args);											
 											
-											
-											                        
-											    foreach( $gallery as $imaged ) {// Loop through each image in each gallery
-											        $image_listd .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$imaged) . ' "><img src=" ' . str_replace('-150x150','',$imaged) . ' "  /></li></a>';
-											    }                  
-											    echo $image_listd;                       
+												foreach ($attachments as $attachment) {
+
+														$image_alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+														if (empty($image_alt)) {
+															$image_alt = $attachment->post_title;
+														}
+														if (empty($image_alt)) {
+															$image_alt = $attachment->post_excerpt;
+														}
+
+														$image_title = $attachment->post_title;
+														$image_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+
+														$image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_alt . '"/></li></a>';
+
+												}											                                       
+											    echo $image_list;                       
 											                     
 											?>
 											
