@@ -26,7 +26,7 @@
 				</div>
 
 				<!--<img src="<?php //echo tt($imgsrc[0], 1400, 472); ?>" alt="<?php //get_post_meta($post->ID, 'bigtitle', true); ?>" />-->
-				<img src="<?php echo $imgsrc[0]; ?>" alt="<?php get_post_meta($post->ID, 'bigtitle', true); ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" />
+				<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" />
 				</a>
 
 			</li>
