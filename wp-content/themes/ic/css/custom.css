@@ -433,7 +433,7 @@ line-height: 30px;
 }
 
 .click-nav:hover .ic-navis i, .click-nav:hover .ic-navis span {
-    color: #ffffff;
+    color: #000 !important;
 }
 
 .click-nav:hover a:hover .ic-navis  i, .click-nav:hover a:hover .ic-navis span {
@@ -448,7 +448,7 @@ line-height: 30px;
 
 #property-nav nav {
   /*   background: none repeat scroll 0 0 #00adef;*/
-    background: none repeat scroll 0 0 #fff; 
+    background: none repeat scroll 0 0 #00adef; 
     height: auto;
     border-bottom: 2px solid #333333;
     max-width: 100%;
@@ -456,18 +456,18 @@ line-height: 30px;
 
 #property-nav nav:hover {
   /*  background: none repeat scroll 0 0 #03b7fb;*/
-     background: none repeat scroll 0 0 #333;
+     background: none repeat scroll 0 0 #fff;
 }
 
 
 #property-nav nav ul li {
     text-transform: uppercase;
-    color: #fff;
-    text-align: center;
+    color: #000;
+    text-align: left;
 }
 
 #property-nav nav:hover ul li {
-    color: #fff;
+    color: #000;
     transition: all 0.5s;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -480,7 +480,7 @@ line-height: 30px;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
-    color: #000;
+    color: #fff;
     font-family: didot, georgia;
     font-size: 11px;
     font-style: italic;
@@ -499,7 +499,7 @@ line-height: 30px;
 
 #property-nav nav:hover ul li a.clicknav-clicker {
     /*background: url(../images/ic_white.png) center no-repeat;*/
-    color: #fff;
+    color: #000;
 }
 #property-nav nav ul li a.clicknav-clicker span {
     font-style: normal;
@@ -4142,20 +4142,26 @@ padding: 0 !important;
 /* --------------- Light it up BLUE ------------ */
 
 li.blue-btn {
-  position: absolute !important;
-  bottom: 6px;
-  background-color: #fff;
-  width: 110px;
-  right: 265px;
+    position: absolute !important;
+    bottom: 9px;
+    background-color: #fff !important;
+    width: 98px !important;
+    right: 110px !important;
+    padding: 2px 0;
+    left: 60%;
 }
 
 li.blue-btn i {
- padding-right: 5px;
+    padding-right: 10px !important;
+    padding-left: 10px;
+    font-size: 12px;
 }
 
 .blue-btn a {
-  padding: 7px 0px;
-  color: #00adef;
+    padding: 3px 0!important;
+    color: #00adef !important;
+    font-size: 9px;
+    letter-spacing: 1px;
 }
 
 /*
@@ -4263,3 +4269,10 @@ div#TA_ssnarrowcollectreview383 li img {
  .single-tribe_events h1.tribe-events-single-event-title {
      font-size: 33px;
  }
+
+.ic-navis div span,
+.ic-navis div i,
+.ic-navis span {
+    color: #fff !important;
+}
+
