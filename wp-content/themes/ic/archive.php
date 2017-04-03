@@ -11,7 +11,7 @@ get_header(); ?>
 				
 				<div class="fl">
 					
-					<h2 class="section-pre-title fl">Archives</h2>
+					<h1 class="section-pre-title fl">Archives</h1>
 					
 					<div class="section-header-divider fl"></div>
 					<h1 class="section-title fr">
