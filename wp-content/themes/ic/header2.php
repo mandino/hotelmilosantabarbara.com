@@ -261,6 +261,12 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 						</ul> -->
 	
 					</li>
+					<li class="blue-btn">
+						<a href="//www.winterhavenhotelsobe.com/why-blue/">
+							<i class="fa fa-info-circle"></i>
+							<span class="blue-mobile">why blue?</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
 			

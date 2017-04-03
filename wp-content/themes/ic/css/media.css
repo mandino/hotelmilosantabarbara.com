@@ -425,7 +425,31 @@ and (max-width : 1099px) {
 	/* light it up blue */
 
 	li.blue-btn {
-		left: 0px;
+		bottom: 33% !important;
+		width: 18px !important;
+		height: 18px !important;
+	}
+
+	li.blue-btn i {
+	 	padding-right: 0px !important;
+	 	padding-left: 0px !important;
+	}
+
+	li.blue-btn span.blue-mobile {
+		display: none;
+	}
+
+	.click-nav ul li.blue-btn {
+		left: 1%;
+	}
+
+	.click-nav ul li:first-child {
+		width: 90%;
+		text-align: center !important;
+		left: 10%;
+	}
+	#property-nav nav ul li {
+		text-align: center !important;
 	}
 
 }
@@ -724,12 +748,13 @@ and (max-width : 1023px) {
 
 li.blue-btn {
 	bottom: 1px;
-	width: 25px !important;
-    height: 25px !important;
+	width: 18px !important;
+    height: 18px !important;
 }
 
 li.blue-btn i {
  padding-right: 0px !important;
+ padding-left: 0px !important;
 }
 
 #property-nav nav ul li a.clicknav-clicker, #navigation-sticky-wrapper.sticky #property-nav nav ul li a.clicknav-clicker
