@@ -14,7 +14,7 @@ get_header(); ?>
 				<div class="fl">
 	
 					
-					<h2 class="section-pre-title fl">Your Search</h2>
+					<h1 class="section-pre-title fl">Your Search</h1>
 
 					<div class="section-header-divider fl"></div>
 				
