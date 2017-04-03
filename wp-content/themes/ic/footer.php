@@ -34,12 +34,7 @@
 					<?php if(get_option('cebo_tele')) { ?>
 					<li class="phone"><i class="fa fa-mobile-phone fa-lg"></i> 
 
-						<a id="lnkP2TalkFTN" href="http://www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span></a>
-
-						<script type="text/javascript">
-							SetElementToNavisNCPhoneNumber("NavisTFN");
-							SetNavisP2TalkLink("lnkP2TalkFTN");
-						</script>
+						<a id="lnkP2TalkFTN" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span></a>
 
 						<?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?>
 
@@ -52,7 +47,7 @@
 	
 				<div class="newsletter-form">
 					
-					<form name="surveys" action="http://zmaildirect.com/app/new/MTIwODQ2MDg1" method="get">  
+					<form name="surveys" action="//zmaildirect.com/app/new/MTIwODQ2MDg1" method="get">  
 
 					<input type="hidden" name="formId" value="MTIwODQ2MDg1">
 					    <div>
@@ -70,8 +65,8 @@
 		</div>
 
 		<div id="property-name">
-			<a href="http://www.independentcollection.com/ic-local/" target="_blank"><i class="sprite sprite-ic_01"></i></a>
-			<a href="http://www.independentcollection.com/" target="_blank"><i class="sprite sprite-ic_02"></i></a>
+			<a href="//www.independentcollection.com/ic-local/" target="_blank"><i class="sprite sprite-ic_01"></i></a>
+			<a href="//www.independentcollection.com/" target="_blank"><i class="sprite sprite-ic_02"></i></a>
 		</div>
 
 		<div class="footer-nav container">
@@ -86,25 +81,25 @@
 
 					<?php if(get_option('cebo_twitter')) { ?>
 					
-						<li class="twitter"><a href="http://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
+						<li class="twitter"><a href="//twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
 						
 					<?php } ?>
 				
 					<?php if(get_option('cebo_facebook')) { ?>
 					
-						<li class="facebook"><a href="http://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
+						<li class="facebook"><a href="//facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
 						
 					<?php } ?>
 					
 					<?php if(get_option('cebo_instagram')) { ?>
 
-						<li class="instagram"><a href="http://instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram fa-2x"></i><span>instagram</span></a></li>
+						<li class="instagram"><a href="//instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram fa-2x"></i><span>instagram</span></a></li>
 
 					<?php } ?>
 					
 					<?php if(get_option('cebo_youtube')) { ?>
 					
-						<li class="youtube"><a href="http://youtube.com/<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube fa-2x"></i><span>youtube</span></a></li>
+						<li class="youtube"><a href="//youtube.com/<?php echo get_option('cebo_youtube'); ?>" target="_blank"><i class="fa fa-youtube fa-2x"></i><span>youtube</span></a></li>
 					
 					<?php } ?>
 				</ul>
@@ -125,40 +120,21 @@
 
 	</footer>
 
-<?php wp_footer(); ?>
+<?php 
 
-<!-- Scripts -->
-<?php include(TEMPLATEPATH. "/library/scripts.php"); ?>
+	wp_footer();
+	
+	if(is_home() || is_front_page() || is_page_template('page_guide.php')) {
+		include (TEMPLATEPATH . '/library/super-map.php'); 
+	}
+	
+	include(TEMPLATEPATH. "/library/scripts.php"); 
 
-<script type="text/javascript">
-//$(document).ready(function(){
-jQuery( document ).ready(function( $ ) {
-   
-	var url_trigger = window.location.pathname;
-	var url_trim = url_trigger.split("/")[1];
+?>
 
-		if (url_trim == 'uber-uns') {
-			$('.current-language').text('de');
-			$('.current-language').attr('href','http://hotelmilosantabarbara.com/uber-uns/');
-			$('.de-lang').text('en');
-			$('.de-lang').attr('href','http://hotelmilosantabarbara.com/');
-		} else if (url_trim == 'a-propos-de-nous') {
-			$('.current-language').text('fr');
-			$('.current-language').attr('href','http://hotelmilosantabarbara.com/a-propos-de-nous/');
-			$('.fr-lang').text('en');
-			$('.fr-lang').attr('href','http://hotelmilosantabarbara.com/');
-		} else if (url_trim == 'sobre-nos') {
-			$('.current-language').text('pt-pt');
-			$('.current-language').attr('href','http://hotelmilosantabarbara.com/sobre-nos/');
-			$('.pt-lang').text('en');
-			$('.pt-lang').attr('href','http://hotelmilosantabarbara.com/');
-		} else {
-			$('.current-language').text('en');
-			$('.current-language').attr('href','http://hotelmilosantabarbara.com/');
-		}
-
-});
-</script>
+<!-- NAVIS script -->
+<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
+<script language="javascript">ProcessNavisNCKeyword();</script>
 
 <!-- sojern script -->
 <script>
@@ -181,6 +157,21 @@ fjs.parentNode.insertBefore(js, fjs);
 <!-- VOYAT CODE -->
 <script> (function(){ var v = document.createElement('script'); var s = document.getElementsByTagName('script')[0]; v.src = '//io.voyat.com/v.js'; v.async = true; s.parentNode.insertBefore(v, s); })(); </script>
 <!-- VOYAT CODE -->	
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 987781696;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script async type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/987781696/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
 		
 </body>
 </html>

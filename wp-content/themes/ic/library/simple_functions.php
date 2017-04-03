@@ -319,13 +319,4 @@ function custom_tag_cloud_widget($args) {
 }
 add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
 
-/*
-if( !is_admin()){
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', (" "), false, '1.10.1');
-    wp_enqueue_script('jquery');
-}
-*/
-
-
 ?>

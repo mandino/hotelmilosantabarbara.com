@@ -42,17 +42,17 @@ get_header(); ?>
 					<ul class="social-buttons">
 					<?php if(get_option('cebo_facebook')) { ?>
 					
-						<li class="facebook"><a href="http://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
+						<li class="facebook"><a href="//facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
 						
 					<?php } ?>
 					<?php if(get_option('cebo_twitter')) { ?>
 					
-						<li class="twitter"><a href="http://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
+						<li class="twitter"><a href="//twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
 						
 					<?php } ?>
 					<?php if(get_option('cebo_instagram')) { ?>
 					
-						<li class="instagram"><a href="http://instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram fa-2x"></i><span>twitter</span></a></li>
+						<li class="instagram"><a href="//instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram fa-2x"></i><span>twitter</span></a></li>
 						
 					<?php } ?>					
 					</ul>
@@ -87,11 +87,11 @@ get_header(); ?>
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_post_meta($post->ID, 'cebo_homethumb', true)); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
 						
 						<?php } ?>
 						
@@ -134,11 +134,11 @@ get_header(); ?>
 						
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_post_meta($post->ID, 'cebo_homethumb', true)); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
 						
 						<?php } ?>
 						
@@ -178,11 +178,11 @@ get_header(); ?>
 					<li>
 						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
 						
-						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>">
+						<img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_post_meta($post->ID, 'cebo_homethumb', true)); ?>">
 						
 						<?php } else { ?>
 						
-						<img src="<?php echo $imgsrc[0]; ?>">
+						<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
 						
 						<?php } ?>
 						
@@ -353,7 +353,7 @@ get_header(); ?>
 
 							<?php } ?>							
 
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
 							<div class="ptit"> 
 								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 							</div>
@@ -383,7 +383,7 @@ get_header(); ?>
 						
 						
 						<div>
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"></a>
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
 							<div class="ptits"> 
 								<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 							</div>
