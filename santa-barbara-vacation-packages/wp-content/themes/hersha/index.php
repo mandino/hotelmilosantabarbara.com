@@ -2,7 +2,7 @@
 
 <body id="ocean-view-king" class="room-details">
 	<div id="navigation">
-		<img class="brand" src="http://sphericalcommunications.com/microsite/images/ic_gray.png" />
+		<img class="brand" src="//sphericalcommunications.com/microsite/images/ic_gray.png" />
 	</div>
 		<div class="flexslider">
 			<ul class="slides">
