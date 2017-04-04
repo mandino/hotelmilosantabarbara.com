@@ -14,7 +14,7 @@ get_header(); ?>
 					<h2 class="section-pre-title fl">Category</h2>
 					
 					<div class="section-header-divider fl"></div>
-					<h2 class="section-title fr"><?php single_cat_title(); ?></h2>
+					<h1 class="section-title fr"><?php single_cat_title(); ?></h1>
 	
 				</div>
 
