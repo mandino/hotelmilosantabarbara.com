@@ -16,7 +16,7 @@
 
 					<h2 class="section-pre-title fl">Blog</h2>
 					<div class="section-header-divider fl"></div>
-					<h2 class="section-title fr">Hotel Milo Santa Barbara Blog</h2>
+					<h1 class="section-title fr">Hotel Milo Santa Barbara Blog</h1>
 
 				</div>
 

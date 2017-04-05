@@ -1777,6 +1777,7 @@ h1, h2, h3, h4, h5, h6, h7 {
     width: 0;
 }
 
+.section-header h1.section-title,
 .section-header h2.section-title {
 	font-family: didot, georgia;
 	font-size: 36px;
@@ -4212,10 +4213,7 @@ bottom: 38px !important;
   width: 97%;
   }
 
-  
-  li.blue-btn {
-    display: none;
-}
+41
 
 .post-content em {
     font-style: italic;
