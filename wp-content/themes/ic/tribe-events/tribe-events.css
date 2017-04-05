@@ -2869,3 +2869,20 @@ body .ui-tooltip {
     height: auto;
     line-height: 1;
 }
+
+/* ** tribe event page title h1 *** */
+
+h1.tribe-events-page-title {
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 15px;	
+	position: relative;
+	text-align: center;
+	z-index: 0;
+
+}
+
+.single-tribe_events h1.tribe-events-single-event-title {
+	font-size: 33px;
+	color: #333;
+}
