@@ -43,6 +43,9 @@
 			<div class="section-header">
 					
 				<div class="fl">
+					
+		
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 					<?php if(get_option('cebo_shorttitle')) { ?>
 					
@@ -52,9 +55,6 @@
 					
 					<?php } ?>
 
-		
-					<h1 class="section-title fr"><?php the_title(); ?></h1>
-	
 				</div>
 	
 				<div class="fr">
@@ -203,7 +203,7 @@
 									
 									<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
 									
-									<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
+									<h4><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h4>
 									
 									
 									<?php } ?>
@@ -212,7 +212,7 @@
 										
 										<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
 										
-										<h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+										<h5><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h5>
 										
 										<?php } ?>
 										
@@ -278,7 +278,7 @@
 				<div class='item item1 current'>
 					<a href="<?php the_permalink(); ?>"><img src = '<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>' alt="<?php echo get_custom_image_thumb_alt_text(get_post_meta($post->ID, 'cebo_homethumb', true)); ?>" /></a>
 					
-					<h3><?php the_title(); ?></h3>
+					<h6><?php the_title(); ?></h6>
 				</div>
 				
 				<?php endwhile; endif; wp_reset_query(); ?>	

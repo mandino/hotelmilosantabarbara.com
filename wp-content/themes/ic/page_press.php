@@ -35,6 +35,8 @@
 			<div class="post-title section-header">
 
 				<div class="fl">
+
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 					<?php if(get_option('cebo_shorttitle')) { ?>
 					
@@ -44,8 +46,6 @@
 					
 					<?php } ?>
 
-		
-					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 				</div>
 	
@@ -137,7 +137,7 @@
 				
 					<li>
 						<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>"  alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>" /></a>
-						<h2><?php the_title(); ?></h2>
+						<h3><?php the_title(); ?></h3>
 					</li>
 				
 				
