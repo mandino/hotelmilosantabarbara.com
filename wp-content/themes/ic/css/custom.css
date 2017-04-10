@@ -775,7 +775,8 @@ line-height: 30px;
 }
 
 .section-header h1.section-pre-title,
-.section-header h2.section-pre-title {
+.section-header h2.section-pre-title,
+.section-header span.section-pre-title {
     font-size: 24px;
     color: #6e6e6e;
     font-family: didot, georgia;
