@@ -792,7 +792,8 @@ line-height: 30px;
 }
 
 .section-header h1.section-title,
-.section-header h2.section-title {
+.section-header h2.section-title, 
+.section-header span.section-title{
     font-family: didot, georgia;
     font-size: 36px;
     text-decoration: uppercase;
@@ -931,7 +932,7 @@ line-height: 30px;
     margin-bottom: 15px;
 }
 
-.section-photos li h3, .thumbgal li h3 {
+.section-photos li h3, .thumbgal li h3, {
     transition: all 0.5s;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -1034,7 +1035,8 @@ line-height: 30px;
     width: 80%;
 }
 
-.section-photos li div h3, .thumbgal li div h3 {
+.section-photos li div h3, .thumbgal li div h3,
+.section-photos li div h4, .thumbgal li div h4 {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     font-size: 40px;
     line-height: 1;

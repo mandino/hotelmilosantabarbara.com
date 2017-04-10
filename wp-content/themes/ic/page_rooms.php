@@ -31,6 +31,8 @@
 			<div class="section-header">
 					
 				<div class="fl">
+
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 					<?php if(get_option('cebo_shorttitle')) { ?>
 					
@@ -40,8 +42,6 @@
 					
 					<?php } ?>
 
-		
-					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 				</div>
 	

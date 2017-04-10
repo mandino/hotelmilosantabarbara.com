@@ -48,6 +48,8 @@
 			<div class="section-header">
 					
 				<div class="fl">
+
+					<h1 class="section-title fr"><?php the_title(); ?></h1>
 	
 					<?php if(get_option('cebo_shorttitle')) { ?>
 					
@@ -55,10 +57,7 @@
 
 					<div class="section-header-divider fl"></div>
 					
-					<?php } ?>
-
-		
-					<h1 class="section-title fr"><?php the_title(); ?></h1>
+					<?php } ?>		
 	
 				</div>
 	
@@ -588,7 +587,7 @@
 						<?php query_posts('post_type=post&posts_per_page=1&cat=-10'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo tt($imgsrc[0], 540, 361); ?>' alt='<?php the_title(); ?>' /></a>
-								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+								<a href="<?php the_permalink(); ?>"><h4 style="margin-top: 15px;"><?php the_title(); ?></h4></a>
 								<p><?php echo excerpt(80); ?></p>
 							</li>
 						</ul>
@@ -602,10 +601,10 @@
 							
 							<li>
 								<a href="<?php the_permalink(); ?>"><img src='<?php echo tt($imgsrc[0], 240, 161); ?>' alt='<?php the_title(); ?>' /></a>
-								<a href="<?php the_permalink(); ?>"><h3 style="margin-top: 15px;"><?php the_title(); ?></h3></a>
+								<a href="<?php the_permalink(); ?>"><h5 style="margin-top: 15px;"><?php the_title(); ?></h5></a>
 								<p><?php echo excerpt(10); ?></p>
 							</li>
-						<?php endwhile; endif; wp_reset_query(); ?>	
+						<?php endwhile; endif; wp_reset_query(); ?>
 						</ul>
 						
 						<div class="clear"></div>
