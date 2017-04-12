@@ -139,13 +139,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
 								</select>
 							</span>
-							<button class="button" type="submit" onClick="fbq('track', 'Lead'); ga('send', 'event', 'Booking-widget', 'Search-now', 'Search dates with booking widget');"><?php _e('Search Now','cebolang'); ?></button>
+							<button class="button" type="submit" onClick="ga('send', 'event', 'Booking-widget', 'Search-now', 'Search dates with booking widget'); fbq('track', 'Lead');"><?php _e('Search Now','cebolang'); ?></button>
 							<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
 						</form>
 					</div>
 				<!-- flex dates -->
 					<div class="reservationform flexdate">
-						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="fbq('track', 'Lead'); ga('send', 'event', 'Flexible Dates', 'click', 'Booking-widget');">Flexible dates?</a> Search for our best available rate</p>
+						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="ga('send', 'event', 'Flexible Dates', 'click', 'Booking-widget'); fbq('track', 'Lead');">Flexible dates?</a> Search for our best available rate</p>
 					</div>
 				<!-- end flex datess -->
 				</div>
@@ -175,8 +175,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div id="primary-nav" style="overflow:visible;">
 			<a href="<?php bloginfo('url'); ?>" class="logo<?php if(is_home()) { ?> droplogo<?php } ?>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
 			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title().'-mobile'; ?>" /></a>
-			<a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
-			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 			<!--
 			<?php if ( function_exists('icl_get_languages') ) { ?>
 				<div class="language">
