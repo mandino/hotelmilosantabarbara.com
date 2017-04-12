@@ -175,6 +175,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div id="primary-nav" style="overflow:visible;">
 			<a href="<?php bloginfo('url'); ?>" class="logo<?php if(is_home()) { ?> droplogo<?php } ?>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
 			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title().'-mobile'; ?>" /></a>
+			<a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="ga('send', 'event', 'reserve-now', 'click','reserve-button-header'); _gaq.push(['_link', this.href]);return false;">RESERVE</a>
+			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="ga('send', 'event', 'reserve-now', 'click','reserve-button-header'); _gaq.push(['_link', this.href]);return false;">RESERVE</a>
 			<!--
 			<?php if ( function_exists('icl_get_languages') ) { ?>
 				<div class="language">
