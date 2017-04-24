@@ -167,7 +167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 
 				<ul class="container no-js">
-					<li><a href="//www.independentcollection.com/ic-local" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
+					<li><a href="//www.iclocalrewards.com" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>
 				</ul>
 			</nav>
