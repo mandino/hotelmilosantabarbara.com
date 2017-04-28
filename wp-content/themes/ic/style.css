@@ -4208,16 +4208,18 @@ bottom: 38px !important;
         display: block;
     }
     
-.wpcf7
-  {
-  width: 97%;
-  }
-
-41
+.wpcf7 {
+    width: 97%;
+}
 
 .post-content em {
     font-style: italic;
 }
+
 .post-content strong {
     font-weight: bold;
+}
+
+.all-events {
+    font-size: 18px;
 }
