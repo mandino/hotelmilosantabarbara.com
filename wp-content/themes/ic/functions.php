@@ -349,3 +349,29 @@ function get_custom_image_thumb_alt_text($img_url,$img_id=0) {
 }
 
 /*** end function alt-tag **/
+
+add_filter( 'amp_post_template_file', 'amp_set_custom_footer_template', 10, 2 );
+function amp_set_custom_footer_template( $file, $type ) {
+
+	if ( 'footer' === $type ) {
+
+		$file = TEMPLATEPATH . '/amp/templates/footer.php';
+
+	}
+
+	return $file;
+
+}
+
+add_filter( 'amp_post_template_file', 'amp_set_custom_style_css', 10, 2 );
+function amp_set_custom_style_css( $file, $type ) {
+
+	if ( 'style' === $type ) {
+
+		$file = TEMPLATEPATH . '/amp/templates/style.php';
+
+	}
+
+	return $file;
+
+}
