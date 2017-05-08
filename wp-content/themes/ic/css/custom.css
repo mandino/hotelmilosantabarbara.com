@@ -3945,6 +3945,7 @@ div.pp_default .pp_nav {
 }
 
 .upcoming-calendar {
+   text-align: center; 
    width: 44%;
 }
 
