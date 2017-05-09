@@ -391,7 +391,8 @@ get_header();
 
 					<!-- <a class="slidesjs-previous slidesjs-navigation" href="#"><i class="icon-chevron-left icon-large"></i></a> -->
 
-					<h3><?php _e('Upcoming events', 'cebolang'); ?></h3>
+					<h3><a href="<?php echo get_option('eventsSlug', 'events'); ?>"><?php _e('Upcoming events', 'cebolang'); ?></a></h3>
+
 				</div>
 
 				<div class="fr">
@@ -417,7 +418,8 @@ get_header();
 						<a href="#" class="slidesjs-next slidesjs-navigation"><i class="fa fa-chevron-right fa-lg"></i></a>
 					</div>
 
-					<h3><?php _e('From our blog', 'cebolang'); ?></h3>
+					<h3><a href="<?php echo get_permalink( get_page_by_path( 'blog' ) ) ?>"><?php _e('From our blog', 'cebolang'); ?></a></h3>
+
 				</div>
 
 			</div>
