@@ -1092,12 +1092,7 @@ line-height: 30px;
     overflow: auto;
 }
 
-.neighborhood-sliders .fl {
-    height: auto;
-    width: 540px;
-}
-
-.neighborhood-sliders .fr {
+.neighborhood-sliders .fr, .neighborhood-sliders .fl {
     height: 292px;
     width: 540px;
 }
@@ -1128,6 +1123,10 @@ line-height: 30px;
     font-weight: bold;
     margin-top: -20px;
     text-transform: uppercase;
+}
+
+.viewall {
+    text-align: center;
 }
 
 
