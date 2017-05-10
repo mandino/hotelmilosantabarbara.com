@@ -1093,7 +1093,7 @@ line-height: 30px;
 }
 
 .neighborhood-sliders .fr, .neighborhood-sliders .fl {
-    height: 292px;
+    height: auto;
     width: 540px;
 }
 
