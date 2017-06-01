@@ -4283,3 +4283,6 @@ nav:after {
   z-index: 1002 !important;
 } 
 
+#property-nav .pride.pos-right .pride-link-right {
+    display: none;
+}
