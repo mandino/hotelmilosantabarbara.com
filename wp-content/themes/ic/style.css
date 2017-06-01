@@ -4261,16 +4261,17 @@ bottom: 38px !important;
     transform: rotate(180deg);
 }
 #property-nav .pride.pos-left a {
-    position: fixed;
+    position: absolute;
     top: 3px;
     right: 10px;
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
     border: 1px solid #1c93d1;
     background: #1c93d1;
     color: #ffffff;
     padding: 8px;
+
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
  }
 #property-nav .pride.pos-left a i {
     margin-right: 8px;
