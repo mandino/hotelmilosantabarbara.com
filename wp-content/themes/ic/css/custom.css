@@ -21,7 +21,10 @@
     -o-transition: color 0.4s;
 }
 
-
+nav:after {
+  opacity: 0 !important;
+  z-index: 1002 !important;
+}
 
 /* ======================================================== GLOBAL STUFF =====================================================  */
 
@@ -1212,7 +1215,8 @@ line-height: 30px;
 
 /* NAVIS Footer - click-nav */
 
-.click-nav .navis-footer {
+.click-nav .navis-footer,
+.pride .navis-footer {
 	position: absolute;
 	right: 10px;
 	top: 5px;
@@ -1220,7 +1224,8 @@ line-height: 30px;
 	margin: 0;
 }
 
-.click-nav .navis-footer a {
+.click-nav .navis-footer a,
+.pride .navis-footer a {
 	background-image: url(../images/navispushbutton.png);
 	background-repeat: no-repeat;
 	background-size: 160px;
@@ -1231,18 +1236,22 @@ line-height: 30px;
 	text-indent: -9999px;
 }
 
-.click-nav .navis-footer a#lnkP2Chatheader {
+.click-nav .navis-footer a#lnkP2Chatheader,
+.pride .navis-footer a#lnkP2Chatheader {
     background-position: 0 0;
 }
 
-.click-nav .navis-footer a#lnkP2Chatheader:hover {
+.click-nav .navis-footer a#lnkP2Chatheader:hover,
+.pride .navis-footer a#lnkP2Chatheader:hover {
     background-position: 0 -40px;
 }
 
-.click-nav .navis-footer a#lnkP2Talkheader {
+.click-nav .navis-footer a#lnkP2Talkheader,
+.pride .navis-footer a#lnkP2Talkheader {
     background-position: -85px 0;
 }
-.click-nav .navis-footer a#lnkP2Talkheader:hover {
+.click-nav .navis-footer a#lnkP2Talkheader:hover,
+.pride .navis-footer a#lnkP2Talkheader:hover {
     background-position: -85px -40px;
 }
 
