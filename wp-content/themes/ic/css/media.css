@@ -79,15 +79,21 @@ and (max-width : 1240px) {
 	}
 
 	.click-nav .container {
-		width: 75%;
-		margin: 0;
+		margin: 0 auto;
+		width: 40%;
 	}
 
 	li.blue-btn {
 		left: 80%;
 	}
 
+	#property-nav .pride.pos-left a {
+		top: 9px;
+	}
 
+	.pride .navis-footer {
+		top: 12px;
+	}
 
 }
 
@@ -454,17 +460,11 @@ and (max-width : 1099px) {
 		left: 1%;
 	}
 
-	.click-nav ul li:first-child {
-		width: 90%;
-		text-align: center !important;
-		left: 10%;
-	}
 	#property-nav nav ul li {
 		text-align: center !important;
 	}
 
 }
-
 
 
 /* ================================================  MAX WIDTH 1024 ======================================= */
@@ -812,7 +812,8 @@ li.blue-btn i {
 
 	#primary-nav .fl,
 	#lnkP2Talk, 
-	.click-nav .navis-footer  {
+	.click-nav .navis-footer,
+	.pride .navis-footer  {
 		display: none;
 	}
 
@@ -919,7 +920,51 @@ li.blue-btn i {
     padding: 5px 36px 5px 19px !important;
 	}
 
+	#property-nav .pride.pos-left a {
+		top: 5px;
+	}
 
+	.pride .navis-footer {
+		top: 3px;
+	}
+
+	#property-nav .pride.pos-right {
+    position: absolute;
+	    top: 0;
+	    right: 0;
+	    z-index: 1001;
+	}
+
+	#property-nav .pride.pos-left {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1001;
+	    -ms-transform: rotate(180deg); /* IE 9 */
+	    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	    transform: rotate(180deg);
+	}
+
+	#property-nav .pride.pos-right .pride-link-right {
+	    position: absolute;
+	    top: 8px;
+	    right: 10px;
+	    border: 1px solid #1c93d1;
+	    background: #1c93d1;
+	    color: #ffffff;
+	    padding: 8px;
+	    display: block;
+	}
+
+	#property-nav .pride.pos-right a i {
+	    margin-right: 8px;
+	    margin-right: 8px;
+	    font-size: 14px;
+	}
+
+	#property-nav .pride.pos-left a {
+		display: none;
+	}
 
 
 }
@@ -1066,6 +1111,33 @@ li.blue-btn i {
 	    height: 500px !important;
 	}
 
+	/* Pride Banner*/
+
+	#property-nav nav ul li.blue-btn {
+		bottom: 13px;
+	}
+
+	#property-nav .pride.pos-right {
+		right: -105px;
+		top: -25px;
+	}
+
+	#property-nav .pride.pos-right img {
+		width: 50%;
+	}
+
+	#property-nav .pride.pos-left {
+		left: -103px;
+		bottom: -27px;
+	}
+
+	#property-nav .pride.pos-left img {
+		width: 50%;
+	}
+
+	#property-nav .pride.pos-right a {
+		display: none !important;
+	}
 
 
 }
