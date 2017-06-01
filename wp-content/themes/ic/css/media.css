@@ -467,22 +467,6 @@ and (max-width : 1099px) {
 }
 
 
-/* ================================================  MAX WIDTH 1057 ======================================= */
-
-@media only screen
-and (max-width : 1057px) {
-
-	#property-nav .pride.pos-left a {
-		top: 15px;
-	}
-
-	.pride .navis-footer {
-		top: 18px;
-	}
-
-}
-
-
 /* ================================================  MAX WIDTH 1024 ======================================= */
 
 @media only screen
@@ -944,6 +928,44 @@ li.blue-btn i {
 		top: 3px;
 	}
 
+	#property-nav .pride.pos-right {
+    position: absolute;
+	    top: 0;
+	    right: 0;
+	    z-index: 1001;
+	}
+
+	#property-nav .pride.pos-left {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1001;
+	    -ms-transform: rotate(180deg); /* IE 9 */
+	    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	    transform: rotate(180deg);
+	}
+
+	#property-nav .pride.pos-right .pride-link-right {
+	    position: absolute;
+	    top: 8px;
+	    right: 10px;
+	    border: 1px solid #1c93d1;
+	    background: #1c93d1;
+	    color: #ffffff;
+	    padding: 8px;
+	    display: block;
+	}
+
+	#property-nav .pride.pos-right a i {
+	    margin-right: 8px;
+	    margin-right: 8px;
+	    font-size: 14px;
+	}
+
+	#property-nav .pride.pos-left a {
+		display: none;
+	}
+
 
 }
 /* ================================================  MAX WIDTH 939 ======================================= */
@@ -1089,21 +1111,6 @@ li.blue-btn i {
 	    height: 500px !important;
 	}
 
-	#property-nav nav ul li.blue-btn {
-		bottom: 13px;
-	}
-
-	#property-nav .pride.pos-right {
-		right: -95px;
-	}
-	#property-nav .pride.pos-left {
-		left: -100px;
-	}
-	#property-nav .pride.pos-left a {
-		display: none;
-	}
-
-
 	/* Pride Banner*/
 
 	#property-nav nav ul li.blue-btn {
@@ -1129,7 +1136,7 @@ li.blue-btn i {
 	}
 
 	#property-nav .pride.pos-right a {
-		display: none;
+		display: none !important;
 	}
 
 

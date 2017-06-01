@@ -163,6 +163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
 				</div>
  				<img src="<?php bloginfo('template_directory'); ?>/images/pride.png">
+ 				<a class="pride-link-right" href="//www.hotelmilosantabarbara.com/blog/guide-pride-month-santa-barbara/"><i class="fa fa-info-circle" aria-hidden="true"></i>Celebrate Pride</a>
  			</div>
 			<div class="pride pos-left">
 				<img src="<?php bloginfo('template_directory'); ?>/images/pride-left.png">
