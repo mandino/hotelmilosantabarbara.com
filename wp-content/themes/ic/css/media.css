@@ -1066,6 +1066,20 @@ li.blue-btn i {
 	    height: 500px !important;
 	}
 
+	#property-nav nav ul li.blue-btn {
+		bottom: 13px;
+	}
+
+	#property-nav .pride.pos-right {
+		right: -95px;
+	}
+	#property-nav .pride.pos-left {
+		left: -100px;
+	}
+	#property-nav .pride.pos-left a {
+		display: none;
+	}
+
 
 
 }
