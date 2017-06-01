@@ -79,15 +79,21 @@ and (max-width : 1240px) {
 	}
 
 	.click-nav .container {
-		width: 75%;
-		margin: 0;
+		margin: 0 auto;
+		width: 40%;
 	}
 
 	li.blue-btn {
 		left: 80%;
 	}
 
+	#property-nav .pride.pos-left a {
+		top: 9px;
+	}
 
+	.pride .navis-footer {
+		top: 12px;
+	}
 
 }
 
@@ -454,17 +460,27 @@ and (max-width : 1099px) {
 		left: 1%;
 	}
 
-	.click-nav ul li:first-child {
-		width: 90%;
-		text-align: center !important;
-		left: 10%;
-	}
 	#property-nav nav ul li {
 		text-align: center !important;
 	}
 
 }
 
+
+/* ================================================  MAX WIDTH 1057 ======================================= */
+
+@media only screen
+and (max-width : 1057px) {
+
+	#property-nav .pride.pos-left a {
+		top: 15px;
+	}
+
+	.pride .navis-footer {
+		top: 18px;
+	}
+
+}
 
 
 /* ================================================  MAX WIDTH 1024 ======================================= */
@@ -920,7 +936,13 @@ li.blue-btn i {
     padding: 5px 36px 5px 19px !important;
 	}
 
+	#property-nav .pride.pos-left a {
+		top: 5px;
+	}
 
+	.pride .navis-footer {
+		top: 3px;
+	}
 
 
 }
@@ -1081,6 +1103,34 @@ li.blue-btn i {
 		display: none;
 	}
 
+
+	/* Pride Banner*/
+
+	#property-nav nav ul li.blue-btn {
+		bottom: 13px;
+	}
+
+	#property-nav .pride.pos-right {
+		right: -105px;
+		top: -25px;
+	}
+
+	#property-nav .pride.pos-right img {
+		width: 50%;
+	}
+
+	#property-nav .pride.pos-left {
+		left: -103px;
+		bottom: -27px;
+	}
+
+	#property-nav .pride.pos-left img {
+		width: 50%;
+	}
+
+	#property-nav .pride.pos-right a {
+		display: none;
+	}
 
 
 }
