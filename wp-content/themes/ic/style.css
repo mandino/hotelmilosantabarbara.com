@@ -4241,7 +4241,6 @@ bottom: 38px !important;
  
  */
 #property-nav {
-    height: 43px;
     overflow:hidden;
     position: relative;
     border-bottom: 2px solid #333333;
@@ -4263,7 +4262,7 @@ bottom: 38px !important;
 }
 #property-nav .pride.pos-left a {
     position: fixed;
-    top: 5px;
+    top: 3px;
     right: 10px;
     -ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
