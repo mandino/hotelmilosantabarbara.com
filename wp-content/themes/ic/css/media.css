@@ -1139,6 +1139,9 @@ li.blue-btn i {
 		display: none !important;
 	}
 
+	.mm-list > li.display-none {
+		display: block !important;
+	}
 
 }
 
