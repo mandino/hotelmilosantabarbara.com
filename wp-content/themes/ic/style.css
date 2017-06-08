@@ -4331,6 +4331,7 @@ html.mm-opened .mm-page, html.mm-opened #mm-blocker {
 }
 
 .cheese {
+  font-size: 12px !important;
   display: block;
 }
 
