@@ -3845,7 +3845,11 @@ ul.tabs li:last-child {
     font-size: 15px;
 }
 
-.wpcf7 input[type="text"]:focus, .wpcf7 input[type="password"]:focus, .wpcf7 input[type="email"]:focus, .wpcf7 textarea:focus {
+.wpcf7 input[type="text"]:focus, 
+.wpcf7 input[type="password"]:focus, 
+.wpcf7 input[type="email"]:focus, 
+.wpcf7 textarea:focus,
+.page-template-default input:focus {
     padding: 11px 10px;
     border: 3px solid #CCCCCC;
 }
