@@ -3843,6 +3843,7 @@ ul.tabs li:last-child {
     border: 3px solid #CCCCCC;
     padding: 11px 10px;
     font-size: 15px;
+    box-sizing: border-box;
 }
 
 .wpcf7 input[type="text"]:focus, 
