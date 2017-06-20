@@ -44,10 +44,7 @@
 
 					<div class="section-header-divider fl"></div>
 					
-					<?php } ?>
-
-		
-					<h1 class="section-title fr"><?php the_title(); ?></h1>
+					<?php } ?>		
 	
 				</div>
 	
