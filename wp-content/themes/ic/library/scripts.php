@@ -1,6 +1,18 @@
 <script type="text/javascript">
 
 	jQuery( document ).ready(function( $ ) {
+        
+        		// ACCORDION BOX
+		$('.accbox-btn').click(function() {
+			var accBoxItem = $(this).parent().parent();
+			if ( accBoxItem.hasClass('active') ) {
+				accBoxItem.removeClass('active');
+				accBoxItem.find('.accbox-hidden').slideUp();
+			} else {
+				accBoxItem.addClass('active');
+				accBoxItem.find('.accbox-hidden').slideDown();
+			}
+		});
 
 		<?php if( is_page_template('page_guide.php') ) { ?>
 

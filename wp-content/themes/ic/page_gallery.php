@@ -44,10 +44,7 @@
 
 					<div class="section-header-divider fl"></div>
 					
-					<?php } ?>
-
-		
-					<h1 class="section-title fr"><?php the_title(); ?></h1>
+					<?php } ?>		
 	
 				</div>
 	
@@ -146,6 +143,7 @@
 									foreach ($attachments as $attachment) {
 
 										$image_alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+                                    
 										if (empty($image_alt)) {
 											$image_alt = $attachment->post_title;
 										}
@@ -156,7 +154,7 @@
 										$image_title = $attachment->post_title;
 										$image_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
 
-										$image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_alt . '"/></li></a>';
+										$image_list .= '<li><a rel="prettyPhoto[gal]" title="'.$image_alt.'" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_title . '"/></li></a>';
 
 									}               
 								    echo $image_list;
