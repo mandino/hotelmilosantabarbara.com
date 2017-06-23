@@ -47,16 +47,13 @@
 	
 				<div class="newsletter-form">
 					
-					<form name="surveys" action="//zmaildirect.com/app/new/MTIwODQ2MDg1" method="get">  
+					<form action="https://web2.cendynhub.com/FormPost/FormPost.ashx" method="post">
+					<input name="emailAddress" required="" type="text" value="" placeholder="Your Email" />
 
-					<input type="hidden" name="formId" value="MTIwODQ2MDg1">
-					    <div>
-					<input type="text" name="email" placeholder="Exclusive offers">
-						</div>
-					  <div>	
-					<input type="submit" value="Sign Up">
-						</div>
-					</form>	
+					<input name="formId" type="hidden" value="8360A196-38AE-4980-91F4-A2E8A7F39D6D" />
+					<input name="CompanyID" type="hidden" value="1153" />
+					<input type="submit" value="Submit" />
+					</form>
 	
 				</div>
 				
