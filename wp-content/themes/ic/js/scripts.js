@@ -115,6 +115,7 @@ jQuery( document ).ready(function( $ ) {
 	$.datepicker._defaults.dateFormat = 'yy-mm-dd';
 	
 	$(".datepicker").datepicker({
+        firstDay: 0,
 		minDate: 0,
 		numberOfMonths: [2,1],
 		beforeShowDay: function(date) {
