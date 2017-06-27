@@ -148,30 +148,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 			</div>
 		<div id="property-nav">
-
-			<div class="pride pos-right">
-				<div class="navis-footer">
-					<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-				</div>
- 				<img src="<?php bloginfo('template_directory'); ?>/images/pride.png">
- 				<a class="pride-link-right" href="//www.hotelmilosantabarbara.com/blog/guide-pride-month-santa-barbara/"><i class="fa fa-info-circle" aria-hidden="true"></i>Celebrate Pride</a>
- 			</div>
-			<div class="pride pos-left">
-				<img src="<?php bloginfo('template_directory'); ?>/images/pride-left.png">
- 				<a href="//www.hotelmilosantabarbara.com/blog/guide-pride-month-santa-barbara/"><i class="fa fa-info-circle" aria-hidden="true"></i>Celebrate Pride</a>
- 			</div>
-
-			<nav class="click-nav" style="border: none;">
+			<nav class="click-nav">
 				<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
 					<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
 					<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
 				</a>
 
-				<!-- <div class="navis-footer">
+				 <div class="navis-footer">
 					<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
 					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-				</div> -->
+				</div> 
 
 				<ul class="container no-js">
 					<li><a href="//www.iclocalrewards.com" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
