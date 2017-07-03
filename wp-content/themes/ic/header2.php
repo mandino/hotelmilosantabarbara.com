@@ -10,6 +10,15 @@
 ?>
 <!DOCTYPE HTML>
 <head>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P2GL4QL');</script>
+	<!-- End Google Tag Manager -->
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
@@ -177,6 +186,12 @@ pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=
 </head> 
 	
 <body id="oceana" <?php body_class($class); ?>>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2GL4QL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
 
 	<div id="navigation">
 			
