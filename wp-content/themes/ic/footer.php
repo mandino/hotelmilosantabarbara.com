@@ -174,20 +174,5 @@ fjs.parentNode.insertBefore(js, fjs);
 <script> (function(){ var v = document.createElement('script'); var s = document.getElementsByTagName('script')[0]; v.src = '//io.voyat.com/v.js'; v.async = true; s.parentNode.insertBefore(v, s); })(); </script>
 <!-- VOYAT CODE -->	
 
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 987781696;
-var google_custom_params = window.google_tag_params;
-var google_remarketing_only = true;
-/* ]]> */
-</script>
-<script async type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/987781696/?guid=ON&amp;script=0"/>
-</div>
-</noscript>
-		
 </body>
 </html>
