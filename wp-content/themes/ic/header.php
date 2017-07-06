@@ -8,6 +8,15 @@
 <!DOCTYPE HTML>
 <html <?php language_attributes( 'html' ); ?> >
 <head>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P2GL4QL');</script>
+	<!-- End Google Tag Manager -->
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="p:domain_verify" content="b064c45724dfd80702c16b1d08c28d8a"/>
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
@@ -53,14 +62,6 @@
 		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
 	</style>
 
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-WZZNS9L');</script>
-	<!-- End Google Tag Manager -->
-
 	<script type="application/ld+json">
 		{
 		"@context": "//schema.org",
@@ -74,30 +75,17 @@
 		"datePublished": "2015-02-05T08:00:00+08:00",
 		"description": "A most wonderful article",
 		"articleBody": "The full body of the article"
-		}
-	</script> 
-	<!-- Facebook Pixel Code -->
-	<!--<script>
-	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-	document,'script','//connect.facebook.net/en_US/fbevents.js');
-	fbq('init', '1701093870106348');
-	fbq('track', "PageView");</script>
-	<noscript><img height="1" width="1" style="display:none"
-	src="https://www.facebook.com/tr?id=1701093870106348&ev=PageView&noscript=1"
-	/></noscript> -->
-	<!-- End Facebook Pixel Code -->
 
-	<script> function ViewContent(){ fbq('track', 'ViewContent'); } </script>
+	</script>
 
 </head> 
 <body id="oceana" <?php body_class($class); ?>>
+
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZZNS9L"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2GL4QL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 <div class="menu-wrap">
 	<div id="navigation">
 			<div class="ressys">
@@ -132,13 +120,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
 								</select>
 							</span>
-							<button class="button" type="submit" onClick="ga('send', 'event', 'Booking-widget', 'Search-now', 'Search dates with booking widget'); fbq('track', 'Lead');"><?php _e('Search Now','cebolang'); ?></button>
+							<button class="button" type="submit"><?php _e('Search Now','cebolang'); ?></button>
 							<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
 						</form>
 					</div>
 				<!-- flex dates -->
 					<div class="reservationform flexdate">
-						<p><a href="https://hotelmilosantabarbara.reztrip.com" onclick="ga('send', 'event', 'Flexible Dates', 'click', 'Booking-widget'); fbq('track', 'Lead');">Flexible dates?</a> Search for our best available rate</p>
+						<p><a href="https://hotelmilosantabarbara.reztrip.com">Flexible dates?</a> Search for our best available rate</p>
 					</div>
 				<!-- end flex datess -->
 				</div>
@@ -148,30 +136,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 			</div>
 		<div id="property-nav">
-
-			<div class="pride pos-right">
-				<div class="navis-footer">
-					<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-				</div>
- 				<img src="<?php bloginfo('template_directory'); ?>/images/pride.png">
- 				<a class="pride-link-right" href="//www.hotelmilosantabarbara.com/blog/guide-pride-month-santa-barbara/"><i class="fa fa-info-circle" aria-hidden="true"></i>Celebrate Pride</a>
- 			</div>
-			<div class="pride pos-left">
-				<img src="<?php bloginfo('template_directory'); ?>/images/pride-left.png">
- 				<a href="//www.hotelmilosantabarbara.com/blog/guide-pride-month-santa-barbara/"><i class="fa fa-info-circle" aria-hidden="true"></i>Celebrate Pride</a>
- 			</div>
-
-			<nav class="click-nav" style="border: none;">
+			<nav class="click-nav">
 				<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
 					<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
 					<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
 				</a>
 
-				<!-- <div class="navis-footer">
+				 <div class="navis-footer">
 					<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
 					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-				</div> -->
+				</div> 
 
 				<ul class="container no-js">
 					<li><a href="//www.iclocalrewards.com" target="_blank" class="clicknav-clicker">Join IC Local and Start Receiving Perks with Every Stay</a></li>
@@ -182,8 +156,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div id="primary-nav" style="overflow:visible;">
 			<a href="<?php bloginfo('url'); ?>" class="logo<?php if(is_home()) { ?> droplogo<?php } ?>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
 			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title().'-mobile'; ?>" /></a>
-			<a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="ga('send', 'event', 'reserve-now', 'click','reserve-button-header'); _gaq.push(['_link', this.href]);return false;">RESERVE</a>
-			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="ga('send', 'event', 'reserve-now', 'click','reserve-button-header'); _gaq.push(['_link', this.href]);return false;">RESERVE</a>
+			<a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
+			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 			<!--
 			<?php if ( function_exists('icl_get_languages') ) { ?>
 				<div class="language">

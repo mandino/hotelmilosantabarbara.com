@@ -63,7 +63,7 @@
 
 				<div class="specialtab">
 
-					<a href="<?php if (get_post_meta($post->ID, 'cebo_popout_url', true)) { echo get_post_meta($post->ID, 'cebo_popout_url', true); } else { ?>#<?php } ?>" onclick="ga('send', 'event', 'reserve-now', 'click','reserve-button-featured');"><h3 style="font-size: 25px;">
+					<a href="<?php if (get_post_meta($post->ID, 'cebo_popout_url', true)) { echo get_post_meta($post->ID, 'cebo_popout_url', true); } else { ?>#<?php } ?>"><h3 style="font-size: 25px;">
 
 						<span><?php echo get_post_meta($post->ID, 'cebo_popout_subtitle', true); ?></span>
 
