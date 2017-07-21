@@ -774,6 +774,8 @@ li.blue-btn i {
 }
 
 
+
+
 }
 
 
@@ -963,6 +965,10 @@ li.blue-btn i {
 	}
 
 	#property-nav .pride.pos-left a {
+		display: none;
+	}
+
+	.white-shadow {
 		display: none;
 	}
 
