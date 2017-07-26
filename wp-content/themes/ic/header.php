@@ -126,7 +126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 				<!-- flex dates -->
 					<div class="reservationform flexdate">
-						<p><a href="https://hotelmilosantabarbara.reztrip.com">Flexible dates?</a> Search for our best available rate</p>
+						<p><a href="https://hotelmilosantabarbara.reztrip.com/calendar">Flexible dates?</a> Search for our best available rate</p>
 					</div>
 				<!-- end flex datess -->
 				</div>
