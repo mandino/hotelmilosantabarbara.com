@@ -4261,7 +4261,9 @@ li.blue-btn i {
 }
 
 .reservationform.flexdate {
-  height: 40px;
+    height: 40px;
+    z-index: 99999999;
+    position: relative;
 }
 
 .lazy{
