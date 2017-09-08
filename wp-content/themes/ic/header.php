@@ -147,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div> 
 
 				<ul class="container no-js">
-					<li><a href="//www.iclocalrewards.com" target="_blank" class="clicknav-clicker">Enter to Win a Two Night Stay at an Independent Collection Hotel</a></li>
+					<li><a href="//iclocalrewards.com/en-US/Login?ReturnUrl=%2F#signup" target="_blank" class="clicknav-clicker">Join The IC Local Perks Program & Get Rewarded With Every Stay</a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>
 				</ul>
 			</nav>
