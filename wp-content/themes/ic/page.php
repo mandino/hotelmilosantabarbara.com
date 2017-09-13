@@ -133,11 +133,87 @@
 				
 					<?php the_content(); ?>
 
+				
+
+	
+
+				
+				<?php //endwhile; endif; wp_reset_query(); ?>	
+
+			</div>
+
+			<div class="sidebar fr">
+				
+				<a class="button" target="_blank" href="<?php if(get_post_meta ($post->ID, 'cebo_booklink', true)) { echo get_post_meta ($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>" onclick="_gaq.push(['_link', this.href]);return false;"><?php _e('RESERVE NOW', 'cebolang'); ?></a>
+				
+				
+				<ul class="thumbgal">
+						
+						<?php query_posts('post_type=specials&posts_per_page=4'); if(have_posts()) : while(have_posts()) : the_post(); 
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+
+							<?php if(get_post_meta($post->ID, 'cebo_available_on_sidebar', true)) { ?>
+								
+								<li>
+									
+						
+									<?php if(get_post_meta($post->ID, 'cebo_pricepoint', true)) { ?>
+									
+									<div class="from-price">
+										<?php echo get_post_meta($post->ID, 'cebo_pricepoint', true); ?>
+									</div>
+									
+									<?php } ?>
+									
+									<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
+									
+									<a href="<?php the_permalink(); ?>"><img src="<?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 260, 290); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_post_meta($post->ID, 'cebo_homethumb', true)); ?>"></a>
+									
+									<?php } else { ?>
+									
+									<a href="<?php the_permalink(); ?>"><img src="<?php echo tt($imgsrc[0], 260, 290); ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
+									
+									<?php } ?>
+									
+									<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
+									
+									<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
+									
+									
+									<?php } ?>
+
+									<div class="hover-effect">
+										
+										<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
+										
+										<h4><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3>
+										
+										<?php } ?>
+										
+										
+										<!-- , and Hotel Oceana Tote Bag., and breakfast at the Hotel. -->
+										<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
+									</div>
+									
+								</li>
+
+							<?php } ?>
+							
+							<?php endwhile; endif; wp_reset_query(); ?>
+							
+						
+							
+						</ul>
+		
+				</div>
+			<!-- New Restaurant Menu Template -->
+			<div class="post-content fl">
+
 				<!-- New Restaurant Menu Template -->
 
 				<?php $class = ""; $cnt = 0; ?>
 				<div class="eat-container">
-					<div>
+				<div>
 					<?php if (have_posts('eat_menu')) : while(have_rows('eat_menu')) : the_row();?>
 					<?php 
 						$temp_class = strtolower(get_sub_field('menu_title'));
@@ -160,84 +236,53 @@
 					<section id="<?php echo $_class; ?>" class="eat-menu-container <?php echo $hideClass; ?>">
 
 						<h2><?php the_sub_field('menu_title') ?></h2>
-
-						<?php if (have_rows('meal_type')) : while(have_rows('meal_type'))  : the_row();?>
-							<?php if ($count == 0): ?>
-								<div class="menu-list left-menu">
-									<div class="menu-content-<?php echo $count;?>">
-										<table class="menu-table">
-											<th><h3><?php the_sub_field('menu_type_name') ?></h3></th>
-											<?php if (have_rows('menu_items')) : while(have_rows('menu_items'))  : the_row();?>
-											<tr>
-												<td>
-													<div class="menu-items-container">
-														<div class="menu-items">
-															<span><?php the_sub_field('items'); ?></span>
-														</div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="menu-items-container">
-														<div class="menu-items">
-															<?php get_sub_field('content') ? the_sub_field('content') : '<p>&nbsp;</p>'; ?>
-														</div>
-													</div>
-												</td>
-												<td>
-													<div class="menu-price">
-														<span><?php the_sub_field('price') ?></span>	
-													</div>
-												</td>
-											</tr>
-											<?php endwhile; endif; ?>
-										</table>					
-									</div>
-									<div class="clear"></div>
-								</div>
-
-							<?php endif ?>
-							<?php $count++; break; endwhile; endif; ?>
 							
-								<div class="menu-list right-menu">
-									<?php if (have_rows('meal_type')) : while(have_rows('meal_type'))  : the_row();?>
-									<?php if ($count > 0): ?>
-									<div class="menu-content-<?php echo $count;?>" style="">
-										<table class="menu-table">
-											<tr><th><h3><?php the_sub_field('menu_type_name') ?></h3></th></tr>
-											<?php if (have_rows('menu_items')) : while(have_rows('menu_items'))  : the_row();?>
-											<tr>
-												<td>
-													<div class="menu-items">
-														<span><?php the_sub_field('items'); ?></span>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="menu-items">
-														<?php get_sub_field('content') ? the_sub_field('content') : '<p>&nbsp;</p>'; ?>
-													</div>
-												</td>
-												<td>
-													<div class="menu-price">
-														<span><?php the_sub_field('price') ?></span>	
-													</div>
-												</td>
-											</tr>
-											<?php endwhile; endif; ?>
-										</table>
+						<div class="menu-list left-menu two-col">
+							<?php if (have_rows('meal_type')) : while(have_rows('meal_type'))  : the_row();?>
+							<div class="menu-content-<?php echo $count;?>">
+								<table class="menu-table">
+									<th><h3><?php the_sub_field('menu_type_name') ?></h3></th>
+									<?php if (have_rows('menu_items')) : while(have_rows('menu_items'))  : the_row();?>
+									<tr>
+										<td>
+											<div class="menu-items-container">
+												<div class="menu-items">
+													<span><?php the_sub_field('items'); ?></span>
+													<?php if (!get_sub_field('content')): ?>
+														<p>&nbsp;</p>
+													<?php endif; ?>
+												</div>
+											</div>
+										</td>
 
-										
-									</div>
+									<?php if (get_sub_field('content')): ?>
 
-									<?php endif ?>
-									<?php $count++; endwhile; endif; ?>
-									<div class="clear"></div>
-								</div>
+									</tr>
+									<tr>
+										<td>
+											<div class="menu-items-container">
+												<div class="menu-items">
+													<?php get_sub_field('content') ? the_sub_field('content') : '<p>&nbsp;</p>'; ?>
+												</div>
+											</div>
+										</td>
 
+									<?php endif; ?>
 
+										<td>
+											<div class="menu-price">
+												<span><?php the_sub_field('price') ?></span>
+											</div>
+										</td>
+									</tr>
+									<?php endwhile; endif; ?>
+								</table>					
+							</div>
+							<div class="clear"></div>
+							
+							<?php $count++; endwhile; endif; ?>
+
+							</div>
 						<div class="clear"></div>
 					</section>
 					
@@ -303,10 +348,7 @@
 				<?php $cnt2++; endwhile; endif; ?>
 				</div>
 
-	<!-- Restaurant Menu New Template : END -->
-
-				
-				<?php //endwhile; endif; wp_reset_query(); ?>	
+				<!-- Restaurant Menu New Template : END -->
 
 			</div>
 

@@ -2,7 +2,10 @@
 
 	jQuery( document ).ready(function( $ ) {
         
-
+		if ($(window).width() < 1024) {
+			$('.menu-list.left-menu').removeClass('two-col');
+		}
+		
 		$(".eat-tab-button").click(function() {
 			var id = "#"+$(this).data('class');
 			$('.eat-menu-container').removeClass('showMenu');
