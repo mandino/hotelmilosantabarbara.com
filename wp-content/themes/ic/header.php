@@ -47,7 +47,6 @@
 	<!-- MILO -->
 	<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/icfavicon.png" type="image/png">
 	<link rel="icon" href="icfavicon.png" type="image/png">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
 
 	<?php
 		/****************** DO NOT REMOVE **********************
