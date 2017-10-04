@@ -2,6 +2,27 @@
 
 	jQuery( document ).ready(function( $ ) {
         
+		if ($(window).width() < 1024) {
+			$('.menu-list.left-menu').removeClass('two-col');
+		}
+		
+		$(".eat-tab-button").click(function() {
+			var id = "#"+$(this).data('class');
+			$('.eat-menu-container').removeClass('showMenu');
+			$('.eat-menu-container').addClass('hideMenu');
+			$(id).removeClass('hideMenu');
+			$(id).addClass('showMenu');
+		});
+
+		$(".drink-tab-button").click(function() {
+			var id = "#"+$(this).data('class');
+			console.log(id)
+			$('.drink-menu-container').removeClass('showMenu');
+			$('.drink-menu-container').addClass('hideMenu');
+			$(id).removeClass('hideMenu');
+			$(id).addClass('showMenu');
+		});
+
 
         $('.white-shadow').parent().addClass('relative');
 		$('.read-more-button').click(function() {
