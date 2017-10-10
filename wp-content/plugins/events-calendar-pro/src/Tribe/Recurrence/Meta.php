@@ -416,7 +416,7 @@ class Tribe__Events__Pro__Recurrence__Meta {
 		if ( ! isset( $recurrence_meta['exclusions'] ) ) {
 			$recurrence_meta['exclusions'] = array();
 		}
-
+        $recurrence_meta = array();    
 		$recurrence_meta['exclusions'][] = array(
 			'type'   => 'Custom',
 			'custom' => array(
