@@ -1,5 +1,5 @@
 <?php
-require_once 'wpml-admin-text-functionality.class.php';
+require_once dirname( __FILE__ ) . '/wpml-admin-text-functionality.class.php';
 
 class WPML_Admin_Text_Configuration extends WPML_Admin_Text_Functionality {
 
@@ -7,22 +7,25 @@ class WPML_Admin_Text_Configuration extends WPML_Admin_Text_Functionality {
 	private $config;
 
 	/**
-	 * @param string|object $file
+	 * @param string|stdClass $file_or_object
 	 */
-	function __construct( $file = "" ) {
-		if ( is_object( $file ) ) {
-			$config             = $file->config;
-			$type               = $file->type;
-			$admin_text_context = $file->admin_text_context;
-		} elseif ( is_string( $file ) && $file !== "" && file_exists( $file ) ) {
-			$config             = icl_xml2array( file_get_contents( $file ) );
-			$type               = ( dirname( $file ) == get_template_directory() || dirname( $file ) == get_stylesheet_directory() ) ? 'theme' : 'plugin';
-			$admin_text_context = basename( dirname( $file ) );
+	function __construct( $file_or_object = '' ) {
+		if ( is_object( $file_or_object ) ) {
+			$config             = $file_or_object->config;
+			$type               = $file_or_object->type;
+			$admin_text_context = $file_or_object->admin_text_context;
+		} elseif ( $this->can_handle_custom_xml( $file_or_object ) ) {
+			$validate           = new WPML_XML_Config_Validate( WPML_PLUGIN_PATH . '/res/xsd/wpml-config.xsd' );
+			$transform          = new WPML_XML2Array();
+			$xml_config_file    = new WPML_XML_Config_Read_File( $file_or_object, $validate, $transform );
+			$config             = $xml_config_file->get();
+			$type               = ( dirname( $file_or_object ) === get_template_directory() || dirname( $file_or_object ) === get_stylesheet_directory() ) ? 'theme' : 'plugin';
+			$admin_text_context = basename( dirname( $file_or_object ) );
 		}
 
 		$admin_text_config = isset( $config['wpml-config']['admin-texts'] ) ? $config['wpml-config']['admin-texts'] : array();
 		$wpml_config_all   = array();
-		if ( isset( $type ) && isset( $admin_text_context ) && isset( $admin_text_config['key'] ) ) {
+		if ( isset( $type, $admin_text_context, $admin_text_config['key'] ) ) {
 			if ( isset( $admin_text_config['key']['attr'] ) ) { //single
 				$admin_text_config['key']['type']    = $type;
 				$admin_text_config['key']['context'] = $admin_text_context;
@@ -108,25 +111,16 @@ class WPML_Admin_Text_Configuration extends WPML_Admin_Text_Functionality {
 		return $ret;
 	}
 
+	/**
+	 * Creates a regex matcher from a wildcard string name definition
+	 *
+	 * @param string $wildcard
+	 *
+	 * @return string
+	 */
 	private function wildcard_to_matcher( $wildcard ) {
-		$wildcard_parts = array_filter( explode( '*', $wildcard ) );
-		if ( (bool) $wildcard_parts === true ) {
-			$first_part = array_shift( $wildcard_parts );
-			$first_part = '^' . $first_part;
-			$single     = (bool) $wildcard_parts === false;
-			$last_part  = ( $single ? $first_part : array_pop( $wildcard_parts ) ) . '$';
-			array_unshift( $wildcard_parts, $first_part );
-			if ( $single === true ) {
-				$wildcard_parts = array( $last_part );
-			} else {
-				$wildcard_parts[] = $last_part;
-			}
-			$name_matcher = '#(' . join( ').?(', $wildcard_parts ) . ')#';
-		} else {
-			$name_matcher = '#.+#';
-		}
 
-		return $name_matcher;
+		return '#^' . str_replace( '*', '.+', $wildcard ) . '$#';
 	}
 
 	private function all_strings_array( array $top_level_filters ) {
@@ -174,5 +168,14 @@ class WPML_Admin_Text_Configuration extends WPML_Admin_Text_Functionality {
 		}
 
 		return $ret;
+	}
+
+	/**
+	 * @param $file_or_object
+	 *
+	 * @return bool
+	 */
+	private function can_handle_custom_xml( $file_or_object ) {
+		return is_string( $file_or_object ) && '' !== $file_or_object && file_exists( $file_or_object ) && class_exists( 'WPML_XML_Config_Validate' );
 	}
 }

@@ -1,8 +1,9 @@
 <?php
+/** @var WPML_String_Translation $WPML_String_Translation */
+global $sitepress, $WPML_String_Translation, $wpdb, $wpml_st_string_factory;
 
-global $sitepress, $WPML_String_Translation, $wpdb;
 $string_settings = $WPML_String_Translation->get_strings_settings();
-icl_st_reset_current_trasnslator_notifications();
+icl_st_reset_current_translator_notifications();
 
 if((!isset($sitepress_settings['existing_content_language_verified']) || !$sitepress_settings['existing_content_language_verified']) /*|| 2 > count($sitepress->get_active_languages())*/){
     return;
@@ -31,22 +32,26 @@ if ( preg_match(
 }
 //$status_filter  = $status_filter !== false ? (int) $status_filter : null;
 $context_filter = filter_input( INPUT_GET, 'context', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+
 $search_filter  = filter_input( INPUT_GET, 'search', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 $exact_match    = filter_input( INPUT_GET, 'em', FILTER_VALIDATE_BOOLEAN );
 
-$icl_string_translations = icl_get_string_translations();
-
 $active_languages = $sitepress->get_active_languages();
-$icl_contexts = icl_st_get_contexts($status_filter);
+$icl_contexts = icl_st_get_contexts( $status_filter );
+$unfiltered_context_counts = $status_filter !== false ? icl_st_get_contexts( false ) : $icl_contexts;
 
-$available_contexts = array();
-if(!empty($icl_contexts)){
-    foreach($icl_contexts as $c){
-        if($c) $available_contexts[] = $c->context;
+function context_array( $contexts ) {
+    $count_array = array();
+    $contexts    = $contexts ? array_filter( $contexts ) : array();
+    foreach ( $contexts as $c ) {
+        $count_array[ $c->context ] = $c->c;
     }
+
+    return $count_array;
 }
 
-$available_contexts = array_unique($available_contexts);
+$available_contexts  = array_keys( context_array( $icl_contexts ) );
+$unfiltered_contexts = context_array( $unfiltered_context_counts );
 
 function _icl_string_translation_rtl_div($language) {
     if (in_array($language, array('ar','he','fa'))) {
@@ -63,10 +68,11 @@ function _icl_string_translation_rtl_textarea($language) {
     }
 }
 
+$po_importer = apply_filters( 'wpml_st_get_po_importer', null );
+
 ?>
 <div class="wrap">
 
-    <div id="icon-wpml" class="icon32"><br /></div>
     <h2><?php echo __('String translation', 'wpml-string-translation') ?></h2>
 
 	<?php
@@ -76,8 +82,8 @@ function _icl_string_translation_rtl_textarea($language) {
     <?php if( isset( $po_importer ) && $po_importer->has_strings() ): ?>
 
         <p><?php printf(__("These are the strings that we found in your .po file. Please carefully review them. Then, click on the 'add' or 'cancel' buttons at the %sbottom of this screen%s. You can exclude individual strings by clearing the check boxes next to them.", 'wpml-string-translation'), '<a href="#add_po_strings_confirm">', '</a>'); ?></p>
-
-        <form method="post" action="<?php echo admin_url("admin.php?page=" . WPML_ST_FOLDER . "/menu/string-translation.php");?>">
+        <form method="post" id="wpml_add_strings" action="<?php echo admin_url("admin.php?page=" . WPML_ST_FOLDER . "/menu/string-translation.php");?>">
+	    <input type="hidden" id="strings_json" name="strings_json">
         <?php wp_nonce_field('add_po_strings') ?>
         <?php $use_po_translations = filter_input(INPUT_POST, 'icl_st_po_translations', FILTER_VALIDATE_BOOLEAN); ?>
         <?php if ( $use_po_translations == true ): ?>
@@ -133,8 +139,9 @@ function _icl_string_translation_rtl_textarea($language) {
             </tbody>
         </table>
         <a name="add_po_strings_confirm"></a>
-        <p><input class="button" type="button" value="<?php echo __('Cancel', 'wpml-string-translation'); ?>" onclick="location.href='admin.php?page=<?php echo $_GET['page'] ?>'" />
-        &nbsp; <input class="button-primary" type="submit" value="<?php echo __('Add selected strings', 'wpml-string-translation'); ?>" />
+
+	        <p><span style="float: left"><input class="js-wpml-btn-cancel button" type="button" value="<?php echo __( 'Cancel', 'wpml-string-translation' ); ?>" onclick="location.href='admin.php?page=<?php echo htmlspecialchars( $_GET['page'], ENT_QUOTES ) ?>'"/>
+        &nbsp;<input class="js-wpml-btn-add-strings button-primary" type="submit" value="<?php echo __('Add selected strings', 'wpml-string-translation'); ?>" /></span><span class="spinner" style="float: left"></span>
         </p>
         </form>
 
@@ -153,7 +160,7 @@ function _icl_string_translation_rtl_textarea($language) {
 	        $selected = selected(ICL_TM_COMPLETE, $status_filter, false);
 	        ?>
             <option value="<?php echo ICL_TM_COMPLETE ?>" <?php echo $selected;?>>
-	            <?php echo $icl_st_string_translation_statuses[ICL_TM_COMPLETE] ?>
+	            <?php echo WPML_ST_String_Statuses::get_status( ICL_TM_COMPLETE ) ?>
             </option>
 	        <?php
 	        if ( icl_st_is_translator() ) {
@@ -191,18 +198,26 @@ function _icl_string_translation_rtl_textarea($language) {
 
         </select>
 
-        <?php if(!empty($icl_contexts)): ?>
-        &nbsp;&nbsp;
-        <span style="white-space:nowrap">
-        <?php echo __('Select strings within domain:', 'wpml-string-translation')?>
-        <select name="icl_st_filter_context">
-            <option value="" <?php if($context_filter === false ):?>selected="selected"<?php endif;?>><?php echo __('All domains', 'wpml-string-translation') ?></option>
-            <?php foreach($icl_contexts as $v):?>
-            <option value="<?php echo esc_attr($v->context)?>" <?php if($context_filter == $v->context ):?>selected="selected"<?php endif;?>><?php echo $v->context . ' ('.$v->c.')'; ?></option>
-            <?php endforeach; ?>
-        </select>
+            <?php if ( ! empty( $icl_contexts ) ): ?>
+                &nbsp;&nbsp;
+                <span style="white-space:nowrap">
+        <?php echo __( 'Select strings within domain:', 'wpml-string-translation' ) ?>
+                    <select name="icl_st_filter_context">
+                        <option value=""
+                                <?php if ( $context_filter === false ): ?>selected="selected"<?php endif; ?>><?php echo __( 'All domains', 'wpml-string-translation' ) ?></option>
+                        <?php foreach ( $icl_contexts as $v ): ?>
+	                        <?php
+	                            if ( ! $v->context ) {
+		                            $v->context = WPML_ST_Strings::EMPTY_CONTEXT_LABEL;
+	                            }
+	                        ?>
+                            <option value="<?php echo esc_attr( $v->context ) ?>"
+                                    data-unfiltered-count="<?php echo( isset( $unfiltered_contexts[ $v->context ] ) ? $unfiltered_contexts[ $v->context ] : 0 ) ?>"
+                                    <?php if ( $context_filter == filter_var( $v->context, FILTER_SANITIZE_FULL_SPECIAL_CHARS ) ): ?>selected="selected"<?php endif; ?>><?php echo  esc_html( $v->context ) . ' (' . $v->c . ')'; ?></option>
+                        <?php endforeach; ?>
+                    </select>
         </span>
-        <?php endif; ?>
+            <?php endif; ?>
 
         &nbsp;&nbsp;
         <span style="white-space:nowrap">
@@ -227,19 +242,27 @@ function _icl_string_translation_rtl_textarea($language) {
         <?php endif; ?>
 
         </p>
+		<?php if( ! empty( $icl_contexts ) ): ?>
+			<p><a href="#" id="wpml-language-of-domains-link"><?php _e( 'Languages of domains', 'wpml-string-translation' ); ?></a></p>
+		<?php endif; ?>
 
 		<?php
-			require_once WPML_ST_PATH . '/menu/string-translation-ui/wpml-string-translation-table.php';
-			$string_translation_table_ui = new WPML_String_Translation_Table( $icl_string_translations );
+			$string_translation_table_ui = new WPML_String_Translation_Table( icl_get_string_translations() );
 			$string_translation_table_ui->render( );
-		?>
-		
-    <?php
+
+			$change_string_language_dialog = new WPML_Change_String_Language_Dialog( $wpdb, $sitepress );
+			$change_string_language_dialog->render( );
+			
+			if( ! empty( $icl_contexts ) ) {
+		$string_factory                       = new WPML_ST_String_Factory( $wpdb );
+		$change_string_domain_language_dialog = new WPML_Change_String_Domain_Language_Dialog( $wpdb, $sitepress, $string_factory );
+				$change_string_domain_language_dialog->render( $icl_contexts );
+			}
     $get_show_results = filter_input( INPUT_GET, 'show_results', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
     $get_page         = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_URL );
     ?>
         <?php if($wp_query->found_posts > 10): ?>
-            <div class="tablenav" style="width:70%;float:right;">
+            <div class="tablenav">
             <?php
             $paged            = filter_input( INPUT_GET, 'paged', FILTER_SANITIZE_NUMBER_INT );
             $paged            = $paged && $get_show_results !== 'all' ? $paged : 1;
@@ -311,13 +334,19 @@ function _icl_string_translation_rtl_textarea($language) {
                             echo ' selected="selected"';
                         } ?>>100
                         </option>
-                    </select>
-                    &nbsp;
-                    <a href="admin.php?page=<?php echo $_GET[ 'page' ] ?>&amp;show_results=all<?php if ( isset( $_GET[ 'context' ] ) ) {
-                        echo '&amp;context=' . $_GET[ 'context' ];
-                    } ?><?php if ( isset( $_GET[ 'status' ] ) ) {
-                        echo '&amp;status=' . $_GET[ 'status' ];
-                    } ?>"><?php echo __( 'Display all results', 'wpml-string-translation' ); ?></a>
+                    </select>&nbsp;
+                    <?php
+                        $url = 'admin.php?page=' . $_GET['page'] . '&amp;show_results=all';
+                        if (isset( $_GET['context'] )) {
+                            $url .= '&amp;context=' . $_GET['context'];
+                        }
+                        if ( isset( $_GET[ 'status' ] ) ) {
+                            $url .= '&amp;status=' . $_GET['status'];
+                        }
+
+                        $url = esc_url( $url );
+                    ?>
+                    <a href="<?php echo $url; ?>"><?php echo __( 'Display all results', 'wpml-string-translation' ); ?></a>
                 <?php endif; ?>
             </div>
 
@@ -326,10 +355,17 @@ function _icl_string_translation_rtl_textarea($language) {
 
         <?php if(current_user_can('manage_options')):  // the rest is only for admins. not for editors  ?>
 
-        <span class="subsubsub">
-            <input type="hidden" id="_icl_nonce_dstr" value="<?php echo wp_create_nonce('icl_st_delete_strings_nonce') ?>" />
-            <input type="button" class="button-secondary" id="icl_st_delete_selected" value="<?php echo __('Delete selected strings', 'wpml-string-translation') ?>" disabled="disabled" />
-            <span style="display:none"><?php echo __("Are you sure you want to delete these strings?\nTheir translations will be deleted too.",'wpml-string-translation') ?></span>
+    <span class="subsubsub">
+            <input type="hidden" id="_icl_nonce_dstr"
+                   value="<?php echo wp_create_nonce( 'icl_st_delete_strings_nonce' ) ?>"/>
+						<div id="wpml-st-package-incomplete" style="display:none;color:red;"><?php echo __( "You have selected strings belonging to a package. Please select all strings from the affected package or unselect these strings.", 'wpml-string-translation' ) ?></div>
+            <input type="button" class="button-secondary" id="icl_st_delete_selected"
+                   value="<?php echo __( 'Delete selected strings', 'wpml-string-translation' ) ?>"
+									 data-confirm="<?php echo __( "Are you sure you want to delete these strings?\nTheir translations will be deleted too.", 'wpml-string-translation' ) ?>"
+                   disabled="disabled"/>
+            <input type="button" class="button-secondary" id="icl_st_change_lang_selected"
+                   value="<?php echo __( 'Change language of selected strings', 'wpml-string-translation' ) ?>"
+                   disabled="disabled"/>
         </span>
 
         <br clear="all" />
@@ -349,7 +385,7 @@ function _icl_string_translation_rtl_textarea($language) {
                                 <br/>
                             </div>
                             <h3 class="hndle">
-                                <span><?php echo __('Track where string appear on the site', 'wpml-string-translation')?></span>
+                                <span><?php echo __('Track where strings appear on the site', 'wpml-string-translation')?></span>
                             </h3>
                             <div class="inside">
                                 <p class="sub"><?php echo __("WPML can keep track of where strings are used on the public pages. Activating this feature will enable the 'view in page' functionality and make translation easier.", 'wpml-string-translation')?></p>
@@ -359,10 +395,29 @@ function _icl_string_translation_rtl_textarea($language) {
                                     <ul>
                                         <li>
                                            	<input type="hidden" name="icl_st[track_strings]" value="0" />
-                                            <label><input type="checkbox" id="icl_st_track_strings" name="icl_st[track_strings]" value="1" <?php
-                                            if(!empty($string_settings['track_strings'])): ?>checked="checked"<?php endif ?> />
-                                        <?php _e('Track where strings appear on the site', 'wpml-string-translation'); ?></label>
-                                        <p><a href="https://wpml.org/?p=9073"><?php _e('Performance considerations', 'wpml-string-translation') ?>&nbsp;&raquo;</a></p>
+	                                        <?php
+	                                        $track_strings         = array_key_exists( 'track_strings', $string_settings ) && $string_settings['track_strings'];
+	                                        $track_strings_checked = checked( true, $track_strings, false );
+	                                        $track_strings_display = ' style="color: red;' . (! $track_strings ? 'display: none;' : '') . '""';
+
+	                                        $url               = 'https://wpml.org/documentation/getting-started-guide/string-translation/#track-strings';
+	                                        $message_sentences = array();
+
+	                                        $anchor_text         = _x( 'String Tracking', 'String Tracking warning: sentence 1, anchor text', 'wpml-string-translation' );
+	                                        $message_sentences[] = _x( '%s allows you to see where strings come from, so you can translate them accurately.', 'String Tracking warning: sentence 1', 'wpml-string-translation' );
+	                                        $message_sentences[] = _x( 'It needs to parse the PHP source files and the output HTML.', 'String Tracking warning: sentence 2', 'wpml-string-translation' );
+	                                        $message_sentences[] = _x( 'This feature is CPU-intensive and should only be used while you are developing sites.', 'String Tracking warning: sentence 3', 'wpml-string-translation' );
+	                                        $message_sentences[] = _x( 'Remember to turn it off before going to production, to avoid performance problems.', 'String Tracking warning: sentence 4', 'wpml-string-translation' );
+
+	                                        $anchor  = '<a href="' . $url . '" target="_blank">' . $anchor_text . '</a>';
+	                                        $message = sprintf( implode( ' ', $message_sentences ), $anchor );
+	                                        ?>
+	                                        <input type="checkbox" id="track_strings" name="icl_st[track_strings]" value="1" <?php echo $track_strings_checked; ?> />
+	                                        <label for="track_strings"><?php _e( 'Track where strings appear on the site', 'wpml-string-translation' ); ?></label>
+	                                        <p class="js-track-strings-note" <?php echo $track_strings_display; ?>>
+		                                        <?php echo $message; ?>
+	                                        </p>
+                                        <p><a href="https://wpml.org/?p=9073" target="_blank"><?php _e('Performance considerations', 'wpml-string-translation') ?>&nbsp;&raquo;</a></p>
                                         </li>
                                         <li>
                                             <?php
@@ -394,52 +449,71 @@ function _icl_string_translation_rtl_textarea($language) {
                             </div>
                         </div>
 
-                        <div id="dashboard_wpml_stsel_1.5" class="postbox">
-                            <div class="handlediv" title="<?php echo __('Click to toggle', 'wpml-string-translation'); ?>">
+                        <div id="dashboard_wpml_stsel_1.5" class="postbox wpml-st-exclude-contexts">
+                            <div class="handlediv" title="<?php echo esc_attr__('Click to toggle', 'wpml-string-translation'); ?>">
                                 <br/>
                             </div>
                             <h3 class="hndle">
-                                <span><?php echo __('Auto register strings for translation', 'wpml-string-translation')?></span>
+                                <span><?php echo esc_html__('Auto register strings for translation', 'wpml-string-translation')?></span>
                             </h3>
                             <div class="inside">
-                                <p class="sub"><?php echo __('WPML can automatically register strings for translation. This allows you to translate user-generated content with minimal PHP code.', 'wpml-string-translation')?></p>
-                                <form id="icl_st_ar_form" name="icl_st_ar_form" method="post" action="">
-                                <?php wp_nonce_field('icl_st_ar_form_nonce', '_icl_nonce') ?>
-                                    <p class="icl_form_errors" style="display:none"></p>
-                                    <ul>
-                                        <li>
-                                        <label>
-                                            <input type="radio" class="icl_auto_reg_type" name="icl_auto_reg_type" value="disable" <?php if($string_settings['icl_st_auto_reg'] == 'disable'):?>checked="checked"<?php endif?> />
-                                            <?php echo __('Disable auto-register strings', 'wpml-string-translation') ?>
-                                        </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="radio" class="icl_auto_reg_type" name="icl_auto_reg_type" value="auto-admin" <?php if(!$string_settings['icl_st_auto_reg'] || $string_settings['icl_st_auto_reg'] == 'auto-admin'):?>checked="checked"<?php endif?> />
-                                                <?php echo __('Auto-register strings only when logged in as an administrator', 'wpml-string-translation') ?>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="radio" class="icl_auto_reg_type" name="icl_auto_reg_type" value="auto-always" <?php if($string_settings['icl_st_auto_reg'] == 'auto-always'):?>checked="checked"<?php endif?> />
-                                                <?php echo __('Auto-register strings always', 'wpml-string-translation') ?>
-                                            </label>
+                                <p class="sub"><?php echo esc_html__('WPML can automatically register strings for translation. This allows you to translate user-generated content with minimal PHP code.', 'wpml-string-translation')?></p>
 
-	                                        <p id="auto_register_notes" style="display: none;">
-		                                        <?php
-		                                        $auto_register_notes = __( 'Auto-registration takes server resources. Read the %susage instructions%s to learn how to use it correctly while you are developing the site.', 'wpml-string-translation' );
-		                                        $auto_register_notes = sprintf( $auto_register_notes, '<a href="http://wpml.org/documentation/getting-started-guide/string-translation/#auto-register-fe" target="_blank">', '</a>' );
-		                                        echo __( $auto_register_notes, 'wpml-string-translation' )
-		                                        ?>
-	                                        </p>
-                                        </li>
-                                    </ul>
-                                    <p>
-                                    <input class="button-secondary" type="submit" name="iclt_auto_reg_apply" value="<?php echo __('Apply', 'wpml-string-translation')?>" />
-                                    <span class="icl_ajx_response" id="icl_ajx_response3" style="display:inline"></span>
-                                    </p>
-                                </form>
+                                <p class="wpml-st-excluded-info"
+                                   data-all-included="<?php echo esc_attr__('Strings from all text domains will be auto-registered', 'wpml-string-translation') ?>"
+                                   data-all-excluded="<?php echo esc_attr__('Strings from all text domains are excluded', 'wpml-string-translation') ?>"
+                                   data-excluded-preview="<?php echo esc_attr__('You excluded: ', 'wpml-string-translation') ?>"
+                                   data-included-preview="<?php echo esc_attr__('You included: ', 'wpml-string-translation') ?>"
+                                   data-preview-suffix="<?php echo esc_attr__('and others', 'wpml-string-translation') ?>"
+                                >
 
+                                </p>
+                                <p>
+                                    <input type="button"
+                                           class="button-secondary js-wpml-autoregister-edit-contexts"
+                                           value="<?php echo esc_attr__('Edit', 'wpml-string-translation')?>"
+                                    />
+                                </p>
+
+                                <div class="wpml-st-exclude-contexts-box"
+                                     style="display:none;"
+                                     title="<?php echo esc_attr__('Auto-register strings from these text domains', 'wpml-string-translation');?>"
+                                >
+                                    <form method="post" action="" data-nonce="<?php echo wp_create_nonce( 'wpml-st-cancel-button' ); ?>" >
+                                        <?php
+                                            $exclude      = new WPML_Autoregister_Context_Exclude( $wpdb, new WPML_ST_Settings() );
+                                            $excluded     = $exclude->get_excluded_contexts();
+                                            $has_excluded = count($excluded) > 0;
+                                        ?>
+
+                                        <div id="wpml-st-filter-and-select-all-box">
+                                            <input type="input" name="search" placeholder="<?php echo esc_attr__('Search', 'wpml-string-translation')?>" />
+
+                                            <br/>
+
+                                            <p>
+                                                <input type="checkbox" name="select_all" <?php checked( false, $has_excluded); ?> />
+                                                <span><?php esc_html__('Select all', 'wpml-string-translation')?></span>
+                                            </p>
+                                        </div>
+
+                                        <div class="contexts">
+                                            <?php foreach ($exclude->get_contexts_and_their_exclude_status() as $context => $status): ?>
+                                                <?php if(strlen($context)): ?>
+                                                <p>
+                                                    <input
+                                                        type="checkbox"
+                                                        name="<?php echo WPML_Autoregister_Context_Exclude::SETTING_KEY ?>[]"
+                                                        value="<?php echo $context ?>"
+                                                        <?php checked(false, $status); ?>
+                                                    />
+                                                    <span><?php echo $context; ?></span>
+                                                </p>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -611,9 +685,6 @@ function _icl_string_translation_rtl_textarea($language) {
         <a href="admin.php?page=<?php echo WPML_ST_FOLDER ?>/menu/string-translation.php&amp;trop=1"><?php _e('Translate texts in admin screens &raquo;', 'wpml-string-translation'); ?></a>
 
     <?php endif; //if(current_user_can('manage_options') ?>
-
     <?php endif; ?>
-
     <?php do_action('icl_menu_footer'); ?>
-
 </div>

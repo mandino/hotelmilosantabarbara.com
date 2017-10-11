@@ -2,8 +2,6 @@
 
 class WPML_Package {
 	public  $ID;
-	private $default_language;
-	public  $language_code;
 	public  $view_link;
 	public  $edit_link;
 	public  $is_translation;
@@ -15,6 +13,7 @@ class WPML_Package {
 	public  $trid;
 	public  $name;
 	public  $translation_element_type;
+	public  $post_id;
 
 	private $element_type_prefix;
 
@@ -22,12 +21,10 @@ class WPML_Package {
 	 * @param stdClass|WPML_Package|array|int $data_item
 	 */
 	function __construct( $data_item ) {
-		$default_language          = icl_get_default_language();
 		$this->element_type_prefix = 'package';
-		$this->default_language    = $default_language;
-		$this->language_code       = $default_language;
 		$this->view_link           = '';
 		$this->edit_link           = '';
+		$this->post_id             = null;
 		if ( $data_item ) {
 			if ( is_object( $data_item ) ) {
 				$data_item = get_object_vars( $data_item );
@@ -97,23 +94,6 @@ class WPML_Package {
 		}
 	}
 
-	public function get_default_language() {
-		if ( $this->ID ) {
-			try {
-				$context = $this->get_package_context();
-			} catch ( Exception $e ) {
-				$context = false;
-			}
-			if ( $context ) {
-				$st = new WPML_Package_ST();
-
-				return $st->get_context_default_language( $context );
-			}
-		}
-
-		return $this->default_language;
-	}
-
 	public function get_translation_element_type() {
 		return $this->translation_element_type;
 	}
@@ -162,12 +142,33 @@ class WPML_Package {
 		$package_id = $this->ID;
 		$results    = false;
 		if ( $package_id ) {
-			$results_query   = "SELECT id, name, value FROM {$wpdb->prefix}icl_strings WHERE string_package_id=%d";
-			$results_prepare = $wpdb->prepare( $results_query, $package_id );
-			$results         = $wpdb->get_results( $results_prepare );
+
+			$cache = new WPML_WP_Cache( 'WPML_Package' );
+			$cache_key = 'strings:' . $package_id;
+			$found = false;
+
+			$results = $cache->get( $cache_key, $found );
+			if ( ! $found ) {
+				$results_query   = "SELECT id, name, value, type FROM {$wpdb->prefix}icl_strings WHERE string_package_id=%d";
+				$results_prepare = $wpdb->prepare( $results_query, $package_id );
+				$results         = $wpdb->get_results( $results_prepare );
+
+				$cache->set( $cache_key, $results );
+			}
 		}
 
 		return $results;
+	}
+	
+	public function set_strings_language( $language_code ) {
+		global $wpdb;
+		$package_id = $this->ID;
+		if ( $package_id ) {
+			$update_query   = "UPDATE {$wpdb->prefix}icl_strings SET language=%s WHERE string_package_id=%d";
+			$update_prepare = $wpdb->prepare( $update_query, $language_code, $package_id );
+			$wpdb->query( $update_prepare );
+		}
+		
 	}
 
 	/**
@@ -209,6 +210,7 @@ class WPML_Package {
 				'title'     => $this->title,
 				'edit_link' => $this->edit_link,
 				'view_link' => $this->view_link,
+				'post_id'   => $this->post_id,
 			);
 			$wpdb->insert( $wpdb->prefix . 'icl_string_packages', $data );
 			$package_id = $wpdb->insert_id;
@@ -292,7 +294,7 @@ class WPML_Package {
 		$string_id = apply_filters('wpml_string_id', null, $string_data);
 
 		if ( ! $string_id ) {
-			$string_id = icl_register_string( $string_context, $string_name, $string_value );
+			$string_id = icl_register_string( $string_context, $string_name, $string_value, null, $this->get_package_language() );
 		}
 
 		return $string_id;
@@ -384,21 +386,29 @@ class WPML_Package {
 	private function get_package_from_name_and_kind() {
 		global $wpdb;
 
-		$package_query    = "SELECT * FROM {$wpdb->prefix}icl_string_packages WHERE kind_slug=%s AND name=%s";
-		$package_prepared = $wpdb->prepare( $package_query, array( $this->kind_slug, $this->name ) );
+		$cache = new WPML_WP_Cache( 'WPML_Package' );
+		$cache_key = 'name-kind:' . $this->kind_slug . $this->name;
+		$found = false;
 
-		return $wpdb->get_row( $package_prepared );
+		$result = $cache->get( $cache_key, $found );
+		if ( ! $found ) {
+
+			$package_query    = "SELECT * FROM {$wpdb->prefix}icl_string_packages WHERE kind_slug=%s AND name=%s";
+			$package_prepared = $wpdb->prepare( $package_query, array( $this->kind_slug, $this->name ) );
+
+			$result = $wpdb->get_row( $package_prepared );
+
+			if ( $result ) {
+				$cache->set( $cache_key, $result );
+			}
+		}
+		return $result;
 	}
 
 	private function package_name_and_kind_exists() {
 		$result = false;
 		if ( $this->has_kind_and_name() ) {
-			global $wpdb;
-
-			$package_query    = "SELECT ID FROM {$wpdb->prefix}icl_string_packages WHERE kind_slug=%s AND name=%s";
-			$package_prepared = $wpdb->prepare( $package_query, array( $this->kind_slug, $this->name ) );
-
-			$result = $wpdb->get_var( $package_prepared );
+			$result = (bool) $this->get_package_from_name_and_kind();
 		}
 
 		return $result;
@@ -416,25 +426,6 @@ class WPML_Package {
 		}
 
 		return $result;
-	}
-
-	/**
-	 * @return int
-	 * @throws WPML_Package_Exception
-	 */
-	private function get_package_context() {
-		global $wpdb;
-		$context_query    = "SELECT context FROM {$wpdb->prefix}icl_strings WHERE string_package_id=%d GROUP BY context";
-		$context_prepared = $wpdb->prepare( $context_query, $this->ID );
-		$context          = $wpdb->get_results( $context_prepared );
-		if ( count( $context ) > 1 ) {
-			throw new WPML_Package_Exception( 'error', 'Package contains multiple contexts' );
-		}
-		if ( ! $context ) {
-			throw new WPML_Package_Exception( 'warning', 'Package has no strings' );
-		}
-
-		return apply_filters( 'WPML_ST_strings_context_language', '', $context );
 	}
 
 	/**
@@ -497,4 +488,38 @@ class WPML_Package {
 	public function get_package_element_type() {
 		return 'package_' . $this->kind_slug;
 	}
+	
+	public function get_package_language() {
+		global $sitepress;
+
+		if ( $this->post_id ) {
+			$post = get_post( $this->post_id );
+			$details = $sitepress->get_element_language_details( $this->post_id, 'post_' . $post->post_type );
+		} else {
+			$element_type = $this->get_package_element_type();
+			$details      = $sitepress->get_element_language_details( $this->ID, $element_type );
+		}
+		
+		if ( $details ) {
+			return $details->language_code;
+		} else {
+			return null;
+		}
+	}
+	
+	public function are_all_strings_included( $strings ) {
+		// check to see if all the strings in this package are present in $strings
+		
+		$package_strings = $this->get_package_strings();
+		if ( is_array( $package_strings ) ) {
+			foreach( $package_strings as $string ) {
+				if ( ! in_array( $string->id, $strings ) ) {
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
 }
