@@ -480,6 +480,10 @@ and (max-width : 1024px) {
 	display: block;
 }
 
+.white-shadow {
+	display: block;
+}
+
 li.blue-btn i {
  padding-right: 0px;
 }
