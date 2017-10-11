@@ -1,9 +1,11 @@
 <?php
 
 class WPML_Package_Translation_Metabox {
+	private $args;
 	private $active_languages;
 	private $container_attributes_html;
 	private $dashboard_link;
+	private $strings_link;
 	private $default_language;
 	private $main_container_attributes;
 	private $show_description;
@@ -33,9 +35,11 @@ class WPML_Package_Translation_Metabox {
 		$this->wpdb      = $wpdb;
 		$this->sitepress = $sitepress;
 		$this->package   = new WPML_Package( $package );
+		$this->args      = $args;
 
 		if ( $this->got_package() ) {
-			$this->dashboard_link = admin_url( 'admin.php?page=' . WPML_TM_FOLDER . '/menu/main.php&sm=dashboard&type=' . $this->package->kind_slug );
+			$this->dashboard_link = admin_url( 'admin.php?page=' . WPML_TM_FOLDER . '/menu/main.php&sm=dashboard&type=' . $this->package->kind_slug . '&lang=' . $this->package->get_package_language() );
+			$this->strings_link   = admin_url( 'admin.php?page=' . WPML_ST_FOLDER . '/menu/string-translation.php&context=' . $this->package->get_string_context_from_package() );
 		}
 
 		$this->parse_arguments( $args );
@@ -46,19 +50,139 @@ class WPML_Package_Translation_Metabox {
 		$this->metabox_data     = array();
 		$this->active_languages = $this->sitepress->get_active_languages();
 		$this->default_language = $this->sitepress->get_default_language();
+		$this->package_language = $this->package->get_package_language();
+		$this->package_language = $this->package_language ? $this->package_language : $this->default_language;
 
 		$this->metabox_data[ 'title' ]                  = __( 'WPML Translation', 'wpml-string-translation' );
-		$this->metabox_data[ 'package_language_title' ] = sprintf( __( 'Language of this %s is %s', 'wpml-string-translation' ), $this->package->kind, $this->active_languages[ $this->default_language ][ 'display_name' ] );
-		$this->metabox_data[ 'translate_title' ]        = sprintf( __( 'Send %s to translation', 'wpml-string-translation' ), $this->package->kind );
+		if ( $this->is_package_language_active( ) ) {
+			$this->metabox_data[ 'translate_title' ]        = __( 'Send to translation', 'wpml-string-translation' );
+		} else {
+			$this->metabox_data[ 'translate_title' ]        = __( 'Translate strings', 'wpml-string-translation' );
+		}
 
 		if ( $this->got_package() ) {
 			$this->metabox_data[ 'statuses_title' ] = __( 'Translation status:', 'wpml-string-translation' );
 			$this->init_translation_statuses();
+			$this->metabox_data[ 'package_language_title' ] = sprintf( __( 'Language of this %s is %s', 'wpml-string-translation' ), $this->package->kind, $this->get_lang_selector( ) );
 		} else {
+			$this->metabox_data[ 'package_language_title' ] = '';
 			$this->metabox_data[ 'statuses_title' ] = __( 'There is nothing to translate.', 'wpml-string-translation' );
 		}
 	}
 
+	private function get_lang_selector( ) {
+
+		$disable = $this->check_if_language_change_is_ok() ? '' : 'disabled="disabled" ';
+		
+		ob_start( );
+		
+		$languages = $this->active_languages;
+		if ( ! $this->is_package_language_active( ) ) {
+			$languages = array_merge( array( $this->sitepress->get_language_details( $this->package_language ) ), $languages );
+		} else {
+			$languages = $this->active_languages;
+		}
+		
+		$selector = new WPML_Simple_Language_Selector( $this->sitepress );
+		$selector->render( array(
+								'id'                 => 'icl_package_language',
+								'name'               => 'icl_package_language',
+								'show_please_select' => false,
+								'languages'          => $languages,
+								'selected'           => $this->package_language,
+								'disabled'           => ! $this->check_if_language_change_is_ok(),
+								'echo'               => true
+								)
+							  );
+		?>
+			<span class="spinner"></span>
+		<?php
+		
+		return ob_get_clean();
+	}
+	
+	public function get_package_language_name() {
+		if ( $this->is_package_language_active ( ) ) {
+			return $this->active_languages[ $this->package_language ][ 'display_name' ];
+		} else {
+			$all_languages = $this->sitepress->get_languages();
+			return $all_languages[ $this->package_language ]['display_name'];
+		}
+	}
+	
+	private function get_lang_switcher_js( ) {
+		ob_start();
+		
+		?>
+			<script type="text/javascript">
+				
+				var WPML_Package_Translation = WPML_Package_Translation || {};
+				
+				WPML_Package_Translation.MetaBox = function () {
+					var self = this;
+					
+					self.init = function () {
+						jQuery('#icl_package_language').off('change');
+						jQuery('#icl_package_language').on('change', self.switch_lang);
+					};
+					
+					self.switch_lang = function() {
+						self.disable_controls(true);
+						var data = {
+							action:          'wpml_change_package_lang',
+							wpnonce:         jQuery('#wpml_package_nonce').val(),
+							package_id:      jQuery('#wpml_package_id').val(),
+							args:            jQuery('#wpml_package_args').val(),
+							package_lang:    jQuery(this).val()
+						};
+
+						jQuery.ajax(
+							{
+								url:     ajaxurl,
+								type:    'post',
+								data:    data,
+								dataType: 'json',
+								success: function (response) {
+									var position = jQuery('#wpml_package_status').prev();
+									jQuery('#wpml_package_status').remove();
+									jQuery(response.metabox).insertAfter(position);
+									
+									jQuery('#icl_package_language').trigger('wpml-package-language-changed', [response.lang]);
+									
+									self.disable_controls(false);
+								}
+							});
+					};
+					
+					self.disable_controls = function(state) {
+						var lang_switcher = jQuery('#icl_package_language');
+						if (state) {
+							lang_switcher.next('.spinner').show();
+							lang_switcher.prop('disabled', true);
+							lang_switcher.closest('div').find('a').prop('disabled', true);
+						} else {
+							lang_switcher.next('.spinner').hide();
+							lang_switcher.prop('disabled', false);
+							lang_switcher.closest('div').find('a').prop('disabled', false);
+						}
+					};
+					
+					self.init();
+				};
+				
+				jQuery(document).ready(
+					function () {
+						WPML_Package_Translation.meta_box = new WPML_Package_Translation.MetaBox();
+					}
+				);
+				
+			</script>
+		
+		<?php
+		
+		return ob_get_clean();
+	}
+	
 	function get_metabox() {
 		$result = '';
 		$result .= '<div ' . $this->container_attributes_html . '>';
@@ -78,14 +202,31 @@ class WPML_Package_Translation_Metabox {
 			$result .= '<p>' . $this->metabox_data[ 'statuses_title' ] . '</p>';
 		}
 
+		$result .= $this->get_metabox_status();
+
+		$result .= '</div>';
+		$result .= wp_nonce_field( 'wpml_package_nonce', 'wpml_package_nonce', true, false );
+		$result .= '<input type="hidden" id="wpml_package_id" value="' . $this->package->ID . '" />';
+		$result .= '<input type="hidden" id="wpml_package_args" value="' . base64_encode( wp_json_encode( $this->args ) ) . '" />';
+		
+		if ( ! defined( 'DOING_AJAX' ) ) {
+			$result .= $this->get_lang_switcher_js();
+		}
+
+		return $result;
+	}
+
+	public function get_metabox_status() {
+		$result = '';
 		if ( $this->got_package() ) {
+			$result .= '<div id="wpml_package_status">';
 			if ( $this->show_status && $this->metabox_data[ 'statuses' ] ) {
 				if ( $this->status_container_tag ) {
 					$result .= $this->get_tag( $this->status_container_tag . ' ' . $this->status_container_attributes_html );
 				}
-				foreach ( $this->metabox_data[ 'statuses' ] as $active_language => $status ) {
+				foreach ( $this->metabox_data[ 'statuses' ] as $code => $status ) {
 					$result .= $this->get_tag( $this->status_element_tag );
-					$result .= $active_language . ' : ' . $status;
+					$result .= '<img src="' . $this->sitepress->get_flag_url( $code ) . '"> ' . $status[ 'name' ] . ' : ' . $status[ 'status' ];
 					$result .= $this->get_tag( $this->status_element_tag, 'closed' );
 				}
 				if ( $this->status_container_tag ) {
@@ -93,14 +234,47 @@ class WPML_Package_Translation_Metabox {
 				}
 			}
 			if ( $this->show_link ) {
-				$result .= '<p><a href="' . $this->dashboard_link . '" target="_blank">' . $this->metabox_data[ 'translate_title' ] . '</a></p>';
+				if ( $this->is_package_language_active() ) {
+					$result .= '<p><a style="float:right" class="button-secondary" href="' . $this->dashboard_link . '" target="_blank">' . $this->metabox_data[ 'translate_title' ] . '</a></p>';
+				} else {
+					$result .= '<p><a style="float:right" class="button-secondary" href="' . $this->strings_link . '" target="_blank">' . $this->metabox_data[ 'translate_title' ] . '</a></p>';
+				}
 			}
+			$result .= '<br /><br /></div>';
 		}
-		$result .= '</div>';
-
+		
 		return $result;
 	}
-
+	
+	private function check_if_language_change_is_ok() {
+		
+		$ok = true;
+		
+		foreach ( $this->translation_statuses as $status ) {
+			if ( isset( $status->status_code ) && $status->status_code != 0 ) {
+				$ok = false;
+				break;
+			}
+		}
+		
+		if ( $ok ) {
+			$translations = $this->package->get_translated_strings( array() );
+			foreach ( $translations as $string ) {
+				foreach ( $string as $lang => $data ) {
+					if ( $data[ 'status'] == ICL_STRING_TRANSLATION_COMPLETE ) {
+						$ok = false;
+						break;
+					}
+				}
+				if ( ! $ok ) {
+					break;
+				}
+			}
+		}
+		
+		return $ok;
+	}
+	
 	/**
 	 * @param $attributes
 	 *
@@ -119,14 +293,13 @@ class WPML_Package_Translation_Metabox {
 	}
 
 	function get_post_translations() {
-		global $sitepress;
-
+		
 		$element_type = $this->package->get_package_element_type();
-		$trid         = $sitepress->get_element_trid( $this->package->ID, $element_type );
+		$trid         = $this->sitepress->get_element_trid( $this->package->ID, $element_type );
 
-		return $sitepress->get_element_translations( $trid, $element_type );
+		return $this->sitepress->get_element_translations( $trid, $element_type );
 	}
-
+	
 	private function get_tag( $tag, $closed = false ) {
 		$result = '<';
 		if ( $closed ) {
@@ -180,11 +353,12 @@ class WPML_Package_Translation_Metabox {
 		$post_translations = $this->get_post_translations();
 		$status            = array();
 		foreach ( $post_translations as $language => $translation ) {
-			$res_query   = "SELECT status, needs_update FROM {$this->wpdb->prefix}icl_translation_status WHERE translation_id=%d";
+			$res_query   = "SELECT status as status_code, needs_update FROM {$this->wpdb->prefix}icl_translation_status WHERE translation_id=%d";
 			$res_args    = array( $translation->translation_id );
 			$res_prepare = $this->wpdb->prepare( $res_query, $res_args );
 			$res         = $this->wpdb->get_row( $res_prepare );
 			if ( $res ) {
+				$res->status = $res->status_code;
 				switch ( $res->status ) {
 					case ICL_TM_WAITING_FOR_TRANSLATOR:
 						$res->status = __( 'Waiting for translator', 'wpml-string-translation' );
@@ -217,12 +391,15 @@ class WPML_Package_Translation_Metabox {
 	}
 
 	private function init_translation_statuses() {
+		$this->metabox_data[ 'statuses' ] = array();
 		$this->translation_statuses = $this->get_translation_statuses();
 		foreach ( $this->active_languages as $language_data ) {
-			if ( $language_data[ 'code' ] != $this->default_language ) {
+			if ( $language_data[ 'code' ] != $this->package_language ) {
 				$display_name = $language_data[ 'display_name' ];
 
-				$this->metabox_data[ 'statuses' ][ $display_name ] = $this->get_status_value( $language_data );
+				$this->metabox_data[ 'statuses' ][ $language_data[ 'code' ] ] = array( 'name'   => $display_name,
+																					   'status' => $this->get_status_value( $language_data )
+																					 );
 			}
 		}
 	}
@@ -231,9 +408,18 @@ class WPML_Package_Translation_Metabox {
 		if ( isset( $this->translation_statuses[ $language_data[ 'code' ] ] ) ) {
 			$status_value = $this->translation_statuses[ $language_data[ 'code' ] ]->status;
 		} else {
-			$status_value = __( 'Not translated', 'wpml-string-translation' );
+			$tm = new WPML_Package_TM( $this->package );
+			if ( $tm->is_in_basket( $language_data[ 'code' ] ) ) {
+				$status_value = __( 'In translation basket', 'wpml-string-translation' );
+			} else {
+				$status_value = __( 'Not translated', 'wpml-string-translation' );
+			}
 		}
 
 		return $status_value;
+	}
+	
+	private function is_package_language_active( ) {
+		return in_array( $this->package_language, array_keys( $this->active_languages ) );
 	}
 }

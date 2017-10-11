@@ -39,7 +39,6 @@ class WPML_Package_Translation_HTML_Packages {
 			$package_kind_options[ $kind_slug ] = $kind;
 		}
 		?>
-		<div id="icon-wpml" class="icon32"><br/></div>
 		<h2><?php echo $table_title; ?></h2>
 
 		<p>
@@ -65,7 +64,7 @@ class WPML_Package_Translation_HTML_Packages {
 
 		<input id="delete_packages" type="button" class="button-primary" value="<?php echo __( 'Delete Selected Packages', 'wpml-string-translation' ) ?>" disabled="disabled"/>
 		&nbsp;
-		<img src="<?php echo ICL_PLUGIN_URL . '/res/img/ajax-loader.gif'; ?>" alt="loading" height="16" width="16" class="wpml_tt_spinner"/>
+		<span class="spinner"></span>
 		<span style="display:none" class="js-delete-confirm-message"><?php echo __( "Are you sure you want to delete these packages?\nTheir strings and translations will be deleted too.", 'wpml-string-translation' ) ?></span>
 
 		<?php
@@ -133,8 +132,8 @@ class WPML_Package_Translation_HTML_Packages {
 		/** @var WPML_Package $package */
 		foreach ( $packages as $package ) {
 
-			$default_package_language_code = $package->get_default_language();
-			$default_package_language      = $sitepress->get_display_language_name( $default_package_language_code );
+			$package_language_code = $package->get_package_language();
+			$package_language      = $sitepress->get_display_language_name( $package_language_code );
 
 			$tm = new WPML_Package_TM( $package );
 
@@ -157,7 +156,7 @@ class WPML_Package_Translation_HTML_Packages {
 
 				<td>
 					<?php
-					do_action( 'wpml_pt_package_status', $string_count, $translation_in_progress, $default_package_language );
+					do_action( 'wpml_pt_package_status', $string_count, $translation_in_progress, $package_language );
 					?>
 				</td>
 			</tr>
