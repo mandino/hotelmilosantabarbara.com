@@ -1,9 +1,6 @@
 <?php
 
 class WPML_Package_ST {
-	public function get_context_default_language( $context ) {
-		return apply_filters( 'WPML_ST_strings_context_language', 'en', $context );
-	}
 
 	public function get_string_element( $string_id, $column = false ) {
 		global $wpdb;

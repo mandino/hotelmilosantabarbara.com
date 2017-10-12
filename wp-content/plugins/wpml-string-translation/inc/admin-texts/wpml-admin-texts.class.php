@@ -1,5 +1,5 @@
 <?php
-require_once 'wpml-admin-text-functionality.class.php';
+require_once dirname( __FILE__ ) . '/wpml-admin-text-functionality.class.php';
 
 class WPML_Admin_Texts extends WPML_Admin_Text_Functionality{
 
@@ -8,13 +8,18 @@ class WPML_Admin_Texts extends WPML_Admin_Text_Functionality{
 	/** @var  TranslationManagement $tm_instance */
 	private $tm_instance;
 
+	/** @var  WPML_String_Translation $st_instance */
+	private $st_instance;
+
 	/**
 	 * @param TranslationManagement $tm_instance
+	 * @param WPML_String_Translation $st_instance
 	 */
-	function __construct( &$tm_instance ) {
+	function __construct( &$tm_instance, &$st_instance ) {
 		add_action( 'plugins_loaded', array( $this, 'icl_st_set_admin_options_filters' ), 10 );
 		add_filter( 'wpml_unfiltered_admin_string', array( $this, 'unfiltered_admin_string_filter' ), 10, 2 );
 		$this->tm_instance = &$tm_instance;
+		$this->st_instance = &$st_instance;
 	}
 
 	function icl_register_admin_options( $array, $key = "", $option = array() ) {
@@ -66,7 +71,7 @@ class WPML_Admin_Texts extends WPML_Admin_Text_Functionality{
 				? ' class="icl_st_has_translations" ' : '';
 
 			$input_val            = ' value="' . htmlspecialchars( $option_value ) . '" ';
-			$option_key_name      = ' name="icl_admin_options' . $sub_key . ' ';
+			$option_key_name      = ' name="icl_admin_options' . $sub_key . '" ';
 			$input_open           = '<input' . ( $fixed ? ' disabled="disabled"' : '' );
 			$read_only_input_open = '<input type="text" readonly="readonly"';
 			$output               = '<div class="icl_st_admin_string icl_st_' . ( is_numeric( $option_value ) ? 'numeric' : 'string' ) . '">'
@@ -134,19 +139,16 @@ class WPML_Admin_Texts extends WPML_Admin_Text_Functionality{
 	}
 
 	function icl_st_translate_admin_string( $option_value, $key = "", $name = "", $rec_level = 0 ) {
-		if ( ! defined( 'ICL_SITEPRESS_VERSION' ) || ICL_PLUGIN_INACTIVE ) {
-			return $option_value;
-		}
-
+		$lang        = $this->st_instance->get_current_string_language( $name );
 		$option_name = substr( current_filter(), 7 );
 		$name        = $name === '' ? $option_name : $name;
-		if ( isset( $this->icl_st_cache[ $name ] ) ) {
+		if ( isset( $this->icl_st_cache[ $lang ][ $name ] ) ) {
 
-			return $this->icl_st_cache[ $name ];
+			return $this->icl_st_cache[ $lang ][ $name ];
 		}
 
 		$serialized   = is_serialized( $option_value );
-		$option_value = $serialized ? @unserialize( $option_value ) : $option_value;
+		$option_value = $serialized ? unserialize( $option_value ) : $option_value;
 		if ( is_array( $option_value ) || is_object( $option_value ) ) {
 			foreach ( $option_value as $k => &$value ) {
 				$value = $this->icl_st_translate_admin_string( $value,
@@ -155,45 +157,54 @@ class WPML_Admin_Texts extends WPML_Admin_Text_Functionality{
 				                                               $rec_level + 1 );
 			}
 		} else {
-			static $option_names;
-
-			add_filter( 'WPML_get_user_admin_language', array( $this, 'get_user_admin_language' ), 1000, 1 ); // Run late
-
-			$option_names = empty( $option_names ) ? get_option( '_icl_admin_option_names' ) : $option_names;
-			$tr           = icl_t( 'admin_texts_' . $option_name, $key . $name, $option_value, $hast, true );
-			$option_value = $hast ? $tr : $option_value;
-
-			remove_filter( 'WPML_get_user_admin_language', array( $this, 'get_user_admin_language' ), 1000, 1 );
-		}
-		$option_value = $serialized ? serialize( $option_value ) : $option_value;
-		/*
-		 * if sticky links plugin is enabled and set to change links into sticky
-		 * in strings, change those links back into permalinks when displayed
-		 */
-		if ( is_string( $option_value ) and class_exists( "WPML_Sticky_links" ) ) {
-			global $WPML_Sticky_Links;
-			if ( isset( $WPML_Sticky_Links ) && $WPML_Sticky_Links->settings['sticky_links_strings'] ) {
-				$option_value = $WPML_Sticky_Links->show_permalinks( $option_value );
+			
+			if ( $this->is_admin_text( $key , $name ) ) {
+				$tr           = icl_t( 'admin_texts_' . $option_name, $key . $name, $option_value, $hast, true );
+				$option_value = $hast ? $tr : $option_value;
 			}
 		}
+		$option_value = $serialized ? serialize( $option_value ) : $option_value;
 
 		if ( $rec_level === 0 ) {
-			$this->icl_st_cache[ $name ] = $option_value;
+			$this->icl_st_cache[ $lang ][ $name ] = $option_value;
 		}
 
 		return $option_value;
 	}
 
-	function get_user_admin_language( $lang ) {
-		// Always return the options in the default language.
-		global $sitepress;
-		return $sitepress->get_default_language( );
+	private function is_admin_text( $key , $name ) {
+		static $option_names;
+		$option_names = empty( $option_names ) ? get_option( '_icl_admin_option_names' ) : $option_names;
+
+		if ( $key ) {
+			$key = ltrim( $key, '[' );
+			$key = rtrim( $key, ']' );
+			
+			$keys = explode( '][', $key );
+			
+			$test_option_names = $option_names;
+			
+			foreach ( $keys as $key ) {
+				if ( isset( $test_option_names[ $key ] ) ) {
+					$test_option_names = $test_option_names[ $key ];
+				} else {
+					return false;
+				}
+			}
+			
+			return isset( $test_option_names[ $name ] );
+		} else {
+			return isset( $option_names[ $name ] );
+		}
 	}
 	
 	function clear_cache_for_option() {
 		$option_name = substr( current_filter(), 14 );
-		
-		unset ( $this->icl_st_cache[ $option_name ] );
+		foreach ( array_keys( $this->icl_st_cache ) as $lang_code ) {
+			if ( isset( $this->icl_st_cache[ $lang_code ][ $option_name ] ) ) {
+				unset ( $this->icl_st_cache[ $lang_code ][ $option_name ] );
+			}
+		}
 	}
 
 	/**
