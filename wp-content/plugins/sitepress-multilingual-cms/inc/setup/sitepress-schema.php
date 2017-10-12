@@ -28,7 +28,7 @@ function icl_reset_language_data(){
         ) {
             continue;
         }
-        if(!file_exists(ICL_PLUGIN_PATH.'/res/flags/'.$code.'.png')){
+        if(!file_exists(WPML_PLUGIN_PATH.'/res/flags/'.$code.'.png')){
             $file = 'nil.png';
         }else{
             $file = $code.'.png';
@@ -43,6 +43,8 @@ function icl_reset_language_data(){
     }
 
     icl_cache_clear();
+
+	do_action( 'wpml_translation_update', array( 'type' => 'reset' ) );
 }
 
 function icl_sitepress_activate() {
@@ -97,7 +99,7 @@ function icl_sitepress_activate() {
                  `md5` varchar(32) NOT NULL,
                  `translation_service` varchar(16) NOT NULL,
                  `batch_id` int DEFAULT 0 NOT NULL,
-                 `translation_package` text NOT NULL,
+                 `translation_package` longtext NOT NULL,
                  `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                  `links_fixed` tinyint(4) NOT NULL DEFAULT 0,
                  `_prevstate` longtext,
@@ -176,7 +178,7 @@ function icl_sitepress_activate() {
 			$sql = "
                  CREATE TABLE IF NOT EXISTS `{$table_name}` (
                     `code` VARCHAR( 7 ) NOT NULL ,
-                    `locale` VARCHAR( 8 ) NOT NULL ,
+                    `locale` VARCHAR( 35 ) NOT NULL ,
                     UNIQUE (`code` ,`locale`)
                 ) {$charset_collate}";
 			if ( $wpdb->query( $sql ) === false ) {
@@ -193,8 +195,9 @@ function icl_sitepress_activate() {
                   `language` varchar(7) NOT NULL,
                   `context` varchar(" . WPML_STRING_TABLE_NAME_CONTEXT_LENGTH . ") CHARACTER SET UTF8 NOT NULL,
                   `name` varchar(" . WPML_STRING_TABLE_NAME_CONTEXT_LENGTH . ") CHARACTER SET UTF8 NOT NULL,
-                  `value` text NOT NULL,
+                  `value` longtext NOT NULL,
                   `string_package_id` BIGINT unsigned NULL,
+                  `location` BIGINT unsigned NULL,
                   `type` VARCHAR(40) NOT NULL DEFAULT 'LINE',
                   `title` VARCHAR(160) NULL,
                   `status` TINYINT NOT NULL,
@@ -202,7 +205,8 @@ function icl_sitepress_activate() {
                   `domain_name_context_md5` VARCHAR(32) CHARACTER SET LATIN1 NOT NULL,
                   PRIMARY KEY  (`id`),
                   UNIQUE KEY `uc_domain_name_context_md5` (`domain_name_context_md5`),
-                  KEY `language_context` (`language`, `context`)
+                  KEY `language_context` (`language`, `context`),
+                  KEY `icl_strings_name` (`name` ASC)
                   ) {$charset_collate}
                   ";
 			if ( $wpdb->query( $sql ) === false ) {
@@ -218,7 +222,8 @@ function icl_sitepress_activate() {
                   `string_id` bigint(20) unsigned NOT NULL,
                   `language` varchar(10) NOT NULL,
                   `status` tinyint(4) NOT NULL,
-                  `value` text NULL DEFAULT NULL,              
+                  `value` longtext NULL DEFAULT NULL,
+                  `mo_string` longtext NULL DEFAULT NULL,              
                   `translator_id` bigint(20) unsigned DEFAULT NULL, 
                   `translation_service` varchar(16) DEFAULT '' NOT NULL,
                   `batch_id` int DEFAULT 0 NOT NULL,
@@ -370,13 +375,14 @@ function icl_sitepress_activate() {
 
 	//Set new caps for all administrator role
 	icl_enable_capabilities();
+	repair_el_type_collate();
 
 	do_action('wpml_activated');
 }
 
 function icl_sitepress_deactivate() {
 	wp_clear_scheduled_hook( 'update_wpml_config_index' );
-	require_once ICL_PLUGIN_PATH . '/inc/cache.php';
+	require_once WPML_PLUGIN_PATH . '/inc/cache.php';
 	icl_cache_clear();
 	do_action('wpml_deactivated');
 }
@@ -407,13 +413,27 @@ function icl_enable_capabilities() {
 		}
 	}
 
+	$user_admins = get_users( array(
+		'role' => 'administrator'
+	) );
 
-	//Set new caps for all Super Admins
-	$super_admins = get_super_admins();
-	foreach ( $super_admins as $admin ) {
-		$user = new WP_User( $admin );
-		for ( $i = 0, $caps_limit = count( $icl_capabilities ); $i < $caps_limit; $i ++ ) {
-			$user->add_cap( $icl_capabilities[ $i ] );
+	if ( is_multisite() ) {
+		$super_admins = get_super_admins();
+
+		foreach( $super_admins as $admin ) {
+			$super_admin = new WP_User( $admin );
+
+			if ( ! in_array( $super_admin, $user_admins, true ) ) {
+				$user_admins[] = $super_admin;
+			}
+		}
+	}
+
+	foreach ( $user_admins as $user ) {
+		if ( $user->exists() ) {
+			for ( $i = 0, $caps_limit = count( $icl_capabilities ); $i < $caps_limit; $i ++ ) {
+				$user->add_cap( $icl_capabilities[ $i ] );
+			}
 		}
 	}
 
