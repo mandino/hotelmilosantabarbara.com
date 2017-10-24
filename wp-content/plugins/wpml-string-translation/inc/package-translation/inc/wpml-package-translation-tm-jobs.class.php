@@ -28,15 +28,17 @@ class WPML_Package_TM_Jobs {
 		return $post_trid;
 	}
 
-	final protected function set_language_details() {
+	final public function set_language_details( $language_code = null ) {
 		global $sitepress;
 		$package = $this->package;
 		$post_id = $package->ID;
 		$post    = $this->get_translatable_item( $post_id );
 		$post_id = $post->ID;
 		$element_type = $package->get_translation_element_type();
-		$default_language_code = $package->get_default_language();
-		$sitepress->set_element_language_details( $post_id, $element_type, false, $default_language_code, null, false );
+		if ( ! $language_code ) {
+			$language_code = icl_get_default_language();
+		}
+		$sitepress->set_element_language_details( $post_id, $element_type, false, $language_code, null, false );
 	}
 
 	final public function get_translatable_item( $package ) {
