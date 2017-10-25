@@ -472,7 +472,17 @@ and (max-width : 1099px) {
 @media only screen
 and (max-width : 1024px) {
 
+.read-more{
+	display: none;
+}
 
+.read-more-button {
+	display: block;
+}
+
+.white-shadow {
+	display: block;
+}
 
 li.blue-btn i {
  padding-right: 0px;
