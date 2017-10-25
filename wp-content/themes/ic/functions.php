@@ -128,6 +128,8 @@ function enqueue_footer_scripts() {
 	}
 
 	wp_enqueue_script('prettyPhoto', SS_BASE_URL . 'js/jquery.prettyPhoto.js', 'jquery', '', true);
+	wp_enqueue_script('loadxt-js', SS_BASE_URL . 'js/jquery.lazyloadxt.extra.js', 'jquery', '', true);
+	wp_enqueue_script('vide', SS_BASE_URL . 'js/jquery.vide.js', 'jquery', '', true);
 	wp_enqueue_script('jquery-clicknav', SS_BASE_URL . 'js/jquery-clicknav.js', 'jquery', '', true);
 	wp_enqueue_script('pinit');
 	wp_enqueue_script('modernizr-custom', SS_BASE_URL . 'js/quotes-rotator/modernizr.custom.js', 'jquery', '', true);

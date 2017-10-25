@@ -1,43 +1,52 @@
 <div id="home-slider">
+	<?php if(get_option('cebo_video_homepage_hero_banner') && is_home()) : ?>
 
-	<div class="flexslider">
-		<ul class="slides">
+		<div class="video-banner" data-vide-bg="<?php echo preg_replace('/\\.[^.\\s]{3,4}$/', '',get_option('cebo_video_homepage_hero_banner')) ?>" style="background-image: url('<?php echo get_option("cebo_video_thumbnail_homepage_hero_banner") ?>');">
 
-			<!-- loop for the slides -->
+		</div>
 
-			<?php query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); 
-			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");?>
+	<?php else : ?>
 
-			<li>
-				<div class="slide-header">
+		<div class="flexslider">
+			<ul class="slides">
 
-					<?php if(get_post_meta($post->ID, 'logopic', true)) { ?>
-					<div class="slicer" style="background-image: url(<?php echo get_post_meta($post->ID, 'logopic', true); ?>);"></div>
-					<?php } ?>
-					
-					<?php if(get_post_meta($post->ID, 'bigtitle', true)) { ?>
-					<h2><?php echo get_post_meta($post->ID, 'bigtitle', true); ?></h2>
-					<?php } ?>
+				<!-- loop for the slides -->
 
-					<?php if(get_post_meta($post->ID, 'littletitle', true)) { ?>
-					<h3><?php echo get_post_meta($post->ID, 'littletitle', true); ?></h3>
-					<?php } ?>
+				<?php query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); 
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");?>
 
-				</div>
+				<li>
+					<div class="slide-header">
 
-				<!--<img src="<?php //echo tt($imgsrc[0], 1400, 472); ?>" alt="<?php //get_post_meta($post->ID, 'bigtitle', true); ?>" />-->
-				<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" />
-				</a>
+						<?php if(get_post_meta($post->ID, 'logopic', true)) { ?>
+						<div class="slicer" style="background-image: url(<?php echo get_post_meta($post->ID, 'logopic', true); ?>);"></div>
+						<?php } ?>
+						
+						<?php if(get_post_meta($post->ID, 'bigtitle', true)) { ?>
+						<h2><?php echo get_post_meta($post->ID, 'bigtitle', true); ?></h2>
+						<?php } ?>
 
-			</li>
+						<?php if(get_post_meta($post->ID, 'littletitle', true)) { ?>
+						<h3><?php echo get_post_meta($post->ID, 'littletitle', true); ?></h3>
+						<?php } ?>
 
-			<?php endwhile; endif; wp_reset_query(); ?>	
+					</div>
 
-			<!-- end loop for the slides -->
+					<!--<img src="<?php //echo tt($imgsrc[0], 1400, 472); ?>" alt="<?php //get_post_meta($post->ID, 'bigtitle', true); ?>" />-->
+					<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" />
+					</a>
 
-		</ul>
+				</li>
 
-	</div>
+				<?php endwhile; endif; wp_reset_query(); ?>	
+
+				<!-- end loop for the slides -->
+
+			</ul>
+
+		</div>
+
+	<?php endif; ?>
 
 	<?php 
 
