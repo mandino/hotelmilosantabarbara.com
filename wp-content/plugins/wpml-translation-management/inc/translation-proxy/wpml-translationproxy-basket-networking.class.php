@@ -37,7 +37,7 @@ class WPML_Translation_Proxy_Basket_Networking {
 		$basket_data = $this->basket->get_basket();
 		$batch  = (bool) $batch === true ? $batch : $this->generate_batch( $basket_data );
 		if ( (bool) $batch === false ) {
-			return array( true, false, array( __( 'Batch is empty', 'sitepress' ) ) );
+			return array( true, false, array( __( 'Batch is empty', 'wpml-translation-management' ) ) );
 		}
 
 		foreach ( $batch as $batch_item ) {
@@ -76,6 +76,7 @@ class WPML_Translation_Proxy_Basket_Networking {
 		$basket_name = $basket_name ? $basket_name : $posted_basket_name;
 		$batch       = $this->basket->get_basket_batch( $basket_name );
 		$batch->cancel_all_remote_jobs();
+		$batch->clear_batch_data();
 	}
 
 	/**
@@ -158,10 +159,10 @@ class WPML_Translation_Proxy_Basket_Networking {
 				foreach ( $valid_jobs[ $item_type_name ] as $value ) {
 					foreach ( $value['to_langs'] as $target_language => $target_language_selected ) {
 						//for remote strings
-						if ( $value['from_lang'] != $target_language
+						if ( array_key_exists( $target_language, $translators ) && $value['from_lang'] != $target_language
 						     && ! is_numeric( $translators[ $target_language ] )
 						     && $target_language_selected
-						     && ! in_array( $target_language, $remote_target_languages )
+						     && ! in_array( $target_language, $remote_target_languages, true )
 						) {
 							$remote_target_languages[] = $target_language;
 						}

@@ -56,7 +56,7 @@ class WPML_Basket_Tab_Ajax {
 		list( $has_error, $data, $error ) = $this->networking->commit_basket_chunk( $batch, $basket_name, $translators );
 
 		if ( $has_error === true ) {
-			wp_send_json_error( $error );
+			wp_send_json_error( $data );
 		} else {
 			wp_send_json_success( $data );
 		}
@@ -102,6 +102,8 @@ class WPML_Basket_Tab_Ajax {
 			$errors[] = $e->getMessage();
 		}
 
+		do_action( 'wpml_tm_basket_committed' );
+
 		$this->send_json_response( $response, $errors );
 	}
 
@@ -116,6 +118,25 @@ class WPML_Basket_Tab_Ajax {
 		$basket_name_max_length = TranslationProxy::get_current_service_batch_name_max_length();
 
 		wp_send_json_success( $this->basket->check_basket_name( $basket_name, $basket_name_max_length ) );
+	}
+
+	private static function sanitize_errors( $source ) {
+		if ( is_array( $source ) ) {
+			if ( $source && array_key_exists( 'errors', $source ) ) {
+				foreach ( $source['errors'] as &$error ) {
+					if ( is_array( $error ) ) {
+						$error = self::sanitize_errors( $error );
+					} else {
+						$error = ICL_AdminNotifier::sanitize_and_format_message( $error );
+					}
+				}
+				unset( $error );
+			}
+		} else {
+			$source = ICL_AdminNotifier::sanitize_and_format_message( $source );
+		}
+
+		return $source;
 	}
 
 	/**
@@ -139,7 +160,7 @@ class WPML_Basket_Tab_Ajax {
 			$this->networking->rollback_basket_commit( filter_input( INPUT_POST,
 			                                                         'basket_name',
 			                                                         FILTER_SANITIZE_STRING ) );
-			wp_send_json_error( $result );
+			wp_send_json_error( self::sanitize_errors( $result ) );
 		} else {
 			$this->basket->delete_all_items();
 
@@ -163,7 +184,7 @@ class WPML_Basket_Tab_Ajax {
 		$basket             = $this->basket->get_basket();
 		$basket_items_types = $this->basket->get_item_types();
 		if ( ! $basket ) {
-			$message_content = __( 'No items found in basket', 'sitepress' );
+			$message_content = __( 'No items found in basket', 'wpml-translation-management' );
 		} else {
 			$total_count             = 0;
 			$message_content_details = '';
@@ -175,7 +196,7 @@ class WPML_Basket_Tab_Ajax {
 					$message_content_details .= '- ' . $item_type_name . '(s): ' . $count_item_type;
 				}
 			}
-			$message_content = sprintf( __( '%s items in basket:', 'sitepress' ), $total_count );
+			$message_content = sprintf( __( '%s items in basket:', 'wpml-translation-management' ), $total_count );
 			$message_content .= $message_content_details;
 		}
 		$container = $message_content;

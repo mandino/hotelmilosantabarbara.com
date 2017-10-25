@@ -1,10 +1,20 @@
 <?php
-require_once 'wpml-admin-text-configuration.php';
-require_once 'wpml-admin-text-functionality.class.php';
+require_once dirname( __FILE__ ) . '/wpml-admin-text-configuration.php';
+require_once dirname( __FILE__ ) . '/wpml-admin-text-functionality.class.php';
 
-class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality{
+class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality {
+
+	/** @var WPML_ST_Records $st_records */
+	private $st_records;
+
+	function __construct( &$st_records ) {
+		$this->st_records = &$st_records;
+	}
 
 	function parse_config( $admin_texts ) {
+		
+		$admin_texts_hash = md5( serialize( $admin_texts ) );
+		
 		global $iclTranslationManagement, $sitepress;
 		foreach ( $admin_texts as $a ) {
 			$type               = isset( $a['type'] ) ? $a['type'] : 'plugin';
@@ -47,7 +57,7 @@ class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality{
 				$admin_text_context = isset( $arr_context[ $key ] ) ? $arr_context[ $key ] : '';
 				$type               = isset( $arr_type[ $key ] ) ? $arr_type[ $key ] : '';
 
-				$req_upgrade = ! $sitepress->get_setting( 'admin_text_3_2_migration_complete', false );
+				$req_upgrade = ! $sitepress->get_setting( 'admin_text_3_2_migration_complete_' . $admin_texts_hash, false );
 				if ( (bool) $value === true ) {
 					$this->register_string_recursive( $key,
 					                                  $value,
@@ -67,7 +77,7 @@ class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality{
 
 		update_option( '_icl_admin_option_names', $_icl_admin_option_names );
 
-		$sitepress->set_setting( 'admin_text_3_2_migration_complete', true, true );
+		$sitepress->set_setting( 'admin_text_3_2_migration_complete_' . $admin_texts_hash, true, true );
 	}
 
 
@@ -99,18 +109,17 @@ class WPML_Admin_Text_Import extends WPML_Admin_Text_Functionality{
 		$old_string_id = icl_st_is_registered_string( 'admin_texts_' . $type . '_' . $old_admin_text_context, $key );
 		if ( $old_string_id ) {
 			$new_string_id = icl_st_is_registered_string( 'admin_texts_' . $new_admin_text_context, $key );
-
 			if ( $new_string_id ) {
-
-				// make the old translations point to the new translations
-
 				$wpdb->update( $wpdb->prefix . 'icl_string_translations', array( 'string_id' => $new_string_id ), array( 'string_id' => $old_string_id ) );
-
-				// Copy the status.
-				$status = $wpdb->get_var( $wpdb->prepare( "SELECT status FROM {$wpdb->prefix}icl_strings WHERE id = %d", $old_string_id ) );
-				$wpdb->update( $wpdb->prefix . 'icl_strings', array( 'status' => $status ), array( 'id' => $new_string_id ) );
+				$this->st_records->icl_strings_by_string_id( $new_string_id )
+				                 ->update(
+					                 array(
+						                 'status' => $this->st_records
+							                 ->icl_strings_by_string_id( $old_string_id )
+							                 ->status()
+					                 )
+				                 );
 			}
 		}
 	}
-
 }

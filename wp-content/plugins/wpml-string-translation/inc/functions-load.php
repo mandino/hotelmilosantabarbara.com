@@ -7,7 +7,6 @@ function wpml_st_load_label_menu() {
 	global $wpml_st_label_menu;
 
 	if ( ! isset( $wpml_st_label_menu ) ) {
-		require WPML_ST_PATH . '/inc/filters/wpml-st-label-translation-menu.class.php';
 		$wpml_st_label_menu = new WPML_ST_Label_Translation();
 		$wpml_st_label_menu->init();
 	}
@@ -31,8 +30,8 @@ function wpml_st_load_admin_texts() {
 	global $wpml_st_admin_texts;
 
 	if ( ! isset( $wpml_st_label_menu ) ) {
-		global $iclTranslationManagement;
-		$wpml_st_admin_texts = new WPML_Admin_Texts( $iclTranslationManagement );
+		global $iclTranslationManagement, $WPML_String_Translation;
+		$wpml_st_admin_texts = new WPML_Admin_Texts( $iclTranslationManagement, $WPML_String_Translation );
 	}
 
 	return $wpml_st_admin_texts;
@@ -50,4 +49,17 @@ function wpml_st_load_slug_translation( ) {
 	}
 
 	return $wpml_slug_translation;
+}
+
+/**
+ * @return WPML_ST_String_Factory
+ */
+function wpml_st_load_string_factory() {
+	global $wpml_st_string_factory, $wpdb;
+
+	if ( ! isset( $wpml_st_string_factory ) ) {
+		$wpml_st_string_factory = new WPML_ST_String_Factory( $wpdb );
+	}
+
+	return $wpml_st_string_factory;
 }
