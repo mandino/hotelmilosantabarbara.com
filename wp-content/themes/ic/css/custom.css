@@ -4537,10 +4537,12 @@ div#TA_ssnarrowcollectreview383 li img {
 .menu-table tr td {
     width: 300px;
 }
-
+#home-slider.home-video {
+    height: 100%;
+}
 #home-slider .video-banner {
     transform: translate3d(0px, 0px, 0px);
-    height: 100% !important;
+    height: 100%;
     background-position: 100% 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4548,16 +4550,10 @@ div#TA_ssnarrowcollectreview383 li img {
 }
 .video-banner div {
     position: relative !important;
-    overflow: auto !important;
+    height: 100%;
 }
 .video-banner video {
     max-width: initial;
-     position: relative !important;
-     transform: none !important;
-     width: 100% !important;
-     height: 100% !important;
-     top: 0 !important;
-     left: 0 !important;
- }
+}
 
 /** end **/

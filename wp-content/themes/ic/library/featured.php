@@ -1,4 +1,5 @@
-<div id="home-slider">
+<?php if(get_option('cebo_video_homepage_hero_banner') && is_home()) : $video_class = ' class="home-video"'; else : $video_class = ''; endif; ?>
+<div id="home-slider" <?php echo $video_class; ?>>
 	<?php if(get_option('cebo_video_homepage_hero_banner') && is_home()) : ?>
 
 		<div class="video-banner" data-vide-bg="<?php echo preg_replace('/\\.[^.\\s]{3,4}$/', '',get_option('cebo_video_homepage_hero_banner')) ?>" style="background-image: url('<?php echo get_option("cebo_video_thumbnail_homepage_hero_banner") ?>');">
