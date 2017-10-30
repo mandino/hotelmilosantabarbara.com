@@ -12,6 +12,34 @@
 $lang = TEMPLATE_PATH . '/languages';
 load_theme_textdomain('cebolang', $lang);
 
+$robots_url = get_bloginfo('url').'/robots.txt';
+if (!file_exists($robots_url)) {
+
+	$robots_file = fopen("robots.txt", "w") or wp_mail(
+		'dino@misfit-inc.com',
+		'robots.txt error',
+		'Unable to open file'
+	);
+
+	$content = 
+		'User-Agent: *' . "\n" .
+		'Disallow: /wp-admin/' . "\n" .
+		'Allow: /wp-admin/admin-ajax.php' . "\n" .
+		"\n" .
+		'Sitemap: /sitemap_index.xml' . "\n" .
+		'Sitemap: /sitemap-video.xml';
+
+	fwrite($robots_file, $content);
+	fclose($robots_file);
+
+} else {
+	wp_mail(
+		'dino@misfit-inc.com',
+		'robots.txt error',
+		'Check the robots file. The robots.txt file cannot be written'
+	);
+}
+
 //.................. BASIC FUNCTIONS .................. //
 
 /* Below is an include to default custom fields for the posts.*/
