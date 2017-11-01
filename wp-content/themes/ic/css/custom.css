@@ -756,6 +756,13 @@ line-height: 30px;
     width: 100%;
 }
 
+.slide-header.slide-header-mobileonly { display: none; }
+.slide-header.slide-header-video {
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
 .fullpic .slide-header {
     margin: 0 auto;
     position: absolute;
@@ -4539,6 +4546,7 @@ div#TA_ssnarrowcollectreview383 li img {
 }
 #home-slider.home-video {
     height: 100%;
+    background-size: 100% 100%;
 }
 #home-slider .video-banner {
     transform: translate3d(0px, 0px, 0px);
