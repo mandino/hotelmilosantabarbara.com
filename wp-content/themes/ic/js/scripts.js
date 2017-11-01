@@ -312,6 +312,10 @@ jQuery( document ).ready(function( $ ) {
 		if (check_home) {
 			$('video').get(0).play();
 		}
+
+		if ( vide_video ) {
+			$('.video-banner-onload').vide(vide_video);
+		}
 	});
 
 });
