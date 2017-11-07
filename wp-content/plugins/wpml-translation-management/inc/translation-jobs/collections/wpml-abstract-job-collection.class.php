@@ -1,6 +1,17 @@
 <?php
 
-class WPML_Abstract_Job_Collection extends WPML_WPDB_User {
+class WPML_Abstract_Job_Collection {
+	/** @var WPDB $wpdb */
+	public $wpdb;
+
+	/**
+	 * WPML_Abstract_Job_Collection constructor.
+	 *
+	 * @param WPDB $wpdb
+	 */
+	public function __construct( WPDB $wpdb ) {
+		$this->wpdb = $wpdb;
+	}
 
 	protected function get_table_join(
 		$single = false,
@@ -100,14 +111,14 @@ class WPML_Abstract_Job_Collection extends WPML_WPDB_User {
 					: $language_pairs;
 
 			$translator_id_query_parts = array();
-			if ( $include_unassigned ) {
-				$translator_id_query_parts[ ] = " j.translator_id = 0 OR j.translator_id IS NULL ";
-			}
 			if ( (int) $translator_id != 0 ) {
-				$translator_id_query_parts[ ] = $this->wpdb->prepare( "j.translator_id = %d", $translator_id );
-			}
-			if ( (bool) $translator_id_query_parts === true ) {
-				$where .= " AND (" . join( ' OR ', $translator_id_query_parts ) . ") ";
+				$translator_id_query_parts[] = $this->wpdb->prepare( "j.translator_id = %d", $translator_id );
+				if ( $include_unassigned ) {
+					$translator_id_query_parts[ ] = " j.translator_id = 0 OR j.translator_id IS NULL ";
+				}
+				if ( (bool) $translator_id_query_parts === true ) {
+					$where .= " AND (" . join( ' OR ', $translator_id_query_parts ) . ") ";
+				}
 			}
 		}
 

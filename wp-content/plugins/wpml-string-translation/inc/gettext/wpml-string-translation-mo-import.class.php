@@ -49,7 +49,6 @@ class WPML_String_Translation_MO_Import {
 	 */
 	private function render_response() {
 		$html = '<div class="wrap">';
-		$html .= ' <div id="icon-wpml" class="icon32"><br /></div>';
 		$html .= '<h2>' . __( 'Auto-download WordPress translations', 'wpml-string-translation' ) . '</h2>';
 
 		if ( $this->updated_translations > 0 || ! empty( $this->added_translation ) ) {
@@ -297,10 +296,10 @@ class WPML_String_Translation_MO_Import {
 		$translations_add = array();
 
 		foreach ( $new_translations as $tr ) {
-			$translations_add[ ] = array(
-				'string'      => $tr[ 'string' ],
-				'translation' => $tr[ 'new' ],
-				'name'        => $tr[ 'name' ]
+			$translations_add[] = array(
+				'string'      => filter_var( $tr['string'], FILTER_SANITIZE_STRING ),
+				'translation' => filter_var( $tr['new'], FILTER_SANITIZE_STRING ),
+				'name'        => filter_var( $tr['name'], FILTER_SANITIZE_STRING ),
 			);
 		}
 
@@ -344,10 +343,10 @@ class WPML_String_Translation_MO_Import {
 		$translations_updated = 0;
 		foreach ( $encoded_array as $idx => $v ) {
 			if ( ! empty( $v ) ) {
-				$translations_add[ ] = array(
-					'string'      => base64_decode( $_POST[ 'string' ][ $idx ] ),
-					'translation' => base64_decode( $_POST[ 'translation' ][ $idx ] ),
-					'name'        => base64_decode( $_POST[ 'name' ][ $idx ] )
+				$translations_add[] = array(
+					'string'      => filter_var( base64_decode( $_POST['string'][ $idx ] ), FILTER_SANITIZE_STRING ),
+					'translation' => filter_var( base64_decode( $_POST['translation'][ $idx ] ), FILTER_SANITIZE_STRING ),
+					'name'        => filter_var( base64_decode( $_POST['name'][ $idx ] ), FILTER_SANITIZE_STRING ),
 				);
 				$translations_updated ++;
 			}
@@ -360,40 +359,5 @@ class WPML_String_Translation_MO_Import {
 		$this->updated_translations = $translations_updated;
 
 		return $translations_add;
-	}
-
-	/**
-	 * Returns the HTML showing the .mo file options on the Plugins and Theme Localization Screen.
-	 * @return string
-	 */
-	public static function render_settings_menu() {
-		ICL_WP_Pointers::add( array( 'ICL_WP_Pointers', 'pointer_mo_auto_download_260' ) );
-		$auto_download_mo = icl_get_sub_setting( 'st', 'auto_download_mo' );
-		$dl_mo            = empty( $auto_download_mo );
-
-		$output = '<br />';
-		$output .= '<form id="icl_auto_download_mo" name="icl_auto_download_mo" method="post" action="">';
-		$output .= '<input type="hidden" name="action" value="icl_adm_save_preferences" />';
-		$output .= '<h3>' . __( 'Select how to get translations for WordPress core', 'wpml-string-translation' ) . '</h3>';
-		$output .= wp_nonce_field( 'icl_auto_download_mo_nonce', '_icl_nonce', true, false );
-		$output .= '<ul style="display:inline-block;padding:0;margin:0;" id="icl_adm_options"><li><label>';
-		$output .= '<input type="radio" name="auto_download_mo" value="1"';
-		if ( ! $dl_mo ) {
-			$output .= ' checked="checked" ';
-		}
-		$output .= '/>';
-		$output .= '&nbsp' . __( 'WPML will automatically download translations for WordPress', 'wpml-string-translation' );
-		$output .= '</label></li><li><label>';
-		$output .= '<input type="radio" name="auto_download_mo" value="0"';
-		if ( $dl_mo ) {
-			$output .= 'checked="checked"';
-		}
-		$output .= '/>';
-		$output .= '&nbsp;' . __( 'I will download translations for WordPress and save .mo files in wp-content/languages', 'wpml-string-translation' );
-		$output .= '</label></li></ul><p>';
-		$output .= '<input class="button-secondary" type="submit" value="' . __( 'Save', 'wpml-string-translation' ) . '" />';
-		$output .= '<span class="icl_ajx_response" id="icl_ajx_response2" style="display:inline"></span></p></form>';
-
-		return $output;
 	}
 }

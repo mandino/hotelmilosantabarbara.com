@@ -127,19 +127,19 @@ define('POTX_CONTEXT_ERROR', FALSE);
  *   Callback function to use to save collected version numbers.
  * @param $default_domain
  *   Default domain to be used if one can't be found.
- * @param $api_version
- *   Drupal API version to work with.
  */
 function _potx_process_file($file_path,
 							$strip_prefix = 0,
 							$save_callback = '_potx_save_string',
 							$version_callback = '_potx_save_version',
-							$default_domain = '',
-							$api_version = POTX_API_6) {
+							$default_domain = '') {
 
   global $_potx_tokens, $_potx_lookup;
 
   // Always grab the CVS version number from the code
+	if ( !wpml_st_file_path_is_valid( $file_path ) ) {
+		return;
+	}
   $code = file_get_contents($file_path);
   $file_name = $strip_prefix > 0 ? substr($file_path, $strip_prefix) : $file_path;
   _potx_find_version_number($code, $file_name, $version_callback);
@@ -664,64 +664,6 @@ function _potx_find_version_number($code, $file, $version_callback) {
     // Unknown version information.
     $version_callback($file .': n/a', $file);
   }
-}
-
-/**
- * Collect a list of file names relevant for extraction,
- * starting from the given path.
- *
- * @param $path
- *   Where to start searching for files recursively.
- *   Provide non-empty path values with a trailing slash.
- * @param $basename
- *   Allows the restriction of search to a specific basename
- *   (ie. to collect files for a specific module).
- * @param $api_version
- *   Drupal API version to work with.
- * @todo
- *   Add folder exceptions for other version control systems.
- */
-function _potx_explore_dir($path = '', $basename = '*', $api_version = POTX_API_6) {
-  // It would be so nice to just use GLOB_BRACE, but it is not available on all
-  // operarting systems, so we are working around the missing functionality.
-  $extensions = array('php', 'inc', 'module', 'engine', 'theme', 'install', 'info', 'profile');
-  if ($api_version > POTX_API_5) {
-    $extensions[] = 'js';
-  }
-  $files = array();
-  foreach ($extensions as $extension) {
-    $files_here = glob($path . $basename .'.'. $extension);
-    if (is_array($files_here)) {
-      $files = array_merge($files, $files_here);
-    }
-    if ($basename != '*') {
-      // Basename was specific, so look for things like basename.admin.inc as well.
-      // If the basnename was *, the above glob() already covered this case.
-      $files_here = glob($path . $basename .'.*.'. $extension);
-      if (is_array($files_here)) {
-        $files = array_merge($files, $files_here);
-      }
-    }
-  }
-
-  // Grab subdirectories.
-  $dirs = glob($path .'*', GLOB_ONLYDIR);
-  if (is_array($dirs)) {
-    foreach ($dirs as $dir) {
-      if (!preg_match("!(^|.+/)(CVS|.svn|.git)$!", $dir)) {
-        $files = array_merge($files, _potx_explore_dir("$dir/", $basename));
-      }
-    }
-  }
-  // Skip our own files, because we don't want to get strings from them
-  // to appear in the output, especially with the command line interface.
-  // TODO: fix this to be able to autogenerate templates for potx itself.
-  foreach ($files as $id => $file_name) {
-    if (preg_match('!(potx-cli.php|potx.php)$!', $file_name)) {
-      unset($files[$id]);
-    }
-  }
-  return $files;
 }
 
 /**

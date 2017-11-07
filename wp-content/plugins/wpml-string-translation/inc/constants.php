@@ -21,4 +21,4 @@ define('ICL_STRING_TRANSLATION_AUTO_REGISTER_THRESHOLD', 500);
 
 define('ICL_STRING_TRANSLATION_DYNAMIC_CONTEXT', 'wpml_string');
 
-$icl_st_string_translation_statuses = array();
+define( 'WPML_ST_DEFAULT_STRINGS_PER_PAGE', 10 );
