@@ -4,7 +4,7 @@
 }
 
 .slidesjs-slide {
-    background: url(../images/)
+    background: url(../images/);
     color: #FFFFFF;
     font-size: 30px;
     text-align: right;

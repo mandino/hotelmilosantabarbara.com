@@ -25,7 +25,7 @@ time, mark, audio, video, button, textarea, a {
 	outline: 0;
 	text-decoration: none;
 	font-weight: normal;
-	font-family:"Arial", "Helvetica"
+	font-family:"Arial", "Helvetica";
 	 -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
@@ -878,7 +878,7 @@ a.detailsAnchor {
 	height: 70px;
 	width: 70px;
 	display: inline-block;
-	*display: inline;
+	display: inline;
 	zoom: 1;
 	background: #f07060;
 	overflow: hidden;
@@ -1036,7 +1036,7 @@ a.detailsAnchor {
     left: 55%;
     margin-left: -200px;
     text-align: center;
-    width: 400px;;
+    width: 400px;
     z-index: 100000;
   }
   
@@ -1606,7 +1606,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 	color: #868282;
 	margin-right: 20px;
 	display: inline-block;
-	*display: inline;
+	display: inline;
 	zoom: 1;
 }
 
@@ -3326,7 +3326,7 @@ body .ui-tooltip {
 	color: #333333;
 }
 .ui-widget-header {
-	background: transparent;;
+	background: transparent;
 	color: #001e3a;
 	font-weight: bold;
 }
