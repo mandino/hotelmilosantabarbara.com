@@ -627,7 +627,7 @@ line-height: 30px;
     color: #868282;
     margin-right: 12px;
     display: inline-block;
-    *display: inline;
+    display: inline;
     zoom: 1;
 }
 
@@ -2617,7 +2617,7 @@ body .ui-tooltip {
     color: #333333;
 }
 .ui-widget-header {
-    background: transparent;;
+    background: transparent;
     color: #001e3a;
     font-weight: bold;
 }
@@ -4022,10 +4022,10 @@ border: 1px solid #ddd !important;
 }
 
 .tribe-mini-calendar div[id*='daynum-'] a {
-height: 100% !important;;
-display: block !important;;
-text-decoration: none !important;;
-padding: 19px 5px 35px 5px !important;;
+height: 100% !important;
+display: block !important;
+text-decoration: none !important;
+padding: 19px 5px 35px 5px !important;
 position: relative !important;
 }
 
@@ -4481,7 +4481,7 @@ div#TA_ssnarrowcollectreview383 li img {
 }
 
 .eat-menu-container [class*="menu-content"] .menu-items span{
-    font-weight: 700;;
+    font-weight: 700;
 }
 
 .eat-menu-container [class*="menu-content"] .menu-items p {
