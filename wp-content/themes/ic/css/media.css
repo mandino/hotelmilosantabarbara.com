@@ -492,7 +492,7 @@ li.blue-btn i {
 #home-slider.home-video {
 	display: table;
 }
-.slide-header.slide-header-mobileonly {
+.slide-header..slide-header-video.slide-header-mobileonly {
 	display: table-cell;
 	position: relative;
 	vertical-align: middle;
