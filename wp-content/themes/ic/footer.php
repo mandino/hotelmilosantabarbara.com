@@ -113,6 +113,9 @@
 					<span class="mobile-number">(866)320-0339</span></p>
 					<?php } ?>
 			</div>
+            <?php if(get_option('cebo_locb-schema')) 
+                echo get_option('cebo_locb-schema');
+            ?>
 		</div>
 
 	</footer>
