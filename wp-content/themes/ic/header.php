@@ -62,6 +62,7 @@
 		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
 	</style>
 
+<!--
 	<script type="application/ld+json">
 		{
 		"@context": "//schema.org",
@@ -77,6 +78,7 @@
 		"articleBody": "The full body of the article"
 		}
 	</script>
+-->
 
 </head> 
 <body id="oceana" <?php body_class($class); ?>>
