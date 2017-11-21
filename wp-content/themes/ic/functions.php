@@ -91,7 +91,9 @@ function is_subpage() {
 define( 'SS_BASE_DIR', TEMPLATEPATH . '/' );
 define( 'SS_BASE_URL', get_template_directory_uri() . '/' );
 
-
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();	
+}
 
 if (!is_admin()) add_action( 'wp_enqueue_scripts', 'enqueue_footer_scripts', 11 );
 function enqueue_footer_scripts() {
