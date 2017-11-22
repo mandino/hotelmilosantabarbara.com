@@ -25,13 +25,13 @@ jQuery( document ).ready(function( $ ) {
 		effect : "fadeIn",
 	});
 
-	if ($(window).width() > 399) {
+	// if ($(window).width() > 399) {
 		$("a[rel^='prettyPhoto']").prettyPhoto({
 	    	default_width: 800,
 	    	default_height: 600,
 
 	    });
-	}
+	// }
     
 	$(".closebox a").click(function(e) {
 		e.preventDefault();
