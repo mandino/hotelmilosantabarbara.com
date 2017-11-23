@@ -610,6 +610,7 @@ line-height: 30px;
 #primary-nav .container {
     width: 1000px;
     position: relative;
+    z-index: 100;
 }
 
 #primary-nav nav {
@@ -629,6 +630,7 @@ line-height: 30px;
     display: inline-block;
     *display: inline;
     zoom: 1;
+    position: relative;
 }
 
 #primary-nav nav ul li a {
@@ -649,6 +651,29 @@ line-height: 30px;
     #primary-nav nav:hover ul li a.clicknav-clicker {
         background: url(../images/ic_white.png) center no-repeat;
     }
+
+#primary-nav nav ul li .sub-menu {
+    position: absolute;
+    z-index: 2;
+    left: -12px;
+    margin: auto;
+    background-color: #fff;
+    padding: 10px 0;
+    display: none;
+    border: 1px solid #CBCBCB;
+    border-top: none;
+}
+
+#primary-nav nav ul li:hover .sub-menu {
+    display: block;
+}
+
+#primary-nav .sub-menu li {
+    margin-right: 0;
+    text-align: center;
+    display: block;
+    padding: 0 10px 5px;
+}
 
 
 
@@ -746,6 +771,7 @@ line-height: 30px;
     background: #eee;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .slide-header {
@@ -4536,6 +4562,16 @@ div#TA_ssnarrowcollectreview383 li img {
 
 .menu-table tr td {
     width: 300px;
+}
+
+.menu-item-has-children .button {
+    position: absolute;
+    background-color: transparent;
+    top: 10px;
+    right: 20px;
+    height: 10px;
+    width: 0px;
+    display: none;
 }
 
 /** end **/
