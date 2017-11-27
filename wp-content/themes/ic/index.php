@@ -172,7 +172,7 @@ get_header();
 					<?php endwhile; endif; wp_reset_query(); ?>
 					<?php 
 
-						query_posts('post_type=page&p=5329'); if(have_posts()) : while(have_posts()) : the_post();
+						query_posts('post_type=page&p=4758'); if(have_posts()) : while(have_posts()) : the_post();
 						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 
 						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
