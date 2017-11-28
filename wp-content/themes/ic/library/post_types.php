@@ -58,6 +58,9 @@ function creates_post_types() {
         'singular_name' => __( 'Slides' )
       ),
       'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
       'rewrite' => array('slug' => 'slides'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
