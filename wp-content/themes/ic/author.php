@@ -220,14 +220,6 @@ get_header(); ?>
 	
 	
 	<?php if(get_option('cebo_twitter')) { ?>
-
-	<!-- Start Twitter Section  -->
-	
-	
-	<?php include (get_stylesheet_directory() . '/library/twitter.php'); ?>
-	
-	
-	<!-- End Twitter Section  -->
 	
 	<? } ?>
 
