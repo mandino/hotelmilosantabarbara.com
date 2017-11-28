@@ -72,7 +72,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
 
 	<!-- Jquery -->
-	<?php include(TEMPLATEPATH. "/library/jquery.php"); ?>	
+	<?php include(get_stylesheet_directory(). "/library/jquery.php"); ?>	
 
 	<script type="text/javascript">
 		
@@ -119,7 +119,7 @@
 
 
 	<!-- Scripts -->
-	<?php include(TEMPLATEPATH. "/library/scripts.php"); ?>	
+	<?php include(get_stylesheet_directory(). "/library/scripts.php"); ?>	
 	
 	
 	
@@ -129,7 +129,7 @@
 	<style>
 		<?php
 
-			include(TEMPLATEPATH. "/library/inset.php");
+			include(get_stylesheet_directory(). "/library/inset.php");
 		?>	
 	</style>
 

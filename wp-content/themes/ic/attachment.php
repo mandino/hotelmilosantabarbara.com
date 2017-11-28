@@ -59,7 +59,7 @@
 					<!-- ========================================>  INSTAGRAM  <====================================== -->
 						
 						
-					<?php include (TEMPLATEPATH . '/library/instagram.php'); ?>
+					<?php include (get_stylesheet_directory() . '/library/instagram.php'); ?>
 					
 				    <!-- ========================================>  / INSTAGRAM  <====================================== -->
 				    
@@ -69,7 +69,7 @@
 					
 					<!-- ========================================>  TWEETS  <====================================== -->
 					
-						<?php include (TEMPLATEPATH . '/library/tweets.php'); ?>		
+						<?php include (get_stylesheet_directory() . '/library/tweets.php'); ?>		
 							
 					<!-- ========================================>  / TWEETS  <====================================== -->
 					
@@ -80,7 +80,7 @@
 					
 					<!-- ========================================>  ABOUT  <====================================== -->
 					
-					<?php include (TEMPLATEPATH . '/library/about.php'); ?>					
+					<?php include (get_stylesheet_directory() . '/library/about.php'); ?>					
 					
 					<!-- ========================================>  / ABOUT  <====================================== -->
 					

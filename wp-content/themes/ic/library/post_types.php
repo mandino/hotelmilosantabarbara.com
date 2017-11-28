@@ -44,7 +44,7 @@ function project_items()
 
 //create taxonomy for project type
 
-include(TEMPLATEPATH . '/options/secondary-panel.php'); 
+include(get_stylesheet_directory() . '/options/secondary-panel.php'); 
 
 
 

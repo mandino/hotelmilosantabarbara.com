@@ -176,7 +176,7 @@ get_header(); ?>
 					<!-- ========================================>  INSTAGRAM  <====================================== -->
 						
 						
-					<?php include (TEMPLATEPATH . '/library/instagram.php'); ?>
+					<?php include (get_stylesheet_directory() . '/library/instagram.php'); ?>
 					
 				    <!-- ========================================>  / INSTAGRAM  <====================================== -->
 				    
@@ -186,7 +186,7 @@ get_header(); ?>
 					
 					<!-- ========================================>  TWEETS  <====================================== -->
 					
-						<?php include (TEMPLATEPATH . '/library/tweets.php'); ?>		
+						<?php include (get_stylesheet_directory() . '/library/tweets.php'); ?>		
 							
 					<!-- ========================================>  / TWEETS  <====================================== -->
 					
@@ -194,7 +194,7 @@ get_header(); ?>
 				
 					<!-- ========================================>  ABOUT  <====================================== -->
 					
-					<?php include(TEMPLATEPATH . '/library/about.php'); ?>	
+					<?php include(get_stylesheet_directory() . '/library/about.php'); ?>	
 											
 					<!-- ========================================>  / ABOUT  <====================================== -->
 	
