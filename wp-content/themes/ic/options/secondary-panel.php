@@ -149,4 +149,3 @@ function mytheme_save_data($post_id) {
 		}
 	}
 }
-?>

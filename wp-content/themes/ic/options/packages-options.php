@@ -140,4 +140,3 @@ function packages_type_save_data($post_id) {
 		}
 	}
 }
-?>

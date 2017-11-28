@@ -180,4 +180,3 @@ function mythemer_save_data($post_id) {
 		}
 	}
 }
-?>

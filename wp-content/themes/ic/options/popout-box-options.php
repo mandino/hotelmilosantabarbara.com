@@ -152,4 +152,3 @@ function mythemes_popout_box_save_data($post_id) {
 		}
 	}
 }
-?>
