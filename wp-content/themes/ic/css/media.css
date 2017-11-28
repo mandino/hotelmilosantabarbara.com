@@ -488,26 +488,16 @@ li.blue-btn i {
  padding-right: 0px;
 }
 
+#home-slider {
+	background-image: none !important;
+}
 
 #home-slider.home-video {
 	display: table;
 }
-.slide-header.slide-header-video.slide-header-mobileonly {
-	display: table-cell;
-	position: relative;
-	vertical-align: middle;
-	top: 0;
-	left: 0;
-	right: 0;
-	-webkit-transform: translateY(0%);
-	-o-transform: translateY(0%);
-	-ms-transform: translateY(0%);
-	transform: translateY(0%);
-}
 
-.slide-header.slide-header-mobileonly .slicer {
-	min-height: 260px;
-	background-position: center;
+.flexslider--mobileonly {
+	display: block;
 }
 
 .video-banner {
