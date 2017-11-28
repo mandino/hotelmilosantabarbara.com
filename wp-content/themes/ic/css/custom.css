@@ -660,6 +660,7 @@ line-height: 30px;
     left: 0;
     margin: auto;
     background-color: #fff;
+    padding: 20px 0 0;
     display: none;
     border: 1px solid #CBCBCB;
     border-top: none;
@@ -678,6 +679,7 @@ line-height: 30px;
     margin-right: 0;
     text-align: left;
     display: block;
+    padding: 0 5px 10px 10px;
 }
 
 
