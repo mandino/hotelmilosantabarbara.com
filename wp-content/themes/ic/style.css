@@ -878,7 +878,6 @@ a.detailsAnchor {
 	height: 70px;
 	width: 70px;
 	display: inline-block;
-	display: inline;
 	zoom: 1;
 	background: #f07060;
 	overflow: hidden;
@@ -1606,7 +1605,6 @@ h1, h2, h3, h4, h5, h6, h7 {
 	color: #868282;
 	margin-right: 20px;
 	display: inline-block;
-	display: inline;
 	zoom: 1;
 }
 
