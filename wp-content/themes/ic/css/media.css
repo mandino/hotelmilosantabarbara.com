@@ -488,6 +488,22 @@ li.blue-btn i {
  padding-right: 0px;
 }
 
+#home-slider {
+	background-image: none !important;
+}
+
+#home-slider.home-video {
+	display: table;
+}
+
+.flexslider--mobileonly {
+	display: block;
+}
+
+.video-banner {
+	display: none;
+}
+
 
 }
 
@@ -1163,10 +1179,22 @@ li.blue-btn i {
 
 
 /* ================================================  MAX WIDTH 768 ======================================= */
-
-
-@media only screen
+<<<<<<< HEAD
+@media only screen 
 and (max-width : 768px) {
+	.video-banner video[style] {
+		width: 100% !important;
+		height: 100% !important;
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+		-moz-transform: none !important;
+		-webkit-transform: none !important;
+		-o-transform: none !important;
+		-ms-transform: none !important;
+		transform: none !important;
+	}
+
 	.post-tags li {
 		float: unset;
 		text-align: center;
