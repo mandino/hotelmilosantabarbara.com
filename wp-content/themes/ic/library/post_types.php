@@ -44,11 +44,6 @@ function project_items()
 
 //create taxonomy for project type
 
-include(get_stylesheet_directory() . '/options/secondary-panel.php'); 
-
-
-
-
 add_action( 'init', 'creates_post_types' );
 function creates_post_types() {
   register_post_type( 'slides',
@@ -135,7 +130,7 @@ function create_post_types() {
       'public' => true,
       'rewrite' => array('slug' => 'locations'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
-      'supports' => array('title','custom-fields','editor','category','author','thumbnail')
+      // 'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )
   );
 }
