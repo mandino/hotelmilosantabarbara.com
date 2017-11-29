@@ -10,7 +10,8 @@ if(is_admin()) {
 	include(get_stylesheet_directory() . '/options/popout-box-options.php'); 
 	include(get_stylesheet_directory() . '/options/project-options.php'); 
 	include(get_stylesheet_directory() . '/options/packages-options.php'); 
-	include(get_stylesheet_directory() . '/options/local-options.php'); 
+	include(get_stylesheet_directory() . '/options/local-options.php');
+	include(get_stylesheet_directory() . '/options/secondary-panel.php');
 
 }
 
@@ -88,7 +89,11 @@ function enqueue_footer_scripts() {
 
 }
 
+add_action( 'admin_init', 'posts_order_wpse_91866' );
 
+function posts_order_wpse_91866() {
+    add_post_type_support( 'slides', 'page-attributes' );
+}
 
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below
