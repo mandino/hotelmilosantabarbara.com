@@ -1,4 +1,0 @@
-hotel-milo
-==========
-
-Hotel Milo

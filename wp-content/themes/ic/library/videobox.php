@@ -129,4 +129,3 @@ $videobox = array (
 			wp_create_nonce( plugin_basename(__FILE__) )
 		);
 	}
-?>

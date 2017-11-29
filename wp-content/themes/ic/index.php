@@ -10,7 +10,7 @@ get_header();
 
 	<!-- ================= PRIMARY SLIDER HERE OPTIONAL ===================== -->
 
-	<?php include (TEMPLATEPATH . '/library/featured.php'); ?>
+	<?php include (get_stylesheet_directory() . '/library/featured.php'); ?>
 
 
 

@@ -10,7 +10,7 @@
 
 	<!-- ================= PRIMARY SLIDER HERE OPTIONAL ===================== -->
 
-	<?php include (TEMPLATEPATH . '/library/featured.php'); ?>
+	<?php include (get_stylesheet_directory() . '/library/featured.php'); ?>
 
 
 
@@ -405,5 +405,5 @@
 	</div>
 	
 	
-<?php include (TEMPLATEPATH . '/library/super-map.php'); ?>
+<?php include (get_stylesheet_directory() . '/library/super-map.php'); ?>
 <?php get_footer(); ?>

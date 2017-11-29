@@ -260,5 +260,3 @@ function custom_tag_cloud_widget($args) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'custom_tag_cloud_widget' );
-
-?>

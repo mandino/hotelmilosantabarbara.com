@@ -1716,5 +1716,3 @@ update_option('of_shortname',$shortname);
 
 }
 }
-
-?>

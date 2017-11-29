@@ -633,5 +633,5 @@
 	</div>
 
 
-<?php include (TEMPLATEPATH . '/library/super-map.php'); ?>
+<?php include (get_stylesheet_directory() . '/library/super-map.php'); ?>
 <?php get_footer(); ?>

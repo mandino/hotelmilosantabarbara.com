@@ -144,10 +144,10 @@
 	wp_footer();
 	
 	if(is_home() || is_front_page() || is_page_template('page_guide.php')) {
-		include (TEMPLATEPATH . '/library/super-map.php'); 
+		include (get_stylesheet_directory() . '/library/super-map.php'); 
 	}
 	
-	include(TEMPLATEPATH. "/library/scripts.php"); 
+	include(get_stylesheet_directory(). "/library/scripts.php"); 
 
 ?>
 

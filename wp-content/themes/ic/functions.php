@@ -1,76 +1,25 @@
 <?php
-/**
 
- Functions
- 
- */
- 
- 
-//.................. BASIC FUNCTIONS .................. //
+define( 'SS_BASE_DIR', get_stylesheet_directory() . '/' );
+define( 'SS_BASE_URL', get_template_directory_uri() . '/' );
 
-/* language include.*/
-$lang = TEMPLATE_PATH . '/languages';
-load_theme_textdomain('cebolang', $lang);
+if(is_admin()) {
 
-//.................. BASIC FUNCTIONS .................. //
+	require_once(get_stylesheet_directory() .  '/options/options_panel.php');
+	include(get_stylesheet_directory() . '/options/single-options.php'); 
+	include(get_stylesheet_directory() . '/options/popout-box-options.php'); 
+	include(get_stylesheet_directory() . '/options/project-options.php'); 
+	include(get_stylesheet_directory() . '/options/packages-options.php'); 
+	include(get_stylesheet_directory() . '/options/local-options.php');
+	include(get_stylesheet_directory() . '/options/secondary-panel.php');
 
-/* Below is an include to default custom fields for the posts.*/
-include(TEMPLATEPATH . '/library/simple_functions.php');
+}
 
-
-/* Include Super Furu Custom Options Panel*/
-require_once(TEMPLATEPATH .  '/options/options_panel.php');
-
-
- /* ................. CUSTOM POST TYPES .................... */
-/* Below is an include to a default custom post type.*/
-include(TEMPLATEPATH . '/library/post_types.php');
-
- /* ................. SOME OPTIONS FOR POSTS .................... */
-/* Below is an include to a few options for your posts.*/
-include(TEMPLATEPATH . '/options/single-options.php'); 
-
-
- /* ................. SOME OPTIONS FOR POPOUT BOXES .................... */
-/* Below is an include to a few options for your popout boxes.*/
-include(TEMPLATEPATH . '/options/popout-box-options.php'); 
-
-
- /* ................. SOME OPTIONS FOR SLIDES .................... */
-/* Below is an include to a few options for your slides.*/
-include(TEMPLATEPATH . '/library/videobox.php'); 
-
-
- /* ................. SOME OPTIONS FOR PROJECTS .................... */
-/* Below is an include to a few options for your projects.*/
-include(TEMPLATEPATH . '/options/project-options.php'); 
-include(TEMPLATEPATH . '/options/packages-options.php'); 
-
-
-
- /* ................. SOME OPTIONS FOR PROJECTS .................... */
-/* Below is an include to a few options for your projects.*/
-include(TEMPLATEPATH . '/options/local-options.php'); 
-
-
-
-
- /* ................. CUSTOM FIELDS .................... */
-/* Below is an include to a few options for your projects.*/
-include(TEMPLATEPATH . '/library/custom_fields.php'); 
-
-/* .................. SHORTCODES ...…… */
-/* Below is an include to default custom fields for the posts.*/
-include(TEMPLATEPATH . '/library/shortcodes.php');
-
-
-
-/* .................. SHORTCODES ...…… */
-/* Below is an include to default custom fields for the posts.*/
-include(TEMPLATEPATH . '/library/widgets.php');
-
-
-
+include(get_stylesheet_directory() . '/library/post_types.php');
+include(get_stylesheet_directory() . '/library/videobox.php'); 
+include(get_stylesheet_directory() . '/library/custom_fields.php');
+include(get_stylesheet_directory() . '/library/simple_functions.php');
+include(get_stylesheet_directory() . '/library/shortcodes.php');
 
 function is_subpage() {
     global $post;                              // load details about this page
@@ -82,14 +31,6 @@ function is_subpage() {
         return false;                          // ... the answer to the question is false
     }
 }
-
-
-
- /* ................. ADDITIONAL INFO FOR SHORTCODES .................... */
-/* Below is an include to a few options for your projects.*/
-
-define( 'SS_BASE_DIR', TEMPLATEPATH . '/' );
-define( 'SS_BASE_URL', get_template_directory_uri() . '/' );
 
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
@@ -150,7 +91,11 @@ function enqueue_footer_scripts() {
 
 }
 
+add_action( 'admin_init', 'posts_order_wpse_91866' );
 
+function posts_order_wpse_91866() {
+    add_post_type_support( 'slides', 'page-attributes' );
+}
 
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below

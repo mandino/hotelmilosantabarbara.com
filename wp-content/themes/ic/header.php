@@ -1,5 +1,5 @@
 <?php 
-	require_once TEMPLATEPATH.'/library/mobile-detect.php';
+	require_once get_stylesheet_directory().'/library/mobile-detect.php';
 	$detect = new Mobile_Detect;
 	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 	$scriptVersion = $detect->getScriptVersion();
@@ -59,7 +59,7 @@
 	?>
 
 	<style>
-		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
+		<?php include(get_stylesheet_directory(). "/library/inset.php"); ?>
 	</style>
 
 <!--
