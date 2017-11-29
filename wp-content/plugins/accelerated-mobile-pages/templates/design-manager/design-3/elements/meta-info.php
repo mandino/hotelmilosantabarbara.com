@@ -1,5 +1,6 @@
-<?php global $redux_builder_amp; ?>
 
+<?php do_action('ampforwp_before_meta_info_hook',$this); ?>
+<?php global $redux_builder_amp; ?>
 <div class="amp-wp-content amp-wp-article-header ampforwp-meta-info">
 	<div class="amp-wp-content post-title-meta">
 
@@ -7,30 +8,33 @@
 <?php $post_author = $this->get( 'post_author' ); ?>
 <?php if ( $post_author ) : ?>
 	<div class="amp-wp-meta amp-wp-byline">
-	<span class="amp-wp-author author vcard"><?php echo esc_html( $post_author->display_name ); ?></span>
-
-<?php $ampforwp_categories = get_the_terms( $this->ID, 'category' );
+  <?php if ( is_single() ) { 
+    echo ampforwp_get_author_details( $post_author , 'meta-info' ); 
+  } ?>
+<?php if( is_page() && $redux_builder_amp['meta_page'] ) {
+    echo ampforwp_get_author_details( $post_author , 'meta-info' );
+    } ?>
+<?php 
+if( isset($redux_builder_amp['ampforwp-cats-single']) && $redux_builder_amp['ampforwp-cats-single']) {
+  $ampforwp_categories = get_the_terms( $this->ID, 'category' );
   if ( $ampforwp_categories ) : ?>
-  	<span class="amp-wp-meta amp-wp-tax-category ampforwp-tax-category">
-            <?php
-            //if RTL is OFF
-            if(!$redux_builder_amp['amp-rtl-select-option']) {
-            global $redux_builder_amp; printf( ampforwp_translation($redux_builder_amp['amp-translator-in-designthree'] .' ', 'accelerated-mobile-pages' )); } ?>
-      <?php foreach ($ampforwp_categories as $cat ) {
-        if($redux_builder_amp['ampforwp-archive-support']){
-            echo ('<span><a href="'.trailingslashit( trailingslashit(get_category_link($cat->term_taxonomy_id)).'amp') . '" >'.$cat->name .'</a></span>');
-      } else {
+  	<span class="amp-wp-meta amp-wp-tax-category ampforwp-tax-category  ">
+      <?php
+        global $redux_builder_amp; printf( ampforwp_translation($redux_builder_amp['amp-translator-in-designthree'] .' ', 'accelerated-mobile-pages' )); 
+        foreach ($ampforwp_categories as $cat ) {
+          if( isset($redux_builder_amp['ampforwp-archive-support']) && $redux_builder_amp['ampforwp-archive-support'] && isset($redux_builder_amp['ampforwp-cats-tags-links-single']) && $redux_builder_amp['ampforwp-cats-tags-links-single']) {
+            echo ('<span class="amp-cat-'.$cat->term_id.'"><a href="'. ampforwp_url_controller( get_category_link( $cat->term_id ) ) . '" >'.$cat->name .'</a></span>'); 
+        } 
+      else {
         echo ('<span>'.$cat->name .'</span>');
       }
        }
-			//if RTL is ON
-			if($redux_builder_amp['amp-rtl-select-option']) {
-             global $redux_builder_amp; printf( ampforwp_translation($redux_builder_amp['amp-translator-categories-text'] .' ', 'accelerated-mobile-pages' )); } ?>
+			?>
   	</span>
-<?php endif; ?>
+<?php endif;  } ?>
 
 <?php if ( $redux_builder_amp['amp-design-3-date-feature'] ) : ?>
-	<span class="ampforwp-design3-single-date"><?php global $redux_builder_amp; echo ampforwp_translation($redux_builder_amp['amp-translator-on-text'], 'On '); the_modified_date( get_option( 'date_format' ) ) ?></span>
+	<span class="ampforwp-design3-single-date"><?php global $redux_builder_amp; echo apply_filters('ampforwp_modify_post_date', ampforwp_translation($redux_builder_amp['amp-translator-on-text']. ' ', 'On') . get_the_date( get_option( 'date_format' ) ) ) ?></span>
 <?php endif; ?>
 
 	</div>
@@ -40,3 +44,4 @@
 			</ul>
 	</div>
 </div>
+<?php do_action('ampforwp_after_meta_info_hook',$this);

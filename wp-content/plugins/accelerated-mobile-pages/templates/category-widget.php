@@ -1,4 +1,5 @@
-<?php class AMPFORWP_Categories_Widget extends WP_Widget {
+<?php 
+class AMPFORWP_Categories_Widget extends WP_Widget {
 
   // Set up the widget name and description.
   public function __construct() {
@@ -6,12 +7,13 @@
       'classname' => 'ampforwp_categories_widget',
        'description' => __('This Widget adds categories where necessary in AMP Pages','accelerated-mobile-pages')
      );
-    parent::__construct( 'ampforwp_categories_widget', __('AMP Categories','accelerated-mobile-pages'), $widget_options );
+    parent::__construct( 'ampforwp_categories_widget', __('AMP Categories Module','accelerated-mobile-pages'), $widget_options );
   }
 
 
 // args for the output of the form
   public $args = array(
+          'id'            => 'uniqueid',
           'before_title'  => '<h4 class="widgettitle">',
           'after_title'   => '</h4>',
           'before_widget' => '<div class="widget-wrap">',
@@ -25,6 +27,8 @@
     $ampforwp_category_id = $instance[ 'category' ];
     $ampforwp_category_link = $instance[ 'showButton' ];
     $ampforwp_show_excerpt = $instance[ 'showExcerpt' ];
+
+    global $redux_builder_amp;
 
  //   echo . $args['before_title'] .  . $args['after_title']; ?>
 
@@ -40,26 +44,24 @@
     );
     // The Query
     $the_query = new WP_Query( $args );
+    $thumb_url = "";
 
     // The Loop
 
     if ( $the_query->have_posts() ) {
-        echo '<div class="amp-category-block"><ul>';
-        echo '<li class="amp-category-block-title">'.$ampforwp_title .'</li>';
+        echo '<div class="amp-wp-content amp_cb_module amp-category-block"><ul>';
+        echo '<li class="amp_module_title">'.$ampforwp_title .'</li>';
         while ( $the_query->have_posts() ) {
             $the_query->the_post();
             $ampforwp_post_url = get_permalink(); ?>
             <li class="amp-category-post">
-              <?php if ( has_post_thumbnail() ) { ?>
-                  <?php
-                  $thumb_id = get_post_thumbnail_id();
-                  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
-                  $thumb_url = $thumb_url_array[0];
+              <?php if ( ampforwp_has_post_thumbnail() ) {
+                  $thumb_url = ampforwp_get_post_thumbnail('url');
                   ?>
-                  <a href="<?php echo trailingslashit($ampforwp_post_url) . AMPFORWP_AMP_QUERY_VAR ;?>"><amp-img  class="ampforwp_wc_shortcode_img"  src=<?php echo $thumb_url ?> width=150 height=150 layout=responsive></amp-img></a>
+                  <a href="<?php echo ampforwp_url_controller($ampforwp_post_url);?>"><amp-img  class="ampforwp_wc_shortcode_img"  src=<?php echo $thumb_url ?> width=150 height=150 layout=responsive></amp-img></a>
               <?php } ?>
 
-              <a class="ampforwp_wc_shortcode_title" href="<?php echo trailingslashit($ampforwp_post_url) . AMPFORWP_AMP_QUERY_VAR ;?>">
+              <a class="ampforwp_wc_shortcode_title" href="<?php echo ampforwp_url_controller($ampforwp_post_url) ;?>">
                   <?php echo get_the_title(); ?>
               </a> <?php
 
@@ -70,19 +72,29 @@
                   } else {
                     $content = get_the_content();
                   } ?>
-                  <p class="ampforwp_cat_wdgt_excerpt_text"><?php echo wp_trim_words( strip_tags( strip_shortcodes( $content ) ) , '15'  ); ?></p>
+                  <span class="ampforwp_cat_wdgt_excerpt_text"><?php echo wp_trim_words( strip_tags( strip_shortcodes( $content ) ) , '15'  ); ?></span>
                 </div> <?php
               } ?>
 
             </li> <?php
+        } ?>
+        <div class="cb"></div>
+        <?php
+
+        //show more link
+        if( $ampforwp_category_link === 'yes' && ! empty( $ampforwp_category_id ) ) {
+          
+          $category_link =  '<a class="amp-category-block-btn" href="'.ampforwp_url_controller(get_category_link( $ampforwp_category_id) ).'">'. ampforwp_translation($redux_builder_amp['amp-translator-show-more-text'], 'View More Posts (Widget Button)').'</a>';
+        } else {
+          $category_link =   '<a class="amp-category-block-btn" href="'.ampforwp_url_controller( home_url() ).'">'. ampforwp_translation($redux_builder_amp['amp-translator-show-more-text'], 'View More Posts (Widget Button)').'</a>';
+        } 
+        if( $ampforwp_category_link === 'no' ) {
+            $category_link = '';
         }
 
-        //show more
-        if( $ampforwp_category_link === 'yes' && $ampforwp_category_id !== '' ) {
-          global $redux_builder_amp;
-          echo '<a class="amp-category-block-btn" href="'.trailingslashit(get_category_link($ampforwp_category_id)).'amp'.'">'. ampforwp_translation($redux_builder_amp['amp-translator-show-more-text'], 'View More Posts (Widget Button)').'</a>';
-        }
-        echo '</ul></div>';
+        echo  $category_link ;
+
+        echo '</ul> <div class="cb"></div> </div>';
 
     } else {
         // no posts found
@@ -143,7 +155,7 @@
         <!-- radio buttons starts Here -->
           <label for="<?php echo $this->get_field_id( 'showButton' ); ?>" value="<?php  echo esc_attr( $ampforwp_title );?>"><?php echo __('Show View more Button:','accelerated-mobile-pages') ?></label><br>
           <label for="<?php echo $this->get_field_id('show_button_1'); ?>">
-              <input class="widefat" id="<?php echo $this->get_field_id('show_button_1'); ?>" name="<?php echo $this->get_field_name('sho) ?>wButton'); ?>" type="radio" value="yes" <?php if($radio_buttons === 'yes'){ echo 'checked="checked"'; } ?> /><?php echo __('Yes ','accelerated-mobile-pages'); ?>
+              <input class="widefat" id="<?php echo $this->get_field_id('show_button_1'); ?>" name="<?php echo $this->get_field_name('showButton'); ?>" type="radio" value="yes" <?php if($radio_buttons === 'yes'){ echo 'checked="checked"'; } ?> /><?php echo __('Yes ','accelerated-mobile-pages'); ?>
           </label>
            <label for="<?php echo $this->get_field_id('show_button_2'); ?>">
               <input class="widefat" id="<?php echo $this->get_field_id('show_button_2'); ?>" name="<?php echo $this->get_field_name('showButton'); ?>" type="radio" value="no" <?php if($radio_buttons === 'no'){ echo 'checked="checked"'; } ?> /><?php echo __(' No','accelerated-mobile-pages'); ?>
