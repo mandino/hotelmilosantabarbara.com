@@ -1,5 +1,5 @@
 <?php 
-	require_once TEMPLATEPATH.'/library/mobile-detect.php';
+	require_once get_stylesheet_directory().'/library/mobile-detect.php';
 	$detect = new Mobile_Detect;
 	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 	$scriptVersion = $detect->getScriptVersion();
@@ -58,9 +58,10 @@
 	?>
 
 	<style>
-		<?php include(TEMPLATEPATH. "/library/inset.php"); ?>
+		<?php include(get_stylesheet_directory(). "/library/inset.php"); ?>
 	</style>
 
+<!--
 	<script type="application/ld+json">
 		{
 		"@context": "//schema.org",
@@ -76,6 +77,7 @@
 		"articleBody": "The full body of the article"
 		}
 	</script>
+-->
 
 </head> 
 <body id="oceana" <?php body_class($class); ?>>

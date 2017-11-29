@@ -1178,6 +1178,8 @@ li.blue-btn i {
 }
 
 
+/* ================================================  MAX WIDTH 768 ======================================= */
+<<<<<<< HEAD
 @media only screen 
 and (max-width : 768px) {
 	.video-banner video[style] {
@@ -1192,9 +1194,13 @@ and (max-width : 768px) {
 		-ms-transform: none !important;
 		transform: none !important;
 	}
+
+	.post-tags li {
+		float: unset;
+		text-align: center;
+		display: block;
+	}
 }
-
-
 
 /* ================================================  MAX WIDTH 720 ======================================= */
 

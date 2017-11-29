@@ -1534,7 +1534,13 @@ $options[] = array( "name" => __('Email','cebolang'),
 			"desc" => "This email will be used in various places as well as used to create the built in contact forms. If blank, it will disable the flyout forms",
 			"id" => $shortname."_email",
 			"std" => "",
-			"type" => "text");			
+			"type" => "text");	
+    
+$options[] = array( "name" => __('Local Business Schema','cebolang'),
+			"desc" => __('Paste Local Business Schema JSON-LD','cebolang'),
+			"id" => $shortname."_locb-schema",
+			"std" => "",
+			"type" => "textarea");     
 
 
 $options[] = array( "name" => __('Email Newsletter Form Code','cebolang'),
@@ -1710,5 +1716,3 @@ update_option('of_shortname',$shortname);
 
 }
 }
-
-?>

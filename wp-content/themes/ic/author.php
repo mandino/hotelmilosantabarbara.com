@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div id="undefined-sticky-wrapper" class="my-wrapper sticky" style="height: 70px; position: fixed; z-index: 99; width: 100%;">
 
-<?php include (TEMPLATEPATH . '/library/navigation.php'); ?>
+<?php include (get_stylesheet_directory() . '/library/navigation.php'); ?>
 
 </div>
 
@@ -220,14 +220,6 @@ get_header(); ?>
 	
 	
 	<?php if(get_option('cebo_twitter')) { ?>
-
-	<!-- Start Twitter Section  -->
-	
-	
-	<?php include (TEMPLATEPATH . '/library/twitter.php'); ?>
-	
-	
-	<!-- End Twitter Section  -->
 	
 	<? } ?>
 
