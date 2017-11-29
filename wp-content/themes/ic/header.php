@@ -196,6 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</ul>
 				</nav>
 			</div>
+			<div class="clear"></div>
 		</div>
 	</div>
 	<div id="quiet"></div>
