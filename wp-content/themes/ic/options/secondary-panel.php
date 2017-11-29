@@ -1,37 +1,6 @@
 <?php
-$categories = get_categories('hide_empty=0&orderby=name');
-$taxers = get_terms('location', 'orderby=name&hide_empty=0');
-$proptype = get_terms('propertytype', 'orderby=name&hide_empty=0');
-$pages_array = get_pages('hide_empty=0');
-$terms = array();
-$site_pages = array();
-$wp_cats = array();
-$type = array();
-
-foreach ($pages_array as $pagg) {
-	$site_pages[$pagg->ID] = htmlspecialchars($pagg->post_title);
-	$pages_ids[] = $pagg->ID;
-}
-
-foreach ($taxers as $taxers_list ) {
-       $terms[] = $taxers_list->name;
-}
-
-foreach ($proptype as $typeall ) {
-       $type[] = $typeall->name;
-}
-
-foreach ($categories as $category_list ) {
-       $wp_cats[$category_list->cat_ID] = $category_list->cat_name;
-}
-
-array_unshift($wp_cats, "Select a category"); 
-array_unshift($terms, "Select a Location"); 
-array_unshift($type, "Select a Type"); 
 
 $prefix = 'cebo';
-
-$numbers = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9+');
 $pagetypes = array('Two Column', 'Full Width', 'With Sidebar');
 
 $meta_box = array(
@@ -109,70 +78,6 @@ function mytheme_show_box() {
 	global $meta_box, $post;
 	// Use nonce for verification
 	
-		echo '
-
-	<script type="text/javascript">			
-			
-jQuery(document).ready(function() {
- 
-    var formfield;
- 
-    /* user clicks button on custom field, runs below code that opens new window */
-    jQuery(".upload_image_button").click(function() {
-        formfield = jQuery(this).prev("input"); //The input field that will hold the uploaded file url
-        tb_show("","media-upload.php?TB_iframe=true");
- 
-        return false;
- 
-    });
-
-    window.old_tb_remove = window.tb_remove;
-    window.tb_remove = function() {
-        window.old_tb_remove(); // calls the tb_remove() of the Thickbox plugin
-        formfield=null;
-    };
- 
- 
-    window.original_send_to_editor = window.send_to_editor;
-    window.send_to_editor = function(html){
-        if (formfield) {
-            fileurl = jQuery("img",html).attr("src");
-            jQuery(formfield).val(fileurl);
-            tb_remove();
-        } else {
-            window.original_send_to_editor(html);
-        }
-    };
-
-			
-						
-				 jQuery("#color_picker").children("div").css("backgroundColor", "#ff0000");    
-				 jQuery("#color_picker").ColorPicker({
-					color: "#ff0000",
-					onShow: function (colpkr) {
-						jQuery(colpkr).fadeIn(500);
-						return false;
-					},
-					onHide: function (colpkr) {
-						jQuery(colpkr).fadeOut(500);
-						return false;
-					},
-					onChange: function (hsb, hex, rgb) {
-						//jQuery(this).css("border","1px solid red");
-						jQuery("#color_picker").children("div").css("backgroundColor", "#" + hex);
-						jQuery("#color_picker").next("input").attr("value","#" + hex);
-						
-					}
-				  });
-			  
-		 
-		});
-		
-		</script>
-		
-		';
-
-
 	echo '<input type="hidden" name="mytheme_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	echo '<table class="form-table">';
 	foreach ($meta_box['fields'] as $field) {
@@ -244,4 +149,3 @@ function mytheme_save_data($post_id) {
 		}
 	}
 }
-?>

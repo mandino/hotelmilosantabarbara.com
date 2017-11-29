@@ -10,7 +10,7 @@ get_header();
 
 	<!-- ================= PRIMARY SLIDER HERE OPTIONAL ===================== -->
 
-	<?php include (TEMPLATEPATH . '/library/featured.php'); ?>
+	<?php include (get_stylesheet_directory() . '/library/featured.php'); ?>
 
 
 
@@ -73,12 +73,7 @@ get_header();
 			<div class="section-photos" style="margin-bottom: 45px;">
 
 				<ul>
-
-
-
-
-
-
+<!-- static -->
 					<!-- featured Room -->
 
 					<?php 
@@ -177,7 +172,7 @@ get_header();
 					<?php endwhile; endif; wp_reset_query(); ?>
 					<?php 
 
-						query_posts('post_type=page&p=2396'); if(have_posts()) : while(have_posts()) : the_post();
+						query_posts('post_type=page&p=5329'); if(have_posts()) : while(have_posts()) : the_post();
 						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 
 						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
@@ -223,6 +218,102 @@ get_header();
 
 
 					<div class="clear"></div>
+
+<!-- dynamic -->
+<!-- 				<?php
+					$first = true;
+					$image_size = 'Image 531x290';
+
+					if( have_rows( 'homepage_tiles', 'options' ) ) : while( have_rows( 'homepage_tiles', 'options' ) ) : the_row();
+						$image = array();
+						$page_info = get_sub_field('related_page');
+
+						if (get_sub_field('image')) {
+							$imageDetail = get_sub_field('image');
+							$image['url'] = $imageDetail['sizes'][$image_size];
+							$image['alt'] = $imageDetail['alt'] ? $imageDetail['alt'] : $imageDetail['name'];
+						} else {
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $page_info->ID ), $image_size);
+							$image_id = get_attachment_id_by_url(get_post_meta($page_info->ID, 'cebo_homethumb', true));
+							$image_url = wp_get_attachment_image_src($image_id , ( $first ? 'Image 540x290' : $image_size ));
+							$image['alt'] = get_custom_image_thumb_alt_text('',$post->ID);
+
+							if(get_post_meta($post->ID, 'cebo_homethumb', true))
+								$image['url'] = $image_url[0];
+							else
+								$image['url'] = $imgsrc[0];
+						}
+
+						if (get_sub_field('title')) {
+							$title = get_sub_field('title');
+						} else {
+							$title = get_post_meta($post->ID, 'cebo_tagline', true);
+						}
+
+						if (get_sub_field('subtitle')) {
+							$subtitle = get_sub_field('subtitle');
+						} elseif(get_post_meta($page_info->ID, 'cebo_subtagline', true)) {
+							$subtitle = get_post_meta($page_info->ID, 'cebo_subtagline', true);
+						} else {
+							$subtitle = $page_info->post_title;
+						}
+
+						if (get_sub_field('link'))
+							$link = get_sub_field('link');
+						else
+							$link = get_page_link($page_info->ID);
+
+						if (get_sub_field('open_link_in_new_tab'))
+							$newtab = 'target="_blank"';
+						else
+							$newtab = '';
+
+				?>
+						<li class="hover">
+
+
+						<?php //price ?>
+						<?php if(get_post_meta($page_info->ID, 'cebo_pricepoint', true)) : ?>
+							<div class="from-price">
+								<?php echo get_post_meta($page_info->ID, 'cebo_pricepoint', true); ?>
+							</div>
+						<?php endif; ?>
+
+
+						<?php //images ?>
+						<?php if($first) : ?>
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+						<?php else : ?>
+							<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+						<?php endif; ?>
+
+
+							<h3><?php echo $subtitle; ?></h3>
+
+
+							<div class="hover-effect">
+
+								<a class="special-copy-link" href="<?php echo $link; ?>" <?php echo $newtab; ?>><h3><?php echo $title; ?></h3></a>
+								<br>
+								<p><?php echo $subtitle; ?></p>
+
+								<a class="special-external" href="<?php echo $link; ?>" <?php echo $newtab; ?>><i class="fa fa-chevron-right fa-lg"></i></a>
+							</div>
+
+
+						</li>
+
+				<?php
+
+						if ($first == true) {
+							$image_size = 'Image 257x290';
+							$first = false;
+						}
+
+					endwhile; endif;
+				?>
+
+					<div class="clear"></div> -->
 
 				</ul>
 

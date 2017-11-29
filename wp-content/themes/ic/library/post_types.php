@@ -44,11 +44,6 @@ function project_items()
 
 //create taxonomy for project type
 
-include(TEMPLATEPATH . '/options/secondary-panel.php'); 
-
-
-
-
 add_action( 'init', 'creates_post_types' );
 function creates_post_types() {
   register_post_type( 'slides',
@@ -58,6 +53,9 @@ function creates_post_types() {
         'singular_name' => __( 'Slides' )
       ),
       'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'query_var' => true,
       'rewrite' => array('slug' => 'slides'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
@@ -132,7 +130,7 @@ function create_post_types() {
       'public' => true,
       'rewrite' => array('slug' => 'locations'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
-      'supports' => array('title','custom-fields','editor','category','author','thumbnail')
+      // 'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )
   );
 }
