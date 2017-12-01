@@ -515,7 +515,7 @@ li.blue-btn i {
 .flexslider--mobileonly .slide-header .slicer {
 	height: 100%;
 	background-position: center center;
-	min-height: unset;
+	min-height: 0;
 }
 .video-banner {
 	display: none;
@@ -1216,13 +1216,13 @@ and (max-width : 768px) {
 	}
 
 	.post-tags li {
-		float: unset;
+		float: none;
 		text-align: center;
 		display: block;
 	}
 
 	#home-slider.home-video {
-		min-height: unset;
+		min-height: 0;
 	}
 }
 
