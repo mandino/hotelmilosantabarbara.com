@@ -507,6 +507,12 @@ li.blue-btn i {
 	height: 100%;
 }
 
+.flexslider--mobileonly .slides > li {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
 .flexslider--mobileonly .slide-header {
 	height: 100%;
 	top: 0;
@@ -1306,6 +1312,10 @@ height: 350px;
 	    bottom: 360px;
 	    display: block;
 	    z-index: 99;
+	}
+
+	.flexslider--mobileonly .flex-control-nav {
+		bottom: 10px;
 	}
 
 	.flexslider .slides img {
