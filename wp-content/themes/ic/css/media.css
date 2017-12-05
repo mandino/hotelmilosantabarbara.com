@@ -494,7 +494,6 @@ li.blue-btn i {
 
 #home-slider.home-video {
 	display: table;
-	height: 498px;
 }
 
 .flexslider--mobileonly {
@@ -505,6 +504,12 @@ li.blue-btn i {
 .flexslider--mobileonly .slides,
 .flexslider--mobileonly .slides > li {
 	height: 100%;
+}
+
+.flexslider--mobileonly .slides > li {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 }
 
 .flexslider--mobileonly .slide-header {
@@ -1015,10 +1020,6 @@ li.blue-btn i {
 		display: none;
 	}
 
-	#home-slider.home-video {
-		height: 350px 
-	}
-
 }
 /* ================================================  MAX WIDTH 939 ======================================= */
 
@@ -1308,9 +1309,16 @@ height: 350px;
 	    z-index: 99;
 	}
 
+	.flexslider--mobileonly .flex-control-nav {
+		bottom: 10px;
+	}
+
 	.flexslider .slides img {
 		width: auto;
 		height: 100%;
+	}
+	.flexslider.flexslider--mobileonly .slides img {
+		height: auto;
 	}
 	.home .flexslider .slides img {
 		width: 150%;
