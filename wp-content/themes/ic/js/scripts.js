@@ -303,10 +303,15 @@ $(document).ready(function(){
 				$('#menus').removeClass('mm-menu mm-horizontal mm-ismenu');
 				$('#menu').removeClass('mm-list mm-panel mm-opened mm-current');
 				$('#primary-nav .container').prepend($('#menus'));
+				$('.mm-page').attr('style','');
+				$('.sub-menu').attr('style', '');
+				$('.button').removeClass('show');
+				$('html').removeClass('mm-background mm-opened mm-opening');
 			} else {
 				$('#menus').removeClass('mm-current mm-opened');
 				$('.mm-page').attr('style','');
 				$('.sub-menu').attr('style', '');
+				$('.button').removeClass('show');
 				$('html').removeClass('mm-background mm-opened mm-opening');
 				$('#menus').addClass('mm-menu mm-horizontal mm-ismenu');
 				$('#menu').addClass('mm-list mm-panel mm-opened mm-current');
