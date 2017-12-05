@@ -348,6 +348,20 @@ $(document).ready(function(){
 		$('.current-language').attr('href','//hotelmilosantabarbara.com/');
 	}
 
+	$(window).load(function() {
+
+		// Home - Video Banner
+		var check_home = $('video').length;
+
+		if (check_home) {
+			$('video').get(0).play();
+		}
+
+		if ( vide_video ) {
+			$('.video-banner-onload').vide(vide_video);
+		}
+	});
+
 });
 
 $('#lnkP2Talkheader-mobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));	
