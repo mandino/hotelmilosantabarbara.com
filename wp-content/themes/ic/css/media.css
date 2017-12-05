@@ -1216,7 +1216,7 @@ and (max-width : 768px) {
 		transform: none !important;
 	}
 
-	.post-tags li {
+	.single-specials .post-tags li {
 		float: none;
 		text-align: center;
 		display: block;
@@ -1736,7 +1736,9 @@ and (max-width : 480px) {
 	    margin-right: 14px;
 	}
 
-
+	.single-specials .post-tags li {
+		display: block;
+	}
 
 	/* Post */
 
