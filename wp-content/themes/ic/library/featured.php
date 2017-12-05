@@ -52,7 +52,7 @@
 					<?php } ?>
 
 					</div>
-
+					<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" class="image-hidden"/>
 				</li>
 
 			<?php endwhile; endif; wp_reset_query(); ?>	
