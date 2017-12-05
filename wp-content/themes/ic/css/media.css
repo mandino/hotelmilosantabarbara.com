@@ -494,7 +494,6 @@ li.blue-btn i {
 
 #home-slider.home-video {
 	display: table;
-	height: 498px;
 }
 
 .flexslider--mobileonly {
@@ -1021,10 +1020,6 @@ li.blue-btn i {
 		display: none;
 	}
 
-	#home-slider.home-video {
-		height: 350px 
-	}
-
 }
 /* ================================================  MAX WIDTH 939 ======================================= */
 
@@ -1321,6 +1316,9 @@ height: 350px;
 	.flexslider .slides img {
 		width: auto;
 		height: 100%;
+	}
+	.flexslider.flexslider--mobileonly .slides img {
+		height: auto;
 	}
 	.home .flexslider .slides img {
 		width: 150%;
