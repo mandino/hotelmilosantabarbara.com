@@ -610,6 +610,7 @@ line-height: 30px;
 #primary-nav .container {
     width: 1000px;
     position: relative;
+    z-index: 100;
 }
 
 #primary-nav nav {
@@ -625,9 +626,11 @@ line-height: 30px;
 }
 #primary-nav nav ul li {
     color: #868282;
-    margin-right: 12px;
+    margin: 0;
+    padding: 0 6px;
     display: inline-block;
     zoom: 1;
+    position: relative;
 }
 
 #primary-nav nav ul li a {
@@ -650,6 +653,38 @@ line-height: 30px;
     }
 
 
+
+#primary-nav nav ul li .sub-menu {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px 0 0;
+    display: none;
+    border: 1px solid #CBCBCB;
+    border-top: none;
+    width: 180px;
+}
+
+.my-wrapper.sticky #primary-nav nav ul li .sub-menu {
+    padding-top: 10px;
+}
+
+#primary-nav nav ul li:hover .sub-menu {
+    display: block;
+}
+
+#primary-nav .sub-menu li {
+    margin-right: 0;
+    text-align: left;
+    display: block;
+    padding: 0 5px 10px 10px;
+}
+
+#primary-nav .sub-menu li a {
+    font-weight: normal;
+}
 
 #primary-nav .button {
     background: none repeat scroll 0 0 #38BABF;
@@ -745,6 +780,7 @@ line-height: 30px;
     background: #eee;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .slide-header {
@@ -4566,6 +4602,17 @@ div#TA_ssnarrowcollectreview383 li img {
 .video-banner video {
     max-width: initial;
 }
+
+.menu-item-has-children .button {
+    position: absolute;
+    background-color: transparent;
+    top: 10px;
+    right: 20px;
+    height: 10px;
+    width: 0px;
+    display: none;
+}
+
 .image-hidden {
     width: 100%;
     height: auto;

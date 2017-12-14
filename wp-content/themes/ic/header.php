@@ -180,28 +180,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</ul>
 				</div>
 			<div class="container" style="float: right;">
-				<a class="mmenu-icon" href="#menu"><i class="fa fa-bars"></i></a>
-				<nav id="menu" class="fl" style="z-index:1">
-					<ul>
-						<li class="navis-mobile">
-							<a id="lnkP2Talkmobile" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav"><?php echo get_option('cebo_tele'); ?></span></span></a>
-						</li>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
-						<li class="hamburgermenu">
-							<a class="cheese" href="#">
-								<div class="hamburger">
-									<span></span>
-									<span></span>
-									<span></span>
-								</div>
-								<span class="menutext">Menu</span>
-							</a>
-						</li>
-						<?php wp_nav_menu( array( 
-							'theme_location' => 'mobilenav',
-							'items_wrap' => '%3$s', 
-							'container' => ''
-						)); ?>
+				<a class="mmenu-icon"><i class="fa fa-bars"></i></a>
+				<nav id="menus" class="fl" style="z-index:1">
+					<ul id="menu">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu' => 'Header',
+								'items_wrap' => home_nav_wrap(),
+								'container' => '',
+								'menu_class' => 'navitem'
+							) );
+						?>
 					</ul>
 				</nav>
 			</div>
