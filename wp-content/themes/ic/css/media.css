@@ -475,7 +475,7 @@ and (max-width : 1099px) {
 and (max-width : 1060px) {
 
 	.push-container {
-		margin-right: 15px;
+		display: none;
 	}
 
 }
