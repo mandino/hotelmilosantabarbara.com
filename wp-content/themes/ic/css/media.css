@@ -127,9 +127,11 @@ and (max-width : 1099px) {
 		display: block;
 	}
 
-	#primary-nav nav ul {
-	    margin-left: 170px;
+	.push-container {
+		margin-right: 15px;
 	}
+
+
 
 	/* Main slider */
 
