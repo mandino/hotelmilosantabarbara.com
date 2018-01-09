@@ -139,16 +139,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		<div id="property-nav">
 			<nav class="click-nav">
-				<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
-					<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
-					<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
-				</a>
-
-				 <div class="navis-footer">
-					<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-					<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-				</div> 
-
 				<ul class="container no-js">
 					<li><a href="//iclocalrewards.com/en-US/Login?ReturnUrl=%2F#signup" target="_blank" class="clicknav-clicker">Join The IC Local Perks Program & Get Rewarded With Every Stay</a></li>
 					<li class="blue-btn"><a href="<?php bloginfo('url'); ?>/blue/"><i class="fa fa-info-circle"></i><span class="blue-mobile">why blue?</span></a></li>
@@ -172,15 +162,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<?php } ?>
 			-->
 			<div class="language">
-					<a class="current-language" href="//hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
-					<i class="fa fa-angle-down"></i>
-					<ul class="molang">
-						<li><a class="de-lang" href="//hotelmilosantabarbara.com/uber-uns/" data-ajax="false">de</a></li>
-						<li><a class="fr-lang" href="//hotelmilosantabarbara.com/a-propos-de-nous/" data-ajax="false">fr</a></li>
-						<li><a class="pt-lang" href="//hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
-					</ul>
-				</div>
-			<div class="container" style="float: right;">
+				<a class="current-language" href="//hotelmilosantabarbara.com/a-propos-de-nous/chambres/" data-ajax="false">en</a>
+				<i class="fa fa-angle-down"></i>
+				<ul class="molang">
+					<li><a class="de-lang" href="//hotelmilosantabarbara.com/uber-uns/" data-ajax="false">de</a></li>
+					<li><a class="fr-lang" href="//hotelmilosantabarbara.com/a-propos-de-nous/" data-ajax="false">fr</a></li>
+					<li><a class="pt-lang" href="//hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
+				</ul>
+			</div>
+			<div class="container" style="float: right;"> 
 				<a class="mmenu-icon"><i class="fa fa-bars"></i></a>
 				<nav id="menus" class="fl" style="z-index:1">
 					<ul id="menu">
@@ -194,6 +184,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							) );
 						?>
 					</ul>
+					<div class="push-container">
+						<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
+							<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
+							<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
+						</a>
+					 	<div class="navis-footer">
+							<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
+							<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
+						</div>
+					</div>
 				</nav>
 			</div>
 			<div class="clear"></div>
