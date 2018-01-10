@@ -455,6 +455,7 @@ line-height: 30px;
     bottom: 2px;
     position: relative;
     vertical-align: bottom;
+    color: #fff !important;
 }
 
 .click-nav:hover .ic-navis i, .click-nav:hover .ic-navis span {
@@ -623,6 +624,7 @@ line-height: 30px;
 }
 #primary-nav nav ul {
     text-align: right;
+    float: right;
 }
 #primary-nav nav ul li {
     color: #868282;
@@ -690,7 +692,7 @@ line-height: 30px;
     background: none repeat scroll 0 0 #38BABF;
     font-size: 20px;
     font-weight: bold;
-    margin: 10px 10px 0px 20px;
+    margin: 10px 10px 10px 20px;
     padding: 10px 70px;
 }
 
@@ -1276,6 +1278,21 @@ line-height: 30px;
 
 /* NAVIS Footer - click-nav */
 
+.push-container {
+    margin-right: 25px;
+    margin-top: -7px;
+    float: right;
+}
+
+.push-container .navis-footer {
+    float: left;
+    margin: 0;
+}
+
+.push-container #lnkP2Talk {
+    float: left;
+}
+
 .click-nav .navis-footer,
 .pride .navis-footer {
 	position: absolute;
@@ -1286,6 +1303,7 @@ line-height: 30px;
 }
 
 .click-nav .navis-footer a,
+.push-container .navis-footer a,
 .pride .navis-footer a {
 	background-image: url(../images/navispushbutton.png);
 	background-repeat: no-repeat;
@@ -1298,20 +1316,24 @@ line-height: 30px;
 }
 
 .click-nav .navis-footer a#lnkP2Chatheader,
+.push-container .navis-footer a#lnkP2Chatheader,
 .pride .navis-footer a#lnkP2Chatheader {
     background-position: 0 0;
 }
 
 .click-nav .navis-footer a#lnkP2Chatheader:hover,
+.push-container .navis-footer a#lnkP2Chatheader:hover,
 .pride .navis-footer a#lnkP2Chatheader:hover {
     background-position: 0 -40px;
 }
 
 .click-nav .navis-footer a#lnkP2Talkheader,
+.push-container .navis-footer a#lnkP2Talkheader,
 .pride .navis-footer a#lnkP2Talkheader {
     background-position: -85px 0;
 }
 .click-nav .navis-footer a#lnkP2Talkheader:hover,
+.push-container .navis-footer a#lnkP2Talkheader:hover,
 .pride .navis-footer a#lnkP2Talkheader:hover {
     background-position: -85px -40px;
 }
@@ -4357,7 +4379,7 @@ div#TA_ssnarrowcollectreview383 li img {
 .ic-navis div span,
 .ic-navis div i,
 .ic-navis span {
-    color: #fff !important;
+    color: #000 !important;
 }
 
 /* Accordion Styling */

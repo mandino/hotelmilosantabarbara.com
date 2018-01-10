@@ -127,9 +127,11 @@ and (max-width : 1099px) {
 		display: block;
 	}
 
-	#primary-nav nav ul {
-	    margin-left: 170px;
+	.push-container {
+		margin-right: 15px;
 	}
+
+
 
 	/* Main slider */
 
@@ -462,6 +464,18 @@ and (max-width : 1099px) {
 
 	#property-nav nav ul li {
 		text-align: center !important;
+	}
+
+}
+
+
+/* ================================================  MAX WIDTH 1060 ======================================= */
+
+@media only screen
+and (max-width : 1060px) {
+
+	.push-container {
+		display: none;
 	}
 
 }
