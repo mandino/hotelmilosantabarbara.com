@@ -455,6 +455,7 @@ line-height: 30px;
     bottom: 2px;
     position: relative;
     vertical-align: bottom;
+    color: #fff !important;
 }
 
 .click-nav:hover .ic-navis i, .click-nav:hover .ic-navis span {
