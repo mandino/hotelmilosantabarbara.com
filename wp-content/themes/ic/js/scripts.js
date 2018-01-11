@@ -1,17 +1,4 @@
 jQuery( document ).ready(function( $ ) {
-
-	SetElementToNavisNCPhoneNumber("NavisTFN");
-	SetNavisP2TalkLink("lnkP2TalkFTN");
-
-	SetElementToNavisNCPhoneNumber("NavisTFNmobnav");
-	SetNavisP2TalkLink("lnkP2Talk");
-	SetNavisP2TalkLink("lnkP2Talkheader");
-	SetNavisP2ChatLink("lnkP2Chatheader");
-
-	SetNavisP2TalkLink("lnkP2Talkmobile");
-
-	SetNavisP2TalkLink("lnkP2Talkheader-mobile");
-	SetNavisP2ChatLink("lnkP2Chatheader-mobile");
 		
 	$('img.lazy').each(function() {
 		var img = $(this);
@@ -363,10 +350,3 @@ $(document).ready(function(){
 	});
 
 });
-
-$('#lnkP2Talkheader-mobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));	
-$('#lnkP2Chatheader-mobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));	
-$('#lnkP2Talkmobile').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
-$('#lnkP2Talkheader').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
-$('#lnkP2Chatheader').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
-$('#lnkP2Talk').prop('href','tel:'+NavisConvertTagToPhoneNumberBasic(jQuery('#NavisTFNmobnav').text()));
