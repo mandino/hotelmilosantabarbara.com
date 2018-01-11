@@ -184,14 +184,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						?>
 					</ul>
 					<div class="push-container">
-						<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
+						<a style="color:#000 !important;" class="push-container-number" href="tel:<?php echo get_option('cebo_tele'); ?>">
 							<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
-							<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
+							<span><?php echo get_option('cebo_tele'); ?></span></span>
 						</a>
-					 	<div class="navis-footer">
-							<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-							<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-						</div>
 					</div>
 				</nav>
 			</div>
