@@ -61,6 +61,12 @@
 		<?php include(get_stylesheet_directory(). "/library/inset.php"); ?>
 	</style>
 
+	<script type="text/javascript" src="https://www.navistechnologies.com/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8446025284"></script>
+
+	<script type="text/javascript">ProcessNavisNCKeyword();</script>
+
+	<script id="navis-fusion-loader" src="https://assets.navisperformance.com/NWRC/Fusion/navis-fusion-loader.js" data-accountid="15407" data-secret="s019eeaiszmi3itqbduy"></script>
+
 <!--
 	<script type="application/ld+json">
 		{
