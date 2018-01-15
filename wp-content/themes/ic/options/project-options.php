@@ -80,8 +80,15 @@ $meta_boxer = array(
 	          "type" => "checkbox",
 	          "std" => ""
         	  )
- 		
-       	)
+ 		,
+ 		array( 
+	          "name" => "Activate More Info",
+	          "desc" => "Check to activate more info for pages",
+	          "id" => $prefix."_more_info",
+	          "type" => "checkbox",
+	          "std" => ""
+	    	)
+    )
 );
 
 
