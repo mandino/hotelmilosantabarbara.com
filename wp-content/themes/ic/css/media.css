@@ -948,7 +948,7 @@ li.blue-btn i {
 	}
 
 	#primary-nav .fl,
-	#lnkP2Talk, 
+	.push-container-number, 
 	.click-nav .navis-footer,
 	.pride .navis-footer  {
 		display: none;
