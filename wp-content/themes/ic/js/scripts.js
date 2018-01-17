@@ -349,4 +349,16 @@ $(document).ready(function(){
 		}
 	});
 
+	$(window).scroll(function() {
+		var verschil = ($(window).scrollTop() / 5);
+
+		if (verschil > 40) {
+			$('.droplogo').addClass('jumpshot');
+			$('.ticker').addClass('ticker-down');
+		} else if (verschil < 40) {
+			$('.droplogo').removeClass('jumpshot');
+			$('.ticker').removeClass('ticker-down');
+		}
+	});
+
 });

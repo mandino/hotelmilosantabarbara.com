@@ -1167,7 +1167,7 @@ nav .container .columns {
     opacity: 1;
     position: absolute;
     top: 0px;
-    z-index: 999999;
+    z-index: 2000;
    	padding: 0px 15px 3px 15px;
 	background: #FFF;
 	border: 1px solid #ddd;

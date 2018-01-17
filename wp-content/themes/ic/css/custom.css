@@ -399,6 +399,7 @@ line-height: 30px;
     width: 100%;
     border-bottom: 1px solid #ddd;
     z-index: 999;
+    overflow: visible;
 }
 
 .navitem {
