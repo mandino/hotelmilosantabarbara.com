@@ -118,11 +118,6 @@ and (max-width : 1099px) {
 		padding-top: 20px;
 	}
 
-	.logo img {
-	    max-width: 150px;
-	    padding: 0;
-	}
-
 	#primary-nav span.navdrop, #primary-nav span.navdrop ul {
 		display: block;
 	}
@@ -945,6 +940,7 @@ li.blue-btn i {
 
 	#primary-nav {
 		position: relative;
+		overflow: visible;
 	}
 
 	#primary-nav .fl,
@@ -973,6 +969,15 @@ li.blue-btn i {
 
 	.logo.mobile > img {
 	    height: 100%;
+	    padding: 0;
+	}
+
+	.ticker {
+		top: 68px;
+	}
+
+	.sticky .ticker {
+		top: 51px;
 	}
 
 	#primary-nav .navdrop i {
