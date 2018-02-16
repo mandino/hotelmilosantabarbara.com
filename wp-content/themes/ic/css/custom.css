@@ -451,10 +451,14 @@ line-height: 30px;
     vertical-align: sub;
 }
 
-.navis-mobile span#NavisTFNmobnav {
+.navis-mobile span {
     bottom: 2px;
     position: relative;
     vertical-align: bottom;
+    color: #fff !important;
+}
+
+.navis-mobile .ic-navis span {
     color: #fff !important;
 }
 

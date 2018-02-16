@@ -61,6 +61,12 @@
 		<?php include(get_stylesheet_directory(). "/library/inset.php"); ?>
 	</style>
 
+	<script type="text/javascript" src="https://www.navistechnologies.com/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8446025284"></script>
+
+	<script type="text/javascript">ProcessNavisNCKeyword();</script>
+
+	<script id="navis-fusion-loader" src="https://assets.navisperformance.com/NWRC/Fusion/navis-fusion-loader.js" data-accountid="15407" data-secret="s019eeaiszmi3itqbduy"></script>
+
 <!--
 	<script type="application/ld+json">
 		{
@@ -184,14 +190,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						?>
 					</ul>
 					<div class="push-container">
-						<a style="color:#000 !important;" id="lnkP2Talk" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">
+						<a style="color:#000 !important;" class="push-container-number" href="tel:<?php echo get_option('cebo_tele'); ?>">
 							<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
-							<span id="NavisTFN_ic"><?php echo get_option('cebo_tele'); ?></span></span>
+							<span><?php echo get_option('cebo_tele'); ?></span></span>
 						</a>
-					 	<div class="navis-footer">
-							<a class="ptt" id="lnkP2Chatheader" href="//www.navistechnologies.info/p2talk/P2ChatIni.aspx?Account=15407">Push to Chat</a>
-							<a class="ptt" id="lnkP2Talkheader" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407">Push to Talk</a>
-						</div>
 					</div>
 				</nav>
 			</div>

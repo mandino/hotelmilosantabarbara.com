@@ -34,7 +34,7 @@
 					<?php if(get_option('cebo_tele')) { ?>
 					<li class="phone"><i class="fa fa-mobile-phone fa-lg"></i> 
 
-						<a id="lnkP2TalkFTN" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span id="NavisTFN"><?php echo get_option('cebo_tele'); ?></span></a>
+						<a href="tel:<?php echo get_option('cebo_tele'); ?>" target="new"><span><?php echo get_option('cebo_tele'); ?></span></a>
 
 						<?php if(get_option('cebo_fax')) { ?>| Fax: <?php echo get_option('cebo_fax'); ?><?php } ?>
 
@@ -150,10 +150,6 @@
 	include(get_stylesheet_directory(). "/library/scripts.php"); 
 
 ?>
-
-<!-- NAVIS script -->
-<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15407&jspass=s019eeaiszmi3itqbduy&dflt=8665473070"></script>
-<script language="javascript">ProcessNavisNCKeyword();</script>
 
 <!-- sojern script -->
 <script>

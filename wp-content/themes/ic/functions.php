@@ -464,7 +464,7 @@ $mobilenav = wp_nav_menu( array(
 	// $wrap  = '<ul>';
 
 	$wrap .= '<li class="navis-mobile">
-			<a id="lnkP2Talkmobile" href="//www.navistechnologies.info/p2talk/p2talk.aspx?Account=15407" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span id="NavisTFNmobnav">'.get_option('cebo_tele').'</span></span></a>
+			<a href="tel:'.get_option('cebo_tele').'" target="new"><span class="ic-navis"><i class="fa fa-phone"></i> <span>'.get_option('cebo_tele').'</span></span></a>
 								</li>';
 
 	$wrap .= '%3$s';
