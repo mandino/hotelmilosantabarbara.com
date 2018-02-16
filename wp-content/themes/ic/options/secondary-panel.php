@@ -22,7 +22,15 @@ $meta_box = array(
 	          "type" => "checkbox",
 	          "std" => ""
               )	
-        ,	
+        ,
+        array( 
+              "name" => "Booking Link",
+	          "desc" => "Add booking link here.",
+	          "id" => $prefix."_special_book_link",
+	          "type" => "text",
+	          "std" => ""
+              )	
+        ,
 		array( 
               "name" => "Price Point",
 	          "desc" => "Anything be here, but should be short ex: From $29",
