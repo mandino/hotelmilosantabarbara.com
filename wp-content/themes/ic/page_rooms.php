@@ -100,10 +100,7 @@
 						<div class="fr">
 							
 							<h3><?php the_title(); ?> </h3>
-
-
-							<p><?php echo excerpt(100); ?></p>
-
+							<p><?php echo excerpt(50); ?></p>
 							<div class="room-list-buttons">
 
 								<a class="button" href="<?php if(get_post_meta ($post->ID, 'cebo_booklink', true)) { echo get_post_meta ($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;">Reserve Now</a>
