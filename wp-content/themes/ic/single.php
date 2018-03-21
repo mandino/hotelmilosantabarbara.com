@@ -100,7 +100,13 @@ if( count( $children ) != 0 ) { ?>
 			<?php } ?>			
 			
 			<div class="post-content fl">
-			
+			     <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb('
+                        <p id="breadcrumbs">','</p>
+                    ');
+                    }
+                ?>
 				<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 				
 					<?php the_content(); ?>
