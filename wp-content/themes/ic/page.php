@@ -127,7 +127,8 @@
 			
 					
 			<div class="wonderline"></div>
-			<div class="post-content fl">
+
+            <div class="post-content fl <?php if(get_post_meta ($post->ID, 'cebo_full_width', true)) echo 'content-fullwidth';?>">
 			
 				<?php //if(have_posts()) : while(have_posts()) : the_post(); ?>
 				<?php
@@ -147,7 +148,10 @@
 				<?php //endwhile; endif; wp_reset_query(); ?>	
 
 			</div>
-
+            <?php 
+                $fw = get_post_meta($post->ID, 'cebo_full_width', true);
+                if (!$fw){ 
+           ?>   
 			<div class="sidebar fr">
 				
 				<a class="button" target="_blank" href="<?php if(get_post_meta ($post->ID, 'cebo_booklink', true)) { echo get_post_meta ($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>" onclick="_gaq.push(['_link', this.href]);return false;"><?php _e('RESERVE NOW', 'cebolang'); ?></a>
@@ -210,10 +214,12 @@
 						
 							
 						</ul>
-		
+                <div class="clear"></div>
+
+               <?php } ?>
 				</div>
 			<!-- New Restaurant Menu Template -->
-			<div class="post-content fl">
+			  <div class="post-content fl <?php if(get_post_meta ($post->ID, 'cebo_full_width', true)) echo 'content-fullwidth';?>">
 
 				<!-- New Restaurant Menu Template -->
 
