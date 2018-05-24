@@ -4685,6 +4685,27 @@ div#TA_ssnarrowcollectreview383 li img {
     display:none;
 }
 
+/*cookie consent*/
+.cookie-consent {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: #fff;
+  border-top: 3px solid #1c93d1;
+  z-index: 99999999;
+  text-align: center;
+  padding: 0; }
+  .cookie-consent__accept-btn {
+    padding: 7px;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    top: -15px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px; }
 
 /*end*/
 
