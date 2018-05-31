@@ -2096,14 +2096,17 @@ and (max-width : 480px) {
 
 /* light it up blue */
 
-.blue-mobile {
-	display: none;
-}
+    .blue-mobile {
+        display: none;
+    }
 
-li.blue-btn {
-	width: 35px;
-}
-
+    li.blue-btn {
+        width: 35px;
+    }
+/*landing page*/
+    .landing-page-logo, .landing-page-logo-header {
+        display:none;
+    }
 
 }
 
