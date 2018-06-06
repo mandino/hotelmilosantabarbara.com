@@ -6,7 +6,7 @@
 	}
 ?>
 <!DOCTYPE HTML>
-<html <?php language_attributes() ?>>
+<html <?php language_attributes() ?> style="margin-top:0;">
 <head>
     
     <style>.async-hide { opacity: 0 !important} </style>

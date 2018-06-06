@@ -262,6 +262,27 @@
 		
     });
     
+// landing-page
+    
+  
+$(window).scroll(function () {
+	$trigger = $('.banner').height();
+
+	if ( $(window).scrollTop() >= ($trigger - 350) ) {
+		$('body').addClass('onscroll');
+        $('.landing-page').removeClass('display-none');
+        $(".landing-page").fadeIn(700);
+		
+       // $('landing-page-logo img').fadeIn(500);
+	} else {
+		$('body').removeClass('onscroll');
+        $(".landing-page").fadeOut(300);
+       // $('landing-page-logo img').fadeIn(500);
+		$('.landing-page').addClass('display-none');
+	}
+
+});        
+    
 //slick
 $(document).ready(function() {
     
