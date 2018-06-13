@@ -10,6 +10,11 @@ h2 {
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     background: #fff !important;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
 }
 
 .landing-page .lp-button {

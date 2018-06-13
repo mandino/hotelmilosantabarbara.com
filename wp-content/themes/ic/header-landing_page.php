@@ -237,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 			
 				
-		<div id="primary-nav" class="landing-page display-none" style="overflow:visible;position: absolute;top: 0px;z-index: 1;width: 100%;">
+		<div id="primary-nav" class="landing-page display-none">
           <?php if ( have_rows('landing_page') ) : while( have_rows('landing_page') ) : the_row(); ?>
             <?php if(get_row_layout() == 'banner') :?>  
               <div class="landing-page-logo-header">
