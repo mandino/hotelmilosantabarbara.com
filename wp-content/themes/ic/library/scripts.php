@@ -369,6 +369,7 @@ function docReady_winResize_functions() {
 	fullBleedImage( $('.banner--50'), 0.5 );
 	fullBleedImage( $('.banner--60'), 0.6 );
 	fullBleedImage( $('.banner--70'), 0.7 );
+	fullBleedImage( $('.banner--80'), 0.8 );
 	fullBleedImage( $('.banner--90'), 0.9 );
 	fullBleedImage( $('.banner--100'), 1 );
 	
