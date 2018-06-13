@@ -14,8 +14,8 @@
                 <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_sub_field('landing_page_logo')['url']?>" alt="<?php echo get_sub_field('landing_page_logo')['title']?>"/></a>
             </div>    
 
-            <div class="fullpic banner">  
-                <img src="<?php echo get_sub_field('banner_image')['url']?>" alt=""/>
+            <div class="fullpic banner-lp banner banner--<?php echo get_sub_field('banner_height'); ?>" style="background-image: url(<?php echo get_sub_field('banner_image')['url']?>);">  
+                <img src="<?php echo get_sub_field('banner_image')['url']?>" alt="" class="img-hidden"/>
             </div>
         <?php endif; ?>
 <!--intro titles-->
@@ -99,7 +99,7 @@
                                     <?php the_sub_field('right_content'); ?>
                                 </div>
                             </div>
-                         </div>
+                         </div>                    
                      <?php endif; ?>
                     <?php if(get_sub_field('left_title')) : ?>
                          <div class="accordion acc-left">
@@ -113,6 +113,7 @@
                                 </div>
                              </div>            
                         </div>
+                        <div class="clear"></div>
                     <?php endif; ?>
                      <?php if(get_sub_field('title')) : ?>
                          <div class="accordion acc-full">
@@ -124,8 +125,9 @@
                                 <div class="accordion-contentbox">
                                     <?php the_sub_field('content'); ?>
                                 </div>
-                             </div>            
+                             </div> 
                         </div>
+                    
                      <?php endif; ?>    
                 </div>      
                  <?php endwhile; endif; ?> 
