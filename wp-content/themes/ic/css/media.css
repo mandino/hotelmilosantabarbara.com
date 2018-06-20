@@ -2456,6 +2456,12 @@ and (max-width : 320px)
 }
 
 
+@media only screen and (max-width:767px) {
+	.newsletter-form-hamburger {
+		display: none;
+	}
+}
+
 
 
 /* ================================================  MOBILES BELOW 480 to 400 ======================================= */
