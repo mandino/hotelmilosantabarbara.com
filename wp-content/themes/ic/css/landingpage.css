@@ -4,6 +4,10 @@ h2 {
     color: #000 !important;
 }
 
+.unstick {
+    min-height: 0 !important;
+}
+
 .landing-page {
         transition: all 0.5s;
     -moz-transition: all 0.5s;
