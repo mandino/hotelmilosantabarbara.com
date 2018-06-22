@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<div class="reservationform">
 					
 					
-						<form method="get" action="https://theboxerboston.reztrip.com">
+						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>">
 
 						<input type="hidden" value="1" name="rooms">
 						
@@ -145,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</select>
 						</span>
 						
-						<button type="submit" class="button">Search Now</button>
+						<button class="button" type="submit"><?php _e('Search Now','cebolang'); ?></button>
 						
 					
 						</form>
@@ -156,8 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 					<div class="reservationform flexdate">
 					
-						<p><a href="https://theboxerboston.reztrip.com/calendar">Flexible dates?</a> Search for our best available rate</p>
-						
+						<p><a href="https://hotelmilosantabarbara.reztrip.com/calendar">Flexible dates?</a> Search for our best available rate</p>
 					</div>
 
 				<!-- end flex dates -->
@@ -184,12 +183,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              <?php endif; ?>
         <?php endwhile; endif; ?>
 
-           <a href="https://theboxerboston.reztrip.com" class="reserve fixeer button fr input-append date lp-button " rooms ="1" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy">RESERVE</a>
-
-			<a class="reserve fixeer mobile button fr lp-button" id="idp4"  onclick="_gaq.push(['_link', this.href]);return false;" href="<?php echo get_option('cebo_genbooklink'); ?>">RESERVE</a>
+            <a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
+			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>"  onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 			
 			
 		</div>
 	</div>
 	
-<!--	<div id="quiet"></div>-->
+	<div id="quiet"></div>
+    
+      <div class="cookie-consent">
+        <p>
+            <?php echo get_bloginfo( 'name' ); ?> site uses cookies. By using this site, you are agreeing to our <a href="<?php bloginfo('url'); ?>/privacy-policy/" target="_blank" target="_blank">Privacy Policy</a>.
+        </p>
+        <a class="cookie-consent__accept-btn button">accept</a>
+     </div>

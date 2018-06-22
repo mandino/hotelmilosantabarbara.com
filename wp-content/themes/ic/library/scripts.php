@@ -270,11 +270,10 @@ $(window).on("scroll", function(e) {
     
 //	$trigger = $('.banner').height();
 
-	if ( $(window).scrollTop() >= 350 ) {
+	if ( $(window).scrollTop() >= 250 ) {
         $('')
 		$('body').addClass('onscroll');
         $('.landing-page').removeClass('display-none');
-         $('.landing-page').css("top", "25px");
         $(".landing-page").fadeIn(700);
        
 		
