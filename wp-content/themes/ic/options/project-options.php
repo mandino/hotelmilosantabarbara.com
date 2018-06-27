@@ -39,8 +39,6 @@ $meta_boxer = array(
 	          "std" => ""
               )
  		,
- 		
- 		
  		array( 
               "name" => "Full screen banner image (hit INSERT INTO POST)",
 	          "desc" => "Wide and narrow is optimum for this image. Try ratios of 16:9, like 800 x 450 or 2000 x 800. ",
@@ -80,6 +78,22 @@ $meta_boxer = array(
 	          "type" => "checkbox",
 	          "std" => ""
         	  )
+ 		,
+ 		array( 
+	          "name" => "Activate More Info",
+	          "desc" => "Check to activate more info for pages",
+	          "id" => $prefix."_more_info",
+	          "type" => "checkbox",
+	          "std" => ""
+	    	  )
+        ,
+        array( 
+                "name" => "Full Width Page",
+				"desc" => "Check for full width page",
+				"id" => $prefix."_full_width",
+				"type" => "checkbox",
+				"std" => ""
+	    	  )
  		
        	)
 );

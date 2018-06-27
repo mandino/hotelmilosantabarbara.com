@@ -73,160 +73,17 @@ get_header();
 			<div class="section-photos" style="margin-bottom: 45px;">
 
 				<ul>
-<!-- static -->
-					<!-- featured Room -->
-
-					<?php 
-
-						query_posts('post_type=page&p=15'); if(have_posts()) : while(have_posts()) : the_post();
-						
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 531x290");
-						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
-						$image_url = wp_get_attachment_image_src($image_id , 'Image 540x290'); 	
-
-					?>
-
-					<li class="hover">
-						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
-
-						<img src="<?php echo $image_url[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
-
-						<?php } else { ?>
-
-						<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
-
-						<?php } ?>
-
-						<h3><?php _e('Guest Rooms', 'cebolang'); ?></h3>
-
-						<div class="hover-effect">
-
-							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
-
-							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
-
-							<?php } ?>
-							<br>
-							<p>Guest Rooms</p>
-
-							<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
-						</div>
-					</li>
-
-
-
-					<?php endwhile; endif; wp_reset_query(); ?>
-					<?php 
-
-						query_posts('post_type=specials&posts_per_page=1'); if(have_posts()) : while(have_posts()) : the_post();
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 257x290"); 
-
-						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
-						$image_url = wp_get_attachment_image_src($image_id , 'Image 257x290'); 	
-
-					?>
-
-					<!-- Special -->
-
-					<li class="hover">
-
-						<?php if(get_post_meta($post->ID, 'cebo_pricepoint', true)) { ?>
-
-						<div class="from-price">
-							<?php echo get_post_meta($post->ID, 'cebo_pricepoint', true); ?>
-						</div>
-
-						<?php } ?>
-
-						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
-
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $image_url[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
-
-						<?php } else { ?>
-
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
-
-						<?php } ?>
-
-						<?php if(get_post_meta($post->ID, 'cebo_subtagline', true)) { ?>
-
-						<h3><?php echo get_post_meta($post->ID, 'cebo_subtagline', true); ?></h3>
-
-
-						<?php } ?>
-
-						<div class="hover-effect">
-
-							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
-
-							<a class="special-copy-link" href="<?php the_permalink(); ?>"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
-
-							<?php } ?>
-
-
-							<!-- , and Hotel Oceana Tote Bag., and breakfast at the Hotel. -->
-							<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
-						</div>
-					</li>
-
-					<?php endwhile; endif; wp_reset_query(); ?>
-					<?php 
-
-						query_posts('post_type=page&p=5329'); if(have_posts()) : while(have_posts()) : the_post();
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
-
-						$image_id = get_attachment_id_by_url(get_post_meta($post_type->ID, 'cebo_homethumb', true));
-						$image_url = wp_get_attachment_image_src($image_id , 'Image 257x290');
-
-					?>
-
-
-
-
-
-
-
-					<!-- Amenities -->
-
-					<li class="hover">
-						<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?>
-
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $image_url[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
-
-						<?php } else { ?>
-
-						<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>">
-
-						<?php } ?>
-
-						<h3><?php _e('IC Local', 'cebolang'); ?></h3>
-
-						<div class="hover-effect">
-							<?php if(get_post_meta($post->ID, 'cebo_tagline', true)) { ?>
-
-							<a class="special-copy-link" href="<?php if (get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>" target="_blank"><h3><?php echo get_post_meta($post->ID, 'cebo_tagline', true); ?></h3></a>
-
-							<?php } ?>
-							<br>
-							<p><?php the_title(); ?></p>
-
-							<a class="special-external" href="<?php if (get_post_meta($post->ID, 'cebo_booklink', true)) { echo get_post_meta($post->ID, 'cebo_booklink', true); } else { the_permalink(); } ?>" target="_blank"><i class="fa fa-chevron-right fa-lg"></i></a>
-						</div>
-					</li>
-
-					<?php endwhile; endif; wp_reset_query(); ?>
-
-
-					<div class="clear"></div>
 
 <!-- dynamic -->
-<!-- 				<?php
+				<?php
 					$first = true;
 					$image_size = 'Image 531x290';
 
 					if( have_rows( 'homepage_tiles', 'options' ) ) : while( have_rows( 'homepage_tiles', 'options' ) ) : the_row();
 						$image = array();
 						$page_info = get_sub_field('related_page');
+						$title = '';
+						$subtitle = '';
 
 						if (get_sub_field('image')) {
 							$imageDetail = get_sub_field('image');
@@ -247,21 +104,22 @@ get_header();
 						if (get_sub_field('title')) {
 							$title = get_sub_field('title');
 						} else {
-							$title = get_post_meta($post->ID, 'cebo_tagline', true);
+							$title = $page_info->post_title;
 						}
 
 						if (get_sub_field('subtitle')) {
 							$subtitle = get_sub_field('subtitle');
-						} elseif(get_post_meta($page_info->ID, 'cebo_subtagline', true)) {
-							$subtitle = get_post_meta($page_info->ID, 'cebo_subtagline', true);
-						} else {
-							$subtitle = $page_info->post_title;
 						}
 
 						if (get_sub_field('link'))
 							$link = get_sub_field('link');
-						else
-							$link = get_page_link($page_info->ID);
+						else {
+							if (get_post_type($page_info->ID) == 'specials') {
+								$link = get_post_permalink($page_info->ID);
+							} else {
+								$link = get_page_link($page_info->ID);
+							}
+						}
 
 						if (get_sub_field('open_link_in_new_tab'))
 							$newtab = 'target="_blank"';
@@ -288,14 +146,14 @@ get_header();
 						<?php endif; ?>
 
 
-							<h3><?php echo $subtitle; ?></h3>
+							<h3><?php echo $title; ?></h3>
 
 
 							<div class="hover-effect">
 
-								<a class="special-copy-link" href="<?php echo $link; ?>" <?php echo $newtab; ?>><h3><?php echo $title; ?></h3></a>
+								<a class="special-copy-link" href="<?php echo $link; ?>" <?php echo $newtab; ?>><h3><?php echo $subtitle; ?></h3></a>
 								<br>
-								<p><?php echo $subtitle; ?></p>
+								<p><?php echo $title; ?></p>
 
 								<a class="special-external" href="<?php echo $link; ?>" <?php echo $newtab; ?>><i class="fa fa-chevron-right fa-lg"></i></a>
 							</div>
@@ -313,7 +171,7 @@ get_header();
 					endwhile; endif;
 				?>
 
-					<div class="clear"></div> -->
+					<div class="clear"></div>
 
 				</ul>
 

@@ -72,6 +72,13 @@
 			<div class="wonderline"></div>
 
 			<div class="post-content" style="padding: 20px;">
+                <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb('
+                        <p id="breadcrumbs">','</p>
+                    ');
+                    }
+                ?>
 				<?php the_content(); ?>
 			</div>
 
@@ -101,12 +108,17 @@
 							
 							<h3><?php the_title(); ?> </h3>
 
-							<p><?php echo excerpt(100); ?></p>
+							<p><?php echo excerpt(50); ?></p>
 
 							<div class="room-list-buttons">
 
 								<a class="button" href="<?php if(get_post_meta ($post->ID, 'cebo_booklink', true)) { echo get_post_meta ($post->ID, 'cebo_booklink', true); } else { echo get_option('cebo_genbooklink'); } ?>" target="_blank" onclick="_gaq.push(['_link', this.href]);return false;">Reserve Now</a>
-								<!--<a class="button" href="<?php the_permalink(); ?>"><?php _e('More Info', 'cebolang'); ?></a>-->
+								
+								<?php if(get_post_meta ($post->ID, 'cebo_more_info', true)) { ?>
+
+									<a class="button" href="<?php the_permalink(); ?>"><?php _e('Read More', 'cebolang'); ?></a>
+
+								<?php } ?>
 
 							</div>
 

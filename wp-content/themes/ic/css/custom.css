@@ -399,6 +399,7 @@ line-height: 30px;
     width: 100%;
     border-bottom: 1px solid #ddd;
     z-index: 999;
+    overflow: visible;
 }
 
 .navitem {
@@ -3661,9 +3662,10 @@ ul.tabs li:last-child {
 
 .post-content img {
     height: auto;
-    /*max-height: 450px;*/
     max-width: 100%;
-    width: 100%;
+    display: block;
+    margin: auto;
+    width: auto;
 }
 
 
@@ -4645,3 +4647,51 @@ div#TA_ssnarrowcollectreview383 li img {
     opacity: 0;
 }
 /** end **/
+
+/*fullwidth default page*/
+
+.post-content.fl.content-fullwidth {
+    border-right:0 solid #D9D9D9;
+    padding:20px 20px 20px 0;
+    width:100%
+}
+
+.post-content img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    width: auto;
+}
+
+.page-template-default .fullpic .button {
+	display: none;
+}
+
+.page-template-default .sidebar.fr{
+    display:none;
+}
+
+/*cookie consent*/
+.cookie-consent {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: #fff;
+  border-top: 3px solid #1c93d1;
+  z-index: 99999999;
+  text-align: center;
+  padding: 0; }
+  .cookie-consent__accept-btn {
+    padding: 7px;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    top: -15px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px; }
+
+/*end*/
