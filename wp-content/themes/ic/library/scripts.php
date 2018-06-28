@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 
 	jQuery( document ).ready(function( $ ) {
@@ -265,13 +266,16 @@
 // landing-page
     
   
-$(window).scroll(function () {
-	$trigger = $('.banner').height();
+$(window).on("scroll", function(e) {
+    
+//	$trigger = $('.banner').height();
 
-	if ( $(window).scrollTop() >= ($trigger - 350) ) {
+	if ( $(window).scrollTop() >= 250 ) {
+        $('')
 		$('body').addClass('onscroll');
         $('.landing-page').removeClass('display-none');
         $(".landing-page").fadeIn(700);
+       
 		
        // $('landing-page-logo img').fadeIn(500);
 	} else {
@@ -342,7 +346,32 @@ $(document).ready(function() {
 		}
 
   });    
-    
+     docReady_winResize_functions();
 });    
 
+$(window).resize(function() {
+	docReady_winResize_functions();
+});
+    
+function fullBleedImage( elem, multiplier ) {
+	var getHeight = $(window).height();
+	var getWidth = $(window).width();
+
+	elem.css('height', ''); // reset
+
+	elem.height(getHeight * multiplier);
+
+}    
+    
+function docReady_winResize_functions() {
+	fullBleedImage( $('.banner--40'), 0.4 );
+	fullBleedImage( $('.banner--50'), 0.5 );
+	fullBleedImage( $('.banner--60'), 0.6 );
+	fullBleedImage( $('.banner--70'), 0.7 );
+	fullBleedImage( $('.banner--80'), 0.8 );
+	fullBleedImage( $('.banner--90'), 0.9 );
+	fullBleedImage( $('.banner--100'), 1 );
+	
+}        
+    
 </script>
