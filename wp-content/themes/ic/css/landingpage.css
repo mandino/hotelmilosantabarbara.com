@@ -4,12 +4,22 @@ h2 {
     color: #000 !important;
 }
 
+.unstick {
+    min-height: 0 !important;
+}
+
 .landing-page {
-        transition: all 0.5s;
+    padding: 10px 0;
+    transition: all 0.5s;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     background: #fff !important;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
 }
 
 .landing-page .lp-button {

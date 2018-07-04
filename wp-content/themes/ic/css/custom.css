@@ -4695,3 +4695,14 @@ div#TA_ssnarrowcollectreview383 li img {
     letter-spacing: 1px; }
 
 /*end*/
+
+.img-hidden {
+    visibility: hidden;
+}
+
+.banner-lp {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
