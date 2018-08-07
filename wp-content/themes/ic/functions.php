@@ -42,7 +42,7 @@ function enqueue_footer_scripts() {
 	wp_enqueue_style('style', SS_BASE_URL . 'style.css');
 	wp_enqueue_style('style-css', SS_BASE_URL . 'css/style.css');
 	wp_enqueue_style('custom-css', SS_BASE_URL . 'css/custom.css');
-	wp_enqueue_style('font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+	wp_enqueue_style('font-awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 	wp_enqueue_style('googleapis-fonts', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700');
 	wp_enqueue_style('quotes-rotator', SS_BASE_URL . 'css/quotes-rotator/component.css');
 	wp_enqueue_style('slidejs', SS_BASE_URL . 'css/slidejs.css');
