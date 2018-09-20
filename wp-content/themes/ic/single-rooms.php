@@ -261,8 +261,6 @@
 			</div>
 			
 
-		</div>
-
 	<!--/div-->
 	
 	<div class="clear"></div>
@@ -305,7 +303,7 @@
 		<div class="iosslider-next"><i class="fa fa-chevron-right"></i></div>
 
 	</div>
-
+   </div>
 	
 					
 <?php get_footer(); ?>
