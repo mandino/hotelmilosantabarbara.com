@@ -157,8 +157,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</nav>
 		</div>
 		<div id="primary-nav" style="overflow:visible;">
-			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
-			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title().'-mobile'; ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php the_title(); ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php the_title().'-mobile'; ?>" /></a>
 
 			<?php 
 				$arg = array(
