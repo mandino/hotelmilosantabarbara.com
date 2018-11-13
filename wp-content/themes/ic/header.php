@@ -28,6 +28,7 @@
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
 	<meta http-equiv="Expires" content="30" />
 	<title>
+        
 		<?php global $page, $paged; wp_title( '|', true, 'right' );
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
@@ -157,8 +158,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</nav>
 		</div>
 		<div id="primary-nav" style="overflow:visible;">
-			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php the_title(); ?>" /></a>
-			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php the_title(); ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title().'-mobile'; ?>" /></a>
 
 			<?php 
 				$arg = array(
@@ -245,6 +246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<li><a class="pt-lang" href="//hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
 				</ul>
 			</div>
+            
 			<div class="container" style="float: right;"> 
 				<a class="mmenu-icon"><i class="fa fa-bars"></i></a>
 				<nav id="menus" class="fl" style="z-index:1">
