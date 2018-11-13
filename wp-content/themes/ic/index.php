@@ -42,23 +42,23 @@ get_header();
 					<ul class="social-buttons">
 					<?php if(get_option('cebo_facebook')) { ?>
 
-						<li class="facebook"><a href="https://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
+						<li class="facebook"><a href="https://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank" aria-label="facebook"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
 
 					<?php } ?>
 					<?php if(get_option('cebo_twitter')) { ?>
 
-						<li class="twitter"><a href="https://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
+						<li class="twitter"><a href="https://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank" aria-label="twitter"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
 
 					<?php } ?>
 					<?php if(get_option('cebo_instagram')) { ?>
 
-						<li class="instagram"><a href="https://instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram fa-2x"></i><span>twitter</span></a></li>
+						<li class="instagram"><a href="https://instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank" aria-label="instagram"><i class="fa fa-instagram fa-2x"></i><span>twitter</span></a></li>
 
 					<?php } ?>
 					<?php if(get_option('cebo_spotify')) { ?>
 					
 						<!-- <li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank"><i class="fa fa-spotify fa-2x" aria-hidden="true>"</i><span>spotify</span></a></li> -->
-						<li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank"><i class="fa fa-spotify fa-2x"></i><span>spotify</span></a></li>
+						<li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank" aria-label="spotify"><i class="fa fa-spotify fa-2x"></i><span>spotify</span></a></li>
 						
 					<?php } ?>
 					</ul>
@@ -339,8 +339,8 @@ get_header();
 
 
 
-						<a href="#slider" class="slidesjs-previous slidesjs-navigation"><i class="fa fa-chevron-left fa-lg"></i></a>
-						<a href="#slider" class="slidesjs-next slidesjs-navigation"><i class="fa fa-chevron-right fa-lg"></i></a>
+						<a href="#" class="slidesjs-previous slidesjs-navigation" aria-label="slider"><i class="fa fa-chevron-left fa-lg"></i></a>
+						<a href="#" class="slidesjs-next slidesjs-navigation" aria-label="slider"><i class="fa fa-chevron-right fa-lg"></i></a>
 
 					</div>
 
@@ -369,8 +369,8 @@ get_header();
 
 						<?php endwhile; endif; wp_reset_query(); ?>
 
-						<a href="#slider" class="slidesjs-previous slidesjs-navigation"><i class="fa fa-chevron-left fa-lg"></i></a>
-						<a href="#slider" class="slidesjs-next slidesjs-navigation"><i class="fa fa-chevron-right fa-lg"></i></a>
+						<a href="#" class="slidesjs-previous slidesjs-navigation" aria-label="slider"><i class="fa fa-chevron-left fa-lg"></i></a>
+						<a href="#" class="slidesjs-next slidesjs-navigation" aria-label="slider"><i class="fa fa-chevron-right fa-lg"></i></a>
 					</div>
 
 					<h3><a href="<?php echo get_permalink( get_page_by_path( 'blog' ) ) ?>"><?php _e('From our blog', 'cebolang'); ?></a></h3>

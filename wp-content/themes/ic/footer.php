@@ -48,8 +48,8 @@
 				<div class="newsletter-form">
 					
 					<form action="https://web2.cendynhub.com/FormPost/FormPost.ashx" method="post">
-					<label for="search" class="visuallyhidden">Your Email</label>
-					<input name="emailAddress" required="" type="text" value="" placeholder="Your Email" />
+					<label for="email-newsletter" class="visuallyhidden">Your Email</label>
+					<input id="email-newsletter" name="emailAddress" required="" type="text" value="" placeholder="Your Email" />
 
 					<input name="formId" type="hidden" value="8360A196-38AE-4980-91F4-A2E8A7F39D6D" />
 					<input name="CompanyID" type="hidden" value="1153" />
@@ -63,8 +63,8 @@
 		</div>
 
 		<div id="property-name">
-			<a href="https://www.theindependenthotel.com/ic-local/" target="_blank"><i class="sprite sprite-ic_01"></i></a>
-			<a href="https://www.theindependenthotel.com/" target="_blank"><i class="sprite sprite-ic_02"></i></a>
+			<a href="https://www.theindependenthotel.com/ic-local/" target="_blank" aria-label="Ic local"><i class="sprite sprite-ic_01"></i></a>
+			<a href="https://www.theindependenthotel.com/" target="_blank" aria-label="Home"><i class="sprite sprite-ic_02"></i></a>
 		</div>
 
 		<div class="footer-nav container">
@@ -79,25 +79,25 @@
 
 					<?php if(get_option('cebo_twitter')) { ?>
 					
-						<li class="twitter"><a href="//twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
+						<li class="twitter"><a href="//twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank" aria-label="twitter"><i class="fa fa-twitter fa-2x"></i><span>twitter</span></a></li>
 						
 					<?php } ?>
 				
 					<?php if(get_option('cebo_facebook')) { ?>
 					
-						<li class="facebook"><a href="//facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
+						<li class="facebook"><a href="//facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank" aria-label="facebook"><i class="fa fa-facebook fa-2x"></i><span>facebook</span></a></li>
 						
 					<?php } ?>
 					
 					<?php if(get_option('cebo_instagram')) { ?>
 
-						<li class="instagram"><a href="//instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram fa-2x"></i><span>instagram</span></a></li>
+						<li class="instagram"><a href="//instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank" aria-label="Instagram"><i class="fa fa-instagram fa-2x"></i><span>instagram</span></a></li>
 
 					<?php } ?>
 					
 					<?php if(get_option('cebo_spotify')) { ?>
 					
-						<li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank"><i class="fa fa-spotify fa-2x"></i><span>spotify</span></a></li>
+						<li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank" aria-label="spotify"><i class="fa fa-spotify fa-2x"></i><span>spotify</span></a></li>
 						
 					<?php } ?>
 				</ul>
@@ -133,7 +133,7 @@
 				<ul>
 					<?php wp_nav_menu( array( 'theme_location' => 'slideoutnav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem', 'before' => '<div class="tnbox">', 'after' => '</div>' ) ); ?>
 
-					<li class="social_share_side noborder"><a href="https://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a><a  href="https://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li class="social_share_side noborder"><a href="https://twitter.com/<?php echo get_option('cebo_twitter'); ?>" target="_blank" aria-label="twitter"><i class="fa fa-twitter"></i></a><a  href="https://facebook.com/<?php echo get_option('cebo_facebook'); ?>" target="_blank" aria-label="facebook"><i class="fa fa-facebook"></i></a><a href="https://instagram.com/<?php echo get_option('cebo_instagram'); ?>" target="_blank" aria-label="instagram"><i class="fa fa-instagram"></i></a></li>
 
 					<li>
 	                    <div class="newsletter-form-hamburger">
@@ -148,7 +148,7 @@
 						
 				        </div>
 	                </li>
-					<li class="locationa noborder"><a href="https://goo.gl/maps/JsLU8Cw1agN2" target="_blank"><i class="fa fa-map-marker fa-lg"></i><span><?php echo get_option('cebo_address'); ?></span></a></li>
+					<li class="locationa noborder"><a href="https://goo.gl/maps/JsLU8Cw1agN2" target="_blank" aria-label="Location"><i class="fa fa-map-marker fa-lg"></i><span><?php echo get_option('cebo_address'); ?></span></a></li>
 				</ul>
 			</div>
 		</div>
