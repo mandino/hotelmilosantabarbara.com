@@ -106,7 +106,7 @@
                         ?>
 
                           <li>
-                            <a href="<?php the_permalink(); ?>" class="overlink"></a>
+                            <a href="<?php the_permalink(); ?>" class="overlink" aria-label="overlink"></a>
                               <div class="from-price">
                                <?php while(the_flexible_field('exclusive_offer_button')):
                                     if(get_row_layout() == "button"): ?>
@@ -124,7 +124,7 @@
 
 
                                 <!-- , and Hotel Oceana Tote Bag., and breakfast at the Hotel. -->
-                                <a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
+                                <a class="special-external" href="<?php the_permalink(); ?>" aria-label="special external"><i class="fa fa-chevron-right fa-lg"></i></a>
 
                             </div>
                         </li>
@@ -149,7 +149,7 @@
 							
 							
 							<li <?php if($i % 4 == 0) { echo 'class="four-last"';} else if ($i % 3 == 0) { echo 'class="three-last"';} else if ($i % 2 == 0) { echo 'class="two-last"';} else {} ?>>
-							<a href="<?php the_permalink(); ?>" class="overlink"></a>
+							<a href="<?php the_permalink(); ?>" class="overlink" aria-label="overlink"></a>
 								<?php if(get_post_meta($post->ID, 'cebo_pricepoint', true)) { ?>
 								
 								<div class="from-price">
@@ -186,7 +186,7 @@
 									
 									
 									<!-- , and Hotel Oceana Tote Bag., and breakfast at the Hotel. -->
-									<a class="special-external" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right fa-lg"></i></a>
+									<a class="special-external" href="<?php the_permalink(); ?>" aria-label="special external"><i class="fa fa-chevron-right fa-lg"></i></a>
 								</div>
 								
 							</li>
