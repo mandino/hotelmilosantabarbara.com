@@ -29,7 +29,7 @@
 		</ul>
 
 	<?php } ?>					
-						<a href="#features-1" id="link" class="navigateTo page-down"></a>
+						<a href="#features-1" id="link" class="navigateTo page-down" aria-label="features 1"></a>
 						
 						
     <!-- begins map area -->
