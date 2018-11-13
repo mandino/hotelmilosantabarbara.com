@@ -161,7 +161,7 @@ get_header();
 								<br>
 								<p><?php echo $title; ?></p>
 
-								<a class="special-external" href="<?php echo $link; ?>" <?php echo $newtab; ?>><i class="fa fa-chevron-right fa-lg"></i></a>
+								<a class="special-external" href="<?php echo $link; ?>" <?php echo $newtab; ?> aria-label="special external"><i class="fa fa-chevron-right fa-lg"></i></a>
 							</div>
 
 
@@ -255,7 +255,7 @@ get_header();
 
 	</ul>
 
-		<a href="#features-1" id="link" class="navigateTo page-down"></a>
+		<a href="#features-1" id="link" class="navigateTo page-down" aria-label="Features 1"></a>
 
 
     <!-- begins map area -->
