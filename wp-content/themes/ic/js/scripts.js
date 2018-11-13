@@ -360,7 +360,5 @@ $(document).ready(function(){
 			$('.ticker').removeClass('ticker-down');
 		}
 	});
-	
-	$('.gm-control-active img').attr('alt', 'map image');
 
 });
