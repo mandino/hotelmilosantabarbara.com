@@ -174,6 +174,8 @@ pl.type = 'text/javascript';
 pl.async = true;
 pl.src = 'https://beacon.sojern.com/pixel/p/3679?cid=[destination_searched]&ha1=[destination_searched]&et=hs';(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
 })();
+
+$('.gm-control-active img').attr('alt', 'map image');
 </script>
 
 <script>(function(d, s, id) {
