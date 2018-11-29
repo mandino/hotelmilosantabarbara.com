@@ -4729,3 +4729,10 @@ div#TA_ssnarrowcollectreview383 li img {
     background-size: cover;
     position: relative;
 }
+
+.sub_text {
+    margin-bottom: 0;
+    font-size: 16px !important;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
