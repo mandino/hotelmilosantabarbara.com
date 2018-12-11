@@ -725,7 +725,7 @@ a.detailsAnchor {
    		font-family: 'scala-sans';
 	margin-bottom: 0px;
 	margin-top: 3px;
-	color: #949393;
+	color: #4e4e4e;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 12px;
@@ -736,7 +736,7 @@ a.detailsAnchor {
    .placeMark a .infobox b.monumental {
    		line-height: 19px;
 		font-weight: bold;
-		background: none repeat scroll 0 0 #1C93D1;
+		background: none repeat scroll 0 0 #067ab8;
 		color: #FFFFFF;
 		display: block;
 		height: 20px;
@@ -856,7 +856,7 @@ a.detailsAnchor {
   }
   
   #toggles li a  {
-  	background: #eeefff;
+  	background: #fff;
   	height: 100%;
   	display: block;
   	width: 100%;
@@ -1892,7 +1892,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 .section-photos li div.hover-effect {
-    background: none repeat scroll 0 0 rgba(56,186,191, .8);
+    background: none repeat scroll 0 0 rgba(6,123,184, .8);
     height: 99.4%;
     position: absolute;
     top: 0;
@@ -4330,11 +4330,11 @@ bottom: 38px !important;
 }
 .all-events.button {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 6px solid #808080;
+    border: 6px solid #4e4e4e;
     font-weight: bold;
     margin-right: 5px;
     font-size: 14px;
-    color: #808080;
+    color: #4e4e4e;
     bottom: 0;
 }
 
@@ -4586,7 +4586,7 @@ section.stophovering {
 }
 
 .topnavigationmob .locationa a:hover span {
-    color: #333;
+    color: #fff;
 }
 
 .noborder
@@ -4600,7 +4600,7 @@ a.cheese img{
 }
 
 .topnavigationmob li span{
-  color: #7b7b7b;
+  color: #4e4e4e;
   display: block;
   font-size: 15px;
   /*padding: 12px 30px 12px 15px;
@@ -4610,7 +4610,7 @@ a.cheese img{
 }
 
 .topnavigationmob li a {
-  color: #7b7b7b;
+  color: #4e4e4e;
   display: block;
   font-size: 16px;
   padding: 25px 0px;
@@ -4625,7 +4625,7 @@ a.cheese img{
   -ms-transition: all 0.4s ease 0s;
 }
   .topnavigationmob li a:hover {
-    background-color: #868282;
+    background-color: #4e4e4e;
     color:#fff;
   }
 
@@ -4634,6 +4634,7 @@ a.cheese img{
   position: fixed;
   width: 100%;
   z-index: 1;
+  background-color: #067BB8;
 }
 
 .royalewrap a {
@@ -4651,7 +4652,7 @@ a.cheese img{
   -ms-transition: all 0.4s ease 0s;
 }
   .royalewrap a:hover {
-    background-color: #868991;
+    background-color: #4e4e4e;
     color:#fff;
   }
 

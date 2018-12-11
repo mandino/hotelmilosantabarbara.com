@@ -9,6 +9,7 @@
     font-size: 30px;
     text-align: right;
     max-height: 292px;
+    background-color: #4e4e4e;
 }
 
 .fl .slidesjs-slide div, .fr .slidesjs-slide div {
@@ -85,7 +86,7 @@
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     -o-border-radius: 8px;
-    background-color: #808080;
+    background-color: #4e4e4e;
     background-position: 0 0;
     display: block;
     float: left;
@@ -115,9 +116,14 @@
     right: 20px;
 }
 
+.slides-mini a.slidesjs-navigation:link,
+.slides-mini a.slidesjs-navigation:visited {
+    color: #4e4e4e;
+}
+
 .slides-mini a:link,
 .slides-mini a:visited {
-    color: #333
+    color: #fff;
 }
 
 .slides-mini a:hover, .slides-mini a:active {
