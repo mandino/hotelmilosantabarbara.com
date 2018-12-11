@@ -1,5 +1,7 @@
 jQuery( document ).ready(function( $ ) {
 		
+	$( "<label class='visuallyhidden' for='search'>Test</label>" ).insertBefore( ".sidewidgets #search" );
+		
 	$('img.lazy').each(function() {
 		var img = $(this);
 		var width = img.width();
@@ -347,6 +349,8 @@ $(document).ready(function(){
 		if ( vide_video ) {
 			$('.video-banner-onload').vide(vide_video);
 		}
+
+
 	});
 
 	$(window).scroll(function() {

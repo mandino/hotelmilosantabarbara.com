@@ -86,7 +86,7 @@
 					?>
 
 						<li class="room-box">
-							<a href="<?php the_permalink(); ?>">
+							<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
 								<div class="fl" style="background-image: url(<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?><?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 400, 330); ?><?php } else { ?><?php echo tt($imgsrc[0], 400, 330); ?><?php } ?>);"></div>
 							</a>
 
