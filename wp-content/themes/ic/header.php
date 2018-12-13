@@ -109,17 +109,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>">
 							<input type="hidden" value="1" name="rooms">
 							<span class="calsec">
+								<label for="arrival_date" class="visuallyhidden">Your Email</label>
 								<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
 								<input type="hidden"  id="arv">
 								<i class="fa fa-calendar"></i>
 							</span>
 							<span class="calsec">
+								<label for="departure_date" class="visuallyhidden">Your Email</label>
 								<input type="text" id="departure_date" name="departure_date" placeholder="<?php _e('Departure','cebolang'); ?>" class="calendarsection" />
 								<input type="hidden" id="dep">
 								<i class="fa fa-calendar"></i>
 							</span>
 							
 							<span class="dropsec">
+								<label for="children" class="visuallyhidden">Your Email</label>
 								<select  id="children" name="children[]" class="halfsies">
 									<option value="0"><?php _e('0 Kids','cebolang'); ?></option>
 									<option value="1"><?php _e('1 Kid','cebolang'); ?></option>
