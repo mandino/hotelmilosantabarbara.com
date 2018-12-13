@@ -121,6 +121,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<i class="fa fa-calendar"></i>
 							</span>
 							
+							<span class="dropsec" style="margin-right: 6px">
+								<label for="adults" class="visuallyhidden">Your Email</label>
+								<select id="adults"  name="adults[]" class="halfsies">
+									<option value="1"><?php _e('1 Adult','cebolang'); ?></option>
+									<option value="2" selected="selected"><?php _e('2 Adults','cebolang'); ?></option>
+									<option value="3"><?php _e('3 Adults','cebolang'); ?></option>
+									<option value="4"><?php _e('4 Adults','cebolang'); ?></option>
+								</select>
+							</span>
 							<span class="dropsec">
 								<label for="children" class="visuallyhidden">Your Email</label>
 								<select  id="children" name="children[]" class="halfsies">
