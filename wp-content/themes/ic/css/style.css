@@ -539,7 +539,7 @@ img.scaleimg {
 	}
 	
 	.button:hover {
-		background-color: #333 !important;
+		background: none repeat scroll 0 0 #4e4e4e !important;
 		color: #fff;
 	}
 	
@@ -876,12 +876,12 @@ p {
 }
 
 p a {
-	color: #38BABF;
+	color: #067BB8;
 	text-decoration: none;
 }
 
 p a:hover {
-	color: #868991;
+	color: #4e4e4e;
 	transition: color 0.5s;
 	-moz-transition: color 0.5s;
 	-webkit-transition: color 0.5s;
@@ -3742,13 +3742,17 @@ html[xmlns] .slides {display: block;}
     /* ----- FORM ----- */
 
 	textarea, input, select {
-		color: #a1a1a1;
+		color: #4e4e4e;
 		margin-bottom: 15px;
 		resize: none;
 	}
 
 	textarea:focus, input:focus, select:focus { 
-		color: #333;
+		color: #4e4e4e;
+	}
+
+	select option:selected { 
+		background-color: #000 !important;
 	}
 
 	.left {
@@ -3844,4 +3848,27 @@ html[xmlns] .slides {display: block;}
 	nav:after {
 	  opacity: 0 !important;
 	  z-index: 1002 !important;
+	}
+
+	.visuallyhidden {
+		font-size: 0;
+	}
+
+	#neighborhood-guide ul.tabs li.active a {
+		color: #067ab8 !important;
+	}
+
+	.tribe-events-notices > ul > li {
+		color: #02496c !important;
+		font-weight: bold !important;
+	}
+
+	.tribe-events-event-categories a {
+		color: #06557f;
+		font-weight: bold;
+	}
+
+	.tribe-events-meta-group a {
+		color: #06557f;
+		font-weight: bold;
 	}

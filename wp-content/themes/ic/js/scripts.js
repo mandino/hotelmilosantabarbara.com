@@ -1,5 +1,7 @@
 jQuery( document ).ready(function( $ ) {
 		
+	$( "<label class='visuallyhidden' for='search'>Test</label>" ).insertBefore( ".sidewidgets #search" );
+
 	$('img.lazy').each(function() {
 		var img = $(this);
 		var width = img.width();
@@ -337,6 +339,9 @@ $(document).ready(function(){
 
 	$(window).load(function() {
 
+		$('.newsletter-form-hamburger .emailAddress').attr('id', 'emailAddress');
+		$( "<label class='visuallyhidden' for='emailAddress'>Test</label>" ).insertBefore( ".newsletter-form-hamburger .emailAddress" );
+		
 		// Home - Video Banner
 		var check_home = $('video').length;
 
@@ -347,6 +352,8 @@ $(document).ready(function(){
 		if ( vide_video ) {
 			$('.video-banner-onload').vide(vide_video);
 		}
+
+
 	});
 
 	$(window).scroll(function() {

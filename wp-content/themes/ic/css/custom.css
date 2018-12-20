@@ -148,7 +148,7 @@ a {
     color: #38BABF;
 }
     a:hover {
-        color: #868991;
+        color: #4e4e4e;
     }
 
 p {
@@ -288,7 +288,7 @@ input[type="submit"] {
     color: #fff;
     font-size: 15px;
     padding: 6px 10px;
-    background: #1C93D1;
+    background: #067ab8;
     position: absolute;
     right: -1px;
     top: -22px;
@@ -481,13 +481,13 @@ line-height: 30px;
   /*   background: none repeat scroll 0 0 #00adef;*/
     background: none repeat scroll 0 0 #fff; 
     height: auto;
-    border-bottom: 2px solid #333333;
+    border-bottom: 2px solid #4e4e4e;
     max-width: 100%;
 }
 
 #property-nav nav:hover {
   /*  background: none repeat scroll 0 0 #03b7fb;*/
-     background: none repeat scroll 0 0 #333;
+     background: none repeat scroll 0 0 #4e4e4e;
 }
 
 
@@ -645,7 +645,7 @@ line-height: 30px;
     -moz-transition: all 0.4s;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
-    color: #868282;
+    color: #4e4e4e;
     font-family: scala-sans,serif;
     font-size: 15px;
     /* font-weight: lighter; */
@@ -991,6 +991,7 @@ line-height: 30px;
     float: left;
     margin-right: 13px;
     position: relative;
+    background-color: #4e4e4e;
 }
     #intro .section-photos li:hover .hover-effect, .thumbgal li:hover .hover-effect {
         opacity: 1;
@@ -1223,7 +1224,7 @@ line-height: 30px;
 }
 
 .contact-details {
-    color: #808080;
+    color: #4e4e4e;
     font-size: 20px;
     line-height: 1.8;
     margin: 40px 0;
@@ -1499,7 +1500,7 @@ footer nav ul.footling li a {
     -moz-transition: color 0.4s;
     -webkit-transition: color 0.4s;
     -o-transition: color 0.4s;
-    color: #808080;
+    color: #4e4e4e;
     font-family: scala-sans,sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -1558,7 +1559,7 @@ footer nav ul.footling li a {
     padding: 15px 25px;
 }
     #room-featured-slider .button:hover {
-        background: none repeat scroll 0 0 #38BABF !important;
+        background: none repeat scroll 0 0 #067ab8 !important;
         color: #fff;
     }
 
@@ -1569,7 +1570,7 @@ footer nav ul.footling li a {
 
 
 .fullpic .button {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
     border: 5px solid #FFFFFF;
     font-family: helvetica,sans-serif;
     font-size: 18px;
@@ -1777,9 +1778,9 @@ h3.featured-gallery-thumb-title {
 
 .room-box .button {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 6px solid #808080;
+    border: 6px solid #4e4e4e;
     bottom: 0;
-    color: #808080;
+    color: #4e4e4e;
     font-size: 14px;
     font-weight: bold;
     margin-right: 5px;
@@ -2191,6 +2192,7 @@ button.ui-button::-moz-focus-inner {
     margin-left: -8px;
     top: 50%;
     margin-top: -8px;
+    color: #4e4e4e;
 }
 .ui-datepicker .ui-datepicker-title {
     margin: -3px 0 0 0;
@@ -3307,7 +3309,7 @@ body .ui-tooltip {
 
 .whats-hot h2, .upcoming-events h2 {
     border-bottom: 1px solid #D1D1D1;
-    color: #818181;
+    color: #4e4e4e;
     font-family: scala-sans;
     font-size: 18px;
     font-weight: bold;
@@ -3415,7 +3417,7 @@ body .ui-tooltip {
 }
 
 .tribe-mini-calendar-nav span {
-    color: #ccc !important;
+    color: #4e4e4e !important;
 }
     .tribe-mini-calendar-nav span:hover {
         color: #333 !important;
@@ -3490,7 +3492,7 @@ ul.tabs li a {
     -webkit-transition: color 0.5s;
     -o-transition: color 0.5s;
     border: 1px solid #FFFFFF;
-    color: #7F7F7F;
+    color: #4e4e4e;
     display: block;
     font-family: scala-sans,sans-serif;
     font-size: 16px;
@@ -3713,7 +3715,7 @@ ul.tabs li:last-child {
 
 
 .post-tags li a {
-    color: #868282;
+    color: #4e4e4e;
     font-weight: lighter;
 }
 
@@ -3856,7 +3858,8 @@ ul.tabs li:last-child {
 .imagegal li .from-price {
     top: 0px;
     right: 20px;
-
+    background: none repeat scroll 0 0 #067ab8;
+    opacity: 1;
 }
 .imagegal li:hover .from-price {
     display: none;
@@ -3894,8 +3897,8 @@ ul.tabs li:last-child {
 
 .sidebar .button {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 6px solid #808080;
-    color: #808080;
+    border: 6px solid #4e4e4e;
+    color: #4e4e4e;
     font-family: helvetica,sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -3904,7 +3907,7 @@ ul.tabs li:last-child {
     width: 95%;
 }
     .sidebar .button:hover {
-        background: #38BABF !important;
+        background: #067ab8 !important;
         color: #fff;
     }
 
@@ -4133,7 +4136,7 @@ position: relative !important;
 }
 
   #navigation-sticky-wrapper #primary-nav .fixeer {
-    background: #1c93d1;
+    background: #067ab8;
         color: #fff;
 }
 
@@ -4739,4 +4742,25 @@ div#TA_ssnarrowcollectreview383 li img {
     font-size: 16px !important;
     font-weight: 300;
     letter-spacing: 2px;
+}
+
+.hover-effect h5 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+}
+
+.sidebar.room-details-gallery h4 {
+    color: #fff;
+}
+
+.home .hover-effect > p {
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+option [-moz-option-selected] {
+    color: red !important;
+    background-color: #000 !important;
 }

@@ -28,6 +28,7 @@
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
 	<meta http-equiv="Expires" content="30" />
 	<title>
+        
 		<?php global $page, $paged; wp_title( '|', true, 'right' );
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
@@ -108,16 +109,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>">
 							<input type="hidden" value="1" name="rooms">
 							<span class="calsec">
+								<label for="arrival_date" class="visuallyhidden">Your Email</label>
 								<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
 								<input type="hidden"  id="arv">
 								<i class="fa fa-calendar"></i>
 							</span>
 							<span class="calsec">
+								<label for="departure_date" class="visuallyhidden">Your Email</label>
 								<input type="text" id="departure_date" name="departure_date" placeholder="<?php _e('Departure','cebolang'); ?>" class="calendarsection" />
 								<input type="hidden" id="dep">
 								<i class="fa fa-calendar"></i>
 							</span>
+							
 							<span class="dropsec" style="margin-right: 6px">
+								<label for="adults" class="visuallyhidden">Your Email</label>
 								<select id="adults"  name="adults[]" class="halfsies">
 									<option value="1"><?php _e('1 Adult','cebolang'); ?></option>
 									<option value="2" selected="selected"><?php _e('2 Adults','cebolang'); ?></option>
@@ -126,6 +131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</select>
 							</span>
 							<span class="dropsec">
+								<label for="children" class="visuallyhidden">Your Email</label>
 								<select  id="children" name="children[]" class="halfsies">
 									<option value="0"><?php _e('0 Kids','cebolang'); ?></option>
 									<option value="1"><?php _e('1 Kid','cebolang'); ?></option>
@@ -157,8 +163,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</nav>
 		</div>
 		<div id="primary-nav" style="overflow:visible;">
-			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title(); ?>" /></a>
-			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="<?php echo the_title().'-mobile'; ?>" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="Hotel Milo" /></a>
+			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="Hotel Milo Mobile" /></a>
 
 			<?php 
 				$arg = array(
@@ -245,6 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<li><a class="pt-lang" href="//hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
 				</ul>
 			</div>
+            
 			<div class="container" style="float: right;"> 
 				<a class="mmenu-icon"><i class="fa fa-bars"></i></a>
 				<nav id="menus" class="fl" style="z-index:1">
