@@ -55,6 +55,13 @@
 	<link rel="icon" href="icfavicon.png" type="image/png">
 
 	<?php
+		// Do not index date
+		if ( is_date() ) {
+			echo ('<meta name="robots" content="noindex,nofollow" />');
+		}
+	?>
+
+	<?php
 		/****************** DO NOT REMOVE **********************
 		/* We add some JavaScript to pages with the comment form
 		 * to support sites with threaded comments (when in use).
