@@ -64,6 +64,13 @@
 		wp_head();
 	?>
 
+	<?php
+		// Do not index date based archives eg. www.site.com/2016/07
+		if ( is_date() ) {
+			echo ('<meta name="robots" content="noindex,nofollow" />');
+		}
+	?>
+
 	<style>
 		<?php include(get_stylesheet_directory(). "/library/inset.php"); ?>
 	</style>
