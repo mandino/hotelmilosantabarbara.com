@@ -572,3 +572,10 @@ function hersha_custom_excerpt () {
 }
 
 add_action( 'wpseo_register_extra_replacements', hersha_custom_excerpt );
+
+function relationship_options_filter($options, $field, $the_post) {
+	$options['post_status'] = array('publish', 'private', 'inherit', 'future');
+	return $options;
+	}
+
+add_filter('acf/fields/post_object/query/name=special_offer_items', 'relationship_options_filter', 10, 3);
