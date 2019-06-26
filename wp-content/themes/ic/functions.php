@@ -579,3 +579,25 @@ function relationship_options_filter($options, $field, $the_post) {
 	}
 
 add_filter('acf/fields/post_object/query/name=special_offer_items', 'relationship_options_filter', 10, 3);
+
+
+// Get the Values of the image array from ACF
+
+function getImageValues( $img_arr, $values_to_return = array( 'url', 'alt' ) ) {
+
+	if( !$img_arr ) return false;
+
+	$return_val = array();
+
+	foreach ( $values_to_return as $key => $value ) {
+		$return_val[$value] = $img_arr[$value];
+
+		// Special case for alt
+		if( $value == 'alt' && !$return_val[$value] ) {
+			$return_val[$value] = $img_arr['name'];
+		}
+	}
+
+	return $return_val;
+
+}
