@@ -1,5 +1,37 @@
-jQuery( document ).ready(function( $ ) {
+
+
+function checkPressItems() {
+	var press_item = jQuery('.press-logo').find('.press-logo__item--hidden');
+		if (!press_item.length) {
+			jQuery('.press_logo__view-more').css('display', 'none');
+		}
+}
+
+function pressLogoDisplay() {
+	$('.press_logo__view-more span').click(function() {
+
+		var press_item = jQuery('.press-logo').find('.press-logo__item--hidden');
 		
+		for (var i = 0; i < press_item.length; i++) {
+			if (jQuery(press_item[i]).hasClass('press-logo__item--hidden')) {
+			
+				jQuery(press_item[i]).removeClass('press-logo__item--hidden');
+				jQuery(press_item[i]).addClass('press-logo__item--displayed');
+
+			}
+			
+			if (i >= 7) {
+				break;
+			}
+		}
+
+		checkPressItems();
+
+	});
+}
+jQuery( document ).ready(function( $ ) {
+	
+	pressLogoDisplay();
 	$( "<label class='visuallyhidden' for='search'>Test</label>" ).insertBefore( ".sidewidgets #search" );
 
 	$('img.lazy').each(function() {

@@ -535,6 +535,14 @@ li.blue-btn i {
 	display: none;
 }
 
+.press-logo {
+	width: 90%;
+}
+
+.press-logo__item {
+	width: calc(33% - 10%);
+}
+
 
 }
 
@@ -1740,6 +1748,14 @@ height: 350px;
     
     .page-template-page_landing_template_without_map .section-header h1.section-title {
         top: 0;
+    }
+
+    .press-logo {
+    	width: 80%;
+    }
+
+    .press-logo__item {
+    	width: 100%;
     }
 
 
