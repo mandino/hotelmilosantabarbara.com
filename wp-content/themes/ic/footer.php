@@ -155,6 +155,13 @@
 		</div>
 	</section>	
 
+
+<!-- WIDGET VERSION 3.0 June 2019 | SBV - Santa Barbara Harbor Overview -->
+<div class="sl-cam-embed" style="position:relative; padding-bottom:calc(56.25% + 40px);">
+	<iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://embed.cdn-surfline.com/cam/5834a02b3421b20545c4b582.html" frameborder="0" allowfullscreen></iframe>
+</div>
+<!-- WIDGET CONTENTS COPYRIGHT SURFLINE.COM2019 -->
+
 <?php 
 
 	wp_footer();
