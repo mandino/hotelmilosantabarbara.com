@@ -1,0 +1,2 @@
+[02-Jun-2017 07:03:00 America/Chicago] PHP Fatal error:  Call to undefined function wp_nonce_field() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/sitepress-multilingual-cms/inc/quote/quote-get.php on line 271
+[02-Jun-2017 11:51:12 America/Chicago] PHP Fatal error:  Call to undefined function wp_nonce_field() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/sitepress-multilingual-cms/inc/quote/quote-get.php on line 271

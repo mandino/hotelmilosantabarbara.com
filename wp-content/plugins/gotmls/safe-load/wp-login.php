@@ -57,7 +57,7 @@ if ((GOTMLS_REQUEST_METHOD == "POST") && isset($_POST["log"]) && isset($_POST["p
 			$GLOBALS["GOTMLS"]["detected_attacks"] .= '&attack[]=NO_REMOTE_ADDR';
 		if (!isset($_SERVER["HTTP_USER_AGENT"]))
 			$GLOBALS["GOTMLS"]["detected_attacks"] .= '&attack[]=NO_HTTP_USER_AGENT';
-		if (!isset($_SERVER["HTTP_REFERER"]))
+		if (!isset($_SERVER["HTTP_REFERER"]) && !(isset($_SERVER["HTTP_USER_AGENT"]) && substr($_SERVER["HTTP_USER_AGENT"], 0, 18) == "Mozilla/5.0 (iPad;"))
 			$GLOBALS["GOTMLS"]["detected_attacks"] .= '&attack[]=NO_HTTP_REFERER';
 		if (!$GLOBALS["GOTMLS"]["detected_attacks"]) {
 			if (isset($_SESSION["GOTMLS_login_attempts"]) && is_numeric($_SESSION["GOTMLS_login_attempts"]) && strlen($_SESSION["GOTMLS_login_attempts"]."") > 0)

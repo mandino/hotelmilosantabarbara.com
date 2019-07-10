@@ -1,0 +1,4 @@
+[19-Jun-2017 11:44:37 America/Chicago] PHP Fatal error:  Call to undefined function plugin_dir_path() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/wp-migrate-db-pro.php on line 26
+[17-Jul-2017 21:32:04 America/Chicago] PHP Fatal error:  Call to undefined function plugin_dir_path() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/wp-migrate-db-pro.php on line 26
+[17-Jul-2017 21:36:24 America/Chicago] PHP Fatal error:  Call to undefined function plugin_dir_path() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/wp-migrate-db-pro.php on line 26
+[27-Jul-2017 14:43:43 America/Chicago] PHP Fatal error:  Call to undefined function plugin_dir_path() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/wp-migrate-db-pro.php on line 26

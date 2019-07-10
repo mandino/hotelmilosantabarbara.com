@@ -1,0 +1,4 @@
+[29-May-2017 10:50:41 America/Chicago] PHP Fatal error:  Call to undefined function esc_attr() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/events-calendar-pro/src/admin-views/recurrence/years.php on line 6
+[29-May-2017 10:50:55 America/Chicago] PHP Fatal error:  Call to undefined function esc_attr() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/events-calendar-pro/src/admin-views/recurrence/weeks.php on line 3
+[29-May-2017 10:51:16 America/Chicago] PHP Fatal error:  Call to undefined function esc_attr() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/events-calendar-pro/src/admin-views/recurrence/months.php on line 3
+[29-May-2017 10:51:16 America/Chicago] PHP Fatal error:  Call to undefined function tribe_events_tab_index() in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/events-calendar-pro/src/admin-views/recurrence/time.php on line 3

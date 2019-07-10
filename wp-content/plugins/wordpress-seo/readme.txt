@@ -3,10 +3,10 @@ Contributors: yoast, joostdevalk, tacoverdo, omarreiss, atimmer, jipmoors
 Donate link: https://yoa.st/1up
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: SEO, XML sitemap, Google Search Console, Content analysis, Readability
+Tags: SEO, XML sitemap, Content analysis, Readability
 Requires at least: 4.9
-Tested up to: 5.0.1
-Stable tag: 9.3
+Tested up to: 5.2.2
+Stable tag: 11.6
 Requires PHP: 5.2.4
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -42,11 +42,10 @@ Yoast SEO does everything in its power to please both visitors and search engine
 
 * Yoast SEO tunes the engine of your site so you can work on creating great content.
 * Our cornerstone content and internal linking features help you optimize your site structure in a breeze.
-* Integrates with Google Search Console: See how your site performs in the search engines and fix crawl errors.
 * Manage SEO roles: Give your colleagues access to specific sections of the Yoast SEO plugin.
 * Bulk editor: Make large-scale edits to your site.
 * **[Premium]** Social previews to manage the way your page is shared on social networks like Facebook and Twitter.
-* **[Premium]** Redirect manager: It keeps your site healthy by easily redirecting errors from Google Search Console, deleted pages and changed URLs.
+* **[Premium]** Redirect manager: It keeps your site healthy by easily redirecting deleted pages and changed URLs.
 
 ### Premium support
 
@@ -106,78 +105,39 @@ You'll find answers to many of your questions on [kb.yoast.com](https://yoa.st/1
 
 == Changelog ==
 
-= 9.3.0 =
-Release Date: December 18th, 2018
+= 11.6.0 =
+Release Date: July 9th, 2019
+
+Yoast SEO 11.6 is out today. Of course, we did the regular round of bug fixing, but the focus of this release is two-fold: a new, much easier to use tabbed interface for the meta box and an updated HowTo structured data content block for WordPress. Find out all about Yoast SEO 11.6 in [our 11.6 release post](https://yoa.st/release-11-6)!
 
 Enhancements:
 
-* Reapplies the markers in Gutenberg when the content changes to make sure they stay up-to-date.
-* Changes the output of schema preventing unnecessary escaping of forward slashes, only available on sites running PHP 5.4 or higher.
-* Changes the website schema `@id` attribute to include the home URL to be a unique identifier.
-* Adds the page number to the breadcrumbs when an archived page is entered.
-* Removes a redundant Edge-specific CSS fix for the tooltips in the post overview. Props [mkronenfeld](https://github.com/mkronenfeld).
+* Changes the tabs in the metabox to horizontal tabs.
+* Splits the content optimization tab in the metabox into two separate tabs: an SEO and a Readability tab.
+* Updates HowTo schema output to reflect Google's new guidelines.
+* Makes sure the media modal that is triggered for image uploads only displays images.
 
 Bugfixes:
 
-* Fixes a bug where the 'Select primary category' label in the primary taxonomy picker would overlap the 'Add new category' button.
-* Fixes a bug where the cornerstone filter was still visible with the metabox disabled.
-* Fixes a bug where non-functional markers are shown for taxonomy pages.
-* Fixes a bug where the `og:description` tag would remain empty after setting the author description.
-* Fixes a bug where texts in the configuration wizard would overlap each other and break out of the columns in Internet Explorer 11. Props [DrGrimshaw](https://github.com/DrGrimshaw).
-* Fixes a bug where keyphrases weren't recognized in the URL when the words in the URL were separated by underscore characters instead of hyphens.
-* Fixes a bug that caused numbers to be stripped when marking a keyphrase containing a number, e.g. 'Yoast SEO 9.3'.
-* Fixes a bug where the first tab of the metabox would be empty when using WordPress 4.8.x.
-* Fixes a bug where private post types would have a sitemap with their 'private' entries.
+* Fixes a bug where the Schema `@id` for `Person` would be incorrect on posts when author archives where disabled. 
+* Fixes a bug where the Schema would contain `WebPage` instead of `CollectionPage` for a latest posts homepage and the static posts page type.
+* Fixes a bug where the Organization and Article Schema nodes would incorrectly be output when a website had not set their organization's name and/or logo.
+* Fixes a bug where the eye marker tooltips would break out of the metabox, which would hide the last part of the tooltip text.
+* Fixes a bug where instances of unfiltered HTML would be allowed in term descriptions where they shouldn't be.
 
-Other:
-* Implemented performance optimizations in FAQ and How To blocks.
+= 11.5.0 =
+Release Date: June 25th, 2019
 
-= 9.2.1 =
-Release Date: November 21th, 2018
-
-Bugfixes:
-
-* Fixes a bug where the title and meta description field's cursor would jump to the start when typing.
-
-= 9.2.0 =
-Release Date: November 20th, 2018
+Yoast SEO 11.5 is out today. This release features a big change that gives you a better idea of how searchers see your snippets on mobile. Yep, we’ve overhauled the mobile snippet preview and brought it up-to-date with Google’s latest changes. And that, of course, includes that shiny favicon. Find out what Yoast SEO 11.5 is all about in [our 11.5 release post](https://yoa.st/release-11-5)!
 
 Enhancements:
 
-* Adds support for the 'eye' markers in Gutenberg using the experimental annotations API in Gutenberg. They will work for the paragraph, quote, heading and list blocks.
-* Adds the latest og:locale options provided by Facebook. Props to [valtlfelipe](https://github.com/valtlfelipe)
-* Adds support for oEmbed utilization of Yoast custom fields (post meta) values. Specifically the image and the title. Props to [ben-caplan](https://github.com/ben-caplan)
-* Defines attachment as non-accessible when attachment urls are redirected to the attachment file itself. Props to [stodorovic](https://github.com/stodorovic)
-* Improves the accessibility of the "Bulk editor" and "Search console" tables.
-* Hides SEO title and meta description fields on the author edit page when the author archives are disabled.
-* Replaces Settings ZIP download (export) and upload (import) functionality with Settings fields.
+* Updates the Mobile Snippet Preview.
+* Moves the primary image for a page out of the `WebPage` piece into its own graph piece.
 
 Bugfixes:
 
-* Fixes a bug where assessments would fail if a "<" character is present in the content.
-* Fixes a bug where the excerpt replacement variable will output a piece of the post content when no excerpt is given.
-* Fixes a bug where the wrong title is rendered for the WooCommerce product archive.
-* Fixes a bug where the Yoast metabox is visible even when the attachment urls are redirected to the attachment file itself.
-* Fixes a bug where the Dashboard Widget was not displayed in the correct language.
-* Fixes a bug in combination with Gutenberg where paragraphs were sometimes not correctly detected because paragraph tags were not automatically added in WordPress-like fashion.
-* Fixes a bug in combination with Gutenberg where multiple marker buttons could be active at the same time.
-* Fixes a bug in combination with Gutenberg where escaped HTML is shown in the OpenGraph description.
-
-Compatibility:
-
-* Adds the `__block_editor_compatible_meta_box` flag to our metabox registrations to indicate they are compatible with WordPress 5.0.
-* Revise the enqueue order of the JavaScript assets to ensure compatibility with the classic editor plugin and WordPress 5.0.
-
-Security:
-
-* Fixes a possible command execution by users with SEO Manager roles. Props to [Dimopoulos Elias](https://twitter.com/gweeperx)
-
-Other:
-
-* Disables the non-functioning markers for the subheading distribution assessment.
-* Refactor SEO assessment filenames and exports. Props to [Kingdutch](https://github.com/Kingdutch)
-* Deprecates the `Yoast_Modal` class.
+* Fixes missing trailing slash for the homepage on post sitemap. Props to [stodorovic](https://github.com/stodorovic).
 
 = Earlier versions =
-
-For the changelog of earlier versions, please refer to https://yoa.st/yoast-seo-changelog
+For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).

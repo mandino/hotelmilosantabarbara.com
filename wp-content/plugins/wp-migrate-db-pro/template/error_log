@@ -1,0 +1,8 @@
+[19-Jun-2017 11:44:19 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/addons.php on line 2
+[19-Jun-2017 11:44:31 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/migrate.php on line 8
+[17-Jul-2017 21:31:40 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/addons.php on line 2
+[17-Jul-2017 21:31:53 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/migrate.php on line 8
+[17-Jul-2017 21:36:02 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/addons.php on line 2
+[17-Jul-2017 21:36:15 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/migrate.php on line 8
+[27-Jul-2017 14:43:32 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/addons.php on line 2
+[27-Jul-2017 14:43:39 America/Chicago] PHP Fatal error:  Using $this when not in object context in /home/hersha/public_html/www.hotelmilosantabarbara.com/wp-content/plugins/wp-migrate-db-pro/template/migrate.php on line 8
