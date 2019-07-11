@@ -6,17 +6,17 @@ define( 'SS_BASE_URL', get_template_directory_uri() . '/' );
 if(is_admin()) {
 
 	require_once(get_stylesheet_directory() .  '/options/options_panel.php');
-	include(get_stylesheet_directory() . '/options/single-options.php'); 
-	include(get_stylesheet_directory() . '/options/popout-box-options.php'); 
-	include(get_stylesheet_directory() . '/options/project-options.php'); 
-	include(get_stylesheet_directory() . '/options/packages-options.php'); 
+	include(get_stylesheet_directory() . '/options/single-options.php');
+	include(get_stylesheet_directory() . '/options/popout-box-options.php');
+	include(get_stylesheet_directory() . '/options/project-options.php');
+	include(get_stylesheet_directory() . '/options/packages-options.php');
 	include(get_stylesheet_directory() . '/options/local-options.php');
 	include(get_stylesheet_directory() . '/options/secondary-panel.php');
 
 }
 
 include(get_stylesheet_directory() . '/library/post_types.php');
-include(get_stylesheet_directory() . '/library/videobox.php'); 
+include(get_stylesheet_directory() . '/library/videobox.php');
 include(get_stylesheet_directory() . '/library/custom_fields.php');
 include(get_stylesheet_directory() . '/library/simple_functions.php');
 include(get_stylesheet_directory() . '/library/shortcodes.php');
@@ -33,7 +33,7 @@ function is_subpage() {
 }
 
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();	
+	acf_add_options_page();
 }
 
 if (!is_admin()) add_action( 'wp_enqueue_scripts', 'enqueue_footer_scripts', 11 );
@@ -52,16 +52,16 @@ function enqueue_footer_scripts() {
 	if ( 'rooms' == get_post_type() ) {
 		wp_enqueue_style('iosslider', SS_BASE_URL . 'css/iosslider.css');
 	}
-    
-//landing page    
-    
+
+//landing page
+
     if (is_page_template(array('page_landing_template_without_map.php','page_landing_template.php'))) {
         wp_enqueue_style('landingpage', SS_BASE_URL . 'css/landingpage.css');
     }
     wp_enqueue_style('magnific-popup', SS_BASE_URL . 'css/magnific-popup.css');
     wp_enqueue_style('slick', SS_BASE_URL . 'js/slick/slick.css');
     wp_enqueue_style('slick-theme', SS_BASE_URL . 'js/slick/slick-theme.css');
-	
+
 	wp_enqueue_style('custom-plugins', SS_BASE_URL . 'css/custom-plugins.css');
 	wp_enqueue_style('oceana-hotel', SS_BASE_URL . 'css/oceana-hotel.css');
 	wp_enqueue_style('prettyPhoto', SS_BASE_URL . 'css/prettyPhoto.css');
@@ -79,24 +79,25 @@ function enqueue_footer_scripts() {
 		wp_enqueue_script('gmap3new', SS_BASE_URL . 'js/gmap3new.js', 'jquery', '', true);
 	}
 
-	wp_enqueue_script('prettyPhoto', SS_BASE_URL . 'js/jquery.prettyPhoto.js', 'jquery', '', true);
-	wp_enqueue_script('vide', SS_BASE_URL . 'js/jquery.vide.js', 'jquery', '', true);
-	wp_enqueue_script('jquery-clicknav', SS_BASE_URL . 'js/jquery-clicknav.js', 'jquery', '', true);
-	wp_enqueue_script('pinit');
-	wp_enqueue_script('modernizr-custom', SS_BASE_URL . 'js/quotes-rotator/modernizr.custom.js', 'jquery', '', true);
-	wp_enqueue_script('cbpQTRotator', SS_BASE_URL . 'js/quotes-rotator/jquery.cbpQTRotator.min.js', 'jquery', '', true);
-	wp_enqueue_script('slides', SS_BASE_URL . 'js/jquery.slides.min.js', 'jquery', '', true);
-	wp_enqueue_script('flexslider', SS_BASE_URL . 'js/flexslider/jquery.flexslider.js', 'jquery', '', true);
-	wp_enqueue_script('loadxt-js', SS_BASE_URL . 'js/jquery.lazyloadxt.extra.js', 'jquery', '', true);
-	wp_enqueue_script('sticky', SS_BASE_URL . 'js/jquery.sticky.js', 'jquery', '', true);
-	wp_enqueue_script('lazyload', SS_BASE_URL . 'scripts/jquery.lazyload.js', 'jquery', '', true);
-	wp_enqueue_script('mmenu', SS_BASE_URL . 'js/jquery.mmenu.min.js', 'jquery', '', true);
-	wp_enqueue_script('mousewheel', SS_BASE_URL . 'js/jquery.mousewheel.js', 'jquery', '', true);
-	wp_register_script( 'php_ticker', SS_BASE_URL . 'js/ticker.js', 'jquery', '', true );
-	wp_enqueue_script('scripts', SS_BASE_URL . 'js/scripts.js', 'jquery', '', true);
-	wp_enqueue_script('slick', SS_BASE_URL . 'js/slick/slick.min.js', 'jquery', '', true);
-	wp_enqueue_script('magnific-popup', SS_BASE_URL . '/js/jquery.magnific-popup.min.js', 'jquery', '', true);
-	
+	// wp_enqueue_script('prettyPhoto', SS_BASE_URL . 'js/jquery.prettyPhoto.js', 'jquery', '', true);
+	// wp_enqueue_script('vide', SS_BASE_URL . 'js/jquery.vide.js', 'jquery', '', true);
+	// wp_enqueue_script('jquery-clicknav', SS_BASE_URL . 'js/jquery-clicknav.js', 'jquery', '', true);
+	// wp_enqueue_script('pinit');
+	// wp_enqueue_script('modernizr-custom', SS_BASE_URL . 'js/quotes-rotator/modernizr.custom.js', 'jquery', '', true);
+	// wp_enqueue_script('cbpQTRotator', SS_BASE_URL . 'js/quotes-rotator/jquery.cbpQTRotator.min.js', 'jquery', '', true);
+	// wp_enqueue_script('slides', SS_BASE_URL . 'js/jquery.slides.min.js', 'jquery', '', true);
+	// wp_enqueue_script('flexslider', SS_BASE_URL . 'js/flexslider/jquery.flexslider.js', 'jquery', '', true);
+	// wp_enqueue_script('loadxt-js', SS_BASE_URL . 'js/jquery.lazyloadxt.extra.js', 'jquery', '', true);
+	// wp_enqueue_script('sticky', SS_BASE_URL . 'js/jquery.sticky.js', 'jquery', '', true);
+	// wp_enqueue_script('lazyload', SS_BASE_URL . 'scripts/jquery.lazyload.js', 'jquery', '', true);
+	// wp_enqueue_script('mmenu', SS_BASE_URL . 'js/jquery.mmenu.min.js', 'jquery', '', true);
+	// wp_enqueue_script('mousewheel', SS_BASE_URL . 'js/jquery.mousewheel.js', 'jquery', '', true);
+	// wp_register_script( 'php_ticker', SS_BASE_URL . 'js/ticker.js', 'jquery', '', true );
+	// wp_enqueue_script('scripts', SS_BASE_URL . 'js/scripts.js', 'jquery', '', true);
+	// wp_enqueue_script('slick', SS_BASE_URL . 'js/slick/slick.min.js', 'jquery', '', true);
+	// wp_enqueue_script('magnific-popup', SS_BASE_URL . '/js/jquery.magnific-popup.min.js', 'jquery', '', true);
+	wp_enqueue_script('mainjs', SS_BASE_URL . '/js/main.js', 'jquery', '', true);
+
 	if ( 'rooms' == get_post_type() ) 	{
 		wp_enqueue_script('', SS_BASE_URL . 'js/jquery.iosslider.min.js', 'jquery', '', true);
 	}
@@ -112,7 +113,7 @@ function posts_order_wpse_91866() {
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below
    $scripts_to_async = array('pinit');
-   
+
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async="async" src', $tag);
@@ -135,7 +136,7 @@ if ( !function_exists('ss_framework_admin_scripts') ) {
 
 	}
 	add_action('admin_enqueue_scripts', 'ss_framework_admin_scripts');
-	
+
 }
 
 
@@ -232,21 +233,21 @@ function blogPage_relNextPrev() {
 }
 
 function get_attachment_id_by_url($attachment_url = '') {
- 
+
 	global $wpdb;
 	$attachment_id = false;
 
 	if ('' == $attachment_url)
 		return;
- 
+
 	$upload_dir_paths = wp_upload_dir();
- 
+
 	if (false !== strpos($attachment_url, $upload_dir_paths['baseurl'])) {
 		$attachment_url = preg_replace('/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url);
 		$attachment_url = str_replace($upload_dir_paths['baseurl'] . '/', '', $attachment_url);
 		$attachment_id = $wpdb->get_var($wpdb->prepare("SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url));
 	}
- 
+
 	return $attachment_id;
 }
 
@@ -274,7 +275,7 @@ function get_image_alt_text_by_post_id($post_id) {
 		}
 	}
 	return get_the_title();
-		
+
 
 }
 
@@ -302,7 +303,7 @@ function get_custom_image_thumb_alt_text($img_url,$img_id=0) {
 	} else {
 		$post_id = $img_id;
 	}
-	
+
 	$image_thumb_alt_text =get_image_alt_text_by_post_id($post_id);
 
 	return $image_thumb_alt_text;
@@ -318,7 +319,7 @@ function get_custom_image_thumb_alt_text($img_url,$img_id=0) {
 add_action('wp_enqueue_scripts', 'enqueue_js');
 function enqueue_js() {
 	wp_register_script('tribe-mini-calendar', get_template_directory_uri().'/js/tribe-events-widget-calendar.js', array( 'jquery' ));
-	wp_localize_script( 'your_unique_js_name', 'youruniquejs_vars', 
+	wp_localize_script( 'your_unique_js_name', 'youruniquejs_vars',
 
 	array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -522,7 +523,7 @@ add_action('wp_head','custom_length_meta_desc');
 
 function custom_length_meta_desc () {
 	global $post;
-	return substr(strip_tags($post->post_content), 0, 156); 
+	return substr(strip_tags($post->post_content), 0, 156);
 }
 
 function hersha_custom_excerpt () {

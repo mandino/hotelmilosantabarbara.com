@@ -1,5 +1,3 @@
-
-
 function checkPressItems() {
 	var press_item = jQuery('.press-logo').find('.press-logo__item--hidden');
 		if (!press_item.length) {
@@ -11,15 +9,15 @@ function pressLogoDisplay() {
 	$('.press_logo__view-more span').click(function() {
 
 		var press_item = jQuery('.press-logo').find('.press-logo__item--hidden');
-		
+
 		for (var i = 0; i < press_item.length; i++) {
 			if (jQuery(press_item[i]).hasClass('press-logo__item--hidden')) {
-			
+
 				jQuery(press_item[i]).removeClass('press-logo__item--hidden');
 				jQuery(press_item[i]).addClass('press-logo__item--displayed');
 
 			}
-			
+
 			if (i >= 7) {
 				break;
 			}
@@ -29,8 +27,9 @@ function pressLogoDisplay() {
 
 	});
 }
-jQuery( document ).ready(function( $ ) {
-	
+
+document.addEventListener("DOMContentLoaded", function () {
+
 	pressLogoDisplay();
 	$( "<label class='visuallyhidden' for='search'>Test</label>" ).insertBefore( ".sidewidgets #search" );
 
@@ -41,7 +40,7 @@ jQuery( document ).ready(function( $ ) {
 		var height = width / ratio;
 		$(this).css('height', height+'px');
 	});
-	
+
 	$("img.lazy").lazyload({
 		effect : "fadeIn",
 	});
@@ -53,39 +52,39 @@ jQuery( document ).ready(function( $ ) {
 
 	    });
 	// }
-    
+
 	$(".closebox a").click(function(e) {
 		e.preventDefault();
-		
+
 		$(".specialsbox").addClass("shutit");
 
-		
+
 	})
 
     // Hidden calendar
 
     $("#primary-nav .button.input-append.date").hover(function() {
-				
+
 		$(".ressys").addClass("dropit");
 		$(this).removeClass("fixeer");
-	
+
 	},function(){
-	
+
 		$(".ressys").removeClass("dropit");
-	
-	
+
+
 	});
-	
-	
+
+
 
 	// Reserve button hover
-	
+
 	 $('.ressys').hover(function() {
 		$("#primary-nav .button").stop().addClass("nothingness");
-		
-		
+
+
 	 	}, function() {
- 		$("#primary-nav .button").removeClass("nothingness");			
+ 		$("#primary-nav .button").removeClass("nothingness");
 	 });
 
 	$('.slides-mini').slidesjs({
@@ -129,11 +128,9 @@ jQuery( document ).ready(function( $ ) {
 		pauseOnAction: false,
 	});
 
-
-$(document).ready(function(){ 
 	// Datepicker
 	$.datepicker._defaults.dateFormat = 'yy-mm-dd';
-	
+
 	$(".datepicker").datepicker({
         firstDay: 0,
 		minDate: 0,
@@ -148,7 +145,7 @@ $(document).ready(function(){
 			var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
             var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
 
-            
+
             if (!date1 || date2) {
 				$("#arrival_date").val(dateText);
 				$("#departure_date").val("");
@@ -163,8 +160,6 @@ $(document).ready(function(){
 			}
 		}
 	});
-});
-
 
 	// Question box
 
@@ -179,40 +174,40 @@ $(document).ready(function(){
 	// Pretty Photo
 
     $('a[rel=tooltip]').mouseover(function(e) {
-         
+
         //Grab the title attribute's value and assign it to a variable
-        var tip = $(this).attr('title');   
-         
+        var tip = $(this).attr('title');
+
         //Remove the title attribute's to avoid the native tooltip from the browser
         $(this).attr('title','');
-         
+
         //Append the tooltip template and its value
-        $(this).append('<div id="tooltip"><div class="tipHeader"></div><div class="tipBody">' + tip + '</div><div class="tipFooter"></div></div>');    
-         
+        $(this).append('<div id="tooltip"><div class="tipHeader"></div><div class="tipBody">' + tip + '</div><div class="tipFooter"></div></div>');
+
         //Set the X and Y axis of the tooltip
         $('#tooltip').css('top', e.pageY + 10 );
         $('#tooltip').css('left', e.pageX + 20 );
-         
+
         //Show the tooltip with faceIn effect
         $('#tooltip').fadeIn('500');
         $('#tooltip').fadeTo('10',0.8);
-         
+
     }).mousemove(function(e) {
-     
+
         //Keep changing the X and Y axis for the tooltip, thus, the tooltip move along with the mouse
         $('#tooltip').css('top', e.pageY + 10 );
         $('#tooltip').css('left', e.pageX + 20 );
-         
+
     }).mouseout(function() {
-     
+
         //Put back the title attribute's value
         $(this).attr('title',$('.tipBody').html());
-     
+
         //Remove the appended tooltip template
         $(this).children('div#tooltip').remove();
-         
+
     });
-    
+
     $('.section-photos').remove('.gallery');
 
 	$("li.tab-item:last-child").addClass('last-item');
@@ -223,10 +218,10 @@ $(document).ready(function(){
 
 	$("body a").attr('data-ajax', false);
 	$('.section-photos li').bind("vmousedown", function(){});
-	$('.thumbgal li').bind("vmousedown", function(){});		
+	$('.thumbgal li').bind("vmousedown", function(){});
 	$( '#cbp-qtrotator' ).cbpQTRotator();
-	
-	
+
+
 
 	// Sticky Nav
 	$(".searchbox").sticky({ topSpacing: 61, className: 'sticky', wrapperClassName: 'my-wrapper' });
@@ -235,16 +230,16 @@ $(document).ready(function(){
 
 
 	// FadeIn logo
-		$(window).scroll(function() {	
+		$(window).scroll(function() {
 			var verschil = ($(window).scrollTop() / 5);
-		  if (verschil > 40) 
+		  if (verschil > 40)
 			   $('.droplogo').addClass('jumpshot');
 			else if (verschil < 40)
 			   $('.droplogo').removeClass('jumpshot');
 		});
 
 	// Calendar in Navigation
-		
+
 		if ($(window).width() > 1000) {
 			$('#menus').removeClass('mm-menu mm-horizontal mm-ismenu');
 			$('#menu').removeClass('mm-list mm-panel mm-opened mm-current');
@@ -297,7 +292,7 @@ $(document).ready(function(){
 
 
 		if ($(window).width() < 1000) {
-			   
+
 		   var pos 	= 'mm-top mm-right mm-bottom',
 				zpos	= 'mm-front mm-next';
 
@@ -314,7 +309,7 @@ $(document).ready(function(){
 				$menu.removeClass();
 				$('nav#menu ul').removeClass()
 				$('#primary-nav .container').prepend($menu);
-		
+
 		}
 
 
@@ -369,24 +364,19 @@ $(document).ready(function(){
 		$('.current-language').attr('href','//hotelmilosantabarbara.com/');
 	}
 
-	$(window).load(function() {
+	$('.newsletter-form-hamburger .emailAddress').attr('id', 'emailAddress');
+	$( "<label class='visuallyhidden' for='emailAddress'>Test</label>" ).insertBefore( ".newsletter-form-hamburger .emailAddress" );
 
-		$('.newsletter-form-hamburger .emailAddress').attr('id', 'emailAddress');
-		$( "<label class='visuallyhidden' for='emailAddress'>Test</label>" ).insertBefore( ".newsletter-form-hamburger .emailAddress" );
-		
-		// Home - Video Banner
-		var check_home = $('video').length;
+	// Home - Video Banner
+	var check_home = $('video').length;
 
-		if (check_home) {
-			$('video').get(0).play();
-		}
+	if (check_home) {
+		$('video').get(0).play();
+	}
 
-		if ( vide_video ) {
-			$('.video-banner-onload').vide(vide_video);
-		}
-
-
-	});
+	if ( vide_video ) {
+		$('.video-banner-onload').vide(vide_video);
+	}
 
 	$(window).scroll(function() {
 		var verschil = ($(window).scrollTop() / 5);
