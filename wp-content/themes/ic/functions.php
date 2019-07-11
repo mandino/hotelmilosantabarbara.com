@@ -79,23 +79,6 @@ function enqueue_footer_scripts() {
 		wp_enqueue_script('gmap3new', SS_BASE_URL . 'js/gmap3new.js', 'jquery', '', true);
 	}
 
-	// wp_enqueue_script('prettyPhoto', SS_BASE_URL . 'js/jquery.prettyPhoto.js', 'jquery', '', true);
-	// wp_enqueue_script('vide', SS_BASE_URL . 'js/jquery.vide.js', 'jquery', '', true);
-	// wp_enqueue_script('jquery-clicknav', SS_BASE_URL . 'js/jquery-clicknav.js', 'jquery', '', true);
-	// wp_enqueue_script('pinit');
-	// wp_enqueue_script('modernizr-custom', SS_BASE_URL . 'js/quotes-rotator/modernizr.custom.js', 'jquery', '', true);
-	// wp_enqueue_script('cbpQTRotator', SS_BASE_URL . 'js/quotes-rotator/jquery.cbpQTRotator.min.js', 'jquery', '', true);
-	// wp_enqueue_script('slides', SS_BASE_URL . 'js/jquery.slides.min.js', 'jquery', '', true);
-	// wp_enqueue_script('flexslider', SS_BASE_URL . 'js/flexslider/jquery.flexslider.js', 'jquery', '', true);
-	// wp_enqueue_script('loadxt-js', SS_BASE_URL . 'js/jquery.lazyloadxt.extra.js', 'jquery', '', true);
-	// wp_enqueue_script('sticky', SS_BASE_URL . 'js/jquery.sticky.js', 'jquery', '', true);
-	// wp_enqueue_script('lazyload', SS_BASE_URL . 'scripts/jquery.lazyload.js', 'jquery', '', true);
-	// wp_enqueue_script('mmenu', SS_BASE_URL . 'js/jquery.mmenu.min.js', 'jquery', '', true);
-	// wp_enqueue_script('mousewheel', SS_BASE_URL . 'js/jquery.mousewheel.js', 'jquery', '', true);
-	// wp_register_script( 'php_ticker', SS_BASE_URL . 'js/ticker.js', 'jquery', '', true );
-	// wp_enqueue_script('scripts', SS_BASE_URL . 'js/scripts.js', 'jquery', '', true);
-	// wp_enqueue_script('slick', SS_BASE_URL . 'js/slick/slick.min.js', 'jquery', '', true);
-	// wp_enqueue_script('magnific-popup', SS_BASE_URL . '/js/jquery.magnific-popup.min.js', 'jquery', '', true);
 	wp_enqueue_script('mainjs', SS_BASE_URL . '/js/main.js', 'jquery', '', true);
 
 	if ( 'rooms' == get_post_type() ) 	{
