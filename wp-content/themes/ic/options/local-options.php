@@ -13,8 +13,8 @@ $meta_localer = array(
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
-				
-		array( 
+
+		array(
               "name" => "What type of location?",
 	          "desc" => "Add a simple tag like 'Asian Cuisine, or Art Museum ",
 	          "id" => $prefix."_category",
@@ -22,7 +22,7 @@ $meta_localer = array(
 	          "std" => "",
               )
 		,
-		array( 
+		array(
               "name" => "Outbound Location Link",
 	          "desc" => "Please put the outgoing link for this location here.",
 	          "id" => $prefix."_outbound",
@@ -30,7 +30,7 @@ $meta_localer = array(
 	          "std" => ""
               )
 		,
-		array( 
+		array(
               "name" => "Property Address",
 	          "desc" => "This address will only be used visually. The coordinates will determine the mapping",
 	          "id" => $prefix."_address",
@@ -38,7 +38,7 @@ $meta_localer = array(
 	          "std" => ""
               )
 		,
-		array( 
+		array(
               "name" => "Property Phone Number",
 	          "desc" => "Put telephone number here",
 	          "id" => $prefix."_phone",
@@ -46,8 +46,8 @@ $meta_localer = array(
 	          "std" => ""
               )
 		,
-		
-		array( 
+
+		array(
               "name" => "Distance",
 	          "desc" => "Distance from the hotel. Ex: 1.5 Miles From Hotel Molo",
 	          "id" => $prefix."_distance",
@@ -55,9 +55,9 @@ $meta_localer = array(
 	          "std" => ""
               )
 		,
-		
-		
-		array( 
+
+
+		array(
               "name" => "Map Coordinates",
 	          "desc" => "If necessary, please put the property coordinates here.",
 	          "id" => $prefix."_coordinates",
@@ -81,7 +81,7 @@ function mythemeee_add_localer() {
 function mythemeee_show_localer() {
 	global $meta_localer, $post;
 	// Use nonce for verification
-		
+
 	echo '<input type="hidden" name="mythemeee_meta_localer_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	echo '<table class="form-table">';
 	foreach ($meta_localer['fields'] as $field) {
@@ -90,22 +90,22 @@ function mythemeee_show_localer() {
 		echo '<tr>',
 				'<td class="localerer" style="border-bottom: 1px solid #DFDFDF; box-shadow: 0 1px 0 #FFFFFF; width: 100%; padding-bottom: 20px;">';
 		switch ($field['type']) {
-			
-			
+
+
 			case 'text':
 				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" />';
 				break;
-			
-			
+
+
 			case 'color':
 				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<div id="color_picker" class="colorSelector"></div></div></div><input class="of-color" name="'. $field['id'] .'" id="'. $field['id'] .'" type="text" value="', $meta ? $meta : $field['std'], '" />';
 				break;
-							
-				
+
+
 			case 'upload':
 				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" /><input class="upload_image_button" type="button" value="Upload Image" />';
 				break;
-			
+
 			case 'textarea':
 				echo '<div class="title">' ,$field['name'], '</div><div class="descriptive">', $field['desc'], '</div>', '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:47%">', $meta ? $meta : $field['std'], '</textarea>';
 				break;
@@ -113,7 +113,7 @@ function mythemeee_show_localer() {
 				echo '<div class="title">' ,$field['name'], '</div><div class="descriptive">', $field['desc'], '</div>', '<select name="', $field['id'], '" id="', $field['id'], '">';
 				foreach ($field['options'] as $option) {
 					echo '<option', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
-					
+
 				}
 				echo '</select>';
 				break;
@@ -130,14 +130,14 @@ function mythemeee_show_localer() {
 		echo 	'<td>',
 			'</tr>';
 	}
-	
+
 	echo '</table>';
 }
 
 add_action('save_post', 'mythemeee_save_data');
 // Save data from meta localer
 function mythemeee_save_data($post_id) {
-	global $meta_localer;	
+	global $meta_localer;
 	// verify nonce
 	if (!wp_verify_nonce($_POST['mythemeee_meta_localer_nonce'], basename(__FILE__))) {
 		return $post_id;
@@ -155,7 +155,7 @@ function mythemeee_save_data($post_id) {
 	}
 	foreach ($meta_localer['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
-		$new = $_POST[$field['id']];		
+		$new = $_POST[$field['id']];
 		if ($new && $new != $old) {
 			update_post_meta($post_id, $field['id'], $new);
 		} elseif ('' == $new && $old) {

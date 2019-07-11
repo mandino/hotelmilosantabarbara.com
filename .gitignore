@@ -11,6 +11,7 @@ sitemap.xml
 wp-content/cache/
 wp-content/backups/
 sitemap.xml.gz
+node_modules/
 
 # ignore debug.log
 wp-content/debug.log
