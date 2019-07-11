@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-get_header(); 
+get_header();
 
 ?>
 
@@ -56,10 +56,10 @@ get_header();
 
 					<?php } ?>
 					<?php if(get_option('cebo_spotify')) { ?>
-					
+
 						<!-- <li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank"><i class="fa fa-spotify fa-2x" aria-hidden="true>"</i><span>spotify</span></a></li> -->
 						<li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank" aria-label="spotify"><i class="fa fa-spotify fa-2x"></i><span>spotify</span></a></li>
-						
+
 					<?php } ?>
 					</ul>
 
@@ -148,7 +148,7 @@ get_header();
 						<?php if($first) : ?>
 							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 						<?php else : ?>
-							<img width="260" height="292" class="lazy img-responsive" data-original="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+							<img width="260" height="292" class="lazy img-responsive" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 						<?php endif; ?>
 
 
@@ -285,7 +285,7 @@ get_header();
 					<div class="slides-mini">
 
 						<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 4
-					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); 
+					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
 							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 
 
@@ -353,7 +353,7 @@ get_header();
 				<div class="fr">
 					<div class="slides-mini">
 
-						<?php 
+						<?php
 
 							query_posts('post_type=post&posts_per_page=4&cat=-10'); if(have_posts()) : while(have_posts()) : the_post();
 							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 540x292"); ?>
@@ -382,4 +382,4 @@ get_header();
 
 	</div>
 
-<?php get_footer(); ?>
+<?php get_footer();
