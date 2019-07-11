@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once get_stylesheet_directory().'/library/mobile-detect.php';
 	$detect = new Mobile_Detect;
 	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
@@ -14,7 +14,7 @@
     (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
     })(window,document.documentElement,'async-hide','dataLayer',4000,
     {'GTM-P2GL4QL':true});</script>
-    
+
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,7 +34,7 @@
 			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
 		?>
 	</title>
-	<?php 
+	<?php
 		if ( file_exists( dirname( __FILE__ ) . '/noindex.php' ) ) {
 		    include( dirname( __FILE__ ) . '/noindex.php' );
 		}
@@ -42,14 +42,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="//gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<?php if (get_option('cebo_custom_favicon') == '') { ?>
-	<link rel="icon" href="<?php bloginfo ('template_url'); ?>/cebo_options/<?php bloginfo ('template_url'); ?>/images/admin_sidebar_icon.png" type="image/x-ico"/>
-	<?php } else { ?>
-	<link rel="icon" href="<?php echo get_option('cebo_custom_favicon'); ?>" type="image/x-ico"/>
-	<?php } ?>
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('cebo_feedburner_url') <> "" ) { echo get_option('cebo_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
-	<!-- favicon -->
-	<!-- MILO -->
 	<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/icfavicon.png" type="image/png">
 	<link rel="icon" href="icfavicon.png" type="image/png">
 
@@ -91,8 +84,8 @@
 	</script>
 -->
 
-</head> 
-	
+</head>
+
 <body id="oceana" <?php body_class($class); ?>>
 
 <!-- Google Tag Manager (noscript) -->
@@ -103,25 +96,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="menu-wrap">
 
 	<div id="navigation" class="lp-navigation">
-			
+
 			<div class="ressys">
-				
+
 				<div class="whippapeal">
 				<div class="formfields">
-				
+
 					<div class="reservationform">
-					
-					
+
+
 						<form method="get" action="<?php echo get_option('cebo_genbooklink'); ?>">
 
 						<input type="hidden" value="1" name="rooms">
-						
+
 						<span class="calsec">
 								<input type="text"  id="arrival_date" name="arrival_date" placeholder="<?php _e('Arrival','cebolang'); ?>" class="calendarsection" />
 							<input type="hidden"  id="arv">
 							<i class="fa fa-calendar"></i>
 						</span>
-						
+
 						<span class="calsec">
 							<input type="text" id="departure_date" name="departure_date" placeholder="<?php _e('Departure','cebolang'); ?>" class="calendarsection" />
 							<input type="hidden" id="dep">
@@ -135,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<option value="4"><?php _e('4 Adults','cebolang'); ?></option>
 							</select>
 						</span>
-						
+
 						<span class="dropsec">
 							<select name="children[]" id="children" class="halfsies">
 								<option value="0"><?php _e('0 Kids','cebolang'); ?></option>
@@ -144,39 +137,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<option value="3"><?php _e('3 Kids','cebolang'); ?></option>
 							</select>
 						</span>
-						
+
 						<button class="button" type="submit"><?php _e('Search Now','cebolang'); ?></button>
-						
-					
+
+
 						</form>
-				
+
 					</div>
 
 				<!-- flex dates -->
 
 					<div class="reservationform flexdate">
-					
+
 						<p><a href="https://hotelmilosantabarbara.reztrip.com/calendar">Flexible dates?</a> Search for our best available rate</p>
 					</div>
 
 				<!-- end flex dates -->
 
 				</div>
-				
+
 				<div class="calendars">
-					
+
 					 <div class="datepicker"></div>
-				
-				
+
+
 				</div>
-				
+
 				</div>
 			</div>
-			
-				
+
+
 		<div id="primary-nav" class="landing-page display-none">
           <?php if ( have_rows('landing_page') ) : while( have_rows('landing_page') ) : the_row(); ?>
-            <?php if(get_row_layout() == 'banner') :?>  
+            <?php if(get_row_layout() == 'banner') :?>
               <div class="landing-page-logo-header">
                   <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_sub_field('landing_page_logo')['url']?>" alt=""/></a>
               </div>
@@ -185,13 +178,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <a class="reserve fixeer button fr input-append date" id="idp3" data-date="12-02-2012" data-date-format="mm-dd-yyyy" onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
 			<a class="reserve fixeer mobile button fr" id="idp4" href="<?php echo get_option('cebo_genbooklink'); ?>"  onclick="_gaq.push(['_link', this.href]);return false;">RESERVE</a>
-			
-			
+
+
 		</div>
 	</div>
-	
+
 	<div id="quiet"></div>
-    
+
       <div class="cookie-consent">
         <p>
             <?php echo get_bloginfo( 'name' ); ?> site uses cookies. By using this site, you are agreeing to our <a href="<?php bloginfo('url'); ?>/privacy-policy/" target="_blank" target="_blank">Privacy Policy</a>.

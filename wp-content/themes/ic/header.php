@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once get_stylesheet_directory().'/library/mobile-detect.php';
 	$detect = new Mobile_Detect;
 	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
@@ -14,7 +14,7 @@
     (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
     })(window,document.documentElement,'async-hide','dataLayer',4000,
     {'GTM-P2GL4QL':true});</script>
-    
+
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -28,14 +28,14 @@
 	<meta name="google-site-verification" content="PLMRblpH5jD6eiEzVXnTlu33LL379Jk97ncPlPQ4d_A" />
 	<meta http-equiv="Expires" content="30" />
 	<title>
-        
+
 		<?php global $page, $paged; wp_title( '|', true, 'right' );
 		// Add a page number if necessary:
 		if ( $paged >= 2 || $page >= 2 )
 			echo ' | ' . sprintf( __( 'Page %s', 'cebolang' ), max( $paged, $page ) );
 		?>
 	</title>
-	<?php 
+	<?php
 		if ( file_exists( dirname( __FILE__ ) . '/noindex.php' ) ) {
 		    include( dirname( __FILE__ ) . '/noindex.php' );
 		}
@@ -43,14 +43,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="//gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<?php if (get_option('cebo_custom_favicon') == '') { ?>
-	<link rel="icon" href="<?php bloginfo ('template_url'); ?>/cebo_options/<?php bloginfo ('template_url'); ?>/images/admin_sidebar_icon.png" type="image/x-ico"/>
-	<?php } else { ?>
-	<link rel="icon" href="<?php echo get_option('cebo_custom_favicon'); ?>" type="image/x-ico"/>
-	<?php } ?>
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('cebo_feedburner_url') <> "" ) { echo get_option('cebo_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
-	<!-- favicon -->
-	<!-- MILO -->
 	<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/icfavicon.png" type="image/png">
 	<link rel="icon" href="icfavicon.png" type="image/png">
 
@@ -99,7 +92,7 @@
 	</script>
 -->
 
-</head> 
+</head>
 <body id="oceana" <?php body_class($class); ?>>
 
 <!-- Google Tag Manager (noscript) -->
@@ -127,7 +120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<input type="hidden" id="dep">
 								<i class="fa fa-calendar"></i>
 							</span>
-							
+
 							<span class="dropsec" style="margin-right: 6px">
 								<label for="adults" class="visuallyhidden">Your Email</label>
 								<select id="adults"  name="adults[]" class="halfsies">
@@ -173,7 +166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="<?php bloginfo('url'); ?>" class="logo droplogo>"><img src="<?php echo get_option('cebo_logo'); ?>" alt="Hotel Milo" /></a>
 			<a href="<?php bloginfo('url'); ?>" class="logo mobile"><img src="<?php echo get_option('cebo_logo'); ?>" alt="Hotel Milo Mobile" /></a>
 
-			<?php 
+			<?php
 				$arg = array(
 							'post_type' => array('specials', 'tribe_events'),
 							'value' => time(),
@@ -258,8 +251,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<li><a class="pt-lang" href="//hotelmilosantabarbara.com/sobre-nos/" data-ajax="false">pt-pt</a></li>
 				</ul>
 			</div>
-            
-			<div class="container" style="float: right;"> 
+
+			<div class="container" style="float: right;">
 				<a class="mmenu-icon"><i class="fa fa-bars"></i></a>
 				<nav id="menus" class="fl" style="z-index:1">
 					<ul id="menu">
@@ -275,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</ul>
 					<div class="push-container">
 						<a style="color:#000 !important;" class="push-container-number" href="tel:<?php echo get_option('cebo_tele'); ?>">
-							<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div> 
+							<span class="ic-navis"><div><i class="fa fa-phone"></i> <span>Reservations</span></div>
 							<span><?php echo get_option('cebo_tele'); ?></span></span>
 						</a>
 					</div>
@@ -285,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 	<div id="quiet"></div>
-    
+
     <div class="cookie-consent">
 	 	<p>
 	 		<?php echo get_bloginfo( 'name' ); ?> site uses cookies. By using this site, you are agreeing to our <a href="<?php bloginfo('url'); ?>/privacy-policy/" target="_blank" target="_blank">Privacy Policy</a>.
