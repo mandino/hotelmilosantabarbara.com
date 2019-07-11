@@ -66,6 +66,15 @@ abstract class AAM_Core_Object {
     public function __construct(AAM_Core_Subject $subject) {
         $this->setSubject($subject);
     }
+    
+    /**
+     * Read object option
+     * 
+     * @return void
+     * 
+     * @access public
+     */
+    public function initialize() {}
 
     /**
      * Set current subject
@@ -116,7 +125,34 @@ abstract class AAM_Core_Object {
     public function getOption() {
         return $this->_option;
     }
-
+    
+    /**
+     * 
+     * @param type $external
+     * @return type
+     */
+    public function mergeOption($external) {
+        return $external;
+    }
+    
+    /**
+     * Update single option item
+     * 
+     * @param string $item
+     * @param mixed  $value
+     * 
+     * @return boolean Always true
+     * 
+     * @access public
+     */
+    public function updateOptionItem($item, $value) {
+        $option = $this->getOption();
+        $option[$item] = $value;
+        $this->setOption($option);
+        
+        return true;
+    }
+    
     /**
      * Set Inherited flag
      * 
@@ -159,8 +195,30 @@ abstract class AAM_Core_Object {
      * 
      * @access public
      */
-    public function isOverwritten () {
+    public function isOverwritten() {
         return $this->_overwritten;
+    }
+    
+    /**
+     * Check if access is allowed
+     * 
+     * @return bool
+     * 
+     * @access public
+     */
+    public function allowed() {
+        return !call_user_func_array(array($this, 'has'), func_get_args());
+    }
+    
+    /**
+     * Check if access is denied
+     * 
+     * @return boolean
+     * 
+     * @access public
+     */
+    public function denied() {
+        return call_user_func_array(array($this, 'has'), func_get_args());
     }
 
 }

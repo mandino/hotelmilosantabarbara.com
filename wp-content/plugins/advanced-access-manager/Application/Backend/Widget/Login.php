@@ -24,17 +24,16 @@ class AAM_Backend_Widget_Login extends WP_Widget {
     
     /**
      * 
-     * @param type $args
-     * @param type $instance
+     * @param array $args
+     * 
+     * @param string $instance
      */
     public function widget($args, $instance) {
         $this->args = array_merge($args, $this->normalize($instance));
         
-        require(
-            AAM_Core_Config::get(
-                'login.widget.template', 
-                dirname(__DIR__) . '/phtml/widget/login-frontend.phtml'
-            )
+        require AAM_Core_Config::get(
+            'feature.secureLogin.widget.template',
+            realpath(dirname(__FILE__) . '/../phtml/widget/login-frontend.phtml')
         );
     }
     
@@ -45,36 +44,17 @@ class AAM_Backend_Widget_Login extends WP_Widget {
     public function form($instance) {
         $instance = $this->normalize($instance);
         
-        require(dirname(__DIR__) . '/phtml/widget/login-backend.phtml');
+        require dirname(__FILE__) . '/../phtml/widget/login-backend.phtml';
     }
     
     /**
      * 
-     * @param type $new
-     * @param type $old
-     * @return type
-     */
-    public function update($new, $old) {
-        if ($new['login-timeout'] != $old['login-timeout']) {
-            AAM_Core_Config::set('login-timeout', $new['login-timeout']);
-        }
-        
-        if ($new['brute-force-lockout'] != $old['brute-force-lockout']) {
-            AAM_Core_Config::set('brute-force-lockout', $new['brute-force-lockout']);
-        }
-        
-        return parent::update($new, $old);
-    }
-    
-    /**
+     * @param array $instance
      * 
-     * @param type $instance
-     * @return type
+     * @return array
      */
     protected function normalize($instance) {
         $instance['login-title'] = AAM_Core_Config::get('login-title');
-        $instance['login-ip-track'] = AAM_Core_Config::get('login-ip-track');
-        $instance['brute-force-lockout'] = AAM_Core_Config::get('brute-force-lockout');
         
         if (empty($instance['login-title'])) {
             $instance['login-title'] = __('Login', AAM_KEY);

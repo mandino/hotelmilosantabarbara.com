@@ -27,6 +27,13 @@ class AAM_Core_Object_Redirect extends AAM_Core_Object {
     public function __construct(AAM_Core_Subject $subject) {
         parent::__construct($subject);
 
+        $this->initialize();
+    }
+    
+    /**
+     * 
+     */
+    public function initialize() {
         $this->read();
     }
     
@@ -49,7 +56,7 @@ class AAM_Core_Object_Redirect extends AAM_Core_Object {
                 $this->readByArea('frontend', $option);
                 $this->readByArea('backend', $option);
             }
-        } elseif (method_exists($this, 'setOverwritten')) { //TODO - Support legacy
+        } else {
             $this->setOverwritten(true);
         }
         

@@ -21,6 +21,15 @@ class AAM_Core_Subject_Visitor extends AAM_Core_Subject {
     const UID = 'visitor';
 
     /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function initialize() {
+        AAM_Core_Policy_Factory::get($this)->initializePolicyTree();
+    }
+
+    /**
      *
      * @param type $value
      * @param type $object
@@ -71,4 +80,20 @@ class AAM_Core_Subject_Visitor extends AAM_Core_Subject {
         return AAM_Core_Subject_Default::getInstance();
     }
 
+    /**
+     * 
+     * @return type
+     */
+    public function getName() {
+        return __('Anonymous', AAM_KEY);
+    }
+    
+    /**
+     * 
+     * @return boolean
+     */
+    public function isVisitor() {
+        return true;
+    }
+    
 }

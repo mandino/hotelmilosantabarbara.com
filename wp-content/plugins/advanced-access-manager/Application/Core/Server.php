@@ -20,34 +20,9 @@ final class AAM_Core_Server {
     /**
      * Server endpoint
      */
-    const SERVER_URL = 'https://aamplugin.com/api/v1';
+    const SERVER_V1_URL = 'https://aamplugin.com/api/v1';
+    const SERVER_V2_URL = 'https://api.aamplugin.com/v2';
     
-    /**
-     * Fallback endpoint
-     */
-    const FALLBACK_URL = 'http://rest.vasyltech.com/v1';
-    
-    /**
-     * Fetch the extension list
-     * 
-     * Fetch the extension list with versions from the server
-     * 
-     * @return array
-     * 
-     * @access public
-     */
-    public static function register() {
-        //prepare check params
-        $params = array(
-            'domain'  => parse_url(site_url(), PHP_URL_HOST), 
-            'version' => AAM_Core_API::version(),
-            'uid'     => AAM_Core_API::getOption('aam-uid', null, 'site'),
-            'email'   => AAM_Core_API::getOption('admin_email')
-        );
-        
-        self::send('/register', $params);
-    }
-
     /**
      * Fetch the extension list
      * 
@@ -58,81 +33,24 @@ final class AAM_Core_Server {
      * @access public
      */
     public static function check() {
+        $repository = AAM_Extension_Repository::getInstance();
+        
         //prepare check params
         $params = array(
-            'domain'  => parse_url(site_url(), PHP_URL_HOST), 
-            'version' => AAM_Core_API::version(),
-            'uid'     => AAM_Core_API::getOption('aam-uid', null, 'site'),
-            'email'   => AAM_Core_API::getOption('admin_email')
+            'domain'   => wp_parse_url(site_url(), PHP_URL_HOST), 
+            'version'  => AAM_Core_API::version(),
+            'uid'      => AAM_Core_API::getOption('aam-uid', null, 'site'),
+            'licenses' => $repository->getCommercialLicenses(false)
         );
         
         $response = self::send('/check', $params);
         $result   = array();
         
-        if (!is_wp_error($response)) {
+        if (!is_wp_error($response) && is_object($response)) {
             //WP Error Fix bug report
             if ($response->error !== true && !empty($response->products)) {
                 $result = $response->products;
             }
-        }
-
-        return $result;
-    }
-
-    /**
-     * Download the extension
-     * 
-     * @param string $license
-     * 
-     * @return base64|WP_Error
-     * 
-     * @access public
-     */
-    public static function download($license) {
-        $domain = parse_url(site_url(), PHP_URL_HOST);
-
-        $response = self::send(
-                '/download', 
-                array(
-                    'license' => $license, 
-                    'domain'  => $domain,
-                    'uid'     => AAM_Core_API::getOption('aam-uid', null, 'site')
-                )
-        );
-        
-        if (!is_wp_error($response)) {
-            if ($response->error === true) {
-                $result = new WP_Error($response->code, $response->message);
-            } else {
-                $result = $response;
-            }
-        } else {
-            $result = $response;
-        }
-
-        return $result;
-    }
-    
-    /**
-     * Subscribe to updates
-     * 
-     * @param string $email
-     * 
-     * @return array
-     * 
-     * @access public
-     */
-    public static function subscribe($email) {
-        $response = self::send('/subscribe', array('email' => $email));
-        
-        if (!is_wp_error($response)) {
-            if ($response->error === true) {
-                $result = new WP_Error($response->code, $response->message);
-            } else {
-                $result = $response;
-            }
-        } else {
-            $result = $response;
         }
 
         return $result;
@@ -147,16 +65,12 @@ final class AAM_Core_Server {
      * 
      * @access protected
      */
-    protected static function send($request, $params, $timeout = 20) {
+    protected static function send($request, $params, $timeout = 10) {
         $response = self::parseResponse(
-                AAM_Core_API::cURL(self::SERVER_URL . $request, false, $params, $timeout)
+            AAM_Core_API::cURL(
+                self::SERVER_V1_URL . $request, $params, $timeout
+            )
         );
-        
-        if (empty($response) || is_wp_error($response)) {
-            $response = self::parseResponse(
-                AAM_Core_API::cURL(self::FALLBACK_URL . $request, false, $params, $timeout)
-            );
-        }
         
         return $response;
     }
@@ -167,9 +81,9 @@ final class AAM_Core_Server {
      */
     protected static function parseResponse($response) {
         if (!is_wp_error($response)) {
-            if ($response['response']['code'] == 200) {
+            if (intval($response['response']['code']) === 200) {
                 $response = json_decode($response['body']);
-                if (empty($params['uid']) && isset($response->uid)) {
+                if (isset($response->uid)) {
                     AAM_Core_API::updateOption('aam-uid', $response->uid, 'site');
                 }
             } else {

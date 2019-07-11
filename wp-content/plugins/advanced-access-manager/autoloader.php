@@ -16,15 +16,23 @@
 class AAM_Autoloader {
 
     /**
-     *
-     * @var type 
+     * Class map
+     * 
+     * @var array
+     * 
+     * @access protected
+     * @static 
      */
     protected static $classmap = array();
 
     /**
+     * Add new index
      * 
-     * @param type $classname
-     * @param type $filepath
+     * @param string $classname
+     * @param string $filepath
+     * 
+     * @access public
+     * @static
      */
     public static function add($classname, $filepath) {
         self::$classmap[$classname] = $filepath;
@@ -45,7 +53,7 @@ class AAM_Autoloader {
             $prefix = array_shift($chunks);
 
             if ($prefix === 'AAM') {
-                $base_path = dirname(__FILE__) . '/Application';
+                $base_path = dirname(__FILE__) . '/application';
                 $filename = $base_path . '/' . implode('/', $chunks) . '.php';
             }
         }
