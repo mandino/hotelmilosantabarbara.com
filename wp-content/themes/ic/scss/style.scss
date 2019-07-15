@@ -164,9 +164,6 @@ html {
 	height: 100%;
 }
 
-.no-boxshadow input:invalid,
-.no-boxshadow textarea:invalid {}
-
 /* By default the selection color is pink */
 ::-moz-selection {
 	background: #468ab1;
@@ -543,8 +540,6 @@ img.alignright {
 	position: relative;
 }
 
-.panelGroup.green img.bg_img {}
-
 .panelGroup.green .bookNow {
 	background: url("images/hotel-deals/bookNow.png") no-repeat scroll 0 0 transparent;
 	bottom: 15px;
@@ -733,8 +728,6 @@ a.detailsAnchor {
 	background: #005681;
 }
 
-.placeData h4 span {}
-
 #maparea {
 	margin-top: 0px;
 	margin-bottom: 45px;
@@ -782,7 +775,6 @@ a.detailsAnchor {
 }
 
 /* place markers */
-.marker {}
 
 .location {
 	background: #faffff;
@@ -829,9 +821,6 @@ a.detailsAnchor {
 	-webkit-transition: all .6s ease-in-out;
 	transition: all .6s ease-in-out;
 }
-
-.placeMark:hover {}
-
 
 #maparea .placeMark:before {
 	position: absolute;
@@ -959,20 +948,6 @@ a.detailsAnchor {
 	font-size: 12px;
 }
 
-/* .placeMark a .infobox b#Attractions {
-   		background: #50C541;
-   }
-   .placeMark a .infobox b#Staying {
-   		background: #F00044;
-   }
-   .placeMark a .infobox b#Shopping {
-   		background: #9F9D15;
-   }
-   .placeMark a .infobox b#Dining {
-   		background: #158D9F;
-   }*/
-.placeMark a:hover .infobox {}
-
 .infobox:after {
 	content: '';
 	/*background: url(images/arrow.png) no-repeat;*/
@@ -1056,10 +1031,6 @@ a.detailsAnchor {
 	background: url(images/dine_marker2.png) no-repeat;
 }
 
-#maparea .shop small {}
-
-#maparea .shop:hover {}
-
 .placeMark a {
 	display: block;
 	width: 18px;
@@ -1073,8 +1044,6 @@ a.detailsAnchor {
 	position: relative;
 	box-shadow: 0 0 5px #333;
 }
-
-#toggles .shop {}
 
 #toggles li a {
 	background: #fff;
@@ -1314,8 +1283,6 @@ a.detailsAnchor {
 	border-bottom: 1px solid #EFEFEF;
 	position: relative;
 }
-
-#toggle-view li:hover {}
 
 #toggle-view h3 {
 	margin: 0;
@@ -1792,9 +1759,6 @@ h7 {
 	position: relative;
 }
 
-.click-nav ul .clicknav-clicker:hover,
-.click-nav ul .active {}
-
 .click-nav img {
 	position: absolute;
 	top: 9px;
@@ -1808,8 +1772,6 @@ h7 {
 	display: block;
 	text-decoration: none;
 }
-
-.click-nav ul li a:hover {}
 
 .click-nav .ic-navis {
 	font-size: 14px;
@@ -2545,8 +2507,6 @@ h7 {
 	padding-top: 60px;
 }
 
-#footer-newsletter p {}
-
 #footer-newsletter .container p {
 	color: #4E4E4E;
 	font-size: 17px;
@@ -2653,7 +2613,6 @@ h7 {
 
 
 #property-name {
-	/*  background: url("../images/independent-collection-footer.png") no-repeat scroll center center rgba(0, 0, 0, 0);*/
 	border-bottom: 1px solid #CBCBCB;
 	height: 80px;
 	text-align: center;
@@ -4832,33 +4791,6 @@ div.ui-loader h1 {
 	display: none;
 }
 
-/* Corner radius */
-.ui-corner-all,
-.ui-corner-top,
-.ui-corner-left,
-.ui-corner-tl {}
-
-.ui-corner-all,
-.ui-corner-top,
-.ui-corner-right,
-.ui-corner-tr {}
-
-.ui-corner-all,
-.ui-corner-bottom,
-.ui-corner-left,
-.ui-corner-bl {}
-
-.ui-corner-all,
-.ui-corner-bottom,
-.ui-corner-right,
-.ui-corner-br {}
-
-
-
-
-
-
-
 /* Overlays */
 .ui-widget-overlay {
 	background: #a6a6a6 url(images/ui-bg_dots-small_65_a6a6a6_2x2.png) 50% 50% repeat;
@@ -5240,10 +5172,6 @@ ul.tabs li a {
 	text-transform: uppercase;
 }
 
-ul.tabs li:last-child {}
-
-
-
 .around-neighborhood>h2 {
 	color: #3F3D3E;
 	margin-bottom: 30px;
@@ -5314,7 +5242,6 @@ ul.tabs li:last-child {}
 /*********************** SPRITE IMAGES FOR IC LOGO FOOTER ********************************/
 
 .sprite {
-	background: url("images/independent-collection-footer.png") no-repeat scroll center center rgba(0, 0, 0, 0);
 	background-repeat: no-repeat;
 	display: inline-block;
 
@@ -7515,10 +7442,6 @@ nav .container .columns {
 }
 
 
-.sticky .logo {}
-
-.personal {}
-
 .navitem li {
 	background-color: transparent;
 	border-right: 1px solid #3F3F3F;
@@ -7585,9 +7508,6 @@ nav .container .columns {
 	bottom: 68px;
 	visibility: visible;
 }
-
-.navitem li ul li:hover ul {}
-
 .sticky .navitem li:hover ul {
 	opacity: 1;
 	top: 68px;
@@ -8144,7 +8064,6 @@ ul.tabs li a {
 	line-height: 26px;
 }
 
-ul.tabs li:last-child {}
 
 ul.tabs li a:hover {
 	color: #323232;
@@ -8190,7 +8109,6 @@ ul.tabs li.active a:hover {
 	position: relative;
 }
 
-#toggle-view li:hover {}
 
 #toggle-view li:after {
 	content: '+';
@@ -9319,7 +9237,6 @@ ul.tabs li.active a:hover {
 	z-index: 9;
 }
 
-.aligner {}
 
 .blogpiccontainer img {
 	max-width: 100%;
@@ -9801,7 +9718,6 @@ html[xmlns] .slides {
 	color: #38BABF;
 }
 
-.tweet_list .tweet_even {}
 
 .tweet_list .tweet_avatar {
 	position: absolute;
@@ -10477,7 +10393,6 @@ select option:selected {
 	color: #59bb3b;
 }
 
-#modal #contactform {}
 
 #modal .error_message {
 	color: #fff;
