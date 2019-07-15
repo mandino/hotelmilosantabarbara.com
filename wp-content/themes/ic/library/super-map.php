@@ -1,6 +1,5 @@
-<script type="text/javascript">
-	//$(document).ready(function(){
-	jQuery( document ).ready(function( $ ) {
+<script type="text/javascript" defer>
+	document.addEventListener("DOMContentLoaded", function (e) {
 
     var list = [];
     var i = 0; // Ordinal for locations.
@@ -391,6 +390,4 @@
 	});
 
   });
-
-
 </script>
