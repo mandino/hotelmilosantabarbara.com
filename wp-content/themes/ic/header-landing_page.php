@@ -43,8 +43,7 @@
 	<link rel="profile" href="//gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('cebo_feedburner_url') <> "" ) { echo get_option('cebo_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
-	<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/icfavicon.png" type="image/png">
-	<link rel="icon" href="icfavicon.png" type="image/png">
+	<link rel="shortcut icon" type="image/png" href="<?= get_stylesheet_directory_uri(); ?>/images/favicon.ico"/>
 
 	<?php
 		/****************** DO NOT REMOVE **********************
