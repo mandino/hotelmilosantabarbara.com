@@ -32,11 +32,11 @@
 
 			<!-- loop for the slides -->
 			<?php
-				query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); 
-				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+				query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post();
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "large");
 			?>
 
-				<li style="background-image: url(<?php echo tt($imgsrc[0], 1400, 498); ?>);">
+				<li style="background-image: url(<?php echo $imgsrc[0]; ?>);">
 					<div class="slide-header">
 
 					<?php if(get_post_meta($post->ID, 'logopic', true)) { ?>
@@ -55,7 +55,7 @@
 					<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" class="image-hidden"/>
 				</li>
 
-			<?php endwhile; endif; wp_reset_query(); ?>	
+			<?php endwhile; endif; wp_reset_query(); ?>
 			<!-- end loop for the slides -->
 
 			</ul>
@@ -73,8 +73,8 @@
 
 				<!-- loop for the slides -->
 
-				<?php query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post(); 
-				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");?>
+				<?php query_posts('post_type=slides&posts_per_page=5'); if(have_posts()) : while(have_posts()) : the_post();
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "large");?>
 
 				<li>
 					<div class="slide-header">
@@ -82,7 +82,7 @@
 						<?php if(get_post_meta($post->ID, 'logopic', true)) { ?>
 						<div class="slicer" style="background-image: url(<?php echo get_post_meta($post->ID, 'logopic', true); ?>);"></div>
 						<?php } ?>
-						
+
 						<?php if(get_post_meta($post->ID, 'bigtitle', true)) { ?>
 						<h2><?php echo get_post_meta($post->ID, 'bigtitle', true); ?></h2>
 						<?php } ?>
@@ -93,13 +93,12 @@
 
 					</div>
 
-					<!--<img src="<?php //echo tt($imgsrc[0], 1400, 472); ?>" alt="<?php //get_post_meta($post->ID, 'bigtitle', true); ?>" />-->
 					<img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo (get_post_meta($post->ID, 'bigtitle', true))?(get_post_meta($post->ID, 'bigtitle', true)):get_custom_image_thumb_alt_text('',$post->ID); ?>" />
 					</a>
 
 				</li>
 
-				<?php endwhile; endif; wp_reset_query(); ?>	
+				<?php endwhile; endif; wp_reset_query(); ?>
 
 				<!-- end loop for the slides -->
 
@@ -109,11 +108,11 @@
 
 	<?php endif; ?>
 
-	<?php 
+	<?php
 
 		$popout_query = new WP_Query(
 			array(
-				'post_type' => 'popout-box', 
+				'post_type' => 'popout-box',
 				'posts_per_page' => 1,
 			)
 		);

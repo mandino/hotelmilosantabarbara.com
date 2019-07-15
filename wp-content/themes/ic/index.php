@@ -248,10 +248,10 @@ get_header();
 
 	<ul style="" class="right-links right" id="toggles">
 
-		<li class="dine"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=48" title="Dining">Eat</a></li>
-		<li class="shop"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=68" title="Dining">Shop</a></li>
-		<li class="arts"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=66" title="Dining">Culture</a></li>
-		<li class="sights"><a class="linkerd active" href="<?php bloginfo('url'); ?>/?page_id=160" title="Dining">Landmarks</a></li>
+		<li class="dine"><a class="linkerd active" href="<?php bloginfo('url'); ?>/echo-dine/" title="Dining">Eat</a></li>
+		<li class="shop"><a class="linkerd active" href="<?php bloginfo('url'); ?>/echo-shop/" title="Dining">Shop</a></li>
+		<li class="arts"><a class="linkerd active" href="<?php bloginfo('url'); ?>/echo-arts/" title="Dining">Culture</a></li>
+		<li class="sights"><a class="linkerd active" href="<?php bloginfo('url'); ?>/echo-sights/" title="Dining">Landmarks</a></li>
 
 	</ul>
 
@@ -286,7 +286,7 @@ get_header();
 
 						<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 4
 					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium"); ?>
 
 
 						<div>
@@ -327,7 +327,7 @@ get_header();
 
 						<?php } ?>
 
-							<a href="<?php the_permalink(); ?>"><img src="<?php echo tt($imgsrc[0], 540, 292); ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
+							<a href="<?php the_permalink(); ?>"><img src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
 							<div class="ptit">
 								<a href="<?php the_permalink(); ?>"><span><?php the_title_char_limit(40); ?></span></a>
 							</div>
