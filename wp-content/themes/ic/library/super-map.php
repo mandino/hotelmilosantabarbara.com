@@ -225,36 +225,35 @@
         $.getJSON(
          url,
          function(data) {
-           //list = $.parseJSON(data);
            $.each(data["places"], function(key, val){
              var docRoot = '<?php bloginfo ('template_url'); ?>';
              var coords = val["coords"].split(",", 2);
              var latlon = [coords[0], coords[1]];
              var goid = val["cater"];
-             //var imgs = (val["images"] !== "undefined") ? '' : buildPlaceCarousel(val["images"]);
              var imgs = (val["images"] !== undefined) ? buildPlaceCarousel(val["images"]) : '';
 
              placeContainer = '<div class="placeData" id="placeData' + i + '"><p class="streetview">See it up close. Drag your streeview!</p><a href="#" class="closeData">X</a><div class="qualinfo"><a href="' + val["permalink"] + '"><img src="' + val["photo"] + '" alt="' + val["name"] + '"/></a><div class="marco"><h4><span>' + val["name"] + '</span></h4><p class="smaller" id="' + val["cater"] + '">' + val["cater"] + '</p><p class="desc">' + val["desc"] + '</p></div></div><div class="specialinfo"><a href="' + val["permalink"] + '">More Info</a><a class="fac" href="//www.facebook.com/sharer.php?s= 100&amp;p[title]=' + val["name"] + '&amp;p[url]=' + val["permalink"] + '&amp;p[images][0]=' + val["photo"] + '&amp;p[summary]=' + val["desc"] + '" target="_blank">Share It</a><a href="//twitter.com/share?text=' + val["name"] + '&url=' + val["permalink"] + '"target="_blank">Tweet It</a><?php $perm = get_permalink(); $img = sp_get_image(); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="//pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=' + val["desc"] + ' on <?php bloginfo ('url'); ?>" target="_blank">Pin It</a></div>';
 
              $("#maparea").gmap3({
                  marker:{
-				    latLng: latlon,
-				    id: goid,
-				    options:{
-						draggable: false
-					}
-				  },
-				  overlay:{
-				    latLng: latlon,
-				    options:{
-				      content:  '<div id="mako" class="placeMark ' + type + '"><a target="_blank" rel="' + i + '" title="' + val["name"] + '"><p class="infobox"><i class="piccontainer" style="background-image: url(' + val["photo"] + ');"></i><span>'+ val["name"] +'</span><span class="info">'+ val["address"] +'<br>'+ val["phone"] +'<br>'+ val["distance"] +'</span><b class="monumental" id="' + val["cater"] + '">' + val["cater"] + '</b></p><small></small></a></div>',
-				      offset:{
-				         y: -12,
-                   		 x: -15
-				      }
-				    }
-				  }
-                   }
+								latLng: latlon,
+								id: goid,
+								options:{
+								draggable: false,
+								icon : new google.maps.MarkerImage('<?= get_stylesheet_directory_uri(); ?>/images/gray.gif')
+							}
+							},
+							overlay:{
+								latLng: latlon,
+								options:{
+									content:  '<div id="mako" class="placeMark ' + type + '"><a target="_blank" rel="' + i + '" title="' + val["name"] + '"><p class="infobox"><i class="piccontainer" style="background-image: url(' + val["photo"] + ');"></i><span>'+ val["name"] +'</span><span class="info">'+ val["address"] +'<br>'+ val["phone"] +'<br>'+ val["distance"] +'</span><b class="monumental" id="' + val["cater"] + '">' + val["cater"] + '</b></p><small></small></a></div>',
+									offset:{
+										y: -12,
+													x: -15
+									}
+								}
+							}
+						}
               );
               $("body").append(placeContainer);
               i++;
