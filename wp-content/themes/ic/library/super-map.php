@@ -1,16 +1,16 @@
 <script type="text/javascript">
 	//$(document).ready(function(){
 	jQuery( document ).ready(function( $ ) {
-  
+
     var list = [];
     var i = 0; // Ordinal for locations.
     var locations = [];
-    
+
     $("#clearMap").click(function(e) {
       clearMap();
       e.preventDefault();
     });
-    
+
     $("#maparea").gmap3({
       marker:{
       	address:"<?php echo get_option('cebo_address'); ?>", data:"<?php bloginfo('name'); ?>", options:{icon:<?php if(get_option('cebo_mapmarker')) { ?>"<?php echo get_option('cebo_mapmarker'); ?>"<?php } else { ?>"//maps.google.com/mapfiles/marker_green.png"<?php } ?>}
@@ -25,9 +25,9 @@
           mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1", "style2"]
            }
-         }   
+         }
     },
-    
+
     styledmaptype:{
       id: "style1",
       options:{
@@ -75,20 +75,20 @@
     }
   }
 );
-    
+
     getPlaces();
-    
+
     $("#toggles li a").click(function(e) {
       e.preventDefault();
       clearMap();
     $("#toggles li a").removeClass("active");
-      $(".placeData").hide(); 
+      $(".placeData").hide();
         $(this).addClass("active");
         //alert("does not has");
         getPlaces();
-      
+
     });
-    
+
     $(".sidenav li a").attr("href", "").click(function(e) {
       clearMap();
       getLocations();
@@ -97,14 +97,14 @@
       var pos = new google.maps.LatLng(latlonsplit[0], latlonsplit[1]);
       getTweets(latlonsplit[0], latlonsplit[1]);
       obLatLon = [latlonsplit[0], latlonsplit[1]];
-      $("#maparea").gmap3({ 
+      $("#maparea").gmap3({
           action: 'panTo',
           args: [pos],
           options: {
-            zoom: 8, 
+            zoom: 8,
           }
-        },  
-        { 
+        },
+        {
           action: 'addOverlay',
           content: '<div class="location"><span>' + $(this).children("h1").html() + '</span></div>',
           latLng: obLatLon,
@@ -116,7 +116,7 @@
       );
       e.preventDefault();
     });
-    
+
     function getTweets(lat, lon) {
       $.getJSON(
         "<?php bloginfo('template_directory'); ?>/svc/cache.php?lat=" + lat + "&long=" + lon,
@@ -134,14 +134,14 @@
                 },
                 { action:'addOverlay',
                   content:  '<div id="tweet' + val["tweet_id"] + '" class="marker"><img src="' + val["profile_image"] + '" class="tweetMarker" />' +
-                            '<div class="tweet"><span>' + val["user"] + '</span><p>' + val["content"] + '</p><a class="retweet" href="#"></a><a class="mention" href="#"></a></div></div>', 
+                            '<div class="tweet"><span>' + val["user"] + '</span><p>' + val["content"] + '</p><a class="retweet" href="#"></a><a class="mention" href="#"></a></div></div>',
                   latLng: latlon,
                   offset:{
                     y: -40,
                     x:-30
                   }
                 }
-             );     
+             );
           });
         }
       );
@@ -157,16 +157,16 @@
 		clearMap();
 		$(".placeData").hide();
 		getLocations();
-	});      
-      
+	});
+
       $("#maparea").mouseover(function(e) {
 
 	$("#infoBox .closeData").click(function() {
-          $("#infoBox").hide();  
+          $("#infoBox").hide();
         });
 
 	$("#warning .closeData").click(function() {
-          $("#warning").hide();  
+          $("#warning").hide();
         });
 	$(".location").bind("click", function() {
 		$(":contains(" + $(this).children("span").html() + ")").show();
@@ -178,7 +178,7 @@
           $(".placeData").hide();
           $("#placeData" + $(this).attr("rel")).show();
           e.preventDefault();
-        }); 
+        });
         $("a.retweet").bind("click", function(e) {
           if ($(".signin").length > 0){
             $("#warning").show();
@@ -190,7 +190,7 @@
             status = "RT @" + name + " " + tweet;
             $("#tweet").html(status);
           }
-          e.preventDefault();   
+          e.preventDefault();
         });
         $("a.mention").bind("click", function(e) {
           if ($(".signin").length > 0){
@@ -205,7 +205,7 @@
           e.preventDefault();
         });
       });
-    
+
     function buildPlaceCarousel(obImages){
       var imageCarousel = '<div class="imageCarousel">';
       $.each(obImages, function(key, img) {
@@ -214,13 +214,13 @@
       imageCarousel += '</div>';
       return imageCarousel;
     }
-    
+
     function getPlaces() {
       $("#toggles li a.active").each(function() {
         getPlaceData($(this).attr("href"), $(this).parent().attr("class"));
       });
     }
-    
+
     function getPlaceData(url, type) {
         $.getJSON(
          url,
@@ -233,16 +233,15 @@
              var goid = val["cater"];
              //var imgs = (val["images"] !== "undefined") ? '' : buildPlaceCarousel(val["images"]);
              var imgs = (val["images"] !== undefined) ? buildPlaceCarousel(val["images"]) : '';
-            
+
              placeContainer = '<div class="placeData" id="placeData' + i + '"><p class="streetview">See it up close. Drag your streeview!</p><a href="#" class="closeData">X</a><div class="qualinfo"><a href="' + val["permalink"] + '"><img src="' + val["photo"] + '" alt="' + val["name"] + '"/></a><div class="marco"><h4><span>' + val["name"] + '</span></h4><p class="smaller" id="' + val["cater"] + '">' + val["cater"] + '</p><p class="desc">' + val["desc"] + '</p></div></div><div class="specialinfo"><a href="' + val["permalink"] + '">More Info</a><a class="fac" href="//www.facebook.com/sharer.php?s= 100&amp;p[title]=' + val["name"] + '&amp;p[url]=' + val["permalink"] + '&amp;p[images][0]=' + val["photo"] + '&amp;p[summary]=' + val["desc"] + '" target="_blank">Share It</a><a href="//twitter.com/share?text=' + val["name"] + '&url=' + val["permalink"] + '"target="_blank">Tweet It</a><?php $perm = get_permalink(); $img = sp_get_image(); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="//pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=' + val["desc"] + ' on <?php bloginfo ('url'); ?>" target="_blank">Pin It</a></div>';
-             
-             $("#maparea").gmap3({ 
+
+             $("#maparea").gmap3({
                  marker:{
 				    latLng: latlon,
 				    id: goid,
 				    options:{
-						draggable: false,
-						icon : new google.maps.MarkerImage('yourImage.png')
+						draggable: false
 					}
 				  },
 				  overlay:{
@@ -263,7 +262,7 @@
         }
       );
     }
-    
+
     function getLocations(args) {
       $(".sidenav li a").each(function(e) {
         var latlon = $(this).attr("rel");
@@ -271,7 +270,7 @@
         getTweets(latlonsplit[0], latlonsplit[1]);
       });
     }
-    
+
     function clearMap() {
         $("#maparea").gmap3('clear', 'markers');
 	$(".placeData").hide();
@@ -289,9 +288,9 @@
           mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, "style1", "style2"]
            }
-         }   
+         }
     },
-    
+
     styledmaptype:{
       id: "style1",
       options:{
@@ -340,59 +339,59 @@
   }
 );
     }
-    
+
     function wait() {
-      // Just wait, buddy...  
+      // Just wait, buddy...
     }
-    		
-		
+
+
 	$(function() {
-	
+
 			$('.panelMenu li#linkerson').toggle(function(){
 				$(this).addClass("active");
 				$(this).next('.largebox').addClass("widest").animate({ right:'215px', opacity: 1 },{queue:false,duration:500});
-			}, 
+			},
 			function(){
 				$(this).removeClass("active");
 				$(this).next('.largebox').removeClass("widest", 500).animate({ right:'0px', opacity: 0 },{queue:false,duration:500});
 			});
 		});
-	
+
 		$(function() {
-	
+
 			$('.linkersonclose').click(function(){
 				$('.panelMenu li#linkerson').removeClass("active");
 				$('.largebox').removeClass("widest", 500).animate({ right:'0px', opacity: 0 },{queue:false,duration:500});
-				
+
 			});
 		});
-		
+
 		// TOGGLE FUNCTION //
 	$('#toggle-view li').click(function () {
         var text = $(this).children('div.panel');
         if (text.is(':hidden')) {
             text.slideDown('200');
-            $(this).children('span').addClass('toggle-minus');     
-            $(this).addClass('activated');     
+            $(this).children('span').addClass('toggle-minus');
+            $(this).addClass('activated');
         } else {
             text.slideUp('200');
-			$(this).children('span').removeClass('toggle-minus'); 
-            $(this).children('span').addClass('toggle-plus'); 
-			$(this).removeClass('activated'); 			
+			$(this).children('span').removeClass('toggle-minus');
+            $(this).children('span').addClass('toggle-plus');
+			$(this).removeClass('activated');
         }
-         
+
     });
-    
+
     function scrollToAnchor(aid){
     var aTag = $("a[name='"+ aid +"']");
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 	}
-	
+
 	$("#link").click(function() {
 	   scrollToAnchor('id3');
 	});
-		
+
   });
 
-		
+
 </script>
