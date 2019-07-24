@@ -60,7 +60,6 @@ wp-content/advanced-cache.php
 wp-content/db.php
 wp-content/object-cache.php
 wp-content/cache/
-wp-content/plugins/w3-total-cache/
 wp-content/w3tc-config/
 
 ############
