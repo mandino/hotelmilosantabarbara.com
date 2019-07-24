@@ -14,15 +14,19 @@ sitemap.xml.gz
 node_modules/
 
 # ignore debug.log
-wp-content/debug.log
+debug.log
 # ignore local-config.php
 local-config.php
 
 # ignore wordpress themes
 wp-content/wp-content/themes/classic/
-wp-content/wp-content/themes/twentyfourteen/
-wp-content/wp-content/themes/twentythirteen/
 wp-content/wp-content/themes/twentytwelve/
+wp-content/wp-content/themes/twentythirteen/
+wp-content/wp-content/themes/twentyfourteen/
+wp-content/wp-content/themes/twentyfifteen/
+wp-content/wp-content/themes/twentysixteen/
+wp-content/wp-content/themes/twentyseventeen/
+wp-content/wp-content/themes/twentyeighteen/
 
 # ignore other themes
 wp-content/wp-content/themes/default/
@@ -34,9 +38,10 @@ blogs/
 .DS_Store
 test/
 *timthumb.txt
-#/cache
-#cache/
+/cache
+cache/
 robots.txt
+!wp-content/plugins/cf7-google-sheets-connector/*
 
 #####################################
 # Wordpress untracked plugins files #
@@ -107,3 +112,9 @@ ehthumbs.db
 *.rar
 *.tar
 *.zip
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+!.ebextensions/*
