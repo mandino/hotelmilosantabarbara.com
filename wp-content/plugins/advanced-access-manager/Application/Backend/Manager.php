@@ -685,21 +685,23 @@ class AAM_Backend_Manager {
         
         $reflection = new ReflectionClass(get_class($wp_admin_bar));
         
-        $prop = $reflection->getProperty('nodes');
-        $prop->setAccessible(true);
-        
-        $nodes = $prop->getValue($wp_admin_bar);
-        
-        if (isset($nodes['root']) && is_null($cache)) {
-            $cache = array();
-            foreach($nodes['root']->children as $node) {
-                $cache = array_merge($cache, $node->children);
-            }
+        if ($reflection->hasProperty('nodes')) {
+            $prop = $reflection->getProperty('nodes');
+            $prop->setAccessible(true);
             
-            // do some cleanup
-            foreach($cache as $i => $node) {
-                if ($node->id === 'menu-toggle') {
-                    unset($cache[$i]);
+            $nodes = $prop->getValue($wp_admin_bar);
+            
+            if (isset($nodes['root']) && is_null($cache)) {
+                $cache = array();
+                foreach($nodes['root']->children as $node) {
+                    $cache = array_merge($cache, $node->children);
+                }
+                
+                // do some cleanup
+                foreach($cache as $i => $node) {
+                    if ($node->id === 'menu-toggle') {
+                        unset($cache[$i]);
+                    }
                 }
             }
         }
@@ -992,8 +994,8 @@ class AAM_Backend_Manager {
         if (current_user_can($type->cap->create_posts)) {
             add_submenu_page(
                 'aam', 
-                'Add New Policies', 
-                'Add New Policies', 
+                'Add New Policy', 
+                'Add New Policy', 
                 $type->cap->create_posts, 
                 'post-new.php?post_type=aam_policy'
             );

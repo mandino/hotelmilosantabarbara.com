@@ -157,10 +157,11 @@ class AAM_Shared_Manager {
         register_post_type('aam_policy', array(
             'label'        => __('Access Policy', AAM_KEY),
             'labels'       => array(
-                'name' => __('Access Policies', AAM_KEY),
-                'edit_item' => __('Edit Policy', AAM_KEY),
-                'add_new_item' => __('Add New Policy', AAM_KEY),
-                'new_item' => __('New Policy', AAM_KEY)
+                'name'          => __('Access Policies', AAM_KEY),
+                'edit_item'     => __('Edit Policy', AAM_KEY),
+                'singular_name' => __('Policy', AAM_KEY),
+                'add_new_item'  => __('Add New Policy', AAM_KEY),
+                'new_item'      => __('New Policy', AAM_KEY)
             ),
             'description'  => __('Access and security policy', AAM_KEY),
             'public'       => true,

@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Advanced Access Manager
  * Description: Collection of features to manage your WordPress website authentication, authorization and monitoring
- * Version: 5.9.7.3
+ * Version: 5.9.8
  * Author: Vasyl Martyniuk <vasyl@vasyltech.com>
  * Author URI: https://vasyltech.com
  * Text Domain: advanced-access-manager
@@ -276,7 +276,7 @@ if (defined('ABSPATH')) {
     AAM_Autoloader::register();
     
     // Keep this as the lowest priority
-    add_action('plugins_loaded', 'AAM::onPluginsLoaded', -1);
+    add_action('plugins_loaded', 'AAM::onPluginsLoaded', -999);
     
     //the highest priority (higher the core)
     //this is important to have to catch events like register core post types
@@ -290,7 +290,7 @@ if (defined('ABSPATH')) {
         wp_schedule_event(time(), 'daily', 'aam-cron');
     }
     add_action('aam-cron', 'AAM::cron');
-
+    
     //activation & deactivation hooks
     register_activation_hook(__FILE__, array('AAM', 'activate'));
     register_uninstall_hook(__FILE__, array('AAM', 'uninstall'));

@@ -25,16 +25,17 @@ final class AAM_Core_Policy_Token {
      * @static 
      */
     protected static $map = array(
-        'USER'      => 'AAM_Core_Policy_Token::getUserValue',
-        'USERMETA'  => 'AAM_Core_Policy_Token::getUserMetaValue',
-        'DATETIME'  => 'AAM_Core_Policy_Token::getDateTimeValue',
-        'GET'       => 'AAM_Core_Request::get',
-        'QUERY'     => 'AAM_Core_Request::get',
-        'POST'      => 'AAM_Core_Request::post',
-        'COOKIE'    => 'AAM_Core_Request::cookie',
-        'SERVER'    => 'AAM_Core_Request::server',
-        'ARGS'      => 'AAM_Core_Policy_Token::getArgValue',
-        'CONST'     => 'AAM_Core_Policy_Token::defined'
+        'USER'        => 'AAM_Core_Policy_Token::getUserValue',
+        'USERMETA'    => 'AAM_Core_Policy_Token::getUserMetaValue',
+        'DATETIME'    => 'AAM_Core_Policy_Token::getDateTimeValue',
+        'GET'         => 'AAM_Core_Request::get',
+        'QUERY'       => 'AAM_Core_Request::get',
+        'POST'        => 'AAM_Core_Request::post',
+        'WP_POSTMETA' => 'AAM_Core_Policy_Token::getCurrentPostMeta',
+        'COOKIE'      => 'AAM_Core_Request::cookie',
+        'SERVER'      => 'AAM_Core_Request::server',
+        'ARGS'        => 'AAM_Core_Policy_Token::getArgValue',
+        'CONST'       => 'AAM_Core_Policy_Token::defined'
     );
     
     /**
@@ -162,6 +163,25 @@ final class AAM_Core_Policy_Token {
         }
 
         return $value;
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $metakey
+     * @return void
+     */
+    protected static function getCurrentPostMeta($metakey)
+    {
+        $post = AAM_Core_API::getCurrentPost(true);
+
+        if (is_a($post, 'WP_Post')) {
+            $meta = get_post_meta($post->ID, $metakey, true);
+        } else {
+            $meta = null;
+        }
+
+        return $meta;
     }
     
     /**

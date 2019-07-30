@@ -385,6 +385,20 @@ final class AAM_Core_Policy_Manager {
                             
                             return $res;
                         }, 1, 2);
+                    } elseif (strpos($id, 'site_option:') === 0) {
+                        add_filter('site_option_' . substr($id, 12), function($res, $option) {
+                            $param = $this->tree['Param']["site_option:{$option}"];
+                            
+                            if ($this->isApplicable($param)) {
+                                if (is_array($res) && is_array($param['Value'])) {
+                                    $res = array_merge($res, $param['Value']);
+                                } else {
+                                    $res = $param['Value'];
+                                }
+                            }
+                            
+                            return $res;
+                        }, 1, 2);
                     }
                 }
             }

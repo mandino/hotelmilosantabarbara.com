@@ -423,11 +423,11 @@ final class AAM_Core_API {
      * 
      * @return AAM_Core_Object_Post|null
      */
-    public static function getCurrentPost() {
+    public static function getCurrentPost($raw = false) {
         global $wp_query, $post;
         
         $res = $post;
-        
+
         if (get_the_ID()) {
             $res = get_post(get_the_ID());
         } elseif (!empty($wp_query->queried_object)) {
@@ -455,8 +455,18 @@ final class AAM_Core_API {
         }
         
         $user = AAM::getUser();
+
+        $response = null;
+
+        if (is_a($res, 'WP_Post')) {
+            if ($raw) {
+                $response = $res;
+            } else {
+                $response = $user->getObject('post', $res->ID);
+            }
+        }
         
-        return (is_a($res, 'WP_Post') ? $user->getObject('post', $res->ID) : null);
+        return $response;
     }
 
     /**
