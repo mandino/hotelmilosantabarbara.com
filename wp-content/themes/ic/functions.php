@@ -79,7 +79,7 @@ function enqueue_footer_scripts() {
 		wp_enqueue_script('gmap3new', SS_BASE_URL . 'js/gmap3new.js', 'jquery', '', true);
 	}
 
-	wp_enqueue_script('mainjs', SS_BASE_URL . '/js/main.js', 'jquery', '', true);
+	wp_enqueue_script('mainjs', SS_BASE_URL . 'js/main.js', 'jquery', '', true);
 
 	if ( 'rooms' == get_post_type() ) 	{
 		wp_enqueue_script('', SS_BASE_URL . 'js/jquery.iosslider.min.js', 'jquery', '', true);
