@@ -125,7 +125,7 @@
 
 				<ul class="thumbgal">
 
-					<?php //query_posts('post_type=specials&posts_per_page=3');
+					<?php
 
 						query_posts(array(
 							'post_type' => 'specials',
@@ -134,7 +134,7 @@
 						));
 
 						if(have_posts()) : while(have_posts()) : the_post();
-						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "large"); ?>
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 260x290"); ?>
 
 							<li>
 
@@ -153,7 +153,7 @@
 
 								<?php } else { ?>
 
-								<a href="<?php the_permalink(); ?>"><img src="<?php echo get_post_meta($post->ID, 'cebo_homethumb', true); ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
+								<a href="<?php the_permalink(); ?>"><img src="<?= $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('',$post->ID); ?>"></a>
 
 								<?php } ?>
 
