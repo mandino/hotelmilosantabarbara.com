@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 	/* Template Name: Blog */
 
 	get_header();
 
 ?>
-	
+
 	<div id="rooms" class="section">
 
 		<div class="container">
@@ -13,11 +13,11 @@
 			<div class="section-header">
 
 				<div class="fl">
-				
+
 					<h1 class="section-title fr">Hotel Milo Santa Barbara Blog</h1>
 					<h2 class="section-pre-title fl">Blog</h2>
 					<div class="section-header-divider fl"></div>
-					
+
 
 				</div>
 
@@ -43,9 +43,9 @@
 
 					<?php } ?>
 					<?php if(get_option('cebo_spotify')) { ?>
-					
+
 						<li class="spotify"><a href="<?php echo get_option('cebo_spotify'); ?>" target="_blank"><i class="fa fa-spotify fa-2x"></i><span>spotify</span></a></li>
-						
+
 					<?php } ?>
 
 
@@ -81,13 +81,13 @@
 
 						if ( $blogPage_query->have_posts() ) : while ( $blogPage_query->have_posts() ) : $blogPage_query->the_post();
 
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "large");
 
 					?>
 
 						<li class="room-box">
 							<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
-								<div class="fl" style="background-image: url(<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?><?php echo tt(get_post_meta($post->ID, 'cebo_homethumb', true), 400, 330); ?><?php } else { ?><?php echo tt($imgsrc[0], 400, 330); ?><?php } ?>);"></div>
+								<div class="fl" style="background-image: url(<?php if(get_post_meta($post->ID, 'cebo_homethumb', true)) { ?><?= get_post_meta($post->ID, 'cebo_homethumb', true); ?><?php } else { ?><?= $imgsrc[0]; ?><?php } ?>);"></div>
 							</a>
 
 							<div class="fr">
@@ -100,7 +100,7 @@
 								</div>
 							</div>
 						</li>
-					
+
 					<?php $postcount++; endwhile; ?>
 
 				</ul>

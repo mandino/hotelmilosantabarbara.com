@@ -1747,8 +1747,17 @@ h3.featured-gallery-thumb-title {
     width: 100%;
 }
 
+.room-box .fl {
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 50%;
+}
+
 .room-box .fl > img {
-    height: 400px;
+		height: 400px;
+		display: none;
 }
 
 .room-box .fr {
