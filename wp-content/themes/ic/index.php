@@ -286,7 +286,7 @@ get_header();
 
 						<?php $query = new WP_Query( array( 'post_type' => 'tribe_events','eventDisplay' => 'upcoming', 'posts_per_page' => 4
 					) ); if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium"); ?>
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Image 540x292"); ?>
 
 
 						<div>
