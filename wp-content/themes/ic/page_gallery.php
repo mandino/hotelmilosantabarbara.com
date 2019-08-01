@@ -164,7 +164,7 @@
 										}
 
 										$image_title = $attachment->post_title;
-										$image_url = wp_get_attachment_image_src( $attachment->ID, 'medium' );
+										$image_url = wp_get_attachment_image_src( $attachment->ID, 'large' );
 
 										$image_list .= '<a rel="prettyPhoto[gal]" title="'.$image_alt.'" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><li style="background-image: url(\''. $image_url[0] .'\');"><img src="'. $image_url[0] .'"  alt="' . $image_title . '"/></li></a>';
 
