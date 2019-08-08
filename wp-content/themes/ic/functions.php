@@ -12,6 +12,7 @@ if(is_admin()) {
 	include(get_stylesheet_directory() . '/options/packages-options.php');
 	include(get_stylesheet_directory() . '/options/local-options.php');
 	include(get_stylesheet_directory() . '/options/secondary-panel.php');
+	require get_stylesheet_directory() . '/includes/functions/admin-functions.php';
 
 }
 
