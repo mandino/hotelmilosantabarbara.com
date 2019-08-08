@@ -4986,8 +4986,9 @@ ul.tabs li:last-child {}
 
 .townbox ul li {
 	display: inline-block;
-	/* Display inline-block, and absolutely NO FLOATS! */
+	height: 226px;
 	margin-bottom: 20px;
+	overflow: hidden;
 	width: 100%;
 }
 
