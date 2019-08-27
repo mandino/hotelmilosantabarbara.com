@@ -22,10 +22,10 @@
 	?>
 
 		<ul class="right-links right" id="toggles">
-			<li class="dine"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>/eat'" data-id="eatl" class="linkerd <?php if ($com_link == 'eat') { ?>active<?php } ?>" href="/?page_id=48" title="Dining">Eat</a></li>
-			<li class="shop"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>/shop'" data-id="shopl" class="linkerd <?php if ($com_link == 'shop') { ?>active<?php } ?>" href="/?page_id=68" title="Dining">Shop</a></li>
-			<li class="arts"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>/culture'" data-id="cult" class="linkerd <?php if ($com_link == 'culture') { ?>active<?php } ?>" href="/?page_id=66" title="Dining">Culture</a></li>
-			<li class="sights"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>/landmarks'" data-id="landl" class="linkerd <?php if ($com_link == 'landmarks') { ?>active<?php } ?>" href="/?page_id=160" title="Dining">Landmarks</a></li>
+			<li class="dine"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>eat/'" href="<?php echo get_permalink( $post->post_parent ); ?>eat/" data-id="eatl" class="linkerd <?php if ($com_link == 'eat') { ?>active<?php } ?>" data-pins="<?php bloginfo('url'); ?>/?page_id=48" title="Eat">Eat</a></li>
+			<li class="shop"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>shop/'" href="<?php echo get_permalink( $post->post_parent ); ?>shop/" data-id="shopl" class="linkerd <?php if ($com_link == 'shop') { ?>active<?php } ?>" data-pins="<?php bloginfo('url'); ?>/?page_id=68" title="Shop">Shop</a></li>
+			<li class="arts"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>culture/'" href="<?php echo get_permalink( $post->post_parent ); ?>culture/" data-id="cult" class="linkerd <?php if ($com_link == 'culture') { ?>active<?php } ?>" data-pins="<?php bloginfo('url'); ?>/?page_id=66" title="Culture">Culture</a></li>
+			<li class="sights"><a onClick="location.href='<?php echo get_permalink( $post->post_parent ); ?>landmarks/'" href="<?php echo get_permalink( $post->post_parent ); ?>landmarks/" data-id="landl" class="linkerd <?php if ($com_link == 'landmarks') { ?>active<?php } ?>" data-pins="<?php bloginfo('url'); ?>/?page_id=160" title="Landmarks">Landmarks</a></li>
 		</ul>
 
 	<?php } ?>
