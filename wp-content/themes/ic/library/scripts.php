@@ -4,15 +4,19 @@
 	jQuery( document ).ready(function( $ ) {
 
 		$( window ).resize(function() {
-			if ($(window).width() > 1024) {
 
-				$('.read-more').attr('style', '');
-				$('.read-more-button').get(0).firstChild.nodeValue = "Read More";
-				$('.read-more-button').parent().addClass('relative');
-				$('.read-more-button i').removeClass('fa-angle-up');
-				$('.read-more-button i').addClass('fa-angle-down');
+			if (typeof($('.read-more-button').get(0)) !== "undefined") {
+				if ($(window).width() > 1024) {
 
+					$('.read-more').attr('style', '');
+					$('.read-more-button').get(0).firstChild.nodeValue = "Read More";
+					$('.read-more-button').parent().addClass('relative');
+					$('.read-more-button i').removeClass('fa-angle-up');
+					$('.read-more-button i').addClass('fa-angle-down');
+
+				}
 			}
+			
 
 			if ($(window).width() > 1024 ) {
 				$('#home-slider.home-video').css('height', 'calc(' + $(window).height() + 'px - ' + ($('.section-header').height() + $('#primary-nav .reserve').outerHeight() + $('#property-nav').height() + 30) + 'px)');
