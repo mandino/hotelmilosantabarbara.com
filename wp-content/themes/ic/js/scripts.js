@@ -1,4 +1,5 @@
-function checkPressItems() {
+(function($) {
+	function checkPressItems() {
 	var press_item = jQuery('.press-logo').find('.press-logo__item--hidden');
 		if (!press_item.length) {
 			jQuery('.press_logo__view-more').css('display', 'none');
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 		
 		$('.login-portal__trigger--container, .click-nav ul li').on('click touchstart', function(e) {
-			
+			alert('nico');
 			if (!$('body').hasClass('portal-active')) {
 				if (!$('.login-portal').is(':visible')) {
 					$('.login-portal').slideDown(1000);
@@ -284,24 +285,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			var verschil = ($(window).scrollTop() / 5);
 		  if (verschil > 40)
 			   $('.droplogo').addClass('jumpshot');
-				if ($('.login-portal__trigger--secondary').hasClass('desktop')) {
-					$('.login-portal__trigger--secondary.desktop').addClass('active');
-		        	$('.login-portal__trigger').addClass('inactive');
-				}
-
-				if ($('.login-portal__trigger--secondary').hasClass('mobile') && $('.login-portal__trigger--secondary').is(':visible')) {
-					$('.login-portal__trigger--secondary.mobile').addClass('active');
-		        	$('.login-portal__trigger').addClass('inactive');
-				}
 			else if (verschil < 40)
 			   $('.droplogo').removeClass('jumpshot');
-				$('.login-portal__trigger--secondary.desktop').removeClass('active');
-		       	$('.login-portal__trigger').removeClass('inactive');
-
-		       	if ($('.login-portal__trigger--secondary').hasClass('mobile')) {
-	    			$('.login-portal__trigger--secondary.mobile').removeClass('active');
-		        	$('.login-portal__trigger').removeClass('inactive');
-	    		}
 		});
 
 	// Calendar in Navigation
@@ -457,3 +442,5 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 });
+
+})(jQuery);
