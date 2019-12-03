@@ -6023,89 +6023,58 @@ option [-moz-option-selected] {
     background-color: #067ab8;
     bottom: -40px;
     left: 11vw;
-    z-index: 1135;
-}
+	z-index: 1135;
+	
+	.open-portal & {
+		top: 0;
+		-webkit-transition: all 1s ease;
+		transition: all 1s ease;
+	}
+	&.inactive {
+		display: none;	
+	}
 
-.open-portal .login-portal__trigger {
-    top: 0;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-}
+	&--secondary {
+		display: block;
+		position: absolute;
+		width: 115px;
+		height: 40px;
+		background-color: #067ab8;
+		top: 105px;
+		left: 30px;
+		z-index: 1135;
+		&.desktop.active{
+			display: block;
+			top: 105px;
+			left: 30px;
+		}
+		span {
+			color: #fff;
+			font-family: scala-sans, sans-serif;
+			font-size: 12px;
+			font-weight: bold;
+			text-transform: uppercase;
+			display: inline-block;
+			margin: 0 auto;
+			width: 100%;
+			vertical-align: top;
+			text-align: center;
+			padding-top: 0;
+			cursor: pointer;
+		}
+		&:after {
+			border-top: 20px solid #067ab8;
+			border-left: 57px solid transparent;
+			border-right: 57px solid transparent;
+			content: "";
+			height: 0;
+			left: 0;
+			position: absolute;
+			bottom: -20px;
+			width: 0;
+		}
+	}
 
-.login-portal__trigger.inactive {
-    display: none;
-}
-
-.login-portal__trigger--secondary {
-    display: block;
-    position: absolute;
-    width: 115px;
-    height: 40px;
-    background-color: #067ab8;
-    top: 105px;
-    left: 10px;
-    z-index: 1135;
-}
-
-.login-portal__trigger--secondary.desktop.active {
-    display: block;
-    top: 105px;
-    left: 10px;
-    
-}
-
-.login-portal__trigger--secondary span {
-    color: #fff;
-    font-family: scala-sans, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0 auto;
-    width: 100%;
-    vertical-align: top;
-    text-align: center;
-    padding-top: 0;
-    cursor: pointer;
-}
-
-.login-portal__trigger--secondary:after{
-    border-top: 20px solid #067ab8;
-    border-left: 57px solid transparent;
-    border-right: 57px solid transparent;
-    content: "";
-    height: 0;
-    left: 0;
-    position: absolute;
-    bottom: -20px;
-    width: 0;
-}
-
-.login-portal__trigger span {
-    color: #fff;
-    font-family: scala-sans, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0 auto;
-    width: 100%;
-    vertical-align: top;
-    text-align: center;
-    padding-top: 0;
-    cursor: pointer;
-}
-
-.login-portal__trigger:after{
-    border-top: 20px solid #067ab8;
-    border-left: 57px solid transparent;
-    border-right: 57px solid transparent;
-    content: "";
-    height: 0;
-    left: 0;
-    position: absolute;
-    bottom: -20px;
-    width: 0;
 }
 
 #primary-nav {

@@ -779,8 +779,8 @@ and (max-width : 1280px) {
 
 	.login-portal__trigger--secondary::after {
 		border-top: 20px solid #067ab8;
-		border-left: 51px solid transparent;
-		border-right: 51px solid transparent;
+		border-left: 57px solid transparent;
+		border-right: 57px solid transparent;
 	}
 
 	#property-nav nav ul li a.clicknav-clicker {
@@ -1286,6 +1286,25 @@ and (max-width : 1280px) {
 	.drops {
 		top: 35px;
 	}
+
+	.login-portal__trigger {
+		&--secondary {
+			&:after {
+				border-top: 20px solid #067ab8;
+				border-left: 51px solid transparent;
+				border-right: 51px solid transparent;
+			}
+		}
+
+		&--secondary.mobile {
+			.sticky & {
+				top: 47px;
+			}
+		}
+	}
+
+	.login-portal__trigger--secondary.mobile
+
 
 	/* MMENU */
 
