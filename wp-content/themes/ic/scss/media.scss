@@ -1190,7 +1190,7 @@ and (max-width : 1280px) {
 	.logo.mobile {
 		display: block;
 		height: 38px;
-		left: 40px;
+		left: 60px;
 		margin-left: 13px;
 		padding: 1px 0 0;
 		top: 12px;
@@ -1303,7 +1303,9 @@ and (max-width : 1280px) {
 		}
 	}
 
-	.login-portal__trigger--secondary.mobile
+	.login-portal__trigger--secondary {
+		left: 70px;
+	}
 
 
 	/* MMENU */
