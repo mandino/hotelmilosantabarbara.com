@@ -16,8 +16,11 @@
 		    
 		});
 		
-		$('.login-portal__trigger--container, .click-nav ul li').on('click touchstart', function(e) {
-			
+		$('.login-portal__trigger--container, .click-nav ul li').on('touchstart click', function(e) {
+			if(event.handled === false) return
+			event.stopPropagation();
+			event.preventDefault();
+			event.handled = true;
 			if (!$('body').hasClass('portal-active')) {
 				if (!$('.login-portal').is(':visible')) {
 					$('.login-portal').slideDown(1000);
