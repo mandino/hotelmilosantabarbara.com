@@ -6016,7 +6016,7 @@ option [-moz-option-selected] {
 }
 
 .login-portal__trigger {
-    display: block;
+    display: none;
     position: absolute;
     width: 115px;
     height: 40px;
@@ -6037,19 +6037,19 @@ option [-moz-option-selected] {
 }
 
 .login-portal__trigger--secondary {
-    display: none;
+    display: block;
     position: absolute;
     width: 115px;
     height: 40px;
     background-color: #067ab8;
-    top: 0;
-    left: 10vw;
+    top: 105px;
+    left: 10px;
     z-index: 1135;
 }
 
 .login-portal__trigger--secondary.desktop.active {
     display: block;
-    top: 135px;
+    top: 105px;
     left: 10px;
     
 }
