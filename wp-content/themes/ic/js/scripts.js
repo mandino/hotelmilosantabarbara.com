@@ -44,43 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		    
 		});
 		
-		$('.login-portal__trigger--container, .click-nav ul li').on('click touchstart', function(e) {
-			alert('nico');
-			if (!$('body').hasClass('portal-active')) {
-				if (!$('.login-portal').is(':visible')) {
-					$('.login-portal').slideDown(1000);
-					$('#primary-nav').addClass('open-portal');
-					$('.login-portal__text').addClass('hidden');
-					$('.login-portal__close-btn').addClass('show');
-					$('body').addClass('portal-active');
-					if (e.keyCode === 13) {
-						if ($('.login-portal').is(':visible')) {
-							$('#login-portal').find('input[name="fname"]').addClass('first-item');
-							$('.login-portal').focus();
-						}
-					}
-
-					
-				}
-			} else {
-
-				if ($('.login-portal').is(':visible')) {
-					$('.login-portal').slideUp(1000);
-					$('#primary-nav').removeClass('open-portal');
-					$('.login-portal__text').removeClass('hidden');
-					$('.login-portal__close-btn').removeClass('show');
-					$('body').removeClass('portal-active');
-				}
-				if (e.keyCode === 13) {
-					if ($('.login-portal').is(':visible')) {
-						$('body').removeClass('portal-active');
-					}
-				}
-			}
-
-
-	
-		});
 	pressLogoDisplay();
 	$( "<label class='visuallyhidden' for='search'>Test</label>" ).insertBefore( ".sidewidgets #search" );
 
