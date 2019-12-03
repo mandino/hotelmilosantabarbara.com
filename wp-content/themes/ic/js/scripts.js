@@ -1,4 +1,5 @@
-function checkPressItems() {
+(function($) {
+	function checkPressItems() {
 	var press_item = jQuery('.press-logo').find('.press-logo__item--hidden');
 		if (!press_item.length) {
 			jQuery('.press_logo__view-more').css('display', 'none');
@@ -29,7 +30,20 @@ function pressLogoDisplay() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
+	$(document).on('keydown', function(e) {			
+			var input = $('#login-portal').find('input');
+			if ((e.keyCode || e.which) == 9) {
+	        	var focused = $(':focus');
+		        if ($(focused).hasClass('login-portal__trigger')) {  	
+		        	if ($('.login-portal').is(':visible')) {
+		        		
+						$('.login-portal').focus();
+					}
+		        }
+	    	}
+		    
+		});
+		
 	pressLogoDisplay();
 	$( "<label class='visuallyhidden' for='search'>Test</label>" ).insertBefore( ".sidewidgets #search" );
 
@@ -391,3 +405,5 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 });
+
+})(jQuery);
