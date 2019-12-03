@@ -766,7 +766,7 @@ and (max-width : 1280px) {
 	}
 
 	.login-portal__trigger--secondary.desktop.active {
-	    display: block;
+	    display: none;
 	    top: 80px;
 	    left: 0;
 	    width: 102px;
@@ -1304,7 +1304,7 @@ and (max-width : 1280px) {
 	}
 
 	.login-portal__trigger--secondary {
-		left: 70px;
+		left: 50px;
 	}
 
 
